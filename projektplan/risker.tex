@@ -1,16 +1,45 @@
 \section{Risker}
 
+Inom projektet behövs risker frambringas och evalueras för att få så lite motstånd som möjligt. 
+Magnituden hos dessa risker beräknas genom produkten utav sannolikheten och inverkan. 
+    Dessa risker beskrivs nedan:
+
+\section*{\fontsize{12}{15}\selectfont Cybercoms backend för långsam för våra krav}
+
+\noindent Sannolikhet: 1
+
+\noindent Inverkan: 4
+
+\noindent Magnitud: 4
+
+\noindent För att minimera inverkan på risken så ska backenden användas så lite som möjligt. i
+Backended kommer inte att fungera som en fat-server utan all "server" kod kommer ligga på UI:n. 
+Om det skulle vissa sig att backenden fortfarande inte klarar av att skicka information, 
+så skulle en lösning vara att få spelet att gå långsammare beträffande kontroller.
+
+\iffalse
+\begin{itemize}
+    \item Cybercoms backend är för långsam för att uppfylla våra krav.
+        \begin{itemize}
+            \item Sannolikhet: 1
+            \item Inverkan: 4
+            \item Magnitud: 4
+            \item Lindring: Använder API:n så lite som möjligt.
+            \item Om det händer: Skapa ett långsammare spel där kontrollerna spelar mindre roll.
+        \end{itemize}
+\end{itemize}
+
 \begin{itemize}
     \item test
     \item test
 \end{itemize}
-
 \begin{center}
     \begin{tabular}{| p{3cm} |  c | c |c | }
         \hline
-        Beskrivning &  Chans &  Inverkan & Magnitud \\
+        Beskrivning & Chans & Inverkan & Magnitud \\
         \hline
         \centering aldfjha slfjhsdlfkhjasdl fhjsadfljhsadf lasdhjfladjhf & 1 & 2 & 2\\
         \hline        
     \end{tabular}
 \end{center}
+\fi
