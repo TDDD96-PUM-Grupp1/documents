@@ -1,13 +1,23 @@
-\documentclass[12pt]{article}
-
+\documentclass[10pt]{article}
+\usepackage{calc}
 \usepackage{subfiles}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish,english]{babel}
+\usepackage[margin=2cm]{geometry}
 \selectlanguage{swedish}
 
-\begin{document}
+% Variable för att räkna ut magnituden på en risk.
+\newcounter{riskmagnitude}
+% Macros för risker, för att strukturera upp dem.
+\newcommand{\risk}[4]{\risksection{#1}\riskmagnitude{#2}{#3}\newline #4}
+\newcommand{\risksection}[1]{\section*{\fontsize{12}{15}\selectfont #1}}
+\newcommand{\riskmagnitude}[2]{\setcounter{riskmagnitude}{#1*#2} \noindent Sannolikhet: #1 \newline Inverkan: #2 \newline Magnitud: \arabic{riskmagnitude}}
 
+
+\begin{document}
+\pagenumbering{gobble}
 \input{titel}
+\pagenumbering{arabic}
 \input{projektbeskrivning}
 \input{tidresursplan}
 \input{projektorganisation}
