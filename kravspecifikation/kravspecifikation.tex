@@ -38,23 +38,40 @@
 \tableofcontents
 
 \section{Inledning}
-	Inledning till projektet
+	I detta kapitel definieras och introduceras kontexten för projektet som ska utföras.
+
+	\subsection{Definitioner}
+		\begin{itemize}
+		\item User Interface (UI) - Den del av applikationen som visar spelplanen
+		\item Kontroller - En mobil eller surfplatta som kör kontrolldelen av applikationen
+		\end{itemize}	
 
 	\subsection{Parter}
-
-
-\section{Översikt av Systemet}
-	Vad slutprodukten ska vara. Hur de olika delarna relaterar till IoT-backenden.
-
-	\subsection{Syfte \& Mål}
+	Kunden till projektet är Cybercom Sweden. Projektet utförs av projektgruppens medlemmar.
+	\subsection{Syfte \& mål}
+		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT backend. För att kunna uppnå detta, ska ett realtids multiplayerspel skapas. Projektgruppens syfte är att genomföra ett kandidatarbete kan utföras enligt kursens mål.
 	
-	\subsection{Använding}
+	\subsection{Användning}
+		Mobil eller surfplattor ska användas som kontroll för spelet medan UI:t ska användas på en enhet med stor skärm för att visa spelplanen.
+	
+	\subsection{Bakgrundsinformation}
+		Projektgruppen har tidigare läst en kurs om programutvecklingsmetodik och vill omsätta denna kunskap i praktiken. 
+	
+\section{Översikt av Systemet}
+	Detta kapitel ger en överskådlig blick av systemet.
 
-\section{Definitioner}
-	Fyll på efter hand
+	\subsection{Grov beskrivning av produkten}
+	Produkten ska vara ett realtids multiplayerspel. Spelet är uppdelat i två olika komponenter, en UI del och en kontroller. Dessa två komponenter ska enbart kommunicera med varandra genom Cybercoms backend. En kontroller kan t.ex. vara en mobilenhet och ska styras av dess sensorer. Både kontroller och UI:t ska vara progressiva webbappar. 
+	
+	
+	\subsection{Beroenden av andra system}
+	Produkten är beroende av Cybercoms backend då all kommunikation måste gå genom denna. 
 
 \section{Funktionella Krav}
-	Kort introduktion
+	Detta avsnitt listar de funktionella kraven på produkten.
+	
+\section{Designkrav}
+	Detta avsnitt listar kraven på utvecklingsprocessen
 
 	\subsection{UI-Applikation}	
 	
@@ -68,8 +85,82 @@
 	
 	\subsection{Sensor-Appliaktion}
 	
-\section{Designkrav}
 
 \section{Kvalitetskrav}
-
+	Detta avsnitt listar krav på kvalitén hos den slutgilitga produkten.
+\pagebreak
+\section{Appendix}
+	\hfill
+	\begin{center}\textbf{Det vi vet att kunden vill ha}\end{center}
+	\begin{itemize}
+	\item Applikationen ska vara en PWA (Progressive webapp)
+	\item Enhet ska användas som kontroller för spelet
+	\item Applikationen ska stödja ett minimum av x (6) antal användare
+	\item Applikationen ska vara i realtid
+	\item Ska kunna köras på en enhet som har chrome (Kontroll)
+	\item Kontrollen ska endast kommunicera med cybercoms backend
+	\item UI ska endast kommunicera med Cybercoms backend
+	\item Sensorer hos kontrollen uppmuntras om det används (gärna accelerometer)
+	\item Behöver enbart stödja senaste versionen av Chrome
+	\item Applikationen ska använda sig av JavaScript
+	\item (2) Olika instanser av spel vid X antal spelare
+	\item Alternativ för styrning ska finnas om sensorer saknas
+	\item Användare ska kunna ansluta direkt
+	\item Kunden vill demonstreras sitt backend API (Fokus)
+	\end{itemize}
+	\bigskip
+	\begin{center}\textbf{Krav}\end{center}
+	\begin{itemize}
+		\item Telefon/Platta ska användas som kontroller för spelet
+		\item Applikationen ska stödja ett minimum av 2 antal användare
+		\item Applikationen ska köras i realtid
+		\item Ska kunna köras på en enhet som har chrome (Kontroll)
+		\item Kontrollen ska endast kommunicera med cybercoms backend
+		\item UI ska endast kommunicera med Cybercoms backend
+		\item Applikationen ska stödja version xx av chrome
+		\item En användare ska kunna gå in i en spelinstans
+		\item Applikationen ska stödja Hotjoin funktionalitet
+		\item Flera instanser ska kunna köras
+	\end{itemize}
+	\bigskip
+	\begin{center}\textbf{Designkrav}\end{center}
+	\begin{itemize}
+		\item All kod ska indentering med två mellanslag
+		\item Alla kod som körs i webbläsaren ska vara JavaScript
+		\item Applikationen ska följa Javascript ES2015+
+		\item UI och kontrollens kod ska licensiera under MITs opensource licens
+		\item Applikationen ska utvecklas som en PWA (Progressive webapp)
+		\item Koden ska följa en dokumentationsstandard. 
+		
+	\end{itemize}
+	\bigskip
+	\begin{center}\textbf{Kvalitetskrav}\end{center}
+	\begin{itemize}
+		\item Kunden vill demonstrera sitt backend API => Responsivitet
+		Tiden från att användare utför en handling till den visuella responsen får inte överskrida 1 sekund under vanliga nätverksförhållanden.
+		\item Tillförlitlighet/Stabilitet
+		UI delen av spelet ska kunna köras 4 timmar utan avbrott.
+		\item Koden ska vara modulär
+		Arkitekturen ska vara uppbyggd så att det är möjligt att vidareutveckla projektet.
+		\item Tid för uppkoppling
+		Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under vanliga nätverksförhållanden. 
+		\end{itemize}
+	
+		\bigskip
+		\begin{center}\textbf{Dokumentation \& kundens önskemål}\end{center}
+		\begin{itemize}
+			\item Prettier
+			\item Minifierar
+			\item AirBnBs base-config för eslint
+			\item Två space indentering Javascript
+			\item UTF-8
+			\item MIT license
+		\end{itemize}
+	\begin{center}\textbf{Krav på spelidé}\end{center}
+	\begin{itemize}
+		\item Realtids multiplayerspel
+		\item Stöjder X antal spelare
+		\item Mobil som kontroller
+		\item Användare ska kunna ansluta direkt
+	\end{itemize}
 \end{document}
