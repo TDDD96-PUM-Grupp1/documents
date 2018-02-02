@@ -1,6 +1,9 @@
 ## Ignore pdf files
 *.pdf
 
+## Ignore vscode settings
+settings.json
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
