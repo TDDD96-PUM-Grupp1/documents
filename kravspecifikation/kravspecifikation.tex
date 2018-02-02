@@ -34,9 +34,9 @@
 \begin{document}
 
 \maketitle
-
+\pagebreak
 \tableofcontents
-
+\pagebreak
 \section{Inledning}
 	I detta kapitel definieras och introduceras kontexten för projektet som ska utföras.
 
@@ -44,6 +44,9 @@
 		\begin{itemize}
 		\item User Interface (UI) - Den del av applikationen som visar spelplanen
 		\item Kontroller - En mobil eller surfplatta som kör kontrolldelen av applikationen
+		\item HotJoin - möjligheten att hoppa in i ett pågående spel
+		\item Standard nätverks förhållande - Stabilt WiFi-LAN kopplad till en router med stabil ethernet uppkoppling.
+		\item Sensor - En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer)
 		\end{itemize}	
 
 	\subsection{Parter}
@@ -91,23 +94,6 @@
 \pagebreak
 \section{Appendix}
 	\hfill
-	\begin{center}\textbf{Det vi vet att kunden vill ha}\end{center}
-	\begin{itemize}
-	\item Applikationen ska vara en PWA (Progressive webapp)
-	\item Enhet ska användas som kontroller för spelet
-	\item Applikationen ska stödja ett minimum av x (6) antal användare
-	\item Applikationen ska vara i realtid
-	\item Ska kunna köras på en enhet som har chrome (Kontroll)
-	\item Kontrollen ska endast kommunicera med cybercoms backend
-	\item UI ska endast kommunicera med Cybercoms backend
-	\item Sensorer hos kontrollen uppmuntras om det används (gärna accelerometer)
-	\item Behöver enbart stödja senaste versionen av Chrome
-	\item Applikationen ska använda sig av JavaScript
-	\item (2) Olika instanser av spel vid X antal spelare
-	\item Alternativ för styrning ska finnas om sensorer saknas
-	\item Användare ska kunna ansluta direkt
-	\item Kunden vill demonstreras sitt backend API (Fokus)
-	\end{itemize}
 	\bigskip
 	\begin{center}\textbf{Krav}\end{center}
 	\begin{itemize}
@@ -115,12 +101,13 @@
 		\item Applikationen ska stödja ett minimum av 2 antal användare
 		\item Applikationen ska köras i realtid
 		\item Ska kunna köras på en enhet som har chrome (Kontroll)
-		\item Kontrollen ska endast kommunicera med cybercoms backend
-		\item UI ska endast kommunicera med Cybercoms backend
+		\item Kommunikationen mellan UI och kontrollen ska endast ske genom Cybercoms backend
 		\item Applikationen ska stödja version xx av chrome
 		\item En användare ska kunna gå in i en spelinstans
 		\item Applikationen ska stödja Hotjoin funktionalitet
-		\item Flera instanser ska kunna köras
+		\item Flera instanser av UI delen ska kunna köras separat
+		\item UI delen ska visa upp en spelplan
+		\item Spelet ska stödja användning av en sensor, ifall sensor saknas ska alternativ styrning finnas
 	\end{itemize}
 	\bigskip
 	\begin{center}\textbf{Designkrav}\end{center}
@@ -136,7 +123,7 @@
 	\bigskip
 	\begin{center}\textbf{Kvalitetskrav}\end{center}
 	\begin{itemize}
-		\item Kunden vill demonstrera sitt backend API => Responsivitet
+		\item Kunden vill demonstrera sitt backend API - Responsivitet
 		Tiden från att användare utför en handling till den visuella responsen får inte överskrida 1 sekund under vanliga nätverksförhållanden.
 		\item Tillförlitlighet/Stabilitet
 		UI delen av spelet ska kunna köras 4 timmar utan avbrott.
@@ -155,12 +142,6 @@
 			\item Två space indentering Javascript
 			\item UTF-8
 			\item MIT license
+			\item Linux line endings
 		\end{itemize}
-	\begin{center}\textbf{Krav på spelidé}\end{center}
-	\begin{itemize}
-		\item Realtids multiplayerspel
-		\item Stöjder X antal spelare
-		\item Mobil som kontroller
-		\item Användare ska kunna ansluta direkt
-	\end{itemize}
 \end{document}
