@@ -1,6 +1,8 @@
 \documentclass[10pt]{article}
 
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 
 \title{Kravspecifikation}
 
@@ -67,6 +69,13 @@
 
 	\subsection{Grov beskrivning av produkten}
 	Produkten ska vara ett realtids multiplayerspel. Spelet är uppdelat i två olika komponenter, en UI del och en kontroller. UI delen är tänkt att agera som skärm för spelet,  Dessa två komponenter ska enbart kommunicera med varandra genom Cybercoms backend. En kontroller kan t.ex. vara en mobilenhet och ska styras av dess sensorer. Både kontroller och UI:t ska vara progressiva webbappar. 
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.4]{backend}
+		\caption{kommunikation mellan Cybercoms backend och komponenterna i systemet}
+		\label{fig:backend}
+	\end{figure}
 	
 	
 	\subsection{Beroenden av andra system}
