@@ -15,7 +15,6 @@ Riskerna inför projektet är nedan:
 {
     Om sensordatan varierar mycket mellan olika enheter, såsom precision eller brus,
     kan det leda till att utvecklingen blir långsammare då det kan ge oönskade problem som måste jobbas runt.
-
     För att undvika att detta blir ett problem så behövs tydligt efterforskning om hur enheterna fungera när
     det gäller sensordata. För att fixa problemet om det skulle bli ett behövs koden struktureras upp för att
     hantera problemen tidigt, såsom att motverka brus genom interpolation.
@@ -25,7 +24,6 @@ Riskerna inför projektet är nedan:
 {
     Två projektmedlemmar saknar laptops i gruppen vilket kan tillföra med att utvecklingen blir tar längre tid
     då dessa eventuellt får sitta tillsammans med någon annan.
-    
     Cybercom kommer förhoppningsviss att ordna två laptops som kan användas utav medlemmarna, men om det skulle
     Visar det sig vara ett problem kan medlemmarna utveckla mer i SU-salar med eller utan de andra.
 }
@@ -34,7 +32,6 @@ Riskerna inför projektet är nedan:
 {
     Under projektets gång kommer troligviss JavaScript att ge upphov till konstiga körtidsfel då språket inte är typat.
     Detta kan leda till långsammare utveckling då konstiga problem måste letas upp.
-
     Genom att skapa bra tester kan detta problemet minskas då testerna ska utformas så att oönskade typer hittas snabbt.
     Om problemen kvarstår ska mer resurser läggas på att testerna fungerar.
 }
@@ -43,7 +40,6 @@ Riskerna inför projektet är nedan:
 {
     Då projektets största krav är att spelet ska vara i realtid är det viktigt att arkitekturen fungerar till just
     detta endamålet.
-
     För att mitigera risken kommer det läggas fokus på arkitekturen i början för att den ska klara av realtid, 
     men även tillsammans hålla koll så att arkitekturen följs.
     Skulle det vissa sig att våran arkitektur ändå inte håller så ska vi så snabbt som möjligt titta över den och bygga om.
@@ -51,25 +47,49 @@ Riskerna inför projektet är nedan:
 
 \risk{Teamledare åker bort en vecka som leder till dålig utveckling}{1}{2}
 {
-
+    Då teamledaren lämnar en vecka i slutet utav april kan det leda till att utvecklingen kan
+    hindras. För att undvika att detta blir ett problem ska teamledaren hålla alla andra i
+    gruppen uppdaterade på diverse områden som andra i gruppen inte har koll på. I fallet då det skulle bli
+    problematiskt finns det inte så mycket att göra, då teamledaren eventuellt inte kan ha någon form utav kontakt,
+    gruppen får med andra ord jobba på så gott det gå under veckan.
 }
 
 \risk{Någon i gruppen respekterar inte deadlines}{1}{3}
 {
-
+   I alla projekt i team finns det en risk att vissa inte respektera deadlines, dåde interna och
+   externa. För att mitigera detta så kommer teamet se till att alla är uppdaterade på
+   diverse deadlines och att på möten hålla koll på vilka som halkar efter. Om det skulle bli
+   ett problem ska det tas upp med personen i fråga, om det inte hjälper kontaktar vi handledaren
+   eller eventuellt examinatorn för råd.
 }
 
 \risk{Oförutsedd dataförlust}{1}{4}
 {
-
+    En sak som inte får hända under projektets gång är att all kod eller data försvinner och 
+    inte går att få tillbaka. Ett enkelt sätt att undvika att vi förlorar kod är att regelbundet
+    versionshantera sin kod med git, även om den inte fungerar så ska den finnas i en personlig
+    branch. Detta leder till att kod alltid finns utanför ens personliga dator och därmed mindre
+    chans för förlust. Om det skulle vara ett problem med förlust så kan teamet endast gå 
+    tillbaka till en tidigare version och fortsätta därifrån.
 }
 
-\risk{Saker som inte funkar blir pushat till master}{1}{3}
+\risk{Saker som inte fungerar blir pushat till master}{1}{3}
 {
-
+    Tanken med master-branchen är att allt ska vara körbart och fungera korrekt, så om teamet ska
+    demonstrera projektet ska allt köras som tänkt. För att hålla master-branchen fungerande
+    kommer tester sättas upp på git som behöver gå igenom för att bli pushat. Dessutom kommer
+    konfigurationsansvarig att behöva godkänna pull requests till mastern. Vid problem kan teamet
+    gå tillbaka till en tidigare version på mastern vid demonstration och därefter utöka tester
+    för att minimera risken att det händer igen.
 }
 
 \risk{Brist på kunskap ger dålig kommunikation}{2}{3}
 {
-
+   När teamet diskutera saker finns det risk till att vissa i gruppen inte har tillräckligt med
+   kunskap inom ämnet för att leda en meningsfull diskussion, vilket kan leda till missförstånd
+   eller att personen inte medför till diskussionen. Genom att hålla redan i början utav
+   projektet ha en uppfattning om vilka erfarenheter gruppen har kan teamet bättre förberedda sig
+   inför diskussionen. Personen i fråga ska även meddela när det kommer upp ämnen som den inte
+   har erfarenheter utav. Vid tillfället då en person har problem och inte meddela detta så
+   ska teamet hålla koll så att alla tillför till diskusionen. 
 }
