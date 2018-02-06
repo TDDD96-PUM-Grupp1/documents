@@ -10,10 +10,27 @@
 % Variable för att räkna ut magnituden på en risk.
 \newcounter{riskmagnitude}
 % Macros för risker, för att strukturera upp dem.
-\newcommand{\risk}[4]{\risksection{#1}\riskmagnitude{#2}{#3}\newline #4}
-\newcommand{\risksection}[1]{\section*{\fontsize{12}{15}\selectfont #1}}
-\newcommand{\riskmagnitude}[2]{\setcounter{riskmagnitude}{#1*#2} \noindent Sannolikhet: #1 \newline Inverkan: #2 \newline Magnitud: \arabic{riskmagnitude}}
+\newcommand{\risk}[4]{
+    \risksection{#1}
+    \riskmagnitude{#2}{#3}
+    \newline #4
+}
+\newcommand{\risksection}[1]{
+    \section*{
+        \fontsize{12}{15}
+        \selectfont #1
+    }
+    \addcontentsline{toc}{subsection}{
+        \protect\numberline{}#1
+    }
+}
 
+\newcommand{\riskmagnitude}[2]{
+    \setcounter{riskmagnitude}{#1*#2} 
+    \noindent Sannolikhet: #1 
+    \newline Inverkan: #2 
+    \newline Magnitud: \arabic{riskmagnitude}
+}
 
 \begin{document}
 
@@ -24,5 +41,8 @@
 \input{tidresursplan}
 \input{projektorganisation}
 \input{risker}
+\pagebreak
+\bibliographystyle{unsrt}
+\bibliography{references}
 
 \end{document}
