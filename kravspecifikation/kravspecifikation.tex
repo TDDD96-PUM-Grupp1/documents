@@ -49,9 +49,8 @@
 		\item User Interface (UI) -- Den del av applikationen som visar spelplanen
 		\item Kontroller -- En mobil eller surfplatta som kör kontrolldelen av applikationen
 		\item HotJoin -- möjligheten att hoppa in i ett pågående spel
-		\item Standard nätverks förhållande - Stabilt WiFi-LAN kopplad till en router med stabil ethernet uppkoppling.
+		\item Standard nätverksförhållande - Stabilt WiFi-LAN kopplad till en router med stabil ethernet uppkoppling.
 		\item Sensor -- En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer)
-		\item Vanliga nätverksförhållanden -- Stabil nätverksuppkoppling utan yttre störningar.
 		\end{itemize}	
 
 	\subsection{Parter}
@@ -70,7 +69,7 @@
 	Detta kapitel ger en överskådlig blick av systemet.
 
 	\subsection{Grov beskrivning av produkten}
-	Produkten ska vara ett realtids multiplayerspel. Spelet är uppdelat i två olika komponenter, en UI del och en kontroller del. UI delen är tänkt att agera som skärm för spelet,  Dessa två komponenter ska enbart kommunicera med varandra genom Cybercoms backend, se figur 1. En kontroller kan t.ex. vara en mobilenhet och ska styras av dess sensorer. Både kontroller och UI:t ska vara progressiva webbappar. 
+	Produkten ska vara ett realtids multiplayerspel. Spelet är uppdelat i två olika komponenter, en UI del och en kontroller del. UI delen är tänkt att agera som skärm för spelet.  Dessa två komponenter ska enbart kommunicera med varandra genom Cybercoms backend, se figur 1. En kontroller kan t.ex. vara en mobilenhet och ska styras av dess sensorer. Både kontroller- och UI-delen ska vara progressiva webbappar. 
 	
 	\begin{figure}[h]
 		\centering
@@ -95,14 +94,13 @@
 		Krav 2 & Applikationen ska stödja ett minimum av 2 antal användare & 1 \\ \hline
 		Krav 3 & Applikationen ska köras i realtid & 1 \\ \hline
 		Krav 4 & Applikationen ska kunna köras på en enhet som har chrome & 1 \\ \hline
-		Krav 5 & UI ska endast kommunicera med Cybercoms backend & 1 \\ \hline
+		Krav 5 & UI-delen ska endast kommunicera med Cybercoms backend & 1 \\ \hline
 		Krav 6 & Applikationen ska stödja version 64 av Chrome & 1 \\ \hline
 		Krav 7 & En användare ska kunna gå in i en spelinstans & 1 \\ \hline
 		Krav 8 & Applikationen ska stödja Hotjoinfunktionalitet & 1 \\ \hline
 		Krav 9 & Flera instanser av spelet ska kunna köras samtidigt & 1 \\ \hline
 		Krav 10 & Applikationen ska stödja styrning med tagentbord och mus & 2 \\ \hline
-		
-		
+		Krav 11 & UI-delen ska visa en unik kod för sin spelinstans & 2 \\ \hline
 	\end{tabular}
 	
 \section{Designkrav}
@@ -111,12 +109,12 @@
 	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
 		\hline
 		\textbf{Krav nr.} & \textbf{Beskrivning} & \textbf{Prioritet} \\ \hline
-		Krav 11 & All kod ska följa två mellanslags indentering & 1\\ \hline
+		
 		Krav 12 & All kod som körs i webbläsaren ska vara Javascript & 1 \\ \hline
 		Krav 13 & Applikationen ska utvecklas som en PWA & 1 \\ \hline
 		Krav 14 & Koden ska följa en dokumentationsstandard & 1 \\ \hline
 		Krav 15 & UI och Kontrollerns kod ska licensieras under MITs opensource licens & 1 \\ \hline
-		Krav 16 & Applikationen sa föla Javascript ES2015+ & 1 \\ \hline
+		Krav 16 & Applikationen sa följa Javascript ES2015+ & 1 \\ \hline
 	\end{tabular}
 
 \section{Kvalitetskrav}
@@ -125,10 +123,11 @@
 		\begin{tabular}{|p{2cm}|p{8cm}|p{2cm}|}
 		\hline
 		\textbf{Krav nr.} & \textbf{Beskrivning} & \textbf{Prioritet} \\ \hline
-		Krav 17 & Tiden från att en användare utför en handling från kontrollern till den visuella responsen från UI:t får inte överskrida 1 sekund under vanliga nätverksförhållanden & 1\\ \hline
+		Krav 17 & Tiden från att en användare utför en handling från kontrollern till den visuella responsen från UI:t får inte överskrida 1 sekund under standard nätverksförhållanden & 1\\ \hline
 		Krav 18 & UI:t ska kunna köras i 4 timmar utan avbrott & 1 \\ \hline
 		Krav 19 & Arkitekturen för systemet ska vara designat så att det är möjligt att vidareutveckla projektet & 1 \\ \hline
-		Krav 20 & Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under vanliga nätverksförhållanden & 1 \\ \hline
+		Krav 20 & Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under standard nätverksförhållanden & 1 \\ \hline
+		Krav 21 & 
 		
 	\end{tabular}
 
