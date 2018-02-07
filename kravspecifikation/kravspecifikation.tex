@@ -3,9 +3,24 @@
 \usepackage[swedish, english]{babel}
 \usepackage[margin=2cm]{geometry}
 \usepackage[utf8]{inputenc}
-\selectlanguage{swedish}
+\usepackage{calc}
 \usepackage{graphicx}
-\graphicspath{ {images/} }
+\usepackage{filecontents}
+\usepackage[backend=bibtex,style=authoryear,natbib=true,style=numeric-comp]{biblatex}
+\graphicspath{ {images/}}
+\selectlanguage{swedish}
+
+\begin{filecontents*}{\jobname.bib}
+@techreport{bib-name,
+    title={title},
+    author={author},
+    year={XXXX},
+    institution={institition},
+    month={month}
+}
+\end{filecontents*}
+
+\addbibresource{\jobname.bib}
 
 
 \title{Kravspecifikation}
@@ -148,5 +163,10 @@
 		Krav 32 & & \\ \hline
 		
 	\end{tabular}
+	
+\pagebreak
+
+\printbibliography
+\addcontentsline{toc}{section}{\refname}
 
 \end{document}
