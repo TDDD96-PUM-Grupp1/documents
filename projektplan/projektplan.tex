@@ -3,12 +3,11 @@
 \usepackage{subfiles}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
-\usepackage[swedish,english]{babel}
+\usepackage[swedish]{babel}
 \usepackage[margin=2cm]{geometry}
+\usepackage[backend=bibtex,style=authoryear,natbib=true,style=numeric-comp]{biblatex}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
-\usepackage[backend=bibtex,style=authoryear,natbib=true, style=numeric-comp
-]{biblatex}
 \usepackage{filecontents}
 \selectlanguage{swedish}
 \input{references}
@@ -36,7 +35,6 @@
 
 
 \begin{document}
-\renewcommand\refname{Referenser}
 
 \pagenumbering{gobble}
 \input{titel}
@@ -45,6 +43,7 @@
 \input{tidresursplan}
 \input{projektorganisation}
 \input{risker}
+
 \pagebreak
 
 \printbibliography
