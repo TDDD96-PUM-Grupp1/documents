@@ -1,0 +1,29 @@
+\documentclass[10pt]{article}
+
+\usepackage{subfiles}
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+
+\usepackage{filecontents}
+
+\graphicspath{ {images/} }
+\selectlanguage{swedish}
+
+\begin{document}
+	\input{titel}
+	
+	\input{inledning}
+	
+	\input{motivering}
+	
+	\section{Modeller}
+		\input{konceptarkitektur}
+		\input{implementationsarkitektur}
+		
+	\input{diskussion}
+
+\end{document}
