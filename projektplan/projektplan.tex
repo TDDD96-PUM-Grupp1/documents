@@ -5,7 +5,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[swedish,english]{babel}
 \usepackage[margin=2cm]{geometry}
+\usepackage[backend=bibtex,style=authoryear,natbib=true, style=numeric-comp
+]{biblatex}
+\usepackage{filecontents}
 \selectlanguage{swedish}
+\input{references}
+\addbibresource{\jobname.bib}
 
 % Variable för att räkna ut magnituden på en risk.
 \newcounter{riskmagnitude}
@@ -16,13 +21,8 @@
     \newline #4
 }
 \newcommand{\risksection}[1]{
-    \section*{
-        \fontsize{12}{15}
-        \selectfont #1
-    }
-    \addcontentsline{toc}{subsection}{
-        \protect\numberline{}#1
-    }
+    \subsection*{#1}
+    \addcontentsline{toc}{subsection}{#1}
 }
 
 \newcommand{\riskmagnitude}[2]{
@@ -32,7 +32,9 @@
     \newline Magnitud: \arabic{riskmagnitude}
 }
 
+
 \begin{document}
+\renewcommand\refname{Referenser}
 
 \pagenumbering{gobble}
 \input{titel}
@@ -42,7 +44,8 @@
 \input{projektorganisation}
 \input{risker}
 \pagebreak
-\bibliographystyle{unsrt}
-\bibliography{references}
+
+\printbibliography
+\addcontentsline{toc}{section}{\refname}
 
 \end{document}
