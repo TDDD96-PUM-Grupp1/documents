@@ -1,0 +1,124 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{scrextend}
+
+\title{Testplan}
+
+\author{
+	Projektgrupp 1\\
+	Joel Oskarsson\\
+	\texttt{joeos014@student.liu.se}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Inledning}
+	Den här testplanen är framtagen för att kvalitetssäkra utvecklingen av ett IoT-spel som skapas av en studentgrupp som läser kursen TDDD96 på Linköpings universitet. Planen kommer endast innefatta tester som påverkar spelet både direkt och indirekt, och som är relaterade till utvecklingen. Primärt fokus kommer ligga på att säkerställa att spelet lever upp till de förväntningar som kund har på oss. Se kravspecifikationen. Projektet är uppdelat i flera iterationer där detta dokument kommer täcka första iterationen.
+
+Det här projektet kommer ha {\color{red}XXXX} olika nivåer av tester, vilket innefattar regressionstester, enhetstester, integrationstester, acceptanstester och {\color{red}XXXX}. Detaljer angående testerna kan finnas under Tillvägagångssättsdelen.
+
+Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och den här testplanen är endast relevant fram till {\color{red}5-3-2018} då en ny testplan kommer skapas inför nästa iteration.
+
+
+
+	\subsection{Definitioner}
+		\begin{itemize}
+		\item [UI] User Interface - Den del av applikationen som visar spelplanen
+		\item [Kontroller] En mobil eller surfplatta som kör kontrolldelen av applikationen
+		\item [Kund] Cybercom Sweden
+		\item [regressionstest] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
+		\item [enhetstest] Testa varje enhet så den fungerar när den är färdig
+		\item [integrationstest] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
+		\item [acceptanstest] Test för att säkerställa att enheten uppfyller kraven för projektet
+		\end{itemize}	
+
+	
+\section{Testföremål}
+	Nedan följer en lista över föremål som ska testas under första iterationen:
+	\begin{itemize}
+	\item [Hastighet] Eftersom målet med projektet är att visa hastigheten av Cybercoms backend är detta en central punkt i projektet.
+	\item [Kontroller] Spelet ska kontrolleras med hjälp av accelerometern i t.ex. en mobil eller surfplatta.
+	\item [UI] Spelet ska kunna visas på en skärm som får all användardata från Cybercoms backend.
+	\end{itemize}
+	
+	
+	
+	
+
+\section{Funktioner att testa}
+	Nedan följer en lista på de områden som har huvudfokus under testningen av applikationen.
+	\begin{itemize}
+	\item Starta spelsession på UI 
+	\item Ansluta spelare till session
+	\item Grundläggande rörelser
+	\item hålla sessionen aktiv en längre tid
+	\item Gå med i en redan aktiv session
+	\end{itemize}
+	
+	
+	
+\section{Funktioner som inte ska testas}
+	Nedan följer en lista på de delar av projektet som ligger utanför fokus av olika anledningar.
+	\begin{itemize}
+	\item Spelfunktioner
+	\item Flera olika spel
+	\item stöd för extra styrfunktioner
+	\end{itemize}
+	Varför dessa punkter inte kommer tas upp i testplanen är för att under första iterationen ska fokus läggas på att få en bra grund att bygga spelet på. Det viktiga är att få igång kopplingen mellan UI och backend, samt mellan kontroller och backend. Eftersom projektet pågår i iterationer är detta inte i fokus under första iterationen.
+
+
+
+
+\section{Tillvägagångssätt}
+	Testerna för IoT-spelet kommer bestå av enhetstester, regressionstester, integrationstester och acceptanstester. Planen är att alla personer ska vara delaktiga i de olika 		testmomenten i utbildningssyfte. Med den tidsbegränsning som är satt på projektet är risken relativt hög att testningen kan bli lidande. \\
+	\\
+	Enhetstestningen kommer utföras utav den person som utvecklat enheten och kommer utföras under hela projektets gång. Bereonde på storlek av enheten kan flera utvecklare behöva hjälpas åt för att enheten ska bli godkänd.\\
+	\\
+	Integrationstestningen kommer i huvuddel styras av konfigurationsansvarig för projektet. När en ny enhet ska integreras ska den först ha klarat enhetstestet och beroende på storleken kan fler projektmedlemmar kopplas in och hjälpa till med att testa samtliga delar av de olika interaktionerna mellan enheterna. \\
+	\\
+	Regressionstester är något som kommer fortgå under hela projektet med hjälp av automatisering. Automatiska tester kommer göras när ny delar läggs till på Github med hjälp av {\color{red}Travis}. Detta är ett extra säkerhetssteg för att försäkra att ingen essentiell funktionalitet går förlorad som existerade i en tidigare version försvinner.\\
+	\\
+	Acceptanstester kommer utföras i slutet av varje iteration för att säkerställa att spelet uppfyller kraven. Detta kommer utföras dels internt till en början för att sedan visa demo inför kund för att få feedback. 
+	
+	
+
+\section{Enhets godkännande/misslyckande kriterier}
+\section{Avbrott och fortsättningskriterier}
+\section{Test leveranser}
+\section{Test uppgifter}
+\section{Miljöbehov}
+\section{Ansvarsområden}
+\section{Avbrott och fortsättningskriterier}
+\section{Personal och utbildningsbehov}
+\section{Schema}
+\section{Risker och ovissheter}
+\section{godkännande}
+
+\end{document}
