@@ -1,5 +1,5 @@
 \section{Motivering}
-I denna del listas de krav och mål som påverkar systemets arkitektur. Specifika krav, centrala kvalitetsaspekter och andra viktiga faktorer i systemet får direkta eller indirekta konsekvenser för arkitekturen. Dessa låg till grund för uppdelningen av systemet i komponenter och definitionen av kommunikationen mellan dem.
+I denna del listas de krav och mål som påverkar systemets arkitektur. Specifika krav, centrala kvalitetsaspekter och andra viktiga faktorer i systemet får direkta eller indirekta konsekvenser för arkitekturen. Dessa har legat till grund för uppdelningen av systemet i komponenter och definitionen av kommunikationen mellan dem.
 
 \subsection{Arkitekturkritiska Krav}
 Kraven återfinns i dokumentet kravspecifikation \cite{bib-kravspec}. Notera att samtliga krav ej har konsekvenser för arkitekturen.\\
@@ -15,15 +15,15 @@ Kraven återfinns i dokumentet kravspecifikation \cite{bib-kravspec}. Notera att
         \hline
         3 & En komponent för att visa upp ett grafiskt gränssnitt bör finnas i kontroll-applikationen.\\
         \hline
-        6 & All speldatat som går ut från UI-applikationen bör gå genom ett gemensamt gränssnitt.\\
+        6 & All speldata som går ut från UI-applikationen bör gå genom ett gemensamt gränssnitt.\\
         \hline
-        9 & UI-Applikatione bör kunna lägga till spelare utan att det stör spelet flöde.\\
+        9 & UI-Applikationen bör kunna lägga till spelare utan att det stör spelets flöde.\\
         \hline
-        10 & Delen av systemet som finna på IoT-backenden måste hantera och identifiera olika instanser av UI-Applikationen.\\
+        10 & Delen av systemet som finns på IoT-backenden måste hantera och identifiera olika instanser av UI-Applikationen.\\
         \hline
         16 & En komponent för att generera och hantera de olika identifikationskoderna bör existera.\\
         \hline
-        26, 27 & Programspråket Javascript sätter vissa begränsningar på hur parallel exekvering kan implementeras.\\
+        26, 27 & Programspråket Javascript sätter vissa begränsningar på hur parallell exekvering kan implementeras.\\
         \hline
         33 & Arkitekturen bör isolera komponenter på ett sätt som motverkar att fel sprids igenom systemet.\\
         \hline
@@ -39,5 +39,5 @@ Förutom krav finns det andra aspekter hos systemets som har identifierats vara 
     \item En komponent som kan hantera olika format av sensordata och abstrahera denna till ett standardiserat format är välbehövligt.
     \item Samtliga handlingar som får realtidskonsekvenser bör ha korta vägar genom arkitekturen.
     \item Det gränssnitt som olika spellägen kan styra spelet genom bör vara både väldefinierat och brett. Detta för att det ska vara enkelt att skapa flera olika spellägen, men också för att erbjuda stor frihet i hur dessa spellägen förändrar spelet.
-    \item En eller flera komponenter bör ta hand om all inläsning av resurser. Detta går också väl ihop med användandet av Prograssive Web Apps (referens?).
+    \item En eller flera komponenter bör ta hand om all inläsning av resurser. Detta går också väl ihop med användandet av Progressive Web Apps.
 \end{itemize}
