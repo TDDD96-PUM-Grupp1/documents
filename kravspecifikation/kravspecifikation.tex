@@ -6,17 +6,14 @@
 \usepackage{graphicx}
 \usepackage{filecontents}
 \usepackage{etoolbox}
-\makeatletter
-\long\def\etb@listitem#1#2{%
-  \expandafter\ifblank\expandafter{\@gobble#2}
-    {}
-    {\expandafter\etb@listitem@i
-     \expandafter{\@secondoftwo#2}{#1}}}
-\long\def\etb@listitem@i#1#2{#2{#1}}
-\makeatother
 \usepackage[backend=bibtex,style=authoryear,natbib=true,style=numeric-comp]{biblatex}
 \graphicspath{ {images/}}
 \selectlanguage{swedish}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
 \begin{filecontents*}{\jobname.bib}
 @techreport{bib-name,
@@ -75,13 +72,14 @@
 		\item Sensor -- En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer).
 		\item Spelinstans -- Ett spel med en unik identifikationskod
 		\item PWA (Progressive webapp) -- Ett mellanting mellan en hemsida och en applikation. Med en PWA behöver man inte ladda ner en app, men ger viss funktionallitet som en appar har.
+		\item Realtidsmultiplayerspel -- ??
 		\end{itemize}	
 
 	\subsection{Parter}
 	Kunden till projektet är Cybercom Sweden. Projektet utförs av projektgruppens medlemmar.
 	
 	\subsection{Syfte \& mål}
-		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta, ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppens är att genomföra ett kandidatarbete enligt kursen TDDD96 -- Kandidatprojekt i programvaruutveckling mål.
+		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta, ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppen är att genomföra ett kandidatarbete enligt kursen TDDD96 -- Kandidatprojekt i programvaruutveckling mål.
 	
 	\subsection{Användning}
 		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen.  
@@ -119,7 +117,7 @@
 		\textbf{Krav nr.} & \textbf{Beskrivning} &\textbf{Prioritet} \\ \hline
 		Krav 1 & En mobil eller surfplatta ska användas som spelkontroll för spelet. & 1 \\ \hline
 		Krav 2 & UI-applikationen ska stödja ett minimum av två spelare & 1 \\ \hline
-		Krav 3 & Kontrollapplikationen ska ha ett grafiskt gränssnitt   & 1 \\ \hline
+		Krav 3 & Kontrollapplikationen ska ha ett grafiskt gränssnitt & 1 \\ \hline
 		Krav 4 & UI-applikationen ska kunna köras på en enhet som har Google Chrome & 1 \\ \hline
 		Krav 5 & Kontrollapplikationen ska kunna köras på en enhet som har Google Chrome & 1 \\ \hline
 		Krav 6 & UI-applikationen ska endast kommunicera med \newline kontrollapplikation via  Cybercoms IoT-backend & 1 \\ \hline
@@ -128,16 +126,17 @@
 		Krav 9 & En användare ska kunna gå in i en spelinstans & 1 \\ \hline
 		Krav 10 & UI-applikationen ska stödja hotjoinfunktionalitet & 1 \\ \hline
 		Krav 11 & Flera instanser av spelet ska kunna köras samtidigt & 1 \\ \hline
-		Krav 12 & Kontrollapplikationen ska stödja styrning med tagentbord och mus & 2 \\ \hline
-		Krav 13 & UI-applikationen ska visa en unik kod för sin spelinstans & 2 \\ \hline
-		Krav 14 & En spelinstans spelare ska kunna rösta på vilket spel som ska spelas & 1 \\ \hline
-		Krav 15 & UI-applikationen ska kunna starta en spelinstans & 1 \\ \hline
-		Krav 16 & UI-applikationen ska kunna avsluta en spelinstans & 1 \\ \hline
-		Krav 17 & Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend & 1 \\ \hline
-		Krav 18 & UI-applikationen ska kommunicera med Cybercoms IoT-backend & 1\\ \hline
-		Krav 19 & Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod & 2 \\ \hline
-		Krav 20 & En unik slumpmässig identifikationskod ska kunna genereras för en spelinstans & 1 \\ \hline
-		Krav 21 & UI-applikationen ska kunna välja sin egna ID-kod för spelinstansen den kör & 2 \\ \hline
+		Krav 12 & En spelinstans spelare ska kunna rösta på vilket spel som ska spelas & 1 \\ \hline
+		Krav 13 & UI-applikationen ska kunna starta en spelinstans & 1 \\ \hline
+		Krav 14 & UI-applikationen ska kunna avsluta en spelinstans & 1 \\ \hline
+		Krav 15 & Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend & 1 \\ \hline
+		Krav 16 & UI-applikationen ska kommunicera med Cybercoms IoT-backend & 1\\ \hline
+		Krav 17 & En unik slumpmässig identifikationskod ska kunna genereras för en spelinstans & 1 \\ \hline
+		Krav 18 & UI-Applikationen ska ha en knapp för att avsluta spelet & 1 \\ \hline
+		Krav 19 & UI-applikationen ska kunna välja sin egna ID-kod för spelinstansen den kör & 2 \\ \hline
+		Krav 20 & Kontrollapplikationen ska stödja styrning med tagentbord och mus & 2 \\ \hline
+		Krav 21 & UI-applikationen ska visa en unik kod för sin spelinstans & 2 \\ \hline
+		Krav 22 & Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod & 2 \\ \hline
 		
 		
 		
@@ -155,8 +154,8 @@
 		Krav 24 & UI-applikationen ska utvecklas som en PWA & 1 \\ \hline
 		Krav 25 & Kontrollapplikationen ska utvecklas som en PWA & 1 \\ \hline
 		Krav 26 & All kod som skrivs ska följa en dokumentationsstandard & 1 \\ \hline
-		Krav 27 & UI-applikationen ska licensieras under MITs opensource licens & 1 \\ \hline
-		Krav 28 & Kontrollapplikationen ska licensieras under MITs opensource licens & 1 \\ \hline
+		Krav 27 & UI-applikationen ska licensieras under MITs open source licens & 1 \\ \hline
+		Krav 28 & Kontrollapplikationen ska licensieras under MITs open source licens & 1 \\ \hline
 	\end{tabular}
 
 	\subsection{Kvalitetskrav}
