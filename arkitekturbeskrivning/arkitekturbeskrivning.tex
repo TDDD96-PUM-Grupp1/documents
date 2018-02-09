@@ -9,7 +9,7 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{scrextend}
-
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \usepackage{filecontents}
 
 %Skriv över engelska namn för appendix
@@ -21,6 +21,7 @@
 
 \graphicspath{ {images/} }
 \selectlanguage{swedish}
+\addbibresource{references.bib}
 
 \begin{document}
 		\input{titel}
@@ -43,6 +44,9 @@
 
 		\input{diskussion}
 		\pagebreak
+
+    \printbibliography
+    \pagebreak
 
 		\begin{appendices}
 				\input{koncept_appendix}
