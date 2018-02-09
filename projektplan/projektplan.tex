@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage[margin=2cm]{geometry}
-\usepackage[backend=bibtex,style=authoryear,natbib=true,style=numeric-comp]{biblatex}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{filecontents}
@@ -32,6 +32,12 @@
     \newline Inverkan: #2 
     \newline Magnitud: \arabic{riskmagnitude}
 }
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
 
 
 \begin{document}
