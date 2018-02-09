@@ -1,2 +1,10 @@
 \section{Diskussion}
 Diskussion om möjliga problem med arkitektur och hur de kan bemötas. Idéer för framtida utökningar.
+
+Arkitkturen lägger stor tilltro till att vissa komponenter klarar av uppgifter effektivt. Speciellt komponenten IoT-Backend är central för systemets responsivitet, då all data mellan Ui- och kontroll-applikation går genom denna. Här finns också begränsad möjlighet till optimering, då den till stor del består av ett redan existerande system som ej kan modifieras.\\
+
+Det finns stora utmaningar gällande utformningen av gränssnittet mellan spellägen och spelet. Att få detta både väldefinierat och brett kräver en noggrann och välgrundad design. Detta kan underlättas då man får en bättre bild av spellägen som ska implementeras.\\
+
+Arkitekturens användargränssnitt har fler ansvarsområden än att endast visa upp saker. Detta gäller främst logik som ligger nära utritning av grafik och menyer. Om denna logik inte växer alltför mycket och kräver interaktion med fler komponenter bör detta ej bli ett problem. Det går dock att bryta ut denna logik i framtiden till en egen komponent.\\
+
+Spelets kontroller i kontroll-applikationen kan i framtiden generellaiseras. För att tillåta andra styrningsmetoder än sensorer kan flera komponenter behöva skapas. Dessa bör struktureras så att oavsett hur användaren kontrollerar spelet blir den slutgilitga datan som skickas till UI-komponenten densamma.
