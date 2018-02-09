@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 
 \usepackage[utf8]{inputenc}
+\usepackage[toc]{appendix}
 \usepackage[swedish]{babel}
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
@@ -11,25 +12,39 @@
 
 \usepackage{filecontents}
 
+%Skriv över engelska namn för appendix
+\addto\captionsswedish{
+  \renewcommand\appendixname{Appendix}
+  \renewcommand\appendixpagename{Appendix}
+	\renewcommand\appendixtocname{Appendix}
+}
+
 \graphicspath{ {images/} }
 \selectlanguage{swedish}
 
 \begin{document}
-	\input{titel}
-	\pagebreak
+		\input{titel}
+		\pagebreak
 
-	\tableofcontents
-	\pagebreak
+		\tableofcontents
+		\listoffigures
+		\pagebreak
 
-	\input{inledning}
-	\pagebreak
+		\input{inledning}
+		\pagebreak
 
-	\input{motivering}
-	\pagebreak
+		\input{motivering}
+		\pagebreak
 
-	\section{Modeller}
-		\input{konceptarkitektur}
-		\input{implementationsarkitektur}
-	\pagebreak
-	\input{diskussion}
+		\section{Modeller}
+				\input{konceptarkitektur}
+				\input{implementationsarkitektur}
+		\pagebreak
+
+		\input{diskussion}
+		\pagebreak
+
+		\begin{appendices}
+				\input{koncept_appendix}
+		\end{appendices}
 \end{document}
