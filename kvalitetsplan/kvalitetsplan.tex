@@ -1,0 +1,214 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{filecontents}
+\usepackage{etoolbox}
+\usepackage[backend=bibtex,style=authoryear,natbib=true,style=numeric-comp]{biblatex}
+\graphicspath{ {images/}}
+
+\selectlanguage{swedish}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\begin{filecontents*}{\jobname.bib}
+@techreport{bib-name,
+    title={title},
+    author={author},
+    year={XXXX},
+    institution={institition},
+    month={month}
+}
+\end{filecontents*}
+
+\addbibresource{\jobname.bib}
+
+\title{Kvalitetsplan}
+
+\author{
+    Joel Almqvist\\
+    \texttt{joeal360@student.liu.se}
+    \and
+    Björn Detterfelt\\
+    \texttt{bjode786@student.liu.se}
+    \and
+    Tim Håkansson\\
+    \texttt{timha404@student.liu.se}
+    \and
+    David Kjellström\\
+    \texttt{davkj168@student.liu.se}
+    \and
+    Axel Löjdquist\\
+    \texttt{axelo225@student.liu.se}
+    \and
+    Joel Oskarsson\\
+    \texttt{joeos014@student.liu.se}
+    \and
+    Lieth Wahid\\
+    \texttt{liewa893@student.liu.se}
+    \and
+    Alexander Wilkens\\
+    \texttt{alewi684@student.liu.se}
+}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Inledning}
+	I detta kapitel definieras en kvalitetsplan, dess syfte samt tillhörande terminologi.
+
+	\subsection{Definitioner}
+		\begin{itemize}
+		\item Projektet -- Processen att framställa en produkt åt vår kund Cybercom.
+		\item Kvalite -- I likhet med IEEE 730 definerar denna rapport kvalitet som konformitet till projektets krav.
+		\item SQA - Software Quality Assurance
+		\item SQA-process - I likhet med IEEE 730 defineras en SQA-process som aktiviteten att samla underlag för att med säkerhet ta beslutet av produkten uppnår sina kvalitetskrav.
+		\item Gruppen -- Det team av åtta studenter som tillsammans ska utföra projektet.
+		\item PWA -- Progressive Web App (TODO  lägg till def)
+		\item Enkäten -- Den enkät som ska användas för att utvärdera användarupplevelsen, se sektion  3.3 Demo och enkät.
+		\end{itemize}	
+	
+	\subsection{Syfte}
+		Syftet med denna kvalitetsplan är att definera de arbetsprocesser gruppen ska efterfölja, med målet att det få produkten att hålla hög kvalité. Kvalitetsplanen ska också definera de standarder gruppen ska efterfölja med målet att de ska ge produkten en högre minimenivå gällande kvalité och samtidigt få produktens olika delar mer konsekventa.
+
+		
+\pagebreak
+\section{Krav på systemet}
+	Detta kapitel ger en överskådlig blick över projektet, hur det är tänkt att utföras och vilka krav som satts på det.
+
+	\subsection{Grov beskrivning av Projektet}
+	Projektet går ut på att gruppen skapa ett realtidsmultiplayerspel åt Cybercom. Produkten ska vara en två delad PWA som enbart kommunicerar med varandra genom Cybercoms backend system. Målet med produkten är att visa upp Cybercoms backend, framförallt dess hastighet.
+	Projektet ska utföras av studenter som saknar god erfarenhet av att arbeta i team och de roller som finns i teamet. Projektet i sig är beräknas ta elva veckor att genomföra. 
+	
+	\subsection{Systemets behov}
+	Syftet med produkten är att demonstrera responsitiviteten hos Cybercoms backend, för att uppfylla detta syfte ställs flera krav på produkten. Den måste vara responsiv för att syftet i huvudtaget ska kunna uppnås alltså ses detta krav som det mest centrala. Själva användningen av produkten kommer utföras av Cybercom på mässor, vid sådana tillfällen är det också viktigt att produkten är stabil. Om så inte är fallet kan produkten ge en negativ bild av backenden den är tänkt att uppvisa. Dessa är de två mest basala behov systemet har.
+	
+	Efter dessa finns fler egenskaper som systemet önskas uppvisa, bland annat så vill kunden ha möjligheten att bygga ut den färdiga produkten. 
+	
+	
+	\subsection{Kvalitetskrav}
+	Utifrån dessa behov har gruppen sammanställt kvalitetskrav som ser till att kundens behov blir uppfyllt när produkten färdigställs.
+	\begin{enumerate}
+		\item UI-applikationen ska kunna köras i 4 timmar utan avbrott.
+		\item Arkitekturen för systemet ska vara designat så att det är möjligt att vidareutveckla projektet
+		\item Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under standard nätverksförhållanden
+		\item Enkätens genomsnittliga betyg för responsivitet ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
+		\item Enkätens genomsnittliga betyg för användbarhet ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
+		\item Enkätens genomsnittliga betyg för den alternativa styrningen ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
+		\item Enkätens genomsnittliga betyg för "lått att förstå vad som händer" ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
+		
+	\end{enumerate}
+
+\pagebreak
+\section{Processer}
+	Detta avsnitt går igenom de aktiviteter gruppen ska genomföra för att uppfylla de satta kvalitetskraven och på så sätt säkra att produkten håller hög kvalité.
+	\subsection{Kommenteringsstandard}
+	\textbf{Syfte:} För att Cybercom med lätthet ska kunna utöka produkten ska koden vara lätt för en utomstående att sätta sig in i.
+	\\\\
+	\textbf{Metod:} Koden ska följa en tydlig och enhetlig kommenteringsstandard för göra det lättare att sätta sig in i samt för att få kommentarerna mer konsekventa. För mer detaljer gällande denna standard se sektion 4.1.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} 3
+	\\
+	
+	\subsection{Kodstandard}
+	\textbf{Syfte:} För att Cybercom med lätthet ska kunna utöka produkten ska koden vara lätt för en utomstående att sätta sig in i.
+	\\\\
+	\textbf{Metod:} För att göra koden med lättläslig och konsekvent ska alla gruppens medlemmar följa kodstandarden definerad i sektion 4.2.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} 3
+	\\
+	
+	\subsection{Demo och enkät - Reponsitivtet och stabilitet}
+	\textbf{Syfte:} De viktigaste kvalitetsaspekterna hos produkten är att den upplevs responsiv och stabil. Dessa aspekter lär förändras under projektets gång då nya delar läggs till och förändras i enlighet med projektets agila arbetsmetod. Kontinuerlig verifiering av dessa kvalitetskrav kommer därav behövas göras så att projektet alltid håller rätt riktning.
+	\\\\
+	\textbf{Metod:} För att kontinuerligt göra dessa tester ska gruppen vid slutet av gruppens satta sprint låta 20 personer testa produkten och efteråt fylla i en enkät relaterad till deras upplevelse med spelet. På en skala mellan ett och tio måste gruppen få åtminstone ett betyg sex på responsitivitet frågorna, betyg sex på stabilitet frågorna.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} 4 och 5
+	\\
+	
+	\subsection{Demo och enkät - Användarvänlighet}
+	\textbf{Syfte:} Målet med produkten är att den med enkelhet ska demonstreras på mässor av personer som aldrig testat produkten tidigare. Det är därav viktigt att användare kan förstå spelets regler och kontroller utan stor ansträngning.
+	\\\\
+	\textbf{Metod:} I och med SQA-processen gällande responsitivtet och stabilitet kommer gruppen att utföra en enkät, på den ska även frågor gällande användarvänlighet ställas. De ska syfte på enkelheten att använda kontrollerna samt att tolka vad som sker på skärmen. På dessa två frågor ska gruppen få åtminstone betyg fem på en skala mellan ett och tio.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} 6 och 7
+	\\
+	
+	\subsection{Trello}
+	\textbf{Syfte:} En viktig del av kvalité är att ge processer den tid som krävs, för att uppnå detta behöver gruppen uttnytja sin tid på ett effektivt sätt.
+	\\\\
+	\textbf{Metod:} Gruppen ska inför varje sprint, och under en sprint vid behov, dela upp de uppgifter som behöver genomföras till mindre uppgifter och lägga upp detta på Trello. Sedan är det varje medlems uppgift att ta den uppgift denne ska arbeta med, och inte arbeta på någon annans del.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} Alla
+	\\
+	
+	
+\pagebreak
+\section{Standarder	/	Arbetsflöden}
+	För att garantera att produkten håller hög kvalité ska gruppen inte enbart genomföra de SQA-processerna utan även följa dessa standarder.
+	
+	\subsection{Cybercoms standard}
+	Standarden Cybercom använder sig av ska även detta projekt följa för att göra det lättare att utöka. Projektet ska använda sig av JavaScript biblioteket React och följa den standard som används där. Dessutom så ska koden i enlighet med Cybercoms standard indenteras med två blanksteg och "encodas" i UTF-8.
+	
+	
+	\subsection{Kommenteringsstandard}
+	Gruppen ska följa en tydlig kommenteringsstandard som utvärderas vid slutet av varje sprint och som kan utökas och minskas vid behov.
+	
+	\begin{itemize}
+		\item 	Ovan varje icketrivial funktion ska en kommentar som beskriver vad funktionen gör ges
+		\item Alla kommentarer ska vara på engelska med amerikansk stavning
+		\item ??
+	\end{itemize}
+
+	
+	\subsection{Kodstandard}
+	För att se till att koden blir lätt att sätta sig in i och utöka så har gruppen en standard att följa. Vid slutet av sprints ska denna standard utvärderas efter ifall punkterna upplevs som onödigt begränsade, överflödiga eller inte applicerbara. Dessutom kan nya punkter att läggas till då ett behov upptäcks.
+
+	\paragraph{Nuvarande kodningsprinciper} \mbox{}
+	\\
+	Gruppen ska följa JavaScript vanliga kodningskonventioner med följande undantag och eller utökningar:
+	\begin{itemize}
+	\item All kod ska vara på engelska med amerikansk stavning
+	\item Koden ska skrivas med målet att vara lättläst, inte efter hur lätt den är att skriva
+	\item Undvik ovanliga och komplicerade metoder/lösningar då de gör det svårare att debugga samt sätta sig in i koden efter projektet är över.
+	\item Undvik att fylla upp den globala name-spacen om möjligt.
+	\item Inga  and i funktionsnamn ifall de inte kan motiveras väl
+	
+	\end{itemize}
+	
+	\subsection{Arbetsflödet för Git}
+	Gruppens arbetsflöde för git är att varje självstående funktionalitet ska arbetas på en egen gren om möjligt. Commits ska ske oftare än dagligen, och med korta men beskrivande kommentarer skriva på engelska i nutid (ex "Add this new cool feature"). När en gren ska "pushas" till master-grenen måste åtminstone en annan team medlem gå igenom grenen som ska läggas till och godkänna denna. Innan ett godkännandes ges måste inspektören ha en helhetsbild av vad som läggs till. När en gren sedan läggs till ska automatiska tester köras, som sedan kan neka en gren.
+	
+	
+\pagebreak
+\section{Appendix}
+	\subsection*{Mock enkätfrågor}
+	\begin{enumerate}
+		\item Jag tycker att spelet var lätt att lära sig. 
+		\item Jag tycker att det var svårt att förstå vad som skulle göras under spelets gång.
+		\item Jag tycker att spelet kändes responsivt.
+		\item Jag tycker inte att responsen för mina handlingar visades snabbt.
+		\item Jag tycker att den alternativa styrningen var lätt att använda.
+		\item Jag tycker att den alternativa syrningen kändes klumpig.
+		\item Jag tycker att det var lätt att se vad som skedde på den stora skärmen.
+		\item Jag hade svårt att följa vad som skedde på den stora skärmen.
+		
+	\end{enumerate}
+
+	
+\pagebreak
+
+\printbibliography
+\addcontentsline{toc}{section}{\refname}
+
+
+\end{document}
