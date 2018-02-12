@@ -1,0 +1,303 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{scrextend}
+
+\title{Master Test plan}
+
+\author{
+	Projektgrupp 1\\
+	Joel Oskarsson\\
+	\texttt{joeos014@student.liu.se}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Inledning}
+	Den här testplanen är framtagen för att kvalitetssäkra utvecklingen av ett IoT-spel som skapas av en studentgrupp som läser kursen TDDD96 på Linköpings universitet. Planen kommer endast innefatta tester som påverkar spelet både direkt och indirekt, och som är relaterade till utvecklingen. Primärt fokus kommer ligga på att säkerställa att spelet lever upp till de förväntningar som kund har på oss. {\color{red}Se kravspecifikationen}. Testplanen följer standard IEEE829. \\
+
+Det här projektet kommer ha {\color{red}XXXX} olika nivåer av tester, vilket innefattar regressionstester, enhetstester, integrationstester, acceptanstester och {\color{red}XXXX}. Detaljer angående testerna kan finnas under respektive testplan.
+
+Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och testplanen kommer med störst sannolikhet modifieras under arbetets gång då arbetssättet är agilt.
+
+	\subsection{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | l |  l | }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} & \textbf{Ansvarig} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-12 & Första utkast & David Kjellström\\
+ 	       \hline
+ 	   \end{tabular}
+	\end{center}
+
+
+	\subsection{Definitioner}
+		\begin{itemize}
+		\item [UI] User Interface - Den del av applikationen som visar spelplanen
+		\item [Kontroller] En mobil eller surfplatta som kör kontrolldelen av applikationen
+		\item [Kund] Cybercom Sweden
+		\item [regressionstest] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
+		\item [enhetstest] Testa varje enhet så den fungerar när den är färdig
+		\item [integrationstest] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
+		\item [acceptanstest] Test för att säkerställa att enheten uppfyller kraven för projektet
+		\end{itemize}
+	
+	\subsection{Referenser}
+		\begin{itemize}
+		\item [1] Kravspecifikation
+		\item [2] Projektplan
+		\item [3] Kvalitetsplan
+		\end{itemize}
+
+	
+\section{Testföremål}
+	Nedan följer en lista över de stora delarna projektet är uppdelat i, som måste testas var för sig.
+	\begin{itemize}
+	\item [Backend] Eftersom målet med projektet är att visa hastigheten av Cybercoms backend är detta en central punkt i projektet.
+	\item [Kontroller] Spelet ska kontrolleras med hjälp av accelerometern i t.ex. en mobil eller surfplatta.
+	\item [UI] Spelet ska kunna visas på en skärm som får all användardata från Cybercoms backend.
+	\end{itemize}
+	
+	
+	
+	
+
+\section{Funktioner att testa}
+	Nedan följer en lista på de områden som har huvudfokus under testningen av applikationen.
+	\begin{itemize}
+	\item Hålla session aktiv under fyra timmar.
+	\item Systemet ska stödja version 64 av Chrome.
+	\item All kommunikation mellan UI och kontroller ska ske via backend.
+	\item Anslutning till spelet ska inte överskrida 10 sekunder.
+	\item Systemet ska ha hög responsivitet och vara stabilt.
+	\item Systemet ska vara användarvänligt.
+	\item 
+	\end{itemize}
+	
+	
+	
+\section{Funktioner som inte ska testas}
+	Nedan följer en lista på de delar av projektet som ligger utanför fokus av olika anledningar.
+	\begin{itemize}
+	\item Chrome
+	\item React
+	\end{itemize}
+	Vi kommer ej att testa Google Chrome eller React som systemet kommer vara beroende utav, detta för att vi utgår från att det är rigoröst testat av sina respektive utvecklare och på grund av den tiden vi har, ej valt att lägga vår begränsade tid på det.
+
+
+
+
+\section{Tillvägagångssätt}
+	Testerna för IoT-spelet kommer bestå av enhetstester, regressionstester, integrationstester och acceptanstester. Planen är att alla personer ska vara delaktiga i de olika 		testmomenten i utbildningssyfte. Med den tidsbegränsning som är satt på projektet är risken relativt hög att testningen kan bli lidande. \\
+	\\
+	Enhetstestningen kommer utföras utav den person som utvecklat enheten och kommer utföras under hela projektets gång. Bereonde på storlek av enheten kan flera utvecklare behöva hjälpas åt för att enheten ska bli godkänd.\\
+	\\
+	Integrationstestningen kommer i huvuddel styras av konfigurationsansvarig för projektet. När en ny enhet ska integreras ska den först ha klarat enhetstestet och beroende på storleken kan fler projektmedlemmar kopplas in och hjälpa till med att testa samtliga delar av de olika interaktionerna mellan enheterna. \\
+	\\
+	Regressionstester är något som kommer fortgå under hela projektet med hjälp av automatisering. Automatiska tester kommer göras när nya delar läggs till på Github med hjälp av {\color{red}Travis}. Detta är ett extra säkerhetssteg för att försäkra att ingen essentiell funktionalitet går förlorad som existerade i en tidigare version.\\
+	\\
+	Acceptanstester kommer utföras i slutet av varje iteration för att säkerställa att spelet uppfyller kraven. Detta kommer utföras dels internt till en början för att sedan visa demo inför kund för att få feedback.  \\ 
+	\\
+	För mer information om varje modul, se respektive testplan.
+	
+	
+
+\section{Föremåls godkännande/misslyckande kriterier}
+	\subsection{Backend}
+		För att backend ska vara godkänd måste den uppnå de krav på hastighet som kan hittas i kravspecifikationen {\color{red}[1]}. All kommunikation ska gå över backend och för att samtliga krav ska bli uppfyllda måste de godkännas enligt kvalitetsplanen  {\color{red}[3]}.
+
+	\subsection{Kontroller och UI}
+		För att kontroller och UI-delen ska vara godkänd krävs det att den kan köras på Chrome, version 64. För godkännande av Kontroller måste den godkännas enligt kvalitetsplanen {\color{red}[3]}, där en enkät genomförs mot en testgrupp som besvarar frågor angående responsivitet, stabilitet och användarvänlighet.
+
+
+
+\section{Avbrott och fortsättningskriterier}
+	Om något av de hårda kraven i kravspecifikationen {\color{red}[1]} misslyckas, avbryts vidareutveckling av produkten tills kravet åter är uppfyllt. Om kravet av någon anledning skulle visa sig vara ouppnåeligt kommer kravspecifikationen kommer problemet diskuteras internt för att sedan ta diskussionen vidare till kund. 
+
+
+
+\section{Test leveranser {\color{red}TODO}}
+	I slutet av varje sprint kommer en testrapport lämnas skapas. Rapporten kommer innefatta olika testfall, testdata och anomalitetsrapport.
+
+
+\section{Test uppgifter {\color{red}TODO}}
+	Känns redundant?
+
+
+\section{Miljöbehov {\color{red}TODO}}
+	För att genomföra flera utav testerna behövs viss hårdvara. Nedan listas det som behövs för att genomföra de olika testerna. 
+
+	\begin{itemize}
+	\item stabil nätverksuppkoppling
+	\item Dator med tillhörande mus och tangentbord
+	\item Mobiltelefon av både typ Android och Iphone {\color{red}Windowsphone osv?}
+	\item surfplatta
+	\end{itemize}
+
+\section{Ansvarsområden {\color{red}TODO}}
+	Samtliga gruppmedlemmar har ett eller flera ansvarsområden i detta projekt. 
+
+This issue includes all areas of the plan.  Here are some examples: 
+§ 
+Setting risks. 
+§ 
+Selecting features to be tested and not tested. 
+§ 
+Setting overall strategy for this level of plan. 
+§ 
+Ensuring all required elements are in place for testing. 
+§ 
+Providing for resolution of scheduling conflicts, especially, if testing is done on the 
+production system. 
+§ 
+Who provides the required training? 
+§ 
+Who makes the critical go/no go decisions for items not covered in the test plans?
+
+
+
+
+\section{Personal och utbildningsbehov {\color{red}TODO}}
+	För att utföra testerna på detta system krävs inga extra utbildningar.
+
+\section{Schema {\color{red}TODO}}
+
+Should be based on realistic and validated estimates.  If the estimates for the development of 
+the application are inaccurate, the entire project plan will slip and the testing is part of the 
+overall project plan. 
+§ 
+As we all know, the first area of a project plan to get cut when it comes to crunch time at 
+the end of a project is the testing.  It usually comes down to the decision, ‘Let’s put 
+something out even if it does not really work all that well’. And, as we all know, this is 
+usually the worst possible decision. 
+How slippage in the schedule will to be handled should also be addressed here. 
+§ 
+If the users know in advance that a slippage in the development will cause a slippage in 
+the test and the overall delivery of the system, they just may be a little more tolerant, if 
+they know it’s in their interest to get a better tested application. 
+§ 
+By spelling out the effects here you have a chance to discuss them in advance of their 
+actual occurrence. You may even get the users to agree to a few defects in advance, if the 
+schedule slips. 
+At this point, all relevant milestones should be identified with their relationship to the 
+development process identified.  This will also help in identifying and tracking potential 
+slippage in the schedule caused by the test process. 
+It is always best to tie all test dates directly to their related development activity dates.  This 
+prevents the test team from being perceived as the cause of a delay.  For example, if system 
+testing is to begin after delivery of the final build, then system testing begins the day after 
+delivery.  If the delivery is late, system testing starts from the day of delivery, not on a 
+specific date.  This is called dependent or relative dating. 
+
+\section{Risker och ovissheter {\color{red}TODO}}
+What are the overall risks to the project with an emphasis on the testing process? 
+§ 
+Lack of personnel resources when testing is to begin. 
+§ 
+Lack of availability of required hardware, software, data or tools. 
+§ 
+Late delivery of the software, hardware or tools. 
+§ 
+Delays in training on the application and/or tools. 
+§ 
+Changes to the original requirements or designs. 
+Specify what will be done for various events, for example: 
+§ 
+Requirements definition will be complete by January 1, 19XX, and, if the requirements 
+change after that date, the following actions will be taken. 
+§ 
+The test schedule and development schedule will move out an appropriate number of 
+days.  This rarely occurs, as most projects tend to have fixed delivery dates. 
+§ 
+The number of test performed will be reduced. 
+§ 
+The number of acceptable defects will be increased. 
+§ 
+These two items could lower the overall quality of the delivered product. 
+§ 
+Resources will be added to the test team. 
+§ 
+The test team will work overtime. 
+§ 
+This could affect team morale. 
+§ 
+The scope of the plan may be changed. 
+§ 
+There may be some optimization of resources.  This should be avoided, if possible, 
+for obvious reasons. 
+
+§ 
+You could just QUIT.  A rather extreme option to say the least. 
+Management is usually reluctant to accept scenarios such as the one above even though they 
+have seen it happen in the past. 
+The important thing to remember is that, if you do nothing at all, the usual result is that 
+testing is cut back or omitted completely, neither of which should be an acceptable option. 
+
+\section{godkännande {\color{red}TODO}}
+
+Who can approve the process as complete and allow the project to proceed to the next level 
+(depending on the level of the plan)? 
+At the master test plan level, this may be all involved parties. 
+When determining the approval process, keep in mind who the audience is.  
+§ 
+The audience for a unit test level plan is different than that of an integration, system or 
+master level plan. 
+§ 
+The levels and type of knowledge at the various levels will be different as well. 
+§ 
+Programmers are very technical but may not have a clear understanding of the overall 
+business process driving the project. 
+§ 
+Users may have varying levels of business acumen and very little technical skills. 
+§ 
+Always be wary of users who claim high levels of technical skills and programmers that 
+claim to fully understand the business process.  These types of individuals can cause more 
+harm than good if they do not have the skills they believe they possess. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
