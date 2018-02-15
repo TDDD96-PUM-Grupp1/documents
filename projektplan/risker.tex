@@ -6,7 +6,7 @@ Riskerna inför projektet är nedan:
 \risk{Cybercoms backend för långsam för våra krav}{1}{4}
 {
     För att minimera inverkan på risken så ska backenden användas så lite som möjligt.
-    Backended kommer inte att fungera som en fat-server utan all ''server'' kod kommer ligga på UI:n. 
+    Backended kommer inte att fungera som en fat-server där den utför mycket beräkningar, utan all ''serverkod'' kommer ligga på UI:n. 
     Om det skulle visa sig att backenden fortfarande inte klarar av att skicka information tillräckligt snabbt, 
     så skulle en lösning vara att få spelet att gå långsammare beträffande kontroller.
 }
@@ -15,22 +15,22 @@ Riskerna inför projektet är nedan:
 {
     Om sensordatan varierar mycket mellan olika enheter, såsom precision eller brus,
     kan det leda till att utvecklingen blir långsammare då det kan ge oönskade problem som måste jobbas runt.
-    För att undvika att detta blir ett problem så behövs tydligt efterforskning om hur enheterna fungera när
+    För att undvika att detta blir ett problem så behövs tydligt efterforskning om hur enheterna fungerar när
     det gäller sensordata. För att fixa problemet om det skulle bli ett behövs koden struktureras upp för att
     hantera problemen tidigt, såsom att motverka brus genom interpolation.
 }
 
 \risk{Projektmedlemmar saknar laptops}{1}{3}
 {
-    Två projektmedlemmar saknar laptops i teamet vilket kan tillföra med att utvecklingen blir tar längre tid
+    Två projektmedlemmar saknar laptops i teamet vilket kan tillföra med att utvecklingen tar längre tid
     då dessa eventuellt får sitta tillsammans med någon annan.
     Cybercom kommer förhoppningsvis att ordna två laptops som kan användas utav medlemmarna, men om det skulle
-    Visar det sig vara ett problem kan medlemmarna utveckla mer i SU-salar med eller utan de andra.
+    visa sig vara ett problem kan medlemmarna utveckla mer i SU-salar med eller utan de andra.
 }
 
 \risk{Körtidsfel i JavaScript ger dålig utveckling}{3}{2}
 {
-    Under projektets gång kommer troligviss JavaScript att ge upphov till konstiga körtidsfel då språket inte är typat.
+    Under projektets gång kommer troligviss JavaScript att ge upphov till oförutsädda körtidsfel då språket inte är typat.
     Detta kan leda till långsammare utveckling då konstiga problem måste letas upp.
     Genom att skapa bra tester kan detta problemet minskas då testerna ska utformas så att oönskade typer hittas snabbt.
     Om problemen kvarstår ska mer resurser läggas på att testerna fungerar.
@@ -56,7 +56,7 @@ Riskerna inför projektet är nedan:
 
 \risk{Någon i teamet respekterar inte deadlines}{1}{3}
 {
-   I alla projekt i team finns det en risk att vissa inte respektera deadlines, dåde interna och
+   I alla projekt i team finns det en risk att vissa inte respektera deadlines, både interna och
    externa. För att mitigera detta så kommer teamet se till att alla är uppdaterade på
    diverse deadlines och att på möten hålla koll på vilka som halkar efter. Om det skulle bli
    ett problem ska det tas upp med personen i fråga, om det inte hjälper kontaktar vi handledaren
