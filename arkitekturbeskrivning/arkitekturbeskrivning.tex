@@ -4,32 +4,54 @@
 \usepackage{hyperref}
 
 \usepackage[utf8]{inputenc}
+\usepackage[toc]{appendix}
 \usepackage[swedish]{babel}
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{scrextend}
-
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \usepackage{filecontents}
+\usepackage{enumitem}
+%Skriv över engelska namn för appendix
+\addto\captionsswedish{
+  \renewcommand\appendixname{Appendix}
+  \renewcommand\appendixpagename{Appendix}
+	\renewcommand\appendixtocname{Appendix}
+}
 
 \graphicspath{ {images/} }
 \selectlanguage{swedish}
+\addbibresource{references.bib}
 
 \begin{document}
-	\input{titel}
-	\pagebreak
+		\input{titel}
+		\pagebreak
 
-	\tableofcontents
-	\pagebreak
+		\tableofcontents
+		\listoffigures
+		\pagebreak
 
-	\input{inledning}
-	\pagebreak
+		\input{inledning}
+		\pagebreak
 
-	\input{motivering}
-	\pagebreak
+    \input{definitioner}
+		\pagebreak
 
-	\section{Modeller}
-		\input{konceptarkitektur}
-		\input{implementationsarkitektur}
-	\pagebreak
-	\input{diskussion}
+		\input{motivering}
+		\pagebreak
+
+		\section{Modeller}
+				\input{konceptarkitektur}
+				\input{implementationsarkitektur}
+		\pagebreak
+
+		\input{diskussion}
+		\pagebreak
+
+    \printbibliography
+    \pagebreak
+
+		\begin{appendices}
+				\input{koncept_appendix}
+		\end{appendices}
 \end{document}

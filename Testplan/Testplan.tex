@@ -46,6 +46,18 @@ Det här projektet kommer ha {\color{red}XXXX} olika nivåer av tester, vilket i
 
 Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och den här testplanen är endast relevant fram till {\color{red}5-3-2018} då en ny testplan kommer skapas inför nästa iteration.
 
+	\subsection{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | l |  l | }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} & \textbf{Ansvarig} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-12 & Första utkast & David Kjellström\\
+ 	       \hline
+ 	   \end{tabular}
+	\end{center}
 
 
 	\subsection{Definitioner}
@@ -103,13 +115,17 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 	\\
 	Integrationstestningen kommer i huvuddel styras av konfigurationsansvarig för projektet. När en ny enhet ska integreras ska den först ha klarat enhetstestet och beroende på storleken kan fler projektmedlemmar kopplas in och hjälpa till med att testa samtliga delar av de olika interaktionerna mellan enheterna. \\
 	\\
-	Regressionstester är något som kommer fortgå under hela projektet med hjälp av automatisering. Automatiska tester kommer göras när ny delar läggs till på Github med hjälp av {\color{red}Travis}. Detta är ett extra säkerhetssteg för att försäkra att ingen essentiell funktionalitet går förlorad som existerade i en tidigare version försvinner.\\
+	Regressionstester är något som kommer fortgå under hela projektet med hjälp av automatisering. Automatiska tester kommer göras när nya delar läggs till på Github med hjälp av {\color{red}Travis}. Detta är ett extra säkerhetssteg för att försäkra att ingen essentiell funktionalitet går förlorad som existerade i en tidigare version.\\
 	\\
 	Acceptanstester kommer utföras i slutet av varje iteration för att säkerställa att spelet uppfyller kraven. Detta kommer utföras dels internt till en början för att sedan visa demo inför kund för att få feedback. 
 	
 	
 
-\section{Enhets godkännande/misslyckande kriterier}
+\section{Föremåls godkännande/misslyckande kriterier}
+	\subsection{Hastighet}
+		För att hastigheten ska vara godkänd måste en kontroller ha anslutning till UI senaste 10 sekunder efter försök under vanliga nätverksförhållanden. En kontroller måste även ha relativt snabb responstid, mätt i hur snabbt uppdateringen på UI sker när man rör kontrollern. För att få ett bra mått kommer en enkät genomföras där testpersonerna får berätta om de upplever hastigheten.
+	\subsection{Kontroller}
+		För att kontroller-delen ska vara godkänd krävs det att den kan köras på Chrome version 64. Styrningen ska 
 \section{Avbrott och fortsättningskriterier}
 \section{Test leveranser}
 \section{Test uppgifter}

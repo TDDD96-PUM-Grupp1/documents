@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{filecontents}
 \usepackage{etoolbox}
+\usepackage{enumitem}
 \usepackage[backend=bibtex,style=authoryear,natbib=true,style=numeric-comp]{biblatex}
 \graphicspath{ {images/}}
 
@@ -64,15 +65,15 @@
 	I detta kapitel definieras och introduceras kontexten för projektet som ska utföras.
 
 	\subsection{Definitioner}
-		\begin{itemize}
-		\item UI-applikationen -- Applikationen som kör själva spelet
-		\item Kontrollapplikationen -- Applikationen som körs på en mobil eller surfplatta som styr spelet
-		\item Hotjoin -- möjligheten att hoppa in i ett pågående spel
-		\item Sensor -- En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer).
-		\item Spelinstans -- Ett spel med en unik identifikationskod
-		\item PWA (Progressive webapp) -- Ett mellanting mellan en hemsida och en applikation. Med en PWA behöver man inte ladda ner en app, men ger viss funktionalitet som en appar har.
-        \item Multiplayer -- Spel där flera användare interagerar med varandra.dd
-		\item Realtidsmultiplayerspel -- Spel där en handling har en direkt inverkan på spelets tillstånd.
+		\begin{itemize}[leftmargin=4cm]
+		\item [UI-applikationen] Applikationen som kör själva spelet
+		\item [Kontrollapplikationen] Applikationen som körs på en mobil eller surfplatta som styr spelet
+		\item [Hotjoin] Möjligheten att hoppa in i ett pågående spel
+		\item [Sensor] En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer).
+		\item [Spelinstans] Ett spel med en unik identifikationskod
+		\item [PWA (Progressive webapp)] Ett mellanting mellan en hemsida och en applikation. Med en PWA behöver man inte ladda ner en app, men ger viss funktionallitet som en appar har.
+        \item [Multiplayer] Spel där flera användare interagerar med varandra.dd
+		\item [Realtidsmultiplayerspel] Spel där en handling har en direkt inverkan på spelets tillstånd.
 		\end{itemize}	
 
 	\subsection{Parter}
@@ -159,19 +160,19 @@
 	\end{tabular}
 
 	\subsection{Kvalitetskrav}
-	Detta avsnitt listar krav på kvalitén hos den slutgilitga produkten.
+	Detta avsnitt listar krav på kvaliten hos den slutgilitga produkten.
 	
 		\begin{tabular}{|p{2cm}|p{8cm}|p{2cm}|}
 		\hline
 		\textbf{Krav nr.} & \textbf{Beskrivning} & \textbf{Prioritet} \\ \hline
 		
 		\Krav{UI-applikationen ska kunna köras i 4 timmar utan avbrott.}{1}
-		\Krav{Arkitekturen för systemet ska vara designat så att det är möjligt att vidareutveckla projektet.}{1}
+		\Krav{Koden ska följa en enhetlig standard för att underlätta vidareutveckling av projektet.}{1}
 		\Krav{Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under standard nätverksförhållanden.}{1}
-		\Krav{Enkätens[referens] genomsnittliga betyg för responsivitet ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.}{1}
-		\Krav{Enkätens[referens] genomsnittliga betyg för användbarhet ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.}{1}
-		\Krav{Enkätens[referens] genomsnittliga betyg för den alternativa styrningen ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.}{1}
-		\Krav{Enkätens[referens] genomsnittliga betyg för "lått att förstå vad som händer" ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.}{1}
+		\Krav{Enkätens[referens] genomsnittliga betyg för responsivitet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
+		\Krav{Enkätens[referens] genomsnittliga betyg för användbarhet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
+		\Krav{Enkätens[referens] genomsnittliga betyg för den alternativa styrningen ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
+		\Krav{Enkätens[referens] genomsnittliga betyg för "lått att förstå vad som händer" ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
 				
 	\end{tabular}
 	
