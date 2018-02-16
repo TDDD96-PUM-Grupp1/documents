@@ -71,8 +71,8 @@
 		\item [Hotjoin] Möjligheten att hoppa in i ett pågående spel
 		\item [Sensor] En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer).
 		\item [Spelinstans] Ett spel med en unik identifikationskod
-		\item [PWA (Progressive webapp)] Ett mellanting mellan en hemsida och en applikation. Med en PWA behöver man inte ladda ner en app, men ger viss funktionallitet som en appar har.
-        \item [Multiplayer] Spel där flera användare interagerar med varandra.dd
+		\item [PWA (Progressive webapp)] Ett mellanting mellan en hemsida och en applikation. Med en PWA behöver man inte ladda ner en app, men ger viss funktionalitet som en appar har.
+        \item [Multiplayer] Spel där flera användare interagerar med varandra.
 		\item [Realtidsmultiplayerspel] Spel där en handling har en direkt inverkan på spelets tillstånd.
 		\end{itemize}	
 
@@ -129,16 +129,17 @@
 		\Krav{UI-applikationen ska stödja version 64 av Google Chrome}{1}
 		\Krav{Kontrollapplikationen ska stödja version 64 av Google Chrome.}{1}
 		\Krav{En användare ska kunna ansluta sig till en spelinstans.}{1}
+		\Krav{Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod.}{1}
 		\Krav{Flera instanser av spelet ska kunna köras samtidigt.}{1}
-		\Krav{En spelinstans spelare ska kunna rösta på vilket gamemode som ska spelas.}{2}
 		\Krav{Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{UI-applikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{En unik slumpmässig identifikationskod ska genereras för en spelinstans.}{1}
 		\Krav{Kontrollapplikationen ska kunna kalibrera en accelerometer.}{1}
+		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
+		\Krav{En spelinstans spelare ska kunna rösta på vilket gamemode som ska spelas.}{2}
 		\Krav{Kontrollapplikationen ska stödja alternativ styrningsmetoder om en sensor saknas.}{2}
 		\Krav{Kontrollapplikationen ska stödja styrning med tagentbord och mus.}{2}
-		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
-		\Krav{Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod.}{1}
+        \Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare, hårdvara, prestanda och plats på skärmen begränsar.}{2}		
 		\Krav{UI-applikationen ska kunna oberservera andra spelinstanser.}{2}
 						
 	\end{tabular}
