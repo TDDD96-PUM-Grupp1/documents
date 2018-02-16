@@ -110,36 +110,58 @@
 \section{Krav}
 	Detta avsnitt listar alla krav som sätts på produkten. Krav med prioritet 1 förväntas vara avklarade vid projektetsslut. Krav med prioritet 2 ska arbetas mot då alla krav med prioritet 1 är avklarade.
 	\subsection{Funktionella Krav}
-	Detta avsnitt listar de funktionella kraven på produkten.	
+	Detta avsnitt listar de funktionella kraven på produkten.
+
+	\subsubsection*{Generella krav}
+	Nedan följer generella krav för hela applikationen.
 	
 	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
 		\hline
 		
 		\textbf{Krav nr.} & \textbf{Beskrivning} &\textbf{Prioritet} \\ \hline
 		\Krav{En mobil eller surfplatta ska användas som spelkontroll för spelet.}{1}
-		\Krav{UI-applikationen ska stödja minst fem spelare samtidigt.}{1}
-        \Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare, hårdvara, prestanda och plats
-        på skärmen begränsar.}{1}
-		\Krav{Kontrollapplikationen ska ha ett grafiskt gränssnitt.}{1}
-		\Krav{UI-applikationen ska ha ett grafiskt gränssnitt.}{1}
-		\Krav{UI-applikationen ska kunna köras på en enhet som har Google Chrome.}{1}
-        \Krav{Spelaren ska mata in ett unikt användarnamn.}{1}
-		\Krav{Kontrollapplikationen ska kunna köras på en enhet som har Google Chrome.}{1}
 		\Krav{UI-applikationen ska endast kommunicera med \newline kontrollapplikation via  Cybercoms IoT-backend}{1}
-		\Krav{UI-applikationen ska stödja version 64 av Google Chrome}{1}
-		\Krav{Kontrollapplikationen ska stödja version 64 av Google Chrome.}{1}
 		\Krav{En användare ska kunna ansluta sig till en spelinstans.}{1}
-		\Krav{Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod.}{1}
 		\Krav{Flera instanser av spelet ska kunna köras samtidigt.}{1}
-		\Krav{Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend.}{1}
-		\Krav{UI-applikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{En unik slumpmässig identifikationskod ska genereras för en spelinstans.}{1}
-		\Krav{Kontrollapplikationen ska kunna kalibrera en accelerometer.}{1}
-		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
 		\Krav{En spelinstans spelare ska kunna rösta på vilket gamemode som ska spelas.}{2}
+				
+	\end{tabular}
+
+	\subsubsection*{Krav kontrollapplikation}
+	Nedan följer krav specifika för kontrollapplikationen.
+
+	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
+		\hline
+		
+		\textbf{Krav nr.} & \textbf{Beskrivning} &\textbf{Prioritet} \\ \hline
+		\Krav{Kontrollapplikationen ska ha ett grafiskt gränssnitt.}{1}
+		\Krav{Spelaren ska mata in ett unikt användarnamn.}{1}
+		\Krav{Kontrollapplikationen ska kunna köras på en enhet som har Google Chrome.}{1}
+		\Krav{Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod.}{1}
+		\Krav{Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend.}{1}
+		\Krav{Kontrollapplikationen ska kunna kalibrera en accelerometer.}{1}
 		\Krav{Kontrollapplikationen ska stödja alternativ styrningsmetoder om en sensor saknas.}{2}
 		\Krav{Kontrollapplikationen ska stödja styrning med tagentbord och mus.}{2}
-        \Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare, hårdvara, prestanda och plats på skärmen begränsar.}{2}		
+
+	\end{tabular}
+
+	\subsubsection*{Krav UI-applikation}
+	Nedan följer krav specifika för UI-applikationen.
+
+	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
+		\hline
+		
+		\textbf{Krav nr.} & \textbf{Beskrivning} &\textbf{Prioritet} \\ \hline
+		\Krav{UI-applikationen ska stödja minst fem spelare samtidigt.}{1}
+        \Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare, hårdvara, prestanda och plats
+		på skärmen begränsar.}{1}
+		\Krav{UI-applikationen ska ha ett grafiskt gränssnitt.}{1}
+		\Krav{UI-applikationen ska kunna köras på en enhet som har Google Chrome.}{1}
+		\Krav{UI-applikationen ska stödja version 64 av Google Chrome}{1}
+		\Krav{UI-applikationen ska kommunicera med Cybercoms IoT-backend.}{1}
+		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
+		\Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare, hårdvara, prestanda och plats på skärmen begränsar.}{2}
 		\Krav{UI-applikationen ska kunna oberservera andra spelinstanser.}{2}
 						
 	\end{tabular}
