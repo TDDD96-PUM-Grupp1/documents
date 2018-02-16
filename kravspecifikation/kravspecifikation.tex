@@ -71,16 +71,16 @@
 		\item [Hotjoin] Möjligheten att hoppa in i ett pågående spel
 		\item [Sensor] En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer).
 		\item [Spelinstans] Ett spel med en unik identifikationskod
-		\item [PWA (Progressive webapp)] Ett mellanting mellan en hemsida och en applikation. Med en PWA behöver man inte ladda ner en app, men ger viss funktionalitet som en appar har.
+		\item [PWA (Progressive Web App)] Ett mellanting mellan en hemsida och en applikation. En PWA sig är en vanlig hemsida som beter sig lite med som en vanlig app.
         \item [Multiplayer] Spel där flera användare interagerar med varandra.
 		\item [Realtidsmultiplayerspel] Spel där en handling har en direkt inverkan på spelets tillstånd.
 		\end{itemize}	
 
 	\subsection{Parter}
-	Kunden till projektet är Cybercom Sweden. Projektet utförs av projektgruppens medlemmar.
+	Kunden till projektet är Cybercom Sweden AB. Projektet utförs av projektgruppens medlemmar.
 	
 	\subsection{Syfte \& mål}
-		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta, ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppen är att genomföra ett kandidatarbete enligt kursen TDDD96 -- Kandidatprojekt i programvaruutveckling mål.
+		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppen är att genomföra ett kandidatarbete enligt kursen \textit{TDDD96 -- Kandidatprojekt i programvaruutveckling} mål\cite{bib-tddd96}.
 	
 	\subsection{Användning}
 		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen.  
@@ -93,7 +93,7 @@
 	Detta kapitel ger en överskådlig blick av systemet.
 
 	\subsection{Grov beskrivning av produkten}
-	Produkten ska vara ett realtidsmultiplayerspel. Spelet är uppdelat i två olika applikationer, en UI-applikation och en kontrollapplikation. UI-applikationen är tänkt att agera som skärm för spelet och kan liknas med en konsol för ett TV-spel. På denna del kommer att själva spelet köras och vara uppkopplad till en skärm där spelet visas. En kontroller kommer vara antingen en mobil eller surfplatta och kan liknas med spelkontrollerna till konsolen. Enhetens sensorer används för att spelaren ska kunna styra spelet. Kommunikationen mellan UI-applikationen och kontrollapplikationen kommer att ske genom Cybercoms IoT-backend, se figur 1. Att kommunikationen går genom Cybercoms IoT-backend är vitalt eftersom huvudsyftet med projektet är att demonstrera Cybercoms IoT-backend.  Både kontroll- och UI-Applikationen kommer att utvecklas som progressiva webbappar. 
+	Produkten ska vara ett realtidsmultiplayerspel. Spelet är uppdelat i två olika applikationer, en UI-applikation och en kontrollapplikation. UI-applikationen är tänkt att agera som skärm för spelet och kan liknas med en konsol för ett TV-spel. På denna del kommer att själva spelet köras och vara uppkopplad till en skärm där spelet visas. En kontroller kommer vara antingen en mobil eller surfplatta och kan liknas med spelkontrollerna till konsolen. Enhetens sensorer används för att spelaren ska kunna styra spelet. Kommunikationen mellan UI-applikationen och kontrollapplikationen kommer att ske genom Cybercoms IoT-backend, se figur 1. Att kommunikationen går genom Cybercoms IoT-backend är vitalt eftersom huvudsyftet med projektet är att demonstrera Cybercoms IoT-backend.  Både kontroll- och UI-Applikationen kommer att utvecklas som PWA:s. 
 	
 	\begin{figure}[h]
 		\centering
