@@ -62,14 +62,14 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 
 	\subsection{Definitioner}
 		\begin{itemize}
-		\item [UI] User Interface - Den del av applikationen som visar spelplanen
-		\item [Kontroller] En mobil eller surfplatta som kör kontrolldelen av applikationen
-		\item [Kund] Cybercom Sweden
-		\item [regressionstest] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
-		\item [enhetstest] Testa varje enhet så den fungerar när den är färdig
-		\item [integrationstest] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
-		\item [systemtest] Test för att säkerställa att enheten uppfyller kraven för projektet
-		\item [acceptanstest] Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
+		\item [Acceptanstest --]Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
+		\item [Enhetstest --]Testa varje enhet så den fungerar när den är färdig
+		\item [Integrationstest --]Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
+		\item [Kontroller --]En mobil eller surfplatta som kör kontrolldelen av applikationen
+		\item [Kund --]Cybercom Sweden
+		\item [Regressionstest --]Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
+		\item [Systemtest --]Test för att säkerställa att enheten uppfyller kraven för projektet		
+		\item [UI --]User Interface - Den del av applikationen som visar spelplanen
 		\end{itemize}
 	
 	\subsection{Referenser}
@@ -89,30 +89,14 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 	\end{itemize}
 	
 	
-	
-	
-
-\section{Funktioner att testa}
-	Nedan följer en lista på de områden som har huvudfokus under testningen av applikationen.
-	\begin{itemize}
-	\item Hålla session aktiv under fyra timmar.
-	\item Systemet ska stödja version 64 av Chrome.
-	\item All kommunikation mellan UI och kontroller ska ske via backend.
-	\item Anslutning till spelet ska inte överskrida 10 sekunder.
-	\item Systemet ska ha hög responsivitet och vara stabilt.
-	\item Systemet ska vara användarvänligt.
-	\item 
-	\end{itemize}
-	
-	
-	
 \section{Funktioner som inte ska testas}
 	Nedan följer en lista på de delar av projektet som ligger utanför fokus av olika anledningar.
 	\begin{itemize}
 	\item Chrome
 	\item React
+	\item Mobila enheter som kör ett annat OS än Android eller iOS
 	\end{itemize}
-	Vi kommer ej att testa Google Chrome eller React som systemet kommer vara beroende utav, detta för att vi utgår från att det är rigoröst testat av sina respektive utvecklare och på grund av den tiden vi har, ej valt att lägga vår begränsade tid på det.
+	Vi kommer ej att testa Google Chrome eller React som systemet kommer vara beroende utav, detta för att vi utgår från att det är rigoröst testat av sina respektive utvecklare och på grund av den tiden vi har, ej valt att lägga vår begränsade tid på det. Den tredje punkten har att göra med hur ovanliga dessa mobila enheter är och att vi inte har resurserna att införskaffa en sådan enhet för testning. 
 
 
 
@@ -148,7 +132,7 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 
 
 \section{Test leveranser}
-	I slutet av varje sprint kommer en testrapport lämnas skapas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.
+	I slutet av varje sprint ska en testrapport lämnas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.
 
 
 	
@@ -164,8 +148,8 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 	\end{itemize}
 
 \section{Ansvarsområden}
-	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet {\color{red}[2]}. Dock betyder inte detta att t.ex. Testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen. \\
-	En av poängerna med projektet är att utbilda sig, så var och en i projektet kommer få prova på det mesta. För stora beslut har vi röstat demokratiskt över vad som är mest lämpligt, vilket gör samtliga ansvariga för allt.
+	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet {\color{red}[2]}. Dock betyder inte detta att t.ex. testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen. \\
+	En av poängerna med projektet är att utbilda sig, så var och en i projektet kommer få prova på det mesta. För stora beslut gällande testning ska vi rösta demokratiskt över vad som är mest lämpligt, vilket fördelar ansvaret på samtliga medlemmar.
 	
 
 \section{Personal och utbildningsbehov}
@@ -173,20 +157,14 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 
 	
 	
-\section{godkännande}
+\section{Godkännande}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
 	 \item Enhetstestplan ska ha använts och godkänts på samtliga punkter.
-	 \item integrationstestplanen ska ha använts och godkänts på samtliga punkter.
-	 \item systemtestplanen ska ha använts och godkänts på samtliga punkter.
+	 \item Integrationstestplanen ska ha använts och godkänts på samtliga punkter.
+	 \item Systemtestplanen ska ha använts och godkänts på samtliga punkter.
 	 \item Regressionstestplanen ska ha använts och godkänts på samtliga punkter.
 	 \item Acceptanstestplanen ska ha använts och godkänts på samtliga punkter.
 	\end{itemize}
 	
-
-
-
-
-
-
 \end{document}
