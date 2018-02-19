@@ -72,9 +72,8 @@
 		\item [Hotjoin] Möjligheten att hoppa in i ett pågående spel
 		\item [Sensor] En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer).
 		\item [Spelinstans] Ett spel med en unik identifikationskod
-		\item [PWA (Progressive Web App)] Ett mellanting mellan en hemsida och en applikation. En PWA sig är en vanlig hemsida som beter sig lite med som en vanlig app.
-        \item [Multiplayer] Spel där flera användare interagerar med varandra.
-		\item [Realtidsmultiplayerspel] Spel där en handling har en direkt inverkan på spelets tillstånd.
+		\item [PWA (Progressive Web App)] Ett mellanting mellan en hemsida och en applikation. En PWA är en vanlig hemsida som beter sig som en app.
+		\item [Realtidsmultiplayerspel] Spel där flera användares handlingar har en direkt inverkan på spelets tillstånd.
 		\item [Gamemode] En variant av basspelet med eventuellt andra funktioner och regler.
 		\end{itemize}	
 
@@ -85,7 +84,9 @@
 		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppen är att genomföra ett kandidatarbete enligt kursen \textit{TDDD96 -- Kandidatprojekt i programvaruutveckling} mål\cite{bib-tddd96}.
 	
 	\subsection{Användning}
-		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen.  
+		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen. \\
+\\
+För att kunna använda produkten startar man UI-applikationen. Då UI-applikationen körs igång, skapas en spelinstans där en identifikationskod kommer att genereras och visas på skärmen. För att kunna ansluta sig till den spelinstansen behöver en användare starta kontrollapplikationen. Här kommer användaren behöva ange ett användarnamn samt identifikationskoden. Efter att användaren har gjort detta, är spelet redo att spelas.
 	
 	\subsection{Bakgrundsinformation}
 		Projektgruppen har tidigare läst en kurs om programutvecklingsmetodik och vill omsätta denna kunskap i praktiken. 
@@ -138,13 +139,14 @@
 		
 		\textbf{Krav nr.} & \textbf{Beskrivning} &\textbf{Prioritet} \\ \hline
 		\Krav{Kontrollapplikationen ska ha ett grafiskt gränssnitt.}{1}
-		\Krav{Spelaren ska mata in ett unikt användarnamn.}{1}
+		\Krav{Spelaren ska kunna sätta ett unikt användarnamn.}{1}
 		\Krav{Kontrollapplikationen ska kunna köras på en enhet som har minst version 64 av Google Chrome.}{1}
 		\Krav{Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod.}{1}
 		\Krav{Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{Kontrollapplikationen ska kunna kalibrera en accelerometer.}{1}
 		\Krav{Kontrollapplikationen ska stödja alternativ styrningsmetoder om en sensor saknas.}{2}
 		\Krav{Kontrollapplikationen ska stödja styrning med tagentbord och mus.}{2}
+		\Krav{Kontrollapplikationen ska ha en knapp för att generera ett slumpmässigt användarnamn.}{2}
 
 	\end{tabular}
 
