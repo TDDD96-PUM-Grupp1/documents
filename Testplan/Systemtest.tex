@@ -1,0 +1,130 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{scrextend}
+
+\title{Systemtestplan}
+
+\author{
+	Projektgrupp 1\\
+	Joel Oskarsson\\
+	\texttt{joeos014@student.liu.se}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Inledning}
+	Det här dokumentet kommer mer ingående definiera hur systemtesterna kommer gå tillväga.
+	\subsection{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | l |  l | }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} & \textbf{Ansvarig} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-18 & Första utkast & David Kjellström\\
+ 	       \hline
+ 	   \end{tabular}
+	\end{center}
+
+
+	\subsection{Definitioner}
+		\begin{itemize}
+		\item [UI] User Interface - Den del av applikationen som visar spelplanen
+		\item [Kontroller] En mobil eller surfplatta som kör kontrolldelen av applikationen
+		\item [Kund] Cybercom Sweden
+		\item [regressionstest] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
+		\item [enhetstest] Testa varje enhet så den fungerar när den är färdig
+		\item [integrationstest] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
+		\item [systemtest] Test för att säkerställa att enheten uppfyller kraven för projektet
+		\item [acceptanstest] Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
+		\end{itemize}
+	
+	\subsection{Referenser}
+		\begin{itemize}
+		\item [1] Kravspecifikation
+		\item [2] Projektplan
+		\item [3] Kvalitetsplan
+		\end{itemize}
+
+	
+\section{Testföremål}
+	Ett systemtest kommer skapas för varje krav i kravspecifikationen.
+
+	
+	
+	
+
+
+\section{Tillvägagångssätt}
+	Systemtester ska göras för de krav från kravspecifikationen, nuvarande iteration är byggd för att klara. Testen görs framåt slutet av varje iteration och när ett systemtest klarats, bör det läggas till som ett regressionstest i Travis.\\
+	\\
+	Samtliga systemtester ska följa Enhetstestens standard, och vara automatiska. 		
+	
+	
+	
+
+\section{Föremåls godkännande/misslyckande kriterier}
+	För att ett systemtest ska vara godkänt, måste det uppfylla det krav det är specifierat efter. Krav med prioritet 2 är inte nödvändigt att de är avklarade för ett komplett projekt.\\
+
+
+\section{Avbrott och fortsättningskriterier}
+	Om ett test ej blir godkänt och ej går att fixa inom en rimlig tid måste gruppen kalla till möte för diskussion över vilken väg projektet ska ta härnäst. Om ett krav skulle vara näst intill omöjligt, kan kund behöva kallas till möte.
+	
+
+
+
+\section{Test leveranser {\color{red}TODO}}
+	I slutet av varje sprint kommer en testrapport lämnas skapas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.
+
+
+
+
+\section{Ansvarsområden}
+	Ansvaret för välspecifierade krav har fallit på analysansvarige, sedan är det upp till projektledaren att se till att projektet lever upp till kraven medan testledaren ska visa att projektet uppfyller kraven.
+
+  
+
+	
+	
+\section{godkännande}
+	För att Testplanen ska vara avklarad behöver följande vara godkänt:
+	\begin{itemize}
+	 \item Samtliga kvantifierbara krav ska testas, automatiseras och implementeras med hjälp av Travis.
+	 \item Ett test ska motsvara ett krav i kravspecifikationen.
+	\end{itemize}
+	
+
+
+
+
+
+
+\end{document}

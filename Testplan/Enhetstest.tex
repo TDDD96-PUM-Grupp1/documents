@@ -1,0 +1,134 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{scrextend}
+
+\title{Enhetstestplan}
+
+\author{
+	Projektgrupp 1\\
+	Joel Oskarsson\\
+	\texttt{joeos014@student.liu.se}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+	\and
+	LastName, FirstName\\
+	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+  	\and
+  	LastName, FirstName\\
+  	\texttt{first.last@xxxxx.com}
+}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Inledning}
+	Det här dokumentet går igenom hur Enhetstestningen kommer ske.
+	\subsection{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | l |  l | }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} & \textbf{Ansvarig} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-18 & Första utkast & David Kjellström\\
+ 	       \hline
+ 	   \end{tabular}
+	\end{center}
+
+
+	\subsection{Definitioner}
+		\begin{itemize}
+		\item [UI] User Interface - Den del av applikationen som visar spelplanen
+		\item [Kontroller] En mobil eller surfplatta som kör kontrolldelen av applikationen
+		\item [Kund] Cybercom Sweden
+		\item [regressionstest] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
+		\item [enhetstest] Testa varje enhet så den fungerar när den är färdig
+		\item [integrationstest] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
+		\item [systemtest] Test för att säkerställa att enheten uppfyller kraven för projektet
+		\item [acceptanstest] Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
+		\end{itemize}
+	
+	\subsection{Referenser}
+		\begin{itemize}
+		\item [1] Kravspecifikation
+		\item [2] Projektplan
+		\item [3] Kvalitetsplan
+		\end{itemize}
+
+	
+\section{Testföremål}
+	Varje enhet som skapas kommer mer eller mindre genomgå enhetstest. Beroende på dess storlek kan de testas olika. T.ex. en liten service som skrivs på backend kan testas manuellt medan för större enheter t.ex. Kontrollerdelen, kan behöva automatiska tester.
+	\\
+	
+	
+
+
+\section{Tillvägagångssätt}
+	Hurvida en enhets testning ska gå till är på fall till fall basis, där testaren ansvarig över enheten själv bestämmer om den är stor nog att meritera automatisk testning.
+	Om så är fallet, bör {\color{red}Jasmine}, Javascript testframework, användas. Test som automatiseras skall övervägas att läggas in som regressionstester i Travis för att funktionalitet inte går förlorad i utvecklingsprocessen. \\
+	\\
+	För att ha en bra teststandard bör följande punkter has i åtanke:
+	\begin {itemize}
+	 \item [Genomgående] Testa alla vägar och möjliga scenarion för varje enhet och försök uppnå maximal täckning.
+	 \item [Repeterbar] Ett test som lyckats en gång bör lyckas varje gång. Tester bör alltid producera samma resultet.
+	 \item [Oberoende] Varje test bör endast testa en sak i taget. Flera antaganden är acceptabelt så länge de testar en funktion. Tester ska ej vara beroende av varandra, varje test ska kunna köras separat.
+	 \item [Kodstandard] Tester ska skriva på så sätt att det ser professionellt ut. Bra funktionsnamn, inga dubletter, osv.
+	\end {itemize}
+
+	
+
+\section{Föremåls godkännande/misslyckande kriterier}
+	För att en enhet ska vara helt godkänd ska samtliga tester den genomgått vara godkända. Upptäcks problem av mindre magnitud som har försumbar inverkan på projektet kan det förbigås.
+
+
+
+\section{Avbrott och fortsättningskriterier}
+	Om en enhet trots flertalet revederingar och omskrivningar fortfarande misslyckas sina tester bör de avbrytas och ett möte med majoriteten utav gruppen sammankallas. 
+	Gruppen ska bestämma om det testerna berör är viktiga nog så att de måste behandlas, och sedan fatta ett gemensamt beslut om hur de ska hanteras, t.ex. skriva om en enhet från grunden.
+
+
+\section{Test leveranser {\color{red}TODO}}
+
+
+
+
+
+\section{Ansvarsområden}
+	En enhets utvecklare är ansvarig över de tester som utförs på enheten för att se till att den lever upp till kraven. Vid testning av större enheter kan fler medlemmar behövas för att sammanställa de nödvändiga testerna.
+	
+	
+	
+\section{godkännande {\color{red}TODO}}
+	För att Testplanen ska vara avklarad behöver följande vara godkänt:
+	\begin{itemize}
+	 \item Varje enhet ska ha testas enligt den standard beskriven under Tillvägagångssätt.
+	 \item större enheter ska testas automatiskt genom {\color{red}Jasmine} och sedan skapa regressionstester att lägga till i Travis.
+	 \item 
+	\end{itemize}
+	
+
+
+
+
+
+
+\end{document}
