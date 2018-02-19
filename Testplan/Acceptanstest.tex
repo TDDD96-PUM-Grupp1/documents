@@ -4,7 +4,7 @@
 \usepackage{color}
 \usepackage{scrextend}
 
-\title{Master Test plan}
+\title{Acceptanstestplan}
 
 \author{
 	Projektgrupp 1\\
@@ -40,6 +40,7 @@
 \tableofcontents
 \pagebreak
 \section{Inledning}
+	I den här testplanen kommer det mest vara information angående krav och hur de kan testas av kund.
 	\subsection{Revisionshistorik}
 
 	
@@ -75,107 +76,43 @@
 
 	
 \section{Testföremål}
-	Nedan följer en lista över de stora delarna projektet är uppdelat i, som måste testas var för sig.
-	\begin{itemize}
-	\item [Backend] Eftersom målet med projektet är att visa hastigheten av Cybercoms backend är detta en central punkt i projektet.
-	\item [Kontroller] Spelet ska kontrolleras med hjälp av accelerometern i t.ex. en mobil eller surfplatta.
-	\item [UI] Spelet ska kunna visas på en skärm som får all användardata från Cybercoms backend.
-	\end{itemize}
+	Precis som i systemtestsplanen innefattar acceptanstesterna alla krav på kravspecifikationen.
 	
-	
-	
-	
-
-\section{Funktioner att testa}
-	Nedan följer en lista på de områden som har huvudfokus under testningen av applikationen.
-	\begin{itemize}
-	\item Hålla session aktiv under fyra timmar.
-	\item Systemet ska stödja version 64 av Chrome.
-	\item All kommunikation mellan UI och kontroller ska ske via backend.
-	\item Anslutning till spelet ska inte överskrida 10 sekunder.
-	\item Systemet ska ha hög responsivitet och vara stabilt.
-	\item Systemet ska vara användarvänligt.
-	\item 
-	\end{itemize}
-	
-	
-	
-\section{Funktioner som inte ska testas}
-	Nedan följer en lista på de delar av projektet som ligger utanför fokus av olika anledningar.
-	\begin{itemize}
-	\item Chrome
-	\item React
-	\end{itemize}
-	Vi kommer ej att testa Google Chrome eller React som systemet kommer vara beroende utav, detta för att vi utgår från att det är rigoröst testat av sina respektive utvecklare och på grund av den tiden vi har, ej valt att lägga vår begränsade tid på det.
-
 
 
 
 \section{Tillvägagångssätt}
-	Testerna för IoT-spelet kommer bestå av enhetstester, regressionstester, integrationstester och acceptanstester. Planen är att alla personer ska vara delaktiga i de olika 		testmomenten i utbildningssyfte. Med den tidsbegränsning som är satt på projektet är risken relativt hög att testningen kan bli lidande. \\
-	\\
-	Enhetstestningen kommer utföras utav den person som utvecklat enheten och kommer utföras under hela projektets gång. Bereonde på storlek av enheten kan flera utvecklare behöva hjälpas åt för att enheten ska bli godkänd.\\
-	\\
-	Integrationstestningen kommer i huvuddel styras av konfigurationsansvarig för projektet. När en ny enhet ska integreras ska den först ha klarat enhetstestet och beroende på storleken kan fler projektmedlemmar kopplas in och hjälpa till med att testa samtliga delar av de olika interaktionerna mellan enheterna. \\
-	\\
-	Regressionstester är något som kommer fortgå under hela projektet med hjälp av automatisering. Automatiska tester kommer göras när nya delar läggs till på Github med hjälp av {\color{red}Travis}. Detta är ett extra säkerhetssteg för att försäkra att ingen essentiell funktionalitet går förlorad som existerade i en tidigare version.\\
-	\\
-	Systemtester kommer utföras i slutet av varje iteration för att säkerställa att spelet uppfyller kraven. Detta kommer utföras dels internt till en början för att sedan visa demo inför kund för att få feedback.  \\ 
-	\\
-	Acceptanstest utförs i slutet vid leverans för att låta kund avgöra om produkten lever upp till förväntningar. De kommer själva få köra igenom spelet och fylla i ett formulär enligt Kvalitetsplanen där vi kan bocka av de sista kraven. \\
-	\\
-	För mer information om varje modul, se respektive testplan.
+	Kund kommer få komplett kontroll över systemet och på egen hand testa det efter sina egna kriterier, och se så det lever upp till de överrenskomna kraven. \\
 	
 	
 
 \section{Föremåls godkännande/misslyckande kriterier}
-	\subsection{Backend}
-		För att backend ska vara godkänd måste den uppnå de krav på hastighet som kan hittas i kravspecifikationen {\color{red}[1]}. All kommunikation ska gå över backend och för att samtliga krav ska bli uppfyllda måste de godkännas enligt kvalitetsplanen  {\color{red}[3]}.
-
-	\subsection{Kontroller och UI}
-		För att kontroller och UI-delen ska vara godkänd krävs det att den kan köras på Chrome, version 64. För godkännande av Kontroller måste den godkännas enligt kvalitetsplanen {\color{red}[3]}, där en enkät genomförs mot en testgrupp som besvarar frågor angående responsivitet, stabilitet och användarvänlighet.
-
+	För godkännande krävs det att systemet lever upp till de överrenskomna kraven.
 
 
 \section{Avbrott och fortsättningskriterier}
-	Om något av de hårda kraven i kravspecifikationen {\color{red}[1]} misslyckas, avbryts vidareutveckling av produkten tills kravet åter är uppfyllt. Om kravet av någon anledning skulle visa sig vara ouppnåeligt kommer kravspecifikationen kommer problemet diskuteras internt för att sedan ta diskussionen vidare till kund. 
+	Om ett av kraven inte uppfylls, ska det ha stoppats redan vid systemtesterna. Om projektgruppen ändå kommer till denna punkt är det viktigt att föra dialog med kund angående kravet i fråga.\\
+	\\
+	Största anledningen till att man kan hamna här beror på tvetydiga krav. Det är har förhoppningsvis mitigierats till en viss grad med hjälp av en grundlig genomgång utav kravspecifikationen.
 
 
-
-\section{Test leveranser}
-	I slutet av varje sprint kommer en testrapport lämnas skapas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.
-
-
+\section{Test leveranser {\color{red}TODO}}
 	
 
-\section{Miljöbehov {\color{red}TODO}}
-	För att genomföra flera utav testerna behövs viss hårdvara. Nedan listas det som behövs för att genomföra de olika testerna. 
-
-	\begin{itemize}
-	\item stabil nätverksuppkoppling
-	\item Dator med tillhörande mus och tangentbord
-	\item Mobiltelefon av både typ Android och Iphone {\color{red}Windowsphone osv?}
-	\item surfplatta {\color{red}vilka?}
-	\end{itemize}
-
+	
 \section{Ansvarsområden}
-	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet {\color{red}[2]}. Dock betyder inte detta att t.ex. Testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen. \\
-	En av poängerna med projektet är att utbilda sig, så var och en i projektet kommer få prova på det mesta. För stora beslut har vi röstat demokratiskt över vad som är mest lämpligt, vilket gör samtliga ansvariga för allt.
+	Under acceptanstestet är ansvaret på kund att de verifierar att de fått den produkt de frågat efter. Analysansvarig har extra ansvar att ta eventuella diskussioner som kan uppstå runt krav.
 	
 
-\section{Personal och utbildningsbehov}
-	För att utföra testerna på detta system krävs inga extra utbildningar, men det uppmuntras att vara kunnig i automatisering utav tester och känna till Javascripts stil.
+	
 
 	
 	
 \section{godkännande}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
-	 \item Enhetstestplan ska ha använts och godkänts på samtliga punkter.
-	 \item integrationstestplanen ska ha använts och godkänts på samtliga punkter.
-	 \item systemtestplanen ska ha använts och godkänts på samtliga punkter.
-	 \item Regressionstestplanen ska ha använts och godkänts på samtliga punkter.
-	 \item Acceptanstestplanen ska ha använts och godkänts på samtliga punkter.
+	 \item Samtliga krav godkända direkt från kund.
+	 \item {\color{red}???}
 	\end{itemize}
 	
 

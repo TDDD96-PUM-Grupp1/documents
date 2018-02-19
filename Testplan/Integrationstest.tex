@@ -76,7 +76,7 @@
 
 	
 \section{Testföremål}
-	Varje gång en ny enhet läggs till på projektet behöver integrationstester genomföras. t.ex. Kommunikation mellan UI & Backend.
+	Varje gång en ny enhet läggs till på projektet behöver integrationstester genomföras. t.ex. Kommunikation mellan UI och Backend.
 	
 	
 	
@@ -84,74 +84,41 @@
 
 
 
-\section{Tillvägagångssätt}
-
-
-
-	Testerna för IoT-spelet kommer bestå av enhetstester, regressionstester, integrationstester och acceptanstester. Planen är att alla personer ska vara delaktiga i de olika 		testmomenten i utbildningssyfte. Med den tidsbegränsning som är satt på projektet är risken relativt hög att testningen kan bli lidande. \\
+\section{Tillvägagångssätt {\color{red}TODO}}
+	Under projektets gång kommer de enheter som utvecklas parallellt skapas på olika branches i git. När enheterna börjar bli redo att implementeras på projektet kommer konfigurationsansvarig att överse mergen mellan de olika grenarna.\\
 	\\
-	Enhetstestningen kommer utföras utav den person som utvecklat enheten och kommer utföras under hela projektets gång. Bereonde på storlek av enheten kan flera utvecklare behöva hjälpas åt för att enheten ska bli godkänd.\\
-	\\
-	Integrationstestningen kommer i huvuddel styras av konfigurationsansvarig för projektet. När en ny enhet ska integreras ska den först ha klarat enhetstestet och beroende på storleken kan fler projektmedlemmar kopplas in och hjälpa till med att testa samtliga delar av de olika interaktionerna mellan enheterna. \\
-	\\
-	Regressionstester är något som kommer fortgå under hela projektet med hjälp av automatisering. Automatiska tester kommer göras när nya delar läggs till på Github med hjälp av {\color{red}Travis}. Detta är ett extra säkerhetssteg för att försäkra att ingen essentiell funktionalitet går förlorad som existerade i en tidigare version.\\
-	\\
-	Systemtester kommer utföras i slutet av varje iteration för att säkerställa att spelet uppfyller kraven. Detta kommer utföras dels internt till en början för att sedan visa demo inför kund för att få feedback.  \\ 
-	\\
-	Acceptanstest utförs i slutet vid leverans för att låta kund avgöra om produkten lever upp till förväntningar. De kommer själva få köra igenom spelet och fylla i ett formulär enligt Kvalitetsplanen där vi kan bocka av de sista kraven. \\
-	\\
-	För mer information om varje modul, se respektive testplan.
+	Testerna som följer kommer skapas med konfigurationsansvarig i spetsen uppbackad av de gruppmedlemmar som hjälpt till att utveckla den del av produkten som är i fokus.
+
+
 	
 	
 
-\section{Föremåls godkännande/misslyckande kriterier}
-	\subsection{Backend}
-		För att backend ska vara godkänd måste den uppnå de krav på hastighet som kan hittas i kravspecifikationen {\color{red}[1]}. All kommunikation ska gå över backend och för att samtliga krav ska bli uppfyllda måste de godkännas enligt kvalitetsplanen  {\color{red}[3]}.
-
-	\subsection{Kontroller och UI}
-		För att kontroller och UI-delen ska vara godkänd krävs det att den kan köras på Chrome, version 64. För godkännande av Kontroller måste den godkännas enligt kvalitetsplanen {\color{red}[3]}, där en enkät genomförs mot en testgrupp som besvarar frågor angående responsivitet, stabilitet och användarvänlighet.
+\section{Föremåls godkännande/misslyckande kriterier {\color{red}TODO}}
+	
 
 
-
-\section{Avbrott och fortsättningskriterier}
-	Om något av de hårda kraven i kravspecifikationen {\color{red}[1]} misslyckas, avbryts vidareutveckling av produkten tills kravet åter är uppfyllt. Om kravet av någon anledning skulle visa sig vara ouppnåeligt kommer kravspecifikationen kommer problemet diskuteras internt för att sedan ta diskussionen vidare till kund. 
-
+\section{Avbrott och fortsättningskriterier {\color{red}TODO}}
+	
 
 
-\section{Test leveranser}
-	I slutet av varje sprint kommer en testrapport lämnas skapas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.
+\section{Test leveranser {\color{red}TODO}}
 
 
 	
 
-\section{Miljöbehov {\color{red}TODO}}
-	För att genomföra flera utav testerna behövs viss hårdvara. Nedan listas det som behövs för att genomföra de olika testerna. 
-
-	\begin{itemize}
-	\item stabil nätverksuppkoppling
-	\item Dator med tillhörande mus och tangentbord
-	\item Mobiltelefon av både typ Android och Iphone {\color{red}Windowsphone osv?}
-	\item surfplatta {\color{red}vilka?}
-	\end{itemize}
+	
 
 \section{Ansvarsområden}
-	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet {\color{red}[2]}. Dock betyder inte detta att t.ex. Testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen. \\
-	En av poängerna med projektet är att utbilda sig, så var och en i projektet kommer få prova på det mesta. För stora beslut har vi röstat demokratiskt över vad som är mest lämpligt, vilket gör samtliga ansvariga för allt.
-	
+	Integrationstesterna kommer konfigurationsansvariga till största del att implementera. Samtliga andra gruppmedlemmar kommer som vid andra tester att vara behjälpliga vid integrationen för att den ska gå smidigt. 
 
-\section{Personal och utbildningsbehov}
-	För att utföra testerna på detta system krävs inga extra utbildningar, men det uppmuntras att vara kunnig i automatisering utav tester och känna till Javascripts stil.
 
 	
 	
-\section{godkännande}
+	
+\section{godkännande {\color{red}TODO}}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
-	 \item Enhetstestplan ska ha använts och godkänts på samtliga punkter.
-	 \item integrationstestplanen ska ha använts och godkänts på samtliga punkter.
-	 \item systemtestplanen ska ha använts och godkänts på samtliga punkter.
-	 \item Regressionstestplanen ska ha använts och godkänts på samtliga punkter.
-	 \item Acceptanstestplanen ska ha använts och godkänts på samtliga punkter.
+	 \item Viktiga integrationssaker!!!
 	\end{itemize}
 	
 
