@@ -1,0 +1,91 @@
+%%% settings.tex --- 
+%% 
+%% Filename: settings.tex
+%% Description: 
+%% Author: Ola Leifler
+%% Maintainer: 
+%% Created: Tue Oct 19 21:11:31 2010 (CEST)
+%% Version: $Id$
+%% Version: 
+%% Last-Updated: Tue Apr 25 08:49:48 2017 (+0200)
+%%           By: Ola Leifler
+%%     Update #: 43
+%% URL: 
+%% Keywords: 
+%% Compatibility: 
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%% Commentary: 
+%% 
+%% 
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%% Change log:
+%% 
+%% 
+%% RCS $Log$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%% Code:
+
+\usepackage[backend=biber,hyperref]{biblatex}
+%% To set the font of your thesis, use the \setmainfont{} command,
+%% surrounded with \ifxetex if you want to switch between xelatex and pdflatex
+\ifxetex 
+%\setmainfont [Scale=1]{Georgia}
+\fi
+
+%%%%%%%%%%%%
+%% The VZ43 chapter style, from Memoir contributed chapter styles: ftp://ftp.tex.ac.uk/ctan%3A/info/MemoirChapStyles/MemoirChapStyles.pdf
+%%%%%%%%%%%
+
+\setcounter{secnumdepth}{3}
+
+\usepackage{calc,color}
+\newif\ifNoChapNumber
+\newcommand\Vlines{%
+\def\VL{\rule[-2cm]{1pt}{5cm}\hspace{1mm}\relax}
+\VL\VL\VL\VL\VL\VL\VL}
+\makeatletter
+\setlength\midchapskip{0pt}
+\makechapterstyle{VZ43}{
+\renewcommand\chapternamenum{}
+\renewcommand\printchaptername{}
+\renewcommand\printchapternum{}
+
+\renewcommand\chapnumfont{\Huge\bfseries\centering}
+\renewcommand\chaptitlefont{\Huge\bfseries\raggedright}
+\renewcommand\printchaptertitle[1]{%
+\Vlines\hspace*{-2em}%
+\begin{tabular}{@{}p{1cm} p{\textwidth-3cm}}%
+\ifNoChapNumber\relax\else%
+\colorbox{black}{\color{white}%
+\makebox[.8cm]{\chapnumfont\strut \thechapter}}
+\fi
+& \chaptitlefont ##1
+\end{tabular}
+\NoChapNumberfalse
+}
+\renewcommand\printchapternonum{\NoChapNumbertrue}
+}
+\makeatother
+
+%% To set bibliography options, refer to the biblatex manual and use
+%% the ExecuteBibliographyOptions command below to set your options
+
+\ExecuteBibliographyOptions{maxnames=99}
+
+
+%% Change this to your appropriate BibTeX reference file (.bib)
+
+\addbibresource{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% settings.tex ends here
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "demothesis"
+%%% End: 
