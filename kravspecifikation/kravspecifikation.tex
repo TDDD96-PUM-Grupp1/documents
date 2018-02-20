@@ -69,12 +69,10 @@
 		\begin{itemize}[leftmargin=5cm]
 		\item [UI-applikationen] Applikationen som kör själva spelet
 		\item [Kontrollapplikationen] Applikationen som körs på en mobil eller surfplatta som styr spelet
-		\item [Hotjoin] Möjligheten att hoppa in i ett pågående spel
-		\item [Sensor] En sensor som sitter på kontrollern som inte är en touch-skärm (t.ex. en accelerometer).
+		\item [Sensor] En apparat eller anläggning som insamlar data. Vi syftar ej på en touch-skärm när vi refererar till en sensor.
 		\item [Spelinstans] Ett spel med en unik identifikationskod
-		\item [PWA (Progressive Web App)] Ett mellanting mellan en hemsida och en applikation. En PWA sig är en vanlig hemsida som beter sig lite med som en vanlig app.
-        \item [Multiplayer] Spel där flera användare interagerar med varandra.
-		\item [Realtidsmultiplayerspel] Spel där en handling har en direkt inverkan på spelets tillstånd.
+		\item [PWA (Progressive Web App)] Ett mellanting mellan en hemsida och en applikation. En PWA är en vanlig hemsida som beter sig som en app.
+		\item [Realtidsmultiplayerspel] Spel där flera användares handlingar har en direkt inverkan på spelets tillstånd.
 		\item [Gamemode] En variant av basspelet med eventuellt andra funktioner och regler.
 		\end{itemize}	
 
@@ -85,7 +83,9 @@
 		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppen är att genomföra ett kandidatarbete enligt kursen \textit{TDDD96 -- Kandidatprojekt i programvaruutveckling} mål\cite{bib-tddd96}.
 	
 	\subsection{Användning}
-		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen.  
+		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen. \\
+\\
+För att kunna använda produkten startar man UI-applikationen. Då UI-applikationen körs igång, skapas en spelinstans där en identifikationskod kommer att genereras och visas på skärmen. För att kunna ansluta sig till den spelinstansen behöver en användare starta kontrollapplikationen. Här kommer användaren behöva ange ett användarnamn samt identifikationskoden. Efter att användaren har gjort detta, är spelet redo att spelas.
 	
 	\subsection{Bakgrundsinformation}
 		Projektgruppen har tidigare läst en kurs om programutvecklingsmetodik och vill omsätta denna kunskap i praktiken. 
@@ -95,7 +95,7 @@
 	Detta kapitel ger en överskådlig blick av systemet.
 
 	\subsection{Grov beskrivning av produkten}
-	Produkten ska vara ett realtidsmultiplayerspel. Spelet är uppdelat i två olika applikationer, en UI-applikation och en kontrollapplikation. UI-applikationen är tänkt att agera som skärm för spelet och kan liknas med en konsol för ett TV-spel. På denna del kommer att själva spelet köras och vara uppkopplad till en skärm där spelet visas. En kontroller kommer vara antingen en mobil eller surfplatta och kan liknas med spelkontrollerna till konsolen. Enhetens sensorer används för att spelaren ska kunna styra spelet. Kommunikationen mellan UI-applikationen och kontrollapplikationen kommer att ske genom Cybercoms IoT-backend, se figur 1. Att kommunikationen går genom Cybercoms IoT-backend är vitalt eftersom huvudsyftet med projektet är att demonstrera Cybercoms IoT-backend.  Både kontroll- och UI-Applikationen kommer att utvecklas som PWA:s. 
+	Produkten ska vara ett realtidsmultiplayerspel. Spelet är uppdelat i två olika applikationer, en UI-applikation och en kontrollapplikation. Det är tänkt att UI-applikationen ska agera skärm för spelet och kan liknas med en konsol för ett TV-spel. På denna del kommer själva spelet köras och vara uppkopplad till en skärm där spelet visas. En kontroller kommer vara antingen en mobil eller surfplatta och kan liknas med spelkontrollerna till konsolen. Enhetens sensorer används för att spelaren ska kunna styra spelet. Kommunikationen mellan UI-applikationen och kontrollapplikationen kommer att ske genom Cybercoms IoT-backend, se figur 1. Att kommunikationen går genom Cybercoms IoT-backend är vitalt eftersom huvudsyftet med projektet är att demonstrera Cybercoms IoT-backend.  Både kontroll- och UI-Applikationen kommer att utvecklas som PWA:s. 
 	
 	\begin{figure}[h]
 		\centering
@@ -126,7 +126,8 @@
 		\Krav{En användare ska kunna ansluta sig till en spelinstans.}{1}
 		\Krav{Flera instanser av spelet ska kunna köras samtidigt.}{1}
 		\Krav{En unik slumpmässig identifikationskod ska genereras för en spelinstans.}{1}
-		\Krav{En spelinstans spelare ska kunna rösta på vilket gamemode som ska spelas.}{2}
+		\Krav{Spelet ska stödja flera gamemodes.}{2}
+		\Krav{En spelare ska ha möjligheten att rösta på vilket gamemode som ska spelas.}{2}
 				
 	\end{tabular}
 
@@ -138,12 +139,14 @@
 		
 		\textbf{Krav nr.} & \textbf{Beskrivning} &\textbf{Prioritet} \\ \hline
 		\Krav{Kontrollapplikationen ska ha ett grafiskt gränssnitt.}{1}
-		\Krav{Spelaren ska mata in ett unikt användarnamn.}{1}
-		\Krav{Kontrollapplikationen ska kunna köras på en enhet som har minst version 64 av Google Chrome.}{1}
-		\Krav{Kontrollapplikationen ska kunna ansluta sig till en spelinstans genom att ange en identifikationskod.}{1}
+		\Krav{Spelaren ska kunna sätta ett användarnamn.}{1}
+		\Krav{Om en spelare inte anger ett användarnamn, ska ett användarnamn ges till spelaren.}{1}
+		\Krav{Kontrollapplikationen ska köras på en enhet som har minst version 64 av Google Chrome.}{1}
+		\Krav{Kontrollapplikationen ska ansluta sig till en spelinstans genom att välja en spelinstans från en lista.}{1}
+		\Krav{Kontrollapplikationen ska ha en sökruta, för att kunna söka bland de olika spelinstanserna.}{1}
 		\Krav{Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{Kontrollapplikationen ska kunna kalibrera en accelerometer.}{1}
-		\Krav{Kontrollapplikationen ska stödja alternativ styrningsmetoder om en sensor saknas.}{2}
+		\Krav{Kontrollapplikationen ska stödja alternativa styrningsmetoder i de fall sensorer saknas.}{2}
 		\Krav{Kontrollapplikationen ska stödja styrning med tagentbord och mus.}{2}
 
 	\end{tabular}
@@ -157,14 +160,12 @@
 		
 		\textbf{Krav nr.} & \textbf{Beskrivning} &\textbf{Prioritet} \\ \hline
 		\Krav{UI-applikationen ska stödja minst fem spelare samtidigt.}{1}
-        \Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare, hårdvara, prestanda och plats
-		på skärmen begränsar.}{1}
 		\Krav{UI-applikationen ska ha ett grafiskt gränssnitt.}{1}
 		\Krav{UI-applikationen ska kunna köras på en enhet som har minst version 64 av Google Chrome.}{1}
 		\Krav{UI-applikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
-		\Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare, hårdvara, prestanda och plats på skärmen begränsar.}{2}
-		\Krav{UI-applikationen ska kunna oberservera andra spelinstanser.}{2}
+		\Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare. Hårdvara, prestanda och plats på skärmen begränsar.}{2}
+		\Krav{UI-applikationen ska visa andra spelinstanser i realtid.}{2}
 						
 	\end{tabular}
 	
@@ -179,9 +180,9 @@
 		\Krav{Kontrollapplikationen ska skrivas i Javascript ES2015+.}{1}
 		\Krav{UI-applikationen ska utvecklas som en PWA.}{1}
 		\Krav{Kontrollapplikationen ska utvecklas som en PWA.}{1}
-		\Krav{All kod som skrivs ska följa en dokumentationsstandard.}{1}
 		\Krav{UI-applikationen ska licensieras under MITs open source licens.}{1}
 		\Krav{Kontrollapplikationen ska licensieras under MITs open source licens.}{1}
+		\Krav{Applikationsprojekten ska vara Node-baserade.}{1}
 		
 	\end{tabular}
 \pagebreak
