@@ -1,44 +1,49 @@
 \documentclass[10pt]{article}
-
 \usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage[swedish]{babel}
+\usepackage{hyperref}
 \usepackage{color}
 \usepackage{scrextend}
+\selectlanguage{swedish}
 
-\title{Acceptanstestplan}
-
+\title{Acceptanstestplan\\
+    \large Projektgrupp 1}
 \author{
-	Projektgrupp 1\\
-	Joel Oskarsson\\
-	\texttt{joeos014@student.liu.se}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-  	\and
-  	LastName, FirstName\\
-  	\texttt{first.last@xxxxx.com}
-  	\and
-  	LastName, FirstName\\
-  	\texttt{first.last@xxxxx.com}
-  	\and
-  	LastName, FirstName\\
-  	\texttt{first.last@xxxxx.com}
+    Joel Almqvist\\
+    \texttt{joeal360@student.liu.se}
+    \and
+    Björn Detterfelt\\
+    \texttt{bjode786@student.liu.se}
+    \and
+    Tim Håkansson\\
+    \texttt{timha404@student.liu.se}
+    \and
+    David Kjellström\\
+    \texttt{davkj168@student.liu.se}
+    \and
+    Axel Löjdquist\\
+    \texttt{axelo225@student.liu.se}
+    \and
+    Joel Oskarsson\\
+    \texttt{joeos014@student.liu.se}
+    \and
+    Lieth Wahid\\
+    \texttt{liewa893@student.liu.se}
+    \and
+    Alexander Wilkens\\
+    \texttt{alewi684@student.liu.se}
 }
-
 \begin{document}
+
+\pagenumbering{gobble}
 
 \maketitle
 \pagebreak
 \tableofcontents
 \pagebreak
+
+\pagenumbering{arabic}
 \section{Inledning}
 	I den här testplanen kommer det mest vara information angående krav och hur de kan testas av kund.
 	\subsection{Revisionshistorik}
@@ -56,16 +61,16 @@
 
 
 	\subsection{Definitioner}
-		\begin{itemize}
-		\item [Acceptanstest --]Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
-		\item [Enhetstest --]Testa varje enhet så den fungerar när den är färdig
-		\item [Integrationstest --]Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
-		\item [Kontroller --]En mobil eller surfplatta som kör kontrolldelen av applikationen
-		\item [Kund --]Cybercom Sweden
-		\item [Regressionstest --]Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
-		\item [Systemtest --]Test för att säkerställa att enheten uppfyller kraven för projektet		
-		\item [UI --]User Interface - Den del av applikationen som visar spelplanen
-		\end{itemize}
+  \begin{labeling}{\textbf{Integrationtest}}
+  \item [\textbf{Acceptanstest}]Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
+    \item [\textbf{Enhetstest}] Testa varje enhet så den fungerar när den är färdig
+    \item [\textbf{Integrationstest}] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
+    \item [\textbf{Kontroller}] En mobil eller surfplatta som kör kontrolldelen av applikationen
+    \item [\textbf{Kund}] Cybercom Sweden
+    \item [\textbf{Regressionstest}] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
+    \item [\textbf{Systemtest}] Test för att säkerställa att enheten uppfyller kraven för projektet		
+    \item [\textbf{UI}] User Interface - Den del av applikationen som visar spelplanen
+  \end{labeling}
 	
 	\subsection{Referenser}
 		\begin{itemize}
