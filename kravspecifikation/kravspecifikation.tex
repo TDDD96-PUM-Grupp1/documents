@@ -27,6 +27,9 @@
 	\stepcounter{indexcounter}
 	Krav \arabic{indexcounter} & #1 & #2 \\ \hline
 }
+\newcommand{\History}[3]{
+	\centering #1 & #2 & #3 \\ \hline
+}
 
 \addbibresource{kravspecifikation.bib}
 
@@ -54,16 +57,35 @@
     Lieth Wahid\\
     \texttt{liewa893@student.liu.se}
     \and
-    Alexander Wilkens\\
+    Alexander Wilkens\\ 
     \texttt{alewi684@student.liu.se}
 }
+
+\date{\today \\Version 2.0}
 
 \begin{document}
 
 \maketitle
 \pagebreak
+
+\section*{Dokumenthistorik}
+
+\begin{center}
+    \begin{tabular}{|p{1.5cm}|p{2cm}|p{12cm}|}
+    	\hline
+        \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\ \hline
+        \History{1.0}{2018-02-15}{Första utkast till kund}
+        \History{1.1}{2018-02-16}{Uppdaterat stavning, definitioner, formulerat om krav 3, 9, 11, 16, 22 ,23 \& 24. Tog bort krav 12, 13, 17, 19, 20 \& 21. (Kund)}
+        \History{1.2}{2018-02-19}{Uppdaterat stavning, formulerat om krav 8 \& 16. (Kund)}
+        \History{1.3}{2018-02-22}{Uppdaterat stavning, formulerat om krav 6, 8, 10, 13, 15, 17, 22, 23, 28 \& 32. (Kund)}
+        \History{1.4}{2018-02-27}{Uppdaterat stavning och struktur. Lagt till en översiktlig bild av systemet. Formulerat om krav 17, 24, 33  \& 34. (Handledare)}
+    \end{tabular}
+\end{center}
+
+\pagebreak
 \tableofcontents
 \pagebreak
+
 \section{Inledning}
 	I detta kapitel definieras och introduceras kontexten för projektet som ska utföras.
 
@@ -76,28 +98,34 @@
       \definition{Progressive Web Apps}
       \definition{Realtidsmultiplayerspel}
       \definition{Gamemode}
+      \definition{Vanliga nätverksförhållanden}
 		\end{itemize}	
 
 	\subsection{Parter}
 	Kunden till projektet är Cybercom Sweden. Projektet utförs av projektgruppens medlemmar.
 	
 	\subsection{Syfte \& mål}
-		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppen är att genomföra ett kandidatarbete enligt kursen \textit{TDDD96 -- Kandidatprojekt i programvaruutveckling} mål\cite{bib-tddd96}.
+	Syftet med detta dokument är att förtydliga vad som förväntas vara klart vid projektets slut. Dokumentet fungerar som överenskommelse mellan kunden Cybercom Sweden och projektgruppen. Kraven specificerar vilken funktionallitet, kvalitet och design produkten ska uppfylla. Dokumentet utgör grunden för hur hela projektet ska struktureras och utformas. Kraven är framtagna efter Cybercom Swedens önskemål och formulerade för att ligga till stöd för projektgruppensarbete.
 	
 	\subsection{Användning}
-		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen. \\
+		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen. Se \ref{fig:overview} för en översiktlig bild av systemet. \\
 \\
 För att kunna använda produkten startar man UI-applikationen. Då UI-applikationen körs igång, skapas en spelinstans där en identifikationskod kommer att genereras och visas på skärmen. För att kunna ansluta sig till den spelinstansen behöver en användare starta kontrollapplikationen. Här kommer användaren behöva ange ett användarnamn samt identifikationskoden. Efter att användaren har gjort detta, är spelet redo att spelas.
-	
-	\subsection{Bakgrundsinformation}
-		Projektgruppen har tidigare läst en kurs om programutvecklingsmetodik och vill omsätta denna kunskap i praktiken. 
-		
+
 \pagebreak
+
 \section{Översikt av Systemet}
 	Detta kapitel ger en överskådlig blick av systemet.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.8]{overview}
+		\caption{Översikt av systemet}
+		\label{fig:overview}
+	\end{figure}
 
 	\subsection{Grov beskrivning av produkten}
-	Produkten ska vara ett realtidsmultiplayerspel. Spelet är uppdelat i två olika applikationer, en UI-applikation och en kontrollapplikation. Det är tänkt att UI-applikationen ska agera skärm för spelet och kan liknas med en konsol för ett TV-spel. På denna del kommer själva spelet köras och vara uppkopplad till en skärm där spelet visas. En kontroller kommer vara antingen en mobil eller surfplatta och kan liknas med spelkontrollerna till konsolen. Enhetens sensorer används för att spelaren ska kunna styra spelet. Kommunikationen mellan UI-applikationen och kontrollapplikationen kommer att ske genom Cybercoms IoT-backend, se figur 1. Att kommunikationen går genom Cybercoms IoT-backend är vitalt eftersom huvudsyftet med projektet är att demonstrera Cybercoms IoT-backend.  Både kontroll- och UI-Applikationen kommer att utvecklas som PWA:s. 
+	Produkten ska vara ett realtidsmultiplayerspel. Spelet är uppdelat i två olika applikationer, en UI-applikation och en kontrollapplikation. Det är tänkt att UI-applikationen ska agera skärm för spelet och kan liknas med en konsol för ett TV-spel. På denna del kommer själva spelet köras och vara uppkopplad till en skärm där spelet visas. En kontroller kommer vara antingen en mobil eller surfplatta och kan liknas med spelkontrollerna till konsolen. Enhetens sensorer används för att spelaren ska kunna styra spelet. Kommunikationen mellan UI-applikationen och kontrollapplikationen kommer att ske genom Cybercoms IoT-backend, se \ref{fig:backend}. Att kommunikationen går genom Cybercoms IoT-backend är vitalt eftersom huvudsyftet med projektet är att demonstrera Cybercoms IoT-backend.  Både kontroll- och UI-Applikationen kommer att utvecklas som PWA:s. 
 	
 	\begin{figure}[h]
 		\centering
@@ -108,16 +136,17 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 	
 	
 	\subsection{Beroenden av andra system}
-	Produkten är beroende av Cybercoms IoT-backend då all kommunikation måste gå genom denna. Produkten är även beroende av en enhet som har tillgång till version 64 av Google Chrome. Produkten kräver även en enhet som kan köra UI-delen av systemet.
+	Produkten är beroende av Cybercoms IoT-backend då all kommunikation måste gå genom denna. Både kontroll- och UI-applikationen är beroende av en enhet som har tillgång till version 64 av Google Chrome. En enhet kan t.ex. vara en dator, surfplatta eller en mobil. Enheten måste ha en internetanslutning.
 
 \pagebreak
 \section{Krav}
-	Detta avsnitt listar alla krav som sätts på produkten. Krav med prioritet 1 förväntas vara avklarade vid projektetsslut. Krav med prioritet 2 ska arbetas mot då alla krav med prioritet 1 är avklarade.
+	Detta avsnitt listar alla krav som sätts på produkten. Krav med prioritet 1 förväntas vara avklarade vid projektetsslut. Krav med prioritet 2 ska arbetas mot då alla krav med prioritet 1 är avklarade. Kraven är uppdelade i följande kategorier: funktionella krav och design- och kvalitetskrav. Varje krav består av ett unikt nummer, en beskrivning samt en prioritet.
+	
 	\subsection{Funktionella Krav}
-	Detta avsnitt listar de funktionella kraven på produkten.
+	Detta avsnitt listar de funktionella kraven på produkten. Funktionella krav deklarerar vilka beteenden och attribut produkten förväntas ha. 
 
 	\subsubsection*{Generella krav}
-	Nedan följer generella krav för hela applikationen.\\
+	Nedan följer generella krav för både kontroll- och UI-applikationen.\\
 	
 	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
 		\hline
@@ -149,7 +178,7 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 		\Krav{Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{Kontrollapplikationen ska kunna kalibrera en accelerometer.}{1}
 		\Krav{Kontrollapplikationen ska stödja alternativa styrningsmetoder i de fall sensorer saknas.}{2}
-		\Krav{Kontrollapplikationen ska stödja styrning med tagentbord och mus.}{2}
+		\Krav{Kontrollapplikationen ska stödja styrning med tangentbord och mus.}{2}
 
 	\end{tabular}
 
@@ -167,12 +196,12 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 		\Krav{UI-applikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
 		\Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare. Hårdvara, prestanda och plats på skärmen begränsar.}{2}
-		\Krav{UI-applikationen ska visa andra spelinstanser i realtid.}{2}
+		\Krav{UI-applikationen ska kunna visa det som andra UI-applikationer visar i realtid.}{2}
 						
 	\end{tabular}
 	
 	\subsection{Designkrav}
-	Detta avsnitt listar kraven på utvecklingsprocessen.\\
+	Detta avsnitt listar designkraven på produkten. Designkrav specificerar hur produkten ska utformas och ställer krav på hur utvecklingsprocessen kommer gå tillväga.  \\
 	
 	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
 		\hline
@@ -189,15 +218,15 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 	\end{tabular}
 \pagebreak
 	\subsection{Kvalitetskrav}
-	Detta avsnitt listar krav på kvaliten hos den slutgilitga produkten.\\
+	Detta avsnitt listar kvalitetskraven på produkten. Kvalitetskrav specificerar hur väl ett attribut hos produkten måste funktionera. D.v.s. vilka kvaliteer en lösning måste ha eller under vilka förhållanden lösningen måste fungera inom.  \\
 	
 		\begin{tabular}{|p{2cm}|p{8cm}|p{2cm}|}
 		\hline
 		\textbf{Krav nr.} & \textbf{Beskrivning} & \textbf{Prioritet} \\ \hline
 		
 		\Krav{UI-applikationen ska kunna köras i 4 timmar utan avbrott.}{1}
-		\Krav{Koden ska följa en enhetlig standard för att underlätta vidareutveckling av projektet.}{1}
-		\Krav{Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under standard nätverksförhållanden.}{1}
+		\Krav{Koden ska följa en enhetlig standard\cite{bib-kvalitetsplan} för att underlätta vidareutveckling av projektet.}{1}
+		\Krav{Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under vanliga nätverksförhållanden.}{1}
         \Krav{Enkätens\cite{bib-kvalitetsplan} genomsnittliga betyg för responsivitet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
 		\Krav{Enkätens\cite{bib-kvalitetsplan} genomsnittliga betyg för användbarhet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
 		\Krav{Enkätens\cite{bib-kvalitetsplan} genomsnittliga betyg för den alternativa styrningen ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
