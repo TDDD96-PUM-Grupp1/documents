@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{filecontents}
 \usepackage{etoolbox}
-\usepackage[backend=bibtex,style=authoryear,natbib=true,style=numeric-comp]{biblatex}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \graphicspath{ {images/}}
 
 \selectlanguage{swedish}
@@ -19,17 +19,7 @@
 \hyphenpenalty=10000
 \hbadness=10000
 
-\begin{filecontents*}{\jobname.bib}
-@techreport{bib-name,
-    title={title},
-    author={author},
-    year={XXXX},
-    institution={institition},
-    month={month}
-}
-\end{filecontents*}
-
-\addbibresource{\jobname.bib}
+\addbibresource{../references.bib}
 
 \title{Kvalitetsplan}
 
