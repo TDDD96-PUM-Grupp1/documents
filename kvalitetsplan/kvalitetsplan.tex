@@ -70,7 +70,7 @@
 		\begin{itemize}
 		\item [Cybercom --]Kortare variant av Cybercom Sweden, företaget produkten utvecklas åt
 		\item [Enkäten --]Den enkät som ska användas för att utvärdera användarupplevelsen, se avsnitt  3.3 Demo och enkät
-		\item [Kvalite --]I likhet med IEEE 730 definierar denna rapport kvalitet som konformitet till projektets krav
+		\item [Kvalitet --]I likhet med IEEE 730 definierar denna rapport kvalitet som konformitet till projektets krav
 		\item [Projektet --]Processen att framställa en produkt  Cybercom Sweden
 		\item [PWA --]Progressive Web App, ett sätt att bygga hemsidor där en stor del av hemsidan cacheas lokalt och kan fungera som en applikation utan tillgång till internet
 		\item [SQA-process --]I likhet med IEEE 730 definieras en SQA-process som aktiviteten att samla underlag för att med säkerhet ta beslutet av produkten uppnår sina kvalitetskrav
@@ -79,7 +79,7 @@
 		\end{itemize}	
 	
 	\subsection{Syfte}
-		Syftet med denna kvalitetsplan är att definiera de arbetsprocesser teamet ska efterfölja, med målet att det få produkten att hålla hög kvalitet. Kvalitetsplanen ska också definiera de standarder teamet ska efterfölja med målet att de ska ge produkten en högre minimumnivå gällande kvalitet och samtidigt få produktens olika delar mer konsekventa.
+		Syftet med denna kvalitetsplan är att definiera de arbetsprocesser teamet ska efterfölja, med målet att det ska få produkten att hålla hög kvalitet. Kvalitetsplanen ska också definiera de standarder teamet ska efterfölja med målet att de ska ge produkten en högre minimumnivå gällande kvalitet och samtidigt få produktens olika delar mer konsekventa.
 
 		
 \pagebreak
@@ -91,7 +91,7 @@
 	Projektet ska utföras av studenter som saknar god erfarenhet av att arbeta i team och de roller som finns i teamet. Projektet i sig beräknas ta elva veckor att genomföra. 
 	
 	\subsection{Systemets behov}
-	Syftet med produkten är att demonstrera responsitiviteten hos Cybercoms backend, för att uppfylla detta ställs flera krav på produkten. Den måste vara responsiv stabil för att ge ett bra intryck av backenden den ska demonstrera. Själva användningen av produkten är tänkt att utföras av Cybercom på mässor, vid sådana tillfällen är det också viktigt att produkten är användarvänlig. Om så inte är fallet kan produkten ge en negativ bild av backenden den är tänkt att uppvisa. Dessa tre är de mest basala behov systemet har. Efter dessa finns fler egenskaper som systemet önskas uppvisa, bland annat så vill kunden ha möjligheten att bygga ut den färdiga produkten.
+	Syftet med produkten är att demonstrera responsitiviteten hos Cybercoms backend, för att uppfylla detta ställs flera krav på produkten. Den måste vara både responsiv och stabil för att ge ett bra intryck av backenden den ska demonstrera. Själva användningen av produkten är tänkt att utföras av Cybercom på mässor, vid sådana tillfällen är det också viktigt att produkten är användarvänlig. Om så inte är fallet kan produkten ge en negativ bild av backenden den är tänkt att uppvisa. Dessa tre är de mest basala behov systemet har. Efter dessa finns fler egenskaper som systemet önskas uppvisa, bland annat så vill kunden ha möjligheten att bygga ut den färdiga produkten.
 	
 	
 	\subsection{Kvalitetskrav}
@@ -103,7 +103,7 @@
 		\item Enkätens genomsnittliga betyg för responsivitet ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
 		\item Enkätens genomsnittliga betyg för användbarhet ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
 		\item Enkätens genomsnittliga betyg för den alternativa styrningen ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
-		\item Enkätens genomsnittliga betyg för "lätt att förstå vad som händer" ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
+		\item Enkätens genomsnittliga betyg för ''lätt att förstå vad som händer'' ska åtminstone vara 6 av 10 vid en undersökning 20 deltagare.
 		
 	\end{enumerate}
 
@@ -117,7 +117,23 @@
 	\\\\
 	\textbf{Relaterat kvalitetskrav:} 3
 	\\
+
+	\subsection{Kommenteringsstandard V2***}
+	\textbf{Syfte:}	För att Cybercom med lätthet ska kunna utöka produkten ska koden vara lätt för en utomstående att sätta sig in i.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} 3
+	\\\\
+	\textbf{Utförande:} All kod som gruppen skriver ska ha förklarande kommentarer där skribenten anser att en förklaring skulle underlätta för läsaren. Ovanför varje funktion ska doc-strings skrivas som förklarar parametrarna funktionen tar in samt returvärden för funktionen.
+	Kommentaren i sig ska följa Airbnbs stil-guide som finns tillgänglig på https://github.com/airbnb/javascript.
+	****TODO FIX CORRECT REFERENCE
+	\\\\
+	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas under kodinspektionerna som måste göras innan en git-branch accepteras in till huvudprojektet. För mer detaljer gällande denna process se sektion gällande git 3.X*********TODO REFERENS.
+	\\\\
+	\textbf{Problem hantering:} Ifall det upptäcks att kod inte följer denna kommenteringsstandard så kommer personen som skrev den få uppgiften att lägga till saknade kommentarer alternativt skriva om de kommentarer som finns. Efter omskrivning ska koden inspekteras igen för att undersöka ifall den uppfyller de standarder som finns.
+	\\\\
+	\textbf{Roller:} Personen som skriver koden är ansvarig för att kommentarer skrivs på korrekt sätt. Det är personen som skriver kod som kommer att initialisera denna process och personen som granskar koden som avslutar den. Alla team medlemmar kommer anta båda rollerna och det spelar ingen roll vem som granskar den andres kod.
 	
+
 	\subsection{Kodstandard}
 	\textbf{Syfte:} För att Cybercom med lätthet ska kunna utöka produkten ska koden vara lätt för en utomstående att sätta sig in i.
 	\\\\
@@ -131,7 +147,7 @@
 	
 	Dessa aspekter lär förändras under projektets gång då nya delar läggs till och förändras i enlighet med projektets agila arbetsmetod. Kontinuerlig verifiering av dessa kvalitetskrav kommer därav behövas göras så att projektet alltid håller rätt riktning.
 	\\\\
-	\textbf{Metod:} För att kontinuerligt utvärdera dessa centrala kvalitetskrav så ska teamet vid slutet av varje spring demonstrera den senaste versionen av produkten och låta 20 personer testa att spela spelet. Dessa personer ska sedan fylla i enkät där de svarar på frågor gällande: responsitivitet, stabilitet, enkelhet att följa vad som händer på skärmen och enkelhet att använda kontroller (se appendix för en mock-enkät). Dessa fyra kriterier representerar kvalitetskrav och ges ett betyg mellan ett och tio, där tio är positivt. Vid den sista sprinten måste det genomsnittliga betyget på den sista enkäten vara åtminstone sex för frågorna gällande responsitivitet och stabilitet. De andra två kriterierna måste också få ett genomsnittligt betyg av åtminstone sex vid den sista demonstrationen. Kraven på dessa betyg kan anses låga, men de är inte vad teamet eftersträvar att nå utan ska ses som en minimum gräns för vad som måste klaras av för att produkten kan anses hålla hög kvalitet.
+	\textbf{Metod:} För att kontinuerligt utvärdera dessa centrala kvalitetskrav så ska teamet vid slutet av varje sprint demonstrera den senaste versionen av produkten och låta 20 personer testa att spela spelet. Dessa personer ska sedan fylla i enkät där de svarar på frågor gällande: responsitivitet, stabilitet, enkelhet att följa vad som händer på skärmen och enkelhet att använda kontroller (se appendix för en mock-enkät). Dessa fyra kriterier representerar kvalitetskrav och ges ett betyg mellan ett och tio, där tio är positivt. Vid den sista sprinten måste det genomsnittliga betyget på den sista enkäten vara åtminstone sex för frågorna gällande responsitivitet och stabilitet. De andra två kriterierna måste också få ett genomsnittligt betyg av åtminstone sex vid den sista demonstrationen. Kraven på dessa betyg kan anses låga, men de är inte vad teamet eftersträvar att nå utan ska ses som en minimum gräns för vad som måste klaras av för att produkten kan anses hålla hög kvalitet.
 	
 	Själva arbetsprocessen blir alltså ett demo och en enkät för att utvärdera hur väl kvalitetskraven uppfylls för tillfället. Den sista sprinten utförs demot på samma sätt, men nu så måste de ovannämnda betygen uppfyllas för att produkten ska sägas uppnå sina kvalitetskrav. Denna kontinuerliga process visar ifall projektet rör sig i rätt riktning, hur nära målet vi är, samt som ett smoke test ifall en förändring skapar en stark negativ upplevelse hos användarna.
 	\\\\
@@ -168,7 +184,7 @@
 	Teamet ska följa en tydlig kommenteringsstandard som utvärderas vid slutet av varje sprint och som kan utökas och minskas vid behov.
 	
 	\begin{itemize}
-		\item 	Ovan varje funktion ska en kommentar skrivas som beskriver vad funktionen gör, vad dess parametrar är och vad vad dess return värde är.
+		\item 	Ovan varje funktion ska en kommentar skrivas som beskriver vad funktionen gör, vad dess parametrar är och vad vad dess returvärde är.
 		\item Alla kommentarer ska vara på engelska med amerikansk stavning
 		\item Kommentarer ska skrivas ovan komplicerade stycken med målet att underlätta för läsaren.
 		\item Teamet ska skriva kommentarer i enlighet med Airbnbs JavaScript standard.
@@ -191,7 +207,7 @@
 	\end{itemize}
 	
 	\subsection{Arbetsflödet för Git}
-	Teamets arbetsflöde för git är att varje självstående funktionalitet ska arbetas på en egen gren om möjligt. Commits ska ske oftare än dagligen, och med korta men beskrivande kommentarer skriva på engelska i nutid (ex "Add this new cool feature"). När en gren ska "pushas" till master-grenen måste åtminstone en annan team medlem gå igenom grenen som ska läggas till och godkänna denna. Innan ett godkännandes ges måste inspektören ha en helhetsbild av vad som läggs till. När en gren sedan läggs till ska automatiska tester köras, som sedan kan neka en gren.
+	Teamets arbetsflöde för git är att varje självstående funktionalitet ska arbetas på en egen gren om möjligt. Commits ska ske oftare än dagligen, och med korta men beskrivande kommentarer skriva på engelska i nutid (ex ''Add this new cool feature''). När en gren ska ''pushas'' till master-grenen måste åtminstone en annan teammedlem gå igenom grenen som ska läggas till och godkänna denna. Innan ett godkännandes ges måste inspektören ha en helhetsbild av vad som läggs till. När en gren sedan läggs till ska automatiska tester köras, som sedan kan neka en gren.
 	
 	En mer utförlig beskrivning av arbetsflödet finns tillgänglig på git-repot. Där finns även en mer detaljerad beskrivning av de automatiska testerna som kommer att köras av testprogrammet Travis.
 	

@@ -1,44 +1,48 @@
 \documentclass[10pt]{article}
-
 \usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage[swedish]{babel}
+\usepackage{hyperref}
 \usepackage{color}
 \usepackage{scrextend}
+\selectlanguage{swedish}
 
-\title{Testplan}
-
+\title{Testplan\\
+  \large Projektgrupp 1}
 \author{
-	Projektgrupp 1\\
-	Joel Oskarsson\\
-	\texttt{joeos014@student.liu.se}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-	\and
-	LastName, FirstName\\
-	\texttt{first.last@xxxxx.com}
-  	\and
-  	LastName, FirstName\\
-  	\texttt{first.last@xxxxx.com}
-  	\and
-  	LastName, FirstName\\
-  	\texttt{first.last@xxxxx.com}
-  	\and
-  	LastName, FirstName\\
-  	\texttt{first.last@xxxxx.com}
+    Joel Almqvist\\
+    \texttt{joeal360@student.liu.se}
+    \and
+    Björn Detterfelt\\
+    \texttt{bjode786@student.liu.se}
+    \and
+    Tim Håkansson\\
+    \texttt{timha404@student.liu.se}
+    \and
+    David Kjellström\\
+    \texttt{davkj168@student.liu.se}
+    \and
+    Axel Löjdquist\\
+    \texttt{axelo225@student.liu.se}
+    \and
+    Joel Oskarsson\\
+    \texttt{joeos014@student.liu.se}
+    \and
+    Lieth Wahid\\
+    \texttt{liewa893@student.liu.se}
+    \and
+    Alexander Wilkens\\
+    \texttt{alewi684@student.liu.se}
 }
 
 \begin{document}
 
+\pagenumbering{gobble}
 \maketitle
 \pagebreak
 \tableofcontents
 \pagebreak
+\pagenumbering{arabic}
 \section{Inledning}
 	Den här testplanen är framtagen för att kvalitetssäkra utvecklingen av ett IoT-spel som skapas av en studentgrupp som läser kursen TDDD96 på Linköpings universitet. Planen kommer endast innefatta tester som påverkar spelet både direkt och indirekt, och som är relaterade till utvecklingen. Primärt fokus kommer ligga på att säkerställa att spelet lever upp till de förväntningar som kund har på oss. Se kravspecifikationen. Projektet är uppdelat i flera iterationer där detta dokument kommer täcka första iterationen.
 
@@ -61,15 +65,16 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 
 
 	\subsection{Definitioner}
-		\begin{itemize}
-		\item [UI] User Interface - Den del av applikationen som visar spelplanen
-		\item [Kontroller] En mobil eller surfplatta som kör kontrolldelen av applikationen
-		\item [Kund] Cybercom Sweden
-		\item [regressionstest] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
-		\item [enhetstest] Testa varje enhet så den fungerar när den är färdig
-		\item [integrationstest] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
-		\item [acceptanstest] Test för att säkerställa att enheten uppfyller kraven för projektet
-		\end{itemize}	
+  \begin{labeling}{\textbf{Integrationstest}}
+  \item [\textbf{Acceptanstest}]Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
+    \item [\textbf{Enhetstest}] Testa varje enhet så den fungerar när den är färdig
+    \item [\textbf{Integrationstest}] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
+    \item [\textbf{Kontroller}] En mobil eller surfplatta som kör kontrolldelen av applikationen
+    \item [\textbf{Kund}] Cybercom Sweden
+    \item [\textbf{Regressionstest}] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
+    \item [\textbf{Systemtest}] Test för att säkerställa att enheten uppfyller kraven för projektet		
+    \item [\textbf{UI}] User Interface - Den del av applikationen som visar spelplanen
+  \end{labeling}
 
 	
 \section{Testföremål}
