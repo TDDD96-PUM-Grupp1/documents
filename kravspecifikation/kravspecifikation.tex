@@ -67,28 +67,27 @@
 
 	\subsection{Definitioner}
 		\begin{itemize}[leftmargin=5cm]
-		\item [UI-applikationen] Applikationen som kör själva spelet
+		\item [UI-applikationen] Applikationen som tar emot kontrolldata och använder denna data för att sköta spellogik och grafik.
 		\item [Kontrollapplikationen] Applikationen som körs på en mobil eller surfplatta som styr spelet
 		\item [Sensor] En apparat eller anläggning som insamlar data. Vi syftar ej på en touch-skärm när vi refererar till en sensor.
 		\item [Spelinstans] Ett spel med en unik identifikationskod
 		\item [PWA (Progressive Web App)] Ett mellanting mellan en hemsida och en applikation. En PWA är en vanlig hemsida som beter sig som en app.
 		\item [Realtidsmultiplayerspel] Spel där flera användares handlingar har en direkt inverkan på spelets tillstånd.
 		\item [Gamemode] En variant av basspelet med eventuellt andra funktioner och regler.
+		\item [Vanliga nätverksförhållanden] En enhet med en stabil internetuppkoppling utan yttre störningar.
 		\end{itemize}	
 
 	\subsection{Parter}
 	Kunden till projektet är Cybercom Sweden. Projektet utförs av projektgruppens medlemmar.
 	
 	\subsection{Syfte \& mål}
-		Syftet med projektet är att skapa en prototyp för att demonstrera Cybercoms IoT-backend. För att kunna uppnå detta ska ett realtidsmultiplayerspel skapas. Syftet för projektgruppen är att genomföra ett kandidatarbete enligt kursen \textit{TDDD96 -- Kandidatprojekt i programvaruutveckling} mål\cite{bib-tddd96}.
+	Syftet med detta dokument är att förtydliga vad som förväntas vara klart vid projektets slut. Dokumentet fungerar som överenskommelse mellan kunden Cybercom Sweden och projektgruppen. Kraven specificerar vilken funktionallitet, kvalitet och design produkten ska uppfylla. Dokumentet utgör grunden för hur hela projektet ska struktureras och utformas. Kraven är framtagna efter Cybercom Swedens önskemål och formulerade för att ligga till stöd för projektgruppensarbete.
 	
 	\subsection{Användning}
 		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen. \\
 \\
 För att kunna använda produkten startar man UI-applikationen. Då UI-applikationen körs igång, skapas en spelinstans där en identifikationskod kommer att genereras och visas på skärmen. För att kunna ansluta sig till den spelinstansen behöver en användare starta kontrollapplikationen. Här kommer användaren behöva ange ett användarnamn samt identifikationskoden. Efter att användaren har gjort detta, är spelet redo att spelas.
-	
-	\subsection{Bakgrundsinformation}
-		Projektgruppen har tidigare läst en kurs om programutvecklingsmetodik och vill omsätta denna kunskap i praktiken. 
+
 		
 \pagebreak
 \section{Översikt av Systemet}
@@ -106,16 +105,17 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 	
 	
 	\subsection{Beroenden av andra system}
-	Produkten är beroende av Cybercoms IoT-backend då all kommunikation måste gå genom denna. Produkten är även beroende av en enhet som har tillgång till version 64 av Google Chrome. Produkten kräver även en enhet som kan köra UI-delen av systemet.
+	Produkten är beroende av Cybercoms IoT-backend då all kommunikation måste gå genom denna. Både kontroll- och UI-applikationen är beroende av en enhet som har tillgång till version 64 av Google Chrome. En enhet kan t.ex. vara en dator, surfplatta eller en mobil. Enheten måste ha en internetanslutning.
 
 \pagebreak
 \section{Krav}
-	Detta avsnitt listar alla krav som sätts på produkten. Krav med prioritet 1 förväntas vara avklarade vid projektetsslut. Krav med prioritet 2 ska arbetas mot då alla krav med prioritet 1 är avklarade.
+	Detta avsnitt listar alla krav som sätts på produkten. Krav med prioritet 1 förväntas vara avklarade vid projektetsslut. Krav med prioritet 2 ska arbetas mot då alla krav med prioritet 1 är avklarade. Kraven är uppdelade i följande kategorier: funktionella-, design- och kvalitetskrav. Varje krav består av ett unikt nummer, en beskrivning samt en prioritet.
+	
 	\subsection{Funktionella Krav}
-	Detta avsnitt listar de funktionella kraven på produkten.
+	Detta avsnitt listar de funktionella kraven på produkten. Funktionella krav deklarerar vilka beteenden och attribut produkten förväntas ha. 
 
 	\subsubsection*{Generella krav}
-	Nedan följer generella krav för hela applikationen.\\
+	Nedan följer generella krav för både kontroll- och UI-applikationen.\\
 	
 	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
 		\hline
@@ -147,7 +147,7 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 		\Krav{Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{Kontrollapplikationen ska kunna kalibrera en accelerometer.}{1}
 		\Krav{Kontrollapplikationen ska stödja alternativa styrningsmetoder i de fall sensorer saknas.}{2}
-		\Krav{Kontrollapplikationen ska stödja styrning med tagentbord och mus.}{2}
+		\Krav{Kontrollapplikationen ska stödja styrning med tangentbord och mus.}{2}
 
 	\end{tabular}
 
@@ -165,12 +165,12 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 		\Krav{UI-applikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
 		\Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare. Hårdvara, prestanda och plats på skärmen begränsar.}{2}
-		\Krav{UI-applikationen ska visa andra spelinstanser i realtid.}{2}
+		\Krav{UI-applikationen ska kunna visa det som andra UI-applikationer visar i realtid.}{2}
 						
 	\end{tabular}
 	
 	\subsection{Designkrav}
-	Detta avsnitt listar kraven på utvecklingsprocessen.\\
+	Detta avsnitt listar designkraven på produkten. Designkrav specificerar hur produkten ska utformas och ställer krav på hur utvecklingsprocessen kommer gå tillväga.  \\
 	
 	\begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
 		\hline
@@ -187,15 +187,15 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 	\end{tabular}
 \pagebreak
 	\subsection{Kvalitetskrav}
-	Detta avsnitt listar krav på kvaliten hos den slutgilitga produkten.\\
+	Detta avsnitt listar kvalitetskraven på produkten. Kvalitetskrav specificerar hur väl ett attribut hos produkten måste funktionera. D.v.s. vilka kvaliteer en lösning måste ha eller under vilka förhållanden lösningen måste fungera inom.  \\
 	
 		\begin{tabular}{|p{2cm}|p{8cm}|p{2cm}|}
 		\hline
 		\textbf{Krav nr.} & \textbf{Beskrivning} & \textbf{Prioritet} \\ \hline
 		
 		\Krav{UI-applikationen ska kunna köras i 4 timmar utan avbrott.}{1}
-		\Krav{Koden ska följa en enhetlig standard för att underlätta vidareutveckling av projektet.}{1}
-		\Krav{Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under standard nätverksförhållanden.}{1}
+		\Krav{Koden ska följa en enhetlig standard\cite{bib-kvalitetsplan} för att underlätta vidareutveckling av projektet.}{1}
+		\Krav{Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under vanliga nätverksförhållanden.}{1}
         \Krav{Enkätens\cite{bib-kvalitetsplan} genomsnittliga betyg för responsivitet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
 		\Krav{Enkätens\cite{bib-kvalitetsplan} genomsnittliga betyg för användbarhet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
 		\Krav{Enkätens\cite{bib-kvalitetsplan} genomsnittliga betyg för den alternativa styrningen ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare.}{1}
