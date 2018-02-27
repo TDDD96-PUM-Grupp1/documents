@@ -1,5 +1,6 @@
 ## Ignore pdf files
 *.pdf
+!kandidatrapport/figures/*.pdf
 
 ## Ignore vscode settings
 settings.json

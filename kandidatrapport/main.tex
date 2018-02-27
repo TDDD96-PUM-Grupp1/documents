@@ -1,33 +1,33 @@
-%%% demothesis.tex --- 
-%% 
+%%% demothesis.tex ---
+%%
 %% Filename: demothesis.tex
-%% Description: 
+%% Description:
 %% Author: Ola Leifler
-%% Maintainer: 
+%% Maintainer:
 %% Created: Thu Oct 14 12:52:20 2010 (CEST)
 %% Version: $Id$
-%% Version: 
+%% Version:
 %% Last-Updated: Wed Jun 28 10:57:24 2017 (+0200)
 %%           By: Ola Leifler
 %%     Update #: 169
-%% URL: 
-%% Keywords: 
-%% Compatibility: 
-%% 
+%% URL:
+%% Keywords:
+%% Compatibility:
+%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
-%%% Commentary: 
-%% 
-%% 
-%% 
+%%
+%%% Commentary:
+%%
+%%
+%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
+%%
 %%% Change log:
-%% 
-%% 
+%%
+%%
 %% RCS $Log$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
+%%
 %%% Code:
 
 \documentclass[msc,lith,swedish]{liuthesis}
@@ -47,18 +47,26 @@
 
 % Include an external supervisor on the cover page
 % \externalsupervisor{Min företagshandledare}
-\supervisor{Min handledare}
-\examiner{Min examinator}
-\titleenglish{A very very long title}
+\supervisor{Carl Brage}
+\examiner{Kristian Sandahl}
+\titleenglish{Realtime Multiplayer Game on IoT-Backend}
 \subtitleenglish{with a subtitle}
-\titleswedish{En himla bra svensk titel}
+\titleswedish{Realtidsultiplayerspel på IoT-Backend}
 \thesissubject{Datateknik}
 
-\publicationyear{2017}
+\publicationyear{2018}
 \currentyearthesisnumber{001}
 \dateofpublication{2015-05-08}
 
-\author{Författaren}
+%\author{Författaren}
+\author{\parbox{\textwidth}{Joel Almqvist\\
+   Björn Detterfelt\\
+   Tim Håkansson\\
+   David Kjellström\\
+   Axel Löjdquist\\
+   Joel Oskarsson\\
+   Lieth Wahid\\
+   Alexander Wilkens}}
 
 % Two authors
 % \author{\parbox{\textwidth}{Ola Leifler\\
@@ -69,6 +77,7 @@
 \chapterstyle{VZ43}
 
 \include{intro}
+\include{background}
 \include{theory}
 \include{method}
 \include{results}
@@ -76,6 +85,7 @@
 \include{conclusion}
 \appendix
 \input{individuall/tim/tim-main}
+\input{individuall/joel_o/joel_o-main}
 
 \printbibliography
 
@@ -83,4 +93,3 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% demothesis.tex ends here
-
