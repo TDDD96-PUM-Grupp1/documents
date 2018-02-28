@@ -22,6 +22,10 @@
 	\renewcommand\appendixtocname{Appendix}
 }
 
+\newcommand{\History}[3]{
+	\centering #1 & #2 & #3 \\ \hline
+}
+
 \graphicspath{ {images/} }
 \selectlanguage{swedish}
 \addbibresource{../references.bib}
@@ -34,13 +38,17 @@
 \setlength{\parindent}{0pt}
 
 \begin{document}
+    \pagenumbering{gobble}
 		\input{titel}
 		\pagebreak
+    \input{dokumenthistorik}
+    \pagebreak
 
 		\tableofcontents
 		\listoffigures
 		\pagebreak
 
+    \pagenumbering{arabic}
 		\input{inledning}
 		\pagebreak
 
