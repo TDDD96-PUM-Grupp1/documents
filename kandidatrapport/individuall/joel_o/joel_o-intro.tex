@@ -1,80 +1,32 @@
 \section{Introduktion}
 \label{sec:joel_o-introduction}
+Tanken med arbetet är att undersöka beroenden till paket i javascript-projekt. I de flesta moderna mjukvaruprojekt som utvecklas i javascript används node package manager för få tillgång till stora mängder färdig kod. Detta gör att projekten får stora beroenden till en kodbas som man inte har direkt kontroll över. I detta arbete vill jag utvärdera kvantitativt hur stora dessa beroenden är, samt hur detta påverkar mjukvarukvalitet och utvecklingsprocessen.
 
-The introduction shall be divided into these subsections:
-
-\subsection{Motivation}
-\label{subsec:motivation}
-
-% \cite{scigen}
-
-This is where the studied problem is described from a general
-point of view and put in a context which makes it clear that
-it is interesting and well worth studying. The aim is to make
-the reader interested in the work and create an urge to
-continue reading.
-
-\subsection{Mål}
-\label{subsec:aim}
-
-
-What is the underlying purpose of the thesis project?
+\subsection{Syfte}
+Undersöka beroenden för att bli mer medveten om effekterna av dessa. Förstå hur dessa effekter påverkar existerande mjukvara skriven i javascript.
 
 \subsection{Frågeställning}
-\label{subsec:research-questions}
-
-
-This is where the research questions are described.
-Formulate these as explicit questions, terminated with a
-question mark. A report will usually contain several different
-research questions that are somehow thematically connected.
-There are usually 2-4 questions in total.
-
-Examples of common types of research questions (simplified
-and generalized):
+\label{subsec:joel_o-research-questions}
+Här är några idéer till frågeställningar. Dessa kan behöva begränsas yttterligare.
 
 \begin{enumerate}
-\item How does technique X affect the possibility of achieving the
-  effect Y?
+\item Hur många direkta beroenden finns i populära open-source javascript-projekt?
 
-\item How can a system (or a solution) for X be realized so
-  that the effect Y is achieved?
+\item Hur många indirekta beroenden finns i populära open-source javascript-projekt?
 
-\item What are the alternatives to
-  achieving X, and which alternative gives the best effect considering
-  Y and Z? (This research question is normally broken down in to 2
-  separate questions.)
+\item Hur påverkar beroenden till färdiga paket utvecklingsprocessen för javascript-projekt?
+
+\item Hur påverkar beroenden till färdiga paket olika kvalitetsattribut för mjukvara skriven i javascript?
+
+\item (Hur har beroenden i javascript-projekt förändrats historiskt?)
 
 \end{enumerate}
 
-
-Observe that a very specific research question almost always
-leads to a better thesis report than a general research question
-(it is simply much more difficult to make something good
-from a general research question.)
-
-The best way to achieve a really good and specific research
-question is to conduct a thorough literature review and get
-familiarized with related research and practice. This leads to
-ideas and terminology which allows one to express oneself
-with precision and also have something valuable to say in the
-discussion section. And once a detailed research question
-has been specified, it is much easier to establish a suitable
-method and thus carry out the actual thesis work much faster
-than when starting with a fairly general research question. In
-the end, it usually pays off to spend some extra time in the
-beginning working on the literature review. The thesis
-supervisor can be of assistance in deciding when the research
-question is sufficiently specific and well-grounded in related
-research.
-
 \subsection{Avgränsingar}
-\label{subsec:delimitations}
+\label{subsec:joel_o-delimitations}
+För att göra det möjligt att få fram tillräckliga mängder information bör arbetet begränsas till open-source projekt. Beroenden i dessa kan hittas på exempelvis github.
 
-This is where the main delimitations are described. For
-example, this could be that one has focused the study on a
-specific application domain or target user group. In the
-normal case, the delimitations need not be justified.
+Undersökningen kommer också behöva begränsas till projekt som använder pakethanteraren npm eller andra inom ekosystemet Node.js.
 
 %\nocite{scigen}
 %We have included Paper \ref{art:scigen}
