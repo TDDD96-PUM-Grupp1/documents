@@ -40,33 +40,30 @@
 \pagenumbering{gobble}
 \maketitle
 \pagebreak
+	\section*{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | p{12cm} |  }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+		\hline
+ 	       \centering 1.0 & 2018-02-12 & Iteration 2\\
+ 	       \hline
+ 	   \end{tabular}
+	\end{center}
+\pagebreak
 \tableofcontents
 \pagebreak
 
 \pagenumbering{arabic}
 \section{Inledning}
      I detta dokument kommer Integrationstesterna beskrivas i större detalj.
-	\subsection{Revisionshistorik}
 
-	
-	\begin{center}
- 	   \begin{tabular}{| l | l | l |  l | }
- 	       \hline
- 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} & \textbf{Ansvarig} \\
- 	       \hline
- 	       \centering 0.1 & 2018-02-18 & Första utkast & David Kjellström\\
- 	       \hline
- 	   \end{tabular}
-	\end{center}
 
   \input{definitioner}
-	
-	\subsection{Referenser}
-		\begin{itemize}
-		\item [1] Kravspecifikation
-		\item [2] Projektplan
-		\item [3] Kvalitetsplan
-		\end{itemize}
 
 	
 \section{Testföremål}
@@ -78,46 +75,47 @@
 
 
 
-\section{Tillvägagångssätt {\color{red}TODO}}
+\section{Tillvägagångssätt}
 	Under projektets gång kommer de enheter som utvecklas parallellt skapas på olika branches i git. När enheterna börjar bli redo att implementeras på projektet kommer konfigurationsansvarig att överse mergen mellan de olika grenarna.\\
 	\\
-	Testerna som följer kommer skapas med konfigurationsansvarig i spetsen uppbackad av de gruppmedlemmar som hjälpt till att utveckla den del av produkten som är i fokus.
+	Testerna som följer kommer skapas med konfigurationsansvarig i spetsen uppbackad av de gruppmedlemmar som hjälpt till att utveckla den del av produkten som är i fokus. Under testningen kommer det ske whiteboxtesting för att se till att samtliga funktioner sammankopplade fungerar som de ska. 
 
 
-	
-	
 
-\section{Föremåls godkännande/misslyckande kriterier {\color{red}TODO}}
-	
-
-
-\section{Avbrott och fortsättningskriterier {\color{red}TODO}}
+\section{Avbrott och fortsättningskriterier}
+	Om ett whiteboxtest inte fungerar som det ska kommer testningen avbrytas tills felet är åtgärdat och testningen kommer börja om från början. 
 	
 
 
-\section{Test leveranser {\color{red}TODO}}
-
+\section{Test leveranser}
+	Vid varje integration kommer det levereras nya automatiska tester designade för att testa samtliga moduler inblandade. Testerna ska vara utformade på så sätt att de testar övergripande funktionalitet för regressionstestning. Problemrapporter kommer skapas om integrationen stöter på större problem.
 
 	
 
 	
 
 \section{Ansvarsområden}
-	Integrationstesterna kommer konfigurationsansvariga till största del att implementera. Samtliga andra gruppmedlemmar kommer som vid andra tester att vara behjälpliga vid integrationen för att den ska gå smidigt. 
+	Integrationstesterna kommer konfigurationsansvarig och de som skapade enheterna till största del att implementera. Samtliga andra gruppmedlemmar kommer som vid andra tester att vara behjälpliga vid integrationen för att den ska gå smidigt. 
 
 
 	
 	
 	
-\section{Godkännande {\color{red}TODO}}
+\section{Godkännande}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
-	 \item Viktiga integrationssaker!!!
+	 \item Enhetstesterna som godkändes innan integration ska godkännas efter.
+	\item Automatiska test ska ha skapats för regressionstestning mellan enheterna i fråga. 
 	\end{itemize}
 	
 
 
-
+\section{Referenser}
+	\begin{itemize}
+	\item [1] Grupp 1. Kravspecifikation. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\item [2] Grupp 1. Projektplan. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\item [3] Grupp 1. Kvalitetsplan. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\end{itemize}
 
 
 
