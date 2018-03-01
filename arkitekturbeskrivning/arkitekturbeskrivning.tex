@@ -13,6 +13,8 @@
 \usepackage{filecontents}
 \usepackage{enumitem}
 
+\usepackage[section]{placeins}
+
 \input{../projectdefinitions.tex}
 
 %Skriv över engelska namn för appendix
@@ -71,5 +73,7 @@
 
 		\begin{appendices}
 				\input{koncept_appendix}
+        \pagebreak
+        \input{implementation_appendix}
 		\end{appendices}
 \end{document}
