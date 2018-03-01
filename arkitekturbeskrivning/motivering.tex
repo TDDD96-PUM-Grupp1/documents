@@ -11,23 +11,23 @@ Kraven återfinns i dokumentet kravspecifikation \cite{bib-kravspec}. Notera att
         \hline
         1 & Då prestandan på enheten som kör kontroll-applikationen är begränsad bör arkitekturen för denna hållas enkel och liten. Kontroll-applikationen bör efterlikna en tunn klient.\\
         \hline
-        2 & För att klara av flera klienter är det bra om kommunikationen i UI-applikationen sker på en robust, specialiserad komponent.\\
+        3 & UI-Applikationen bör kunna lägga till spelare utan att det stör spelets flöde.\\
         \hline
-        3 & En komponent för att visa upp ett grafiskt gränssnitt bör finnas i kontroll-applikationen.\\
+        4 & Delen av systemet som finns på IoT-backenden måste hantera och identifiera olika instanser av UI-Applikationen.\\
         \hline
-        6 & All speldata som går ut från UI-applikationen bör gå genom ett gemensamt gränssnitt.\\
+        5 & En komponent för att generera och hantera de olika identifikationskoderna bör existera.\\
         \hline
-        9 & UI-Applikationen bör kunna lägga till spelare utan att det stör spelets flöde.\\
+        8 & En komponent för att visa upp ett grafiskt gränssnitt bör finnas i kontroll-applikationen.\\
         \hline
-        10 & Delen av systemet som finns på IoT-backenden måste hantera och identifiera olika instanser av UI-Applikationen.\\
+        18 & För att klara av flera klienter är det bra om kommunikationen i UI-applikationen sker på en robust, specialiserad komponent.\\
         \hline
-        16 & En komponent för att generera och hantera de olika identifikationskoderna bör existera.\\
+        21 & All speldata som går ut från UI-applikationen bör gå genom ett gemensamt gränssnitt.\\
         \hline
-        26, 27 & Programspråket Javascript sätter vissa begränsningar på hur parallell exekvering kan implementeras.\\
+        25, 26 & Programspråket Javascript sätter vissa begränsningar på hur parallell exekvering kan implementeras.\\
         \hline
-        33 & Arkitekturen bör isolera komponenter på ett sätt som motverkar att fel sprids igenom systemet.\\
+        32 & Arkitekturen bör isolera komponenter på ett sätt som motverkar att fel sprids igenom systemet.\\
         \hline
-        35 & Vägen genom arkitekturen då användaren ansluter till en spelsession bör hållas kort.\\
+        34 & Vägen genom arkitekturen då användaren ansluter till en spelsession bör hållas kort.\\
         \hline
     \end{tabular}
 \end{center}
