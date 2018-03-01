@@ -1,0 +1,96 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage[swedish]{babel}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{scrextend}
+\selectlanguage{swedish}
+\input{../projectdefinitions.tex}
+
+\title{Testrapport\\
+    \large Projektgrupp 1}
+\author{
+    Joel Almqvist\\
+    \texttt{joeal360@student.liu.se}
+    \and
+    Björn Detterfelt\\
+    \texttt{bjode786@student.liu.se}
+    \and
+    Tim Håkansson\\
+    \texttt{timha404@student.liu.se}
+    \and
+    David Kjellström\\
+    \texttt{davkj168@student.liu.se}
+    \and
+    Axel Löjdquist\\
+    \texttt{axelo225@student.liu.se}
+    \and
+    Joel Oskarsson\\
+    \texttt{joeos014@student.liu.se}
+    \and
+    Lieth Wahid\\
+    \texttt{liewa893@student.liu.se}
+    \and
+    Alexander Wilkens\\
+    \texttt{alewi684@student.liu.se}
+}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+
+
+\maketitle
+\pagebreak
+	\section*{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | p{12cm} |  }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+		\hline
+ 	   \end{tabular}
+	\end{center}
+
+	
+	
+\pagebreak
+\tableofcontents
+\pagebreak
+\pagenumbering{arabic}
+
+\section{Inledning}
+
+\subsection{Syfte}
+Syftet med denna testrapport är att sammanställa och utvärdera de tester som utförts under utvecklingen utav IoT-spelet. 
+  \input{definitioner}
+
+\section{Metod}
+
+\section{Resultat}
+\section{Iterationer}
+Detta kapitel ger en överskådlig blick över resultaten av testningen under varje iteration.
+\subsection{Iteration 1}
+Under projektets första iteration utfördes inget utvecklingsarbete och därför har inga tester utförts. Endast dokumentskrivning förekom under denna iteration.
+\subsection{Iteration 2}
+Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning,
+
+\section{Enhetstestrapport}
+\section{Integrationstestrapport}
+\section{Systemtestrapport}
+\section{Acceptanstestrapport}
+	
+
+\section{Referenser}
+	\begin{itemize}
+	\item [1] Grupp 1. Kravspecifikation. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\item [2] Grupp 1. Projektplan. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\item [3] Grupp 1. Kvalitetsplan. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\end{itemize}
+	
+\end{document}
