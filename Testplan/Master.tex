@@ -5,6 +5,12 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{scrextend}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
+
+
+
+
+\addbibresource{../references.bib}
 \selectlanguage{swedish}
 \input{../projectdefinitions.tex}
 
@@ -116,29 +122,34 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 	För mer information om varje modul, se respektive testplan.
 	
 \subsection{Iteration 2}
-	Iteration 2 är påbörjan utav utvecklingen och kommer till största del bestå utav enhetstester där utvecklarna gör sina egna manuella tester. Vidare ska något eller några automatiska tester ha påbörjats för att bygga upp ett bibliotek av funktionstester som körs vid regressionstestning. Planen för första iterationen är att skapa grundläggande kommunikation mellan de olika delarna så testen kommer skapas därutefter. 
+	Iteration 2 är påbörjan utav utvecklingen och kommer till största del bestå utav enhetstester där utvecklarna gör sina egna manuella tester. Vidare ska något eller några automatiska tester ha påbörjats för att bygga upp ett bibliotek av funktionstester som körs vid regressionstestning. Planen för första iterationen är att skapa grundläggande kommunikation mellan de olika delarna så testen kommer skapas därutefter.
+	\\
+	Väldigt få tester kommer att genomföras under denna iteration då de kommer vara svåra att definiera pga att det är en web-applikation som utvecklas. Tester kommer bli mer genomgående när servern är klart.
 	
 \subsection{Iteration 3}
+	I iteration 3 kommer huvudfokus ligga på att vidareutveckla applikationen för att få mer funktionalitet. Gruppen ska lägga mer tid på att skapa tester vilket kommer förenkla framtidiga utveckling. 
 	
 	
 	
 
 \section{Föremåls godkännande/misslyckande kriterier}
 	\subsection{Backend}
-		För att backend ska vara godkänd måste den uppnå de krav på hastighet som kan hittas i kravspecifikationen {\color{red}[1]}. All kommunikation ska gå över backend och för att samtliga krav ska bli uppfyllda måste de godkännas enligt kvalitetsplanen  {\color{red}[3]}.
+		För att backend ska vara godkänd måste den uppnå de krav på hastighet som kan hittas i kravspecifikationen \cite{bib-kravspec}. All kommunikation ska gå över backend och för att samtliga krav ska bli uppfyllda måste de godkännas enligt kvalitetsplanen  \cite{bib-kvalitetsplan}.
 
 	\subsection{Kontroller och UI}
-		För att kontroller och UI-delen ska vara godkänd krävs det att den kan köras på Chrome, version 64. För godkännande av Kontroller måste den godkännas enligt kvalitetsplanen {\color{red}[3]}, där en enkät genomförs mot en testgrupp som besvarar frågor angående responsivitet, stabilitet och användarvänlighet.
+		För att kontroller och UI-delen ska vara godkänd krävs det att den kan köras på Chrome, version 64. För godkännande av Kontroller måste den godkännas enligt kvalitetsplanen \cite{bib-kvalitetsplan}, där en enkät genomförs mot en testgrupp som besvarar frågor angående responsivitet, stabilitet och användarvänlighet.
 
 
 
 \section{Avbrott och fortsättningskriterier}
-	Om något av de hårda kraven i kravspecifikationen {\color{red}[1]} misslyckas, avbryts vidareutveckling av produkten tills kravet åter är uppfyllt. Om kravet av någon anledning skulle visa sig vara ouppnåeligt kommer kravspecifikationen kommer problemet diskuteras internt för att sedan ta diskussionen vidare till kund. 
+	Om något av de hårda kraven i kravspecifikationen \cite{bib-kravspec} misslyckas, avbryts vidareutveckling av produkten tills kravet åter är uppfyllt. Om kravet av någon anledning skulle visa sig vara ouppnåeligt kommer kravspecifikationen kommer problemet diskuteras internt för att sedan ta diskussionen vidare till kund. 
 
 
 
 \section{Test leveranser}
 	I slutet av varje sprint ska en testrapport lämnas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.
+	\\
+	I samband med leveranser kommer även testfall levereras på de olika tester som genomförts. 
 
 
 	
@@ -154,7 +165,7 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 	\end{itemize}
 
 \section{Ansvarsområden}
-	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet {\color{red}[2]}. Dock betyder inte detta att t.ex. testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen. \\
+	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet \cite{bib-projektplan}. Dock betyder inte detta att t.ex. testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen. \\
 	En av poängerna med projektet är att utbilda sig, så var och en i projektet kommer få prova på det mesta. För stora beslut gällande testning ska vi rösta demokratiskt över vad som är mest lämpligt, vilket fördelar ansvaret på samtliga medlemmar.
 	
 
@@ -173,12 +184,6 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 	 \item Acceptanstestplanen ska ha använts och godkänts på samtliga punkter.
 	\end{itemize}
 	
+\printbibliography	
 
-\section{Referenser}
-	\begin{itemize}
-	\item [1] Grupp 1. Kravspecifikation. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\item [2] Grupp 1. Projektplan. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\item [3] Grupp 1. Kvalitetsplan. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\end{itemize}
-	
 \end{document}

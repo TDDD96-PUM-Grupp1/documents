@@ -5,8 +5,17 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{scrextend}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
+\usepackage{multirow}
+
+\newcounter{indexcounter}
+\newcommand{\Krav}[2]{
+	\stepcounter{indexcounter}
+	Krav \arabic{indexcounter} & #1 & #2 \\ \hline
+}
 \selectlanguage{swedish}
 \input{../projectdefinitions.tex}
+
 
 \title{Systemtestplan\\
     \large Projektgrupp 1}
@@ -69,8 +78,100 @@
 	
 \section{Testföremål}
 	Ett systemtest kommer skapas för varje krav i kravspecifikationen.
-
+	\\
+  \subsection{Kravtest}
+  För ett godkänt systemtest ska samtliga av nedanstående tester vara godkända. \\
+  
+  \begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
 	
+  \hline
+    \multicolumn{3}{|c|}{Systemtester}\\
+    \hline
+		Krav 2&UI-applikationen ska endast kommunicera med \newline kontrollapplikationen via Cybercoms IoT-backend.&1\\
+		\hline
+		Krav 3& En användare ska kunna ansluta sig till en spelinstans. & 1 \\
+		\hline
+		Krav 7& En spelare ska ha möjligheten att rösta på vilket gamemode som ska spelas. & 2 \\
+		\hline
+		Krav 12& Kontrollapplikationen ska ansluta sig till en spelinstans genom att välja en spelinstans från en lista. & 1 \\
+		\hline
+		Krav 14& Kontrollapplikationen ska kommunicera med Cybercoms IoT-backend. & 1 \\
+		\hline
+		Krav 21& UI-applikationen ska kommunicera med Cybercoms IoT-backend. & 1 \\
+		\hline
+		Krav 24& UI-applikationen ska kunna visa det som andra UI-applikationer visar i realtid. & 2 \\
+		\hline
+		Krav 32& UI-applikationen ska kunna köras i 4 timmar utan avbrott. & 1 \\
+		\hline
+		Krav 34& Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under vanliga nätverksförhållanden. & 1 \\
+		\hline
+
+   
+  \end{tabular}
+  \begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
+	
+  \hline
+    \multicolumn{3}{|c|}{Enhetstester}\\
+    \hline
+    
+		Krav 1&En mobil eller surfplatta ska användas som spelkontroll för spelet.&1\\
+		\hline
+		Krav 4& Flera instanser av spelet ska kunna köras samtidigt. & 1 \\
+		\hline
+		Krav 5& En unik slumpmässig identifikationskod ska genereras för en spelinstans. &  1 \\
+		\hline
+		Krav 6& Spelet ska stödja flera gamemodes. & 2 \\
+		\hline
+		Krav 8& Kontrollapplikationen ska ha ett grafiskt gränssnitt. & 1 \\
+		\hline
+		Krav 9& Spelaren ska kunna sätta ett användarnamn. & 1 \\
+		\hline
+		Krav 10& Om en spelare inte anger ett användarnamn, ska ett användarnamn ges till spelaren. & 1 \\
+		\hline
+		Krav 11& Kontrollapplikationen ska köras på en enhet som har minst version 64 av Google Chrome. & 1 \\
+		\hline
+		Krav 13& Kontrollapplikationen ska ha en sökruta, för att kunna söka bland de olika spelinstanserna. & 1 \\
+		\hline
+		Krav 15& Kontrollapplikationen ska kunna kalibrera en accelerometer. & 1 \\
+		\hline
+		Krav 16& Kontrollapplikationen ska stödja alternativa styrningsmetoder i de fall sensorer saknas. & 2 \\
+		\hline
+		Krav 17& Kontrollapplikationen ska stödja styrning med tangentbord och mus. & 2 \\
+		\hline
+		Krav 18& UI-applikationen ska stödja minst fem spelare samtidigt. & 1 \\
+		\hline
+		Krav 19& UI-applikationen ska ha ett grafiskt gränssnitt. & 1 \\
+		\hline
+		Krav 20& UI-applikationen ska kunna köras på en enhet som har minst version 64 av Google Chrome. & 1 \\
+		\hline
+		Krav 22& UI-applikationen ska visa en unik kod för sin spelinstans. & 1 \\
+		\hline
+		Krav 23& UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare. Hårdvara, prestanda och plats på skärmen begränsar. & 2 \\
+		\hline
+
+
+   
+  \end{tabular}
+  
+  \begin{tabular}{| p{2cm} | p{8cm} | p{2cm}|}
+	
+  \hline
+    \multicolumn{3}{|c|}{Acceptanstester}\\
+    \hline
+
+
+		Krav 35& Enkätens\cite {bib-kvalitetsplan} genomsnittliga betyg för responsivitet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare. & 1 \\
+		\hline
+		Krav 36& Enkätens\cite {bib-kvalitetsplan} genomsnittliga betyg för användbarhet ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare. & 1 \\
+		\hline
+		Krav 37& Enkätens\cite {bib-kvalitetsplan} genomsnittliga betyg för den alternativa styrningen ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare. & 1 \\
+		\hline
+		Krav 38&Enkätens\cite{bib-kvalitetsplan} genomsnittliga betyg för ''lätt att förstå vad som händer'' ska åtminstone vara 6 av 10 vid en undersökning av 20 deltagare. & 1 \\
+		\hline
+
+   
+  \end{tabular}
+  
 	
 	
 
@@ -121,7 +222,6 @@
 	\item [2] Grupp 1. Projektplan. Tekn. rapport. Linköpings universitet, febr. 2018.
 	\item [3] Grupp 1. Kvalitetsplan. Tekn. rapport. Linköpings universitet, febr. 2018.
 	\end{itemize}
-
 
 
 \end{document}
