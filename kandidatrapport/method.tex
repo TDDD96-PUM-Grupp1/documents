@@ -30,7 +30,7 @@
 %%
 %%% Code:
 
-\chapter{Method}
+\chapter{Metod}
 \label{cha:method}
 Det här kapitlet beskriver hur projektet har utförts samt beskrivningar av de metoder och verktyg som använts för de olika områden projektet omfattar.
 
@@ -67,13 +67,23 @@ Konfigurationsansvarig ansvarar för generell versionshantering i projektet. Arb
 \section{Utvecklingsmetodik}
 
 \subsection{Projektfaser}
-Projektet uppdelades i 4 iterationer.
+Projektet uppdelades i 4 faser.
 
 \subsubsection*{Förestudier}
-\subsubsection*{Utveckling}
-\subsubsection*{???}
-\subsubsection*{???}
+Första fasen under projektet var att göra diverse förstudier inför projektet. Detta inkluderar skrivandet av diverse dokument som beskrivs under avsnitt \ref{sec:method-documentation}. Dessutom gjordes individuella studier om JavaScript och olika bibliotek så alla lättare ska kunna börja arbeta under utvecklingen. I slutet av förstudierna gav även en workshop av Cypercom om deras backend 
 
+\subsubsection*{Utveckling}
+Själva utvecklingen utfördes mestadels på Cybercoms kontor för att teamet lättare skulle kunna ställa frågor till funderingar som kom upp. Samtidigt som det gav teamet ett ställe att arbeta på gemensamt.
+
+{
+  \color{red}
+
+\subsubsection*{Finslipning?}
+Under denna fasen finslipades diverse funktioner för att ge användaren en bättre upplevelse när de spelar spelet.
+
+\subsubsection*{Efterstudier?}
+Efter projektet gjordes efterstudier för att granska det resultat teamet fick för att göra en utvärdering av projektet.
+}
 \subsection{Sprint}
 Trello användes för att organisera varje sprint i projektet. Ett trello-board för en sprint bestod av kolumerna TODO, currently doable, in progress, stalled och done. Under TODO hamnade alla aktiviteter projektgruppen kunde producera, aktiviteter kunde läggas till denna kolumn under en pågående sprint. TODO kolumnen kan liknas med en product backlog i Scrum. I kolumnen currently doable hamnade alla aktiviter som förväntades bli klara till en sprints slut. Varje aktivitet bestod av två attribut, prioritet och tidsestimering. Dessa attribut sattes när en sprint planerades och hjälpte gruppen att belasta varje sprint med en bra mängd aktiviteter. Under rubriken in progress hamnade alla aktiviteter som en eller flera projektmedlemmar arbetade med. I stalled kolumnen hamnade alla aktiviterer som påbörjats men pausats på grund av andra prioriteringar. I Done kolumnen hamnade alla aktiviteter som blvit avklarade. Kolumnen användes för att utvärdera sprinten och fungerade som en log över vad som hade gjorts.
 
@@ -85,12 +95,17 @@ En gemensam Google kalender skapades där alla möten samt viktiga moment lades 
 
 \subsection{Utbildning}
 
+
 \subsection{Kommunikation}
 Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom rollerna team ledare och analysansvarig. Slack användes för både den interna- och externa kommunikationen under projektetsgång. En Slack arbetsplats skapades, där enbart projektgruppen var medverkande i, skedde majoriteten av all den interna kommunikationen. Olika kanaler skapades på denna Slack arbetsplats för att diskutera olika ärenden och hålla kommunikationen strukturerad. Det fanns ytterligare en slack arbetsplats där både projektgruppen och kunden medverkade i, på denna arbetsplats skedde majoriteten av den externa kommunikationen med kunden. Även denna arbetsplats var uppdelad i olika kanaler, frågor och allmänt. Tanken bakom frågor kanalen var att projektgruppen kunde fylla kanalen med frågor rörande utvecklingen och kunden kunde bearbeta frågorna när de hade tid. Allmänt kanalen användes för all övrig kommunikation.
 
 \subsection{Versionshantering}
+Git användes för att versionshantera våran kod. Själva gitrepot lagrades på GitHub för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan GitHub hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på mastern. 
+
+Utöver det så fungerar master-branchen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna branch. För att garantera detta laddades aldrig kod upp direkt till branchen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en request ska bli godkänd ska granskaren läsa igenom koden och testa relevanta områden för att garantera att det fungerar som det ska.
 
 \section{Dokumentation}
+\label{sec:method-documentation}
 Det här avsnittet beskriver vilka verktyg som har använts för att dokumentera projektgruppens arbete samt vilka dokument som har producerats och dess syften.
 
 \subsubsection*{Projektplan}
@@ -125,7 +140,7 @@ Testplanen beskriver hur de olika delarna av produkten ska testas och även hur 
 Projektgruppen producerade och undertecknade ett gruppkontrakt[gruppkontrakt] som skrevs vid ett tidigt stadie för att förtydliga vad som förväntades av varje gruppmedlem.
 
 \subsubsection*{Tidrapport}
-Tidrapporteringen under projektet skedde i ett excelblad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs in fick inte överstiga två timmar och arbetspass som varade längre skrevs som två olika arbetstillfällen. I och med detta kunde även ett burndown-chart genereras för att få en bättre uppfattning om hur teamet ligger till i tidsåtgång.
+Tidrapporteringen under projektet skedde i ett excelblad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs ner fick inte överstiga två timmar och arbetspass som varade längre skrevs som två eller flera olika arbetstillfällen. Detta för att få en bättre bild av vad som har jobbats på under arbetspassen. I och med tidrapporteringen kunde även ett burndown-chart genereras för att få en bättre uppfattning om hur teamet ligger till i tidsåtgång.
 
 \subsubsection*{Mötesprotokoll}
 Under projektet hölls olika möten för att diskutera saker som har kommit upp. Dessa behövdes dokumenteras vilket gjordes med hjälp av en mötesprotokollmall som fylldes ut under varje möten.
