@@ -34,23 +34,15 @@
 \label{cha:method}
 Det här kapitlet beskriver hur projektet har utförts samt beskrivningar av de metoder och verktyg som använts för de olika områden projektet omfattar.
 
-\section{Utvecklingsverktyg för produkt}
-Det här avsnittet redovisar vilka verktyg projektgruppen har använt för att utveckla produkten samt hur projektgruppen har använt sig av dessa verktyg.
-
-\subsection*{React}
-Ramverket React användes för att utveckla UI-applikationen samt kontroller-applikationen. Ett krav från kunden var att produkten skulle skrivas i JavaScript. React är ett Javascript biblotek som bidrar med mycket funktionallitet vilket underlättar utveckladet av användargränssnittet.  Detta bestämdes tidigt i projektet då vissa projektmedlemmar hade tidigare erfarenheter med React ramverket.
-
-\subsection*{Yarn}
-
-\subsection*{Node.js}
-Node.js är en exekveringsmiljö för Javascript. Nodes.js ger funktionallitet att emulera en server med sin applikation på lokalt på sin dator. Att Node.js skulle användas var ett krav från kunden.
-
 \section{Utvecklingsmetodik}
-Det här avsnittet förklarar hur projektgruppen är strukturerad. Avsnittet beskriver även vilka metoder och verktyg som har använts för att sköta den interna kommunikationen och utvecklingssmetodiken för projektgruppen.
+Det här avsnittet förklarar hur projektgruppen är strukturerad. Avsnittet beskriver även vilka metoder och verktyg som har använts för att sköta den interna kommunikationen och förklarar utvecklingssmetodiken projektgruppen har följt.
 
 \subsection*{Scrum}
+Projektgruppen beslutade tidigt att 
+
+
 \subsection*{Trello}
-Trello användes för att organisera varje sprint i projektet. Det skapades en product-backlog 
+Trello användes för att organisera varje sprint i projektet. Ett trello-board för en sprint bestod av kolumerna TODO, currently doable, in progress, stalled och done. Under TODO hamnade alla aktiviteter projektgruppen kunde producera, aktiviteter kunde läggas till denna kolumn under en pågående sprint. TODO kolumnen kan liknas med en product backlog i Scrum. I kolumnen currently doable hamnade alla aktiviter som förväntades bli klara till en sprints slut. Varje aktivitet bestod av två attribut, prioritet och tidsestimering. Dessa attribut sattes när en sprint planerades och hjälpte gruppen att belasta varje sprint med en bra mängd aktiviteter. Under rubriken in progress hamnade alla aktiviteter som en eller flera projektmedlemmar arbetade med. I stalled kolumnen hamnade alla aktiviterer som påbörjats men pausats på grund av andra prioriteringar. I Done kolumnen hamnade alla aktiviteter som blvit avklarade. Kolumnen användes för att utvärdera sprinten och fungerade som en log över vad som hade gjorts.
 
 \subsection*{Slack}
 Slack användes för både den interna- och externa kommunikationen under projektetsgång. En Slack arbetsplats skapades, där enbart projektgruppen var medverkande i, skedde majoriteten av all den interna kommunikationen. Olika kanaler skapades på denna Slack arbetsplats för att diskutera olika ärenden och hålla kommunikationen strukturerad. Det fanns ytterligare en slack arbetsplats där både projektgruppen och kunden medverkade i, på denna arbetsplats skedde majoriteten av den externa kommunikationen med kunden. Även denna arbetsplats var uppdelad i olika kanaler, frågor och allmänt. Tanken bakom frågor kanalen var att projektgruppen kunde fylla kanalen med frågor rörande utvecklingen och kunden kunde bearbeta frågorna när de hade tid. Allmänt kanalen användes för all övrig kommunikation.
@@ -94,7 +86,36 @@ Konfigurationsansvarig ansvarar för generell versionshantering i projektet. Arb
 
 \section{Dokumentation}
 Det här avsnittet beskriver vilka verktyg som har använts för att dokumentera projektgruppens arbete samt vilka dokument som har producerats och dess syften.
-\subsection*{Document}
+
+\subsection*{Dokument}
+\subsubsection*{Projektplan}
+Projektplan består av en beskrivning utav projektet, 
+resurser som teamet har tillgång till, processer som kommer användas och risker inom projektet.
+Dessutom beskrivs en aktivitetsplan som översiktligt tar upp alla aktiviteter som kommer att
+göras under projektet.
+
+\subsubsection*{Kravspecifikation}
+Kravspecifikationen förtydligar vad som förväntas vara klart vid projektets slut. Dokumentet fungerar som överenskommelse mellan kunden och projektgruppen. Kraven specificerar vilken funktionallitet, kvalitet och design produkten ska uppfylla. Dokumentet utgör grunden för hur hela projektet ska struktureras och utformas. Kraven är framtagna efter kundens önskemål och formulerade för att ligga till stöd för projektgruppensarbete.
+
+\subsubsection*{Kvalitetsplan}
+Kvalitetsplanen definierar processer vars syften är att säkerställa att produkten håller en hög kvalitet. Kvaliteterna som är i huvudfokus är definerade i kravspecifikationen och är baserade på kundens önskemål.
+
+\subsubsection*{Statusrapport}
+Statusrapporten är som en mindre projektplan för
+de olika iterationerna. Rapporten reflekterar över hur allt förarbete har gått, vad som kommer
+hända till nästa iteration samt vilka risker projektgruppen står inför.
+
+\subsubsection*{Systemanatomi}
+Anatomin för systemet beskriver hur systemet är uppbyggt på olika nivåer, såsom funktioner, 
+mjukvara, hårdvara. Anatomin ger en större bild för hur systemet fungerar och beskriver vilken miljö den kommer
+befinna sig i.
+
+\subsubsection*{Arkitekturbeskrivning}
+Arkitekturbeskrivningen detaljerar arkitekturen för systemet samt beskriver hur olika submoduler hänger ihop. Arkitekturens fördelar, nackdelar och möjliga utökningar förklaras även i dokumentet.
+
+\subsubsection*{Testplan}
+Testplanen beskriver hur de olika delarna av produkten ska testas och även hur man ska följa upp på testerna.
+
 \subsection*{Google Drive \& Google Docs}
 \subsection*{Latex}
 \subsection*{Eslint}
