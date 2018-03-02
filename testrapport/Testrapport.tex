@@ -5,6 +5,8 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{scrextend}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
+\usepackage{multirow}
 \selectlanguage{swedish}
 \input{../projectdefinitions.tex}
 
@@ -81,16 +83,107 @@ Under projektets första iteration utfördes inget utvecklingsarbete och därfö
 Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning,
 
 \section{Enhetstestrapport}
+  \begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{Kontroll}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kan skapa användarnamn&19/2\\
+   \hline
+   Kan ta ut sensordata&18/2\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  
+  beskrivande text Enhetstestrapport
+  \\
+  
+  \noindent
+    \begin{tabular}{|l| c|}
+    \hline
+    \multicolumn{2}{|c|}{UI}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kan skapa användarnamn&20/2\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  beskrivande text UItestrapport
+\\
+
+  \noindent
+\begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{Backend}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   
+   
+  \end{tabular}
+  \\
+  \\
+  beskrivande text Backend
+  \\
 \section{Integrationstestrapport}
+  \begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{Kontroll}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kan koppla upp sig mot Backend&19/2\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  Beskrivande text Kontroll
+  \\
+  \noindent
+\begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{UI}\\
+    \hline
+    Test&godkänt\\
+    \hline
+    Kan koppla upp sig mot Backend&19/2s\\
+    \hline
+   
+  \end{tabular}
+  \\
+  \\
+  Beskrivande text UI
+  \\
 \section{Systemtestrapport}
+  \begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{System}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kommuniktation mellan UI och Kontroll&19/2\\
+   \hline
+   Kommunikation mellan UI och flera kontroller&19/2\\
+   \hline
+   Flera instanser av UI aktiva samtidigt&\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  Beskrivande text system
+  \\
+  
 \section{Acceptanstestrapport}
 	
 
-\section{Referenser}
-	\begin{itemize}
-	\item [1] Grupp 1. Kravspecifikation. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\item [2] Grupp 1. Projektplan. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\item [3] Grupp 1. Kvalitetsplan. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\end{itemize}
+\printbibliography
 	
 \end{document}
