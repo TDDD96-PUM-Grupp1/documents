@@ -64,7 +64,8 @@
     \definition{Enkäten}
     \definition{Kvalitet}
     \definition{Projektet}
-    \definition{Progressive Web Apps}
+    \definition{Progressive Web Apps}s
+    \definition{SQA}
     \definition{SQA-process}
     \definition{Teamet}
     \definition{Trello}
@@ -106,13 +107,12 @@
 	\subsection{Kommenteringsstandard}
 	\textbf{Syfte:}	Eftersom Cybercom potentielt kommer att utveckla koden själva ska den vara lättläst och väl dokumenterad. Med lättläst så menas alltså att den ska vara lätt att förstå för en icke-teammedlem som inte varit med i utvecklingsprocessen och som inte har möjligtheten att direkt ställa en fråga till personen som skrev stycket.
 	\\\\
-	\textbf{Relaterat kvalitetskrav:} 3
+	\textbf{Relaterat kvalitetskrav:} 3 
 	\\\\
 	\textbf{Utförande:} All kod som gruppen skriver ska ha förklarande kommentarer där skribenten anser att en förklaring skulle underlätta för läsaren. Ovanför varje funktion ska doc-strings skrivas som förklarar parametrarna funktionen tar in samt returvärden för funktionen.
-	Kommentaren i sig ska följa Airbnbs stil-guide som finns tillgänglig på https://github.com/airbnb/javascript.
-	****TODO FIX CORRECT REFERENCE
+	Kommentaren i sig ska följa Airbnbs ''stilguide''\cite{bib-airbnb}.
 	\\\\
-	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas under kodinspektionerna som måste göras innan en git-branch accepteras in till huvudprojektet. För mer detaljer gällande denna process se sektion gällande git. Lite kortfarrat så ska alla kod inspekteras av en annan teammedlem innan den accepteras in i huvud projektet, det är då inspektörens uppgift att se till att koden är väldokumenterad och att kommentererna följer denna standard. 
+	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas under kodinspektionerna som måste göras innan en git-branch accepteras in till huvudprojektet\cite{bib-gitguide}. För mer detaljer gällande denna process se sektion gällande git. Lite kortfarrat så ska alla kod inspekteras av en annan teammedlem innan den accepteras in i huvud projektet, det är då inspektörens uppgift att se till att koden är väldokumenterad och att kommentererna följer denna standard. 
 	\\\\
 	\textbf{Problem hantering:} Ifall det upptäcks att kod inte följer denna kommenteringsstandard så kommer personen som skrev den få uppgiften att lägga till saknade kommentarer alternativt skriva om de kommentarer som finns. Efter omskrivning ska en ny git-push requests göras och koden ska då återigen inspekteras innan den godkänns. Notera att inspektionerna inte nödvändigtvis behöver göras av samma person.
 	Ifall en inspektör godkänner kod med bristfälliga eller icke existerande kommentarer så ska inspektören och kodskribenten bestämma sig sinsemellan vem som ska lägga till kommentarer till koden. Dessa nya kommentarer ska sen läggas till huvudgrenen genom den standardiserade git processen, och då får inte koden inspekteras av den gamla inspektören eller ursprungliga kodskribenten.
@@ -125,7 +125,7 @@
 	\\\\
 	\textbf{Relaterat kvalitetskrav:} 3
 	\\\\
-	\textbf{Utförande:} All kod som gruppen skriver ska följa Airbnbs stilguide för Javascript som finns att hämta på: https://github.com/airbnb/javascript.
+	\textbf{Utförande:} All kod som gruppen skriver ska följa Airbnbs stilguide för Javascript\cite{bib-airbnb}.
 	\\\\
 	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas då en git-branch begärs gå ihop med huvudgrenen. I sektionen git-processer så skrivs mer om detta i detalj, men kortfattat så ska alla grenar inspekteras innan de tillåts gå ihop med huvudgrenen. Under denna inspektion ska inspektören undersöka ifall koden överensstämmer med Airbnbs kodstandard och neka grenen ifall den inte gör det.
 	\\\\
@@ -172,7 +172,7 @@
 	\\\\
 	\textbf{Relaterat kvalitetskrav:} 3
 	\\\\
-	\textbf{Utförande:} Teamet ska kontinuerligt använda sig av verktyget Prettier för att formatera koden enligt Airbnbs Javascript standard. Detta verktyg måste installeras och konfigueras till teamets standard innan det kan användas. Det ska köras på alla javascript filer i projekt för att få dem att bli mer lättläsliga.
+	\textbf{Utförande:} Teamet ska kontinuerligt använda sig av verktyget Prettier för att formatera koden enligt Airbnbs Javascript standard\cite{bib-airbnb}. Detta verktyg måste installeras och konfigueras till teamets standard innan det kan användas. Det ska köras på alla javascript filer i projekt för att få dem att bli mer lättläsliga.
 	\\\\
 	\textbf{Utvärdering:} Denna process kommer inte att utvärderas utan det är upp till varje teammedlem att se till att de installerar och använder Prettier. Ifall någon inte använder Prettier så kommer inget att göras, men med all sannolikhet kommer de då inte följa vår kodstandard och då kommer det att uppdagas. 
 	\textbf{Problem hantering:} Om en teammedlem har problem att installera eller använda Prettier ska denne be teamet om hjälp då dessa problem sannolikt uppkommit för någon annan också.
@@ -185,7 +185,7 @@
 	\\\\
 	\textbf{Relaterat kvalitetskrav:} Alla
 	\\\\
-	\textbf{Utförande:} Teamet ska använda sig av git för versionshantering av produkten och varje medlem ska se till att de följer den uppsatta gitrutinen. Den fungerar på så sätt att varje medlem skapar en gren för varje ''feature'' de jobbar på, när en gren sedan är färdig och tester skrivis och utförts på den så ska en pull begäran skickas till master-grenen. Denna begäran måste godkännas av en annan teammedlem som utvärderar att koden följer teamets kod och kommenteringsstandard. En mer utförlig beskrivning av gitprocessen finns på github repot.
+	\textbf{Utförande:} Teamet ska använda sig av git för versionshantering av produkten och varje medlem ska se till att de följer den uppsatta gitrutinen. Den fungerar på så sätt att varje medlem skapar en gren för varje ''feature'' de jobbar på, när en gren sedan är färdig och tester skrivis och utförts på den så ska en pull begäran skickas till master-grenen. Denna begäran måste godkännas av en annan teammedlem som utvärderar att koden följer teamets kod och kommenteringsstandard. En mer utförlig beskrivning av gitprocessen finns på github repot\cite{bib-gitguide}.
 	\\\\
 	\textbf{Utvärdering:} Denna process kommer att utvärderas av teamets konfigurationsansvarig som också är ansvarig att svara på frågor ifall det finns några oklarheter gällande denna process. Ifall denne anser att en del av processen skapar för många frågor eller problem så finns möjligheten att ta beslut gällande förändring av processen. Ifall ingen förändring behövs utan enbart utbildning så kan denna ges över antingen Slack eller vid nästa gruppmöte.
 	\\\\
