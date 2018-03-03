@@ -1,0 +1,189 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage[swedish]{babel}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{scrextend}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
+\usepackage{multirow}
+\selectlanguage{swedish}
+\input{../projectdefinitions.tex}
+
+\title{Testrapport\\
+    \large Projektgrupp 1}
+\author{
+    Joel Almqvist\\
+    \texttt{joeal360@student.liu.se}
+    \and
+    Björn Detterfelt\\
+    \texttt{bjode786@student.liu.se}
+    \and
+    Tim Håkansson\\
+    \texttt{timha404@student.liu.se}
+    \and
+    David Kjellström\\
+    \texttt{davkj168@student.liu.se}
+    \and
+    Axel Löjdquist\\
+    \texttt{axelo225@student.liu.se}
+    \and
+    Joel Oskarsson\\
+    \texttt{joeos014@student.liu.se}
+    \and
+    Lieth Wahid\\
+    \texttt{liewa893@student.liu.se}
+    \and
+    Alexander Wilkens\\
+    \texttt{alewi684@student.liu.se}
+}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+
+
+\maketitle
+\pagebreak
+	\section*{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | p{12cm} |  }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+		\hline
+ 	   \end{tabular}
+	\end{center}
+
+	
+	
+\pagebreak
+\tableofcontents
+\pagebreak
+\pagenumbering{arabic}
+
+\section{Inledning}
+
+\subsection{Syfte}
+Syftet med denna testrapport är att sammanställa och utvärdera de tester som utförts under utvecklingen utav IoT-spelet. 
+  \input{definitioner}
+
+\section{Metod}
+
+\section{Resultat}
+\section{Iterationer}
+Detta kapitel ger en överskådlig blick över resultaten av testningen under varje iteration.
+\subsection{Iteration 1}
+Under projektets första iteration utfördes inget utvecklingsarbete och därför har inga tester utförts. Endast dokumentskrivning förekom under denna iteration.
+\subsection{Iteration 2}
+Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning,
+
+\section{Enhetstestrapport}
+  \begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{Kontroll}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kan skapa användarnamn&19/2\\
+   \hline
+   Kan ta ut sensordata&18/2\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  
+  beskrivande text Enhetstestrapport
+  \\
+  
+  \noindent
+    \begin{tabular}{|l| c|}
+    \hline
+    \multicolumn{2}{|c|}{UI}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kan skapa användarnamn&20/2\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  beskrivande text UItestrapport
+\\
+
+  \noindent
+\begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{Backend}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   
+   
+  \end{tabular}
+  \\
+  \\
+  beskrivande text Backend
+  \\
+\section{Integrationstestrapport}
+  \begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{Kontroll}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kan koppla upp sig mot Backend&19/2\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  Beskrivande text Kontroll
+  \\
+  \noindent
+\begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{UI}\\
+    \hline
+    Test&godkänt\\
+    \hline
+    Kan koppla upp sig mot Backend&19/2s\\
+    \hline
+   
+  \end{tabular}
+  \\
+  \\
+  Beskrivande text UI
+  \\
+\section{Systemtestrapport}
+  \begin{tabular}{|l| c|}
+  \hline
+    \multicolumn{2}{|c|}{System}\\
+    \hline
+    Test&godkänt\\
+   \hline
+   Kommuniktation mellan UI och Kontroll&19/2\\
+   \hline
+   Kommunikation mellan UI och flera kontroller&19/2\\
+   \hline
+   Flera instanser av UI aktiva samtidigt&\\
+   \hline
+   
+  \end{tabular}
+  \\
+  \\
+  Beskrivande text system
+  \\
+  
+\section{Acceptanstestrapport}
+	
+
+\printbibliography
+	
+\end{document}

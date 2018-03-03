@@ -12,6 +12,11 @@
 \usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \usepackage{filecontents}
 \usepackage{enumitem}
+
+\usepackage[section]{placeins}
+
+\input{../projectdefinitions.tex}
+
 %Skriv över engelska namn för appendix
 \addto\captionsswedish{
   \renewcommand\appendixname{Appendix}
@@ -19,9 +24,13 @@
 	\renewcommand\appendixtocname{Appendix}
 }
 
+\newcommand{\History}[3]{
+	\centering #1 & #2 & #3 \\ \hline
+}
+
 \graphicspath{ {images/} }
 \selectlanguage{swedish}
-\addbibresource{references.bib}
+\addbibresource{../references.bib}
 
 \tolerance=1
 \emergencystretch=\maxdimen
@@ -31,13 +40,17 @@
 \setlength{\parindent}{0pt}
 
 \begin{document}
+    \pagenumbering{gobble}
 		\input{titel}
 		\pagebreak
+    \input{dokumenthistorik}
+    \pagebreak
 
 		\tableofcontents
 		\listoffigures
 		\pagebreak
 
+    \pagenumbering{arabic}
 		\input{inledning}
 		\pagebreak
 
@@ -60,5 +73,7 @@
 
 		\begin{appendices}
 				\input{koncept_appendix}
+        \pagebreak
+        \input{implementation_appendix}
 		\end{appendices}
 \end{document}

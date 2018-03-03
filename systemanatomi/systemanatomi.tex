@@ -6,6 +6,9 @@
 \usepackage[margin=2cm]{geometry}
 
 \selectlanguage{swedish}
+
+\input{../projectdefinitions.tex}
+
 \graphicspath{ {images/} }
 
 \title{Systemanatomi\\
@@ -38,17 +41,19 @@
 }
 
 \begin{document}
+  \pagenumbering{gobble}
 	\maketitle
-	
+  \pagebreak	
 	\tableofcontents
 
 	\pagebreak
+  \pagenumbering{arabic}
 	
 	\section{Definitioner}
-	\begin{itemize}
-		\item IoT - Internet of Things, koncept som beskriver att många objekt är uppkopplade mot internet
-		\item UI / UI-applikation - den applikation som håller i själva spelet och visar upp spelplanen i sitt grafiska gränssnitt
-		\item Speldata - information om handlingar och status i spelet samt nödvändig teknisk data för att upprätthålla kommunikation
+  \begin{itemize}[leftmargin=5cm]
+    \definition{IoT-backend}
+    \definition{UI-applikation}
+    \definition{Speldata}
 	\end{itemize}
 	
 	\section{Systemanatomi}	

@@ -11,7 +11,10 @@
 \graphicspath{ {images/} }
 \usepackage{filecontents}
 \selectlanguage{swedish}
-\addbibresource{references.bib}
+
+\addbibresource{../references.bib}
+
+\input{../projectdefinitions.tex}
 
 % Variable för att räkna ut magnituden på en risk.
 \newcounter{riskmagnitude}
@@ -31,6 +34,9 @@
     \noindent Sannolikhet: #1 
     \newline Inverkan: #2 
     \newline Magnitud: \arabic{riskmagnitude}
+}
+\newcommand{\History}[3]{
+	\centering #1 & #2 & #3 \\ \hline
 }
 
 \tolerance=1

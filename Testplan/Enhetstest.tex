@@ -6,6 +6,7 @@
 \usepackage{color}
 \usepackage{scrextend}
 \selectlanguage{swedish}
+\input{../projectdefinitions.tex}
 
 \title{Enhetstestplan\\
     \large Projektgrupp 1}
@@ -39,44 +40,31 @@
 \pagenumbering{gobble}
 \maketitle
 \pagebreak
+	\section*{Revisionshistorik}
+
+	
+	\begin{center}
+ 	   \begin{tabular}{| l | l | p{12cm} |  }
+ 	       \hline
+ 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
+ 	       \hline
+ 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+		\hline
+ 	       \centering 1.0 & 2018-02-12 & Iteration 2\\
+ 	       \hline
+ 	   \end{tabular}
+	\end{center}
+\pagebreak
 \tableofcontents
 \pagebreak
 
 \pagenumbering{arabic}
 \section{Inledning}
 	Det här dokumentet går igenom hur Enhetstestningen kommer ske.
-	\subsection{Revisionshistorik}
 
+
+  \input{definitioner}
 	
-	\begin{center}
- 	   \begin{tabular}{| l | l | l |  l | }
- 	       \hline
- 	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} & \textbf{Ansvarig} \\
- 	       \hline
- 	       \centering 0.1 & 2018-02-18 & Första utkast & David Kjellström\\
- 	       \hline
- 	   \end{tabular}
-	\end{center}
-
-
-	\subsection{Definitioner}
-  \begin{labeling}{\textbf{Integrationstest}}
-  \item [\textbf{Acceptanstest}]Slutgiltiga testet som kund utför för att se att produkten lever upp till förväntningarna
-    \item [\textbf{Enhetstest}] Testa varje enhet så den fungerar när den är färdig
-    \item [\textbf{Integrationstest}] Testa att en ny enhet som läggs till i projektet fungerar som den ska tillsammans med de andra enheterna
-    \item [\textbf{Kontroller}] En mobil eller surfplatta som kör kontrolldelen av applikationen
-    \item [\textbf{Kund}] Cybercom Sweden
-    \item [\textbf{Regressionstest}] Testa ny kod enligt gamla parametrar för att säkerställa att ingen funktionalitet försvunnit
-    \item [\textbf{Systemtest}] Test för att säkerställa att enheten uppfyller kraven för projektet		
-    \item [\textbf{UI}] User Interface - Den del av applikationen som visar spelplanen
-  \end{labeling}
-	
-	\subsection{Referenser}
-		\begin{itemize}
-		\item [1] Kravspecifikation
-		\item [2] Projektplan
-		\item [3] Kvalitetsplan
-		\end{itemize}
 
 	
 \section{Testföremål}
@@ -110,9 +98,11 @@
 	Gruppen ska bestämma om det testerna berör är viktiga nog så att de måste behandlas, och sedan fatta ett gemensamt beslut om hur de ska hanteras, t.ex. skriva om en enhet från grunden.
 
 
-\section{Test leveranser {\color{red}TODO}}
+\section{Test leveranser}
 
-
+Leveranser från enhetstesten kommer bestå utav automatiska tester för regressionstestning som kommer implementeras direkt och köras vid varje pushning till git. 
+\\
+Datum för dessa är samma som återfinnes i Master Testplan.
 
 
 
@@ -121,17 +111,22 @@
 	
 	
 	
-\section{Godkännande {\color{red}TODO}}
+\section{Godkännande}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
 	 \item Varje enhet ska ha testas enligt den standard beskriven under Tillvägagångssätt.
 	 \item större enheter ska testas automatiskt genom {\color{red}Jasmine} och sedan skapa regressionstester att lägga till i Travis.
-	 \item 
 	\end{itemize}
 	
 
 
-
+\section{Referenser}
+	\begin{itemize}
+	\item [1] Grupp 1. Kravspecifikation. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\item [2] Grupp 1. Projektplan. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\item [3] Grupp 1. Kvalitetsplan. Tekn. rapport. Linköpings universitet, febr. 2018.
+	\end{itemize}
+	
 
 
 

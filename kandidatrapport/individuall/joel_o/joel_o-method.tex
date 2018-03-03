@@ -1,16 +1,16 @@
 \section{Metod}
 \label{sec:joel_o-method}
+Tanken är att samla in data genom att skriva ett script som går igenom repositiories för open-source javascript projekt. En begränsad mängd av projekt att undersöka kan väljas genom att exempelvis se till de högst rankade projekten på github. Hur detta urval görs är dock viktigt och bör poängteras noga.
 
-In this chapter, the method is described in a way which shows how the
-work was actually carried out. The description must be precise and
-well thought through. Consider the scientific term
-replicability. Replicability means that someone reading a scientific
-report should be able to follow the method description and then carry
-out the same study and check whether the results obtained are
-similar. Achieving replicability is not always relevant, but precision
-and clarity is.
+Själva datainsamlingen kan göras genom att i dessa  projekt läsa av deras beroenden från filen package.json, som används av npm. Detta ger direkta beroenden.
 
-Sometimes the work is separated into different parts, e.g.  pre-study,
-implementation and evaluation. In such cases it is recommended that
-the method chapter is structured accordingly with suitable named
-sub-headings.
+Hela trädet av beroenden kan fås från package-lock.json, som ofta lagras tillsammans med package.json. Detta ger indirekta beroenden och det kan vara möjligt att göra vidare undersökningar på denna graf (exempelvis nivåer av beroenden)
+
+För att få fram inforamtion om effekterna av beroenden får en större informationssökning genomföras. Det verkar finnas gott om akademiska källor av intresse för detta och troligen även bloggposter från personer med stor erfarenhet av javascript-projekt (som kan användas ur ett kritiskt perspektiv).
+
+Till viss del kan den egna gruppens erfarenheter presenteras. Det vore även möjligt att intervjua någon/några från en annan grupp inom kursen och därmed få in en större bredd av erfarenheter.\\
+
+\textbf{Här följer några källor som kan användas}\\
+\href{https://dspace.cvut.cz/bitstream/handle/10467/68195/F8-DP-2017-Zitny-Jakub-thesis.pdf?sequence=1&isAllowed=y}{Liknande undersökning}\\
+\href{https://arxiv.org/pdf/1709.04638.pdf}{Effekter av micro-paket i npm}\\
+\href{https://repository.tudelft.nl/islandora/object/uuid:3a15293b-16f6-4e9d-b6a2-f02cd52f1a9e?collection=education}{Effekter av beroenden i npm för säkerhet}\\ \href{https://arxiv.org/pdf/1710.04936.pdf}{Jämförelse mellan pakethantering i olika programmeringsspråk}\\ \href{http://www.scotthenry.ca/wp-content/uploads/2018/01/Report.pdf}{Undersökning om uppdatering av beroenden i npm}\\
