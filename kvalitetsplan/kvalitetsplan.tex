@@ -110,16 +110,9 @@
 \pagebreak
 \section{Processer}
 	Detta avsnitt går igenom de aktiviteter teamet ska genomföra för att uppfylla de satta kvalitetskraven och på så sätt säkra att produkten håller hög kvalitet.
-	\subsection{Kommenteringsstandard}
-	\textbf{Syfte:} För att Cybercom med lätthet ska kunna utöka produkten ska koden vara lätt för en utomstående att sätta sig in i.
-	\\\\
-	\textbf{Metod:} Koden ska följa en tydlig och enhetlig kommenteringsstandard för att göra det lättare att sätta sig in i samt för att få kommentarerna mer konsekventa. För mer detaljer gällande denna standard se avsnitt 4.1.
-	\\\\
-	\textbf{Relaterat kvalitetskrav:} 3
-	\\
 
-	\subsection{Kommenteringsstandard V2***}
-	\textbf{Syfte:}	För att Cybercom med lätthet ska kunna utöka produkten ska koden vara lätt för en utomstående att sätta sig in i.
+	\subsection{Kommenteringsstandard}
+	\textbf{Syfte:}	Eftersom Cybercom potentielt kommer att utveckla koden själva ska den vara lättläst och väl dokumenterad. Med lättläst så menas alltså att den ska vara lätt att förstå för en icke-teammedlem som inte varit med i utvecklingsprocessen och som inte har möjligtheten att direkt ställa en fråga till personen som skrev stycket.
 	\\\\
 	\textbf{Relaterat kvalitetskrav:} 3
 	\\\\
@@ -127,89 +120,88 @@
 	Kommentaren i sig ska följa Airbnbs stil-guide som finns tillgänglig på https://github.com/airbnb/javascript.
 	****TODO FIX CORRECT REFERENCE
 	\\\\
-	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas under kodinspektionerna som måste göras innan en git-branch accepteras in till huvudprojektet. För mer detaljer gällande denna process se sektion gällande git 3.X*********TODO REFERENS.
+	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas under kodinspektionerna som måste göras innan en git-branch accepteras in till huvudprojektet. För mer detaljer gällande denna process se sektion gällande git. Lite kortfarrat så ska alla kod inspekteras av en annan teammedlem innan den accepteras in i huvud projektet, det är då inspektörens uppgift att se till att koden är väldokumenterad och att kommentererna följer denna standard. 
 	\\\\
-	\textbf{Problem hantering:} Ifall det upptäcks att kod inte följer denna kommenteringsstandard så kommer personen som skrev den få uppgiften att lägga till saknade kommentarer alternativt skriva om de kommentarer som finns. Efter omskrivning ska koden inspekteras igen för att undersöka ifall den uppfyller de standarder som finns.
+	\textbf{Problem hantering:} Ifall det upptäcks att kod inte följer denna kommenteringsstandard så kommer personen som skrev den få uppgiften att lägga till saknade kommentarer alternativt skriva om de kommentarer som finns. Efter omskrivning ska en ny git-push requests göras och koden ska då återigen inspekteras innan den godkänns. Notera att inspektionerna inte nödvändigtvis behöver göras av samma person.
+	Ifall en inspektör godkänner kod med bristfälliga eller icke existerande kommentarer så ska inspektören och kodskribenten bestämma sig sinsemellan vem som ska lägga till kommentarer till koden. Dessa nya kommentarer ska sen läggas till huvudgrenen genom den standardiserade git processen, och då får inte koden inspekteras av den gamla inspektören eller ursprungliga kodskribenten.
 	\\\\
-	\textbf{Roller:} Personen som skriver koden är ansvarig för att kommentarer skrivs på korrekt sätt. Det är personen som skriver kod som kommer att initialisera denna process och personen som granskar koden som avslutar den. Alla team medlemmar kommer anta båda rollerna och det spelar ingen roll vem som granskar den andres kod.
-	
-
-	\subsection{Kodstandard}
-	\textbf{Syfte:} För att Cybercom med lätthet ska kunna utöka produkten ska koden vara lätt för en utomstående att sätta sig in i.
-	\\\\
-	\textbf{Metod:} För att göra koden med lättläslig och konsekvent ska alla teamets medlemmar följa kodstandarden definierad i avsnitt 4.2.
-	\\\\
-	\textbf{Relaterat kvalitetskrav:} 3
+	\textbf{Roller:} Personen som skriver koden är ansvarig för att kommentarer skrivs på korrekt sätt. Ansvaret att se till att koden faktiskt följer denna kommenteringsstandarden ligger hos inspektören, som också har möjligheten att neka en git-push request ifall den inte följer standarden. De båda rollerna kommer att kontinuerligt antas av alla teammedlemmar vid olika faser av projektet och det är på så sätt allas ansvar att koden följer denna standard.
 	\\
 	
+	\subsection{Kodstandard}
+	\textbf{Syfte:}	Eftersom Cybercom potentielt kommer att utveckla koden själva behöver den vara lättläst och konsekvent. Det kan lätt hända att olika personer fölljer olika personliga standarder, vilket då kan betyda att kod mellan två filer skiljer markant. Detta gör det svårare att förstå koden samtidigt som det skapar extra arbete för Cybercom att städa upp detta ifall de hade tänkt fortsätta jobba på produkten.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} 3
+	\\\\
+	\textbf{Utförande:} All kod som gruppen skriver ska följa Airbnbs stilguide för Javascript som finns att hämta på: https://github.com/airbnb/javascript.
+	\\\\
+	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas då en git-branch begärs gå ihop med huvudgrenen. I sektionen git-processer så skrivs mer om detta i detalj, men kortfattat så ska alla grenar inspekteras innan de tillåts gå ihop med huvudgrenen. Under denna inspektion ska inspektören undersöka ifall koden överensstämmer med Airbnbs kodstandard och neka grenen ifall den inte gör det.
+	\\\\
+	\textbf{Problem hantering:} Ifall det upptäcks att kod inte följer denna kodstandard så ska personen som skrev den få uppgiften att skriva om koden så att den gör det. Efter omskrivning ska en ny git-push requests göras och koden ska då återigen inspekteras innan den godkänns. Notera att inspektionerna inte nödvändigtvis behöver göras av samma person.
+	Ifall en inspektör godkänner kod som inte följer denna standard ska det diskuteras på nästa möte varför detta gjordes, ifall det var okunskap så är det viktigt att gå igenom så att problemet inte uppkommer igen hos en annan teammedlem. Ifall en inspektör medvetet godkännde kod som ej medhör standarden ska inspektören ändra koden så att den följer kodstandarden.
+	\\\\
+	\textbf{Roller:} Personen som skriver koden är ansvarig för att den följer Airbnbs Javascript standard. Ansvaret att påpeka ifall den inte gör det ligger hos inspektören, som också har möjlighet att neka en git-push ifall den inte uppfyller kraven. Ansvaret att koden följer standarden ligger alltså hos båda parterna och med gits historik är det transparant vem som lagt till vilken kod.
+	
 	\subsection{Demo och enkät}
-	\textbf{Syfte:} De viktigaste kvalitetsaspekterna hos produkten är att den är responsiv, användarvänlig och stabil. Syftet med produkten är att demonstrera Cybercoms backend för en användbas som testar produkten för första gången. Den måste alltså vara användarvänlig, men också stabil och responsiv för att visa att backenden erbjuder dessa egenskaper.
+	\textbf{Syfte:}	De viktigaste kvalitetsaspekterna hos produkten är responsitivitet, användarvänlighet och stabilitet. Syftet med produkten är att demonstrera Cybercoms backend för en användbas som testar produkten för första gången. Den måste alltså vara användarvänlig, men också stabil och responsiv för att visa att backenden erbjuder dessa egenskaper.
 	
 	Dessa aspekter lär förändras under projektets gång då nya delar läggs till och förändras i enlighet med projektets agila arbetsmetod. Kontinuerlig verifiering av dessa kvalitetskrav kommer därav behövas göras så att projektet alltid håller rätt riktning.
 	\\\\
-	\textbf{Metod:} För att kontinuerligt utvärdera dessa centrala kvalitetskrav så ska teamet vid slutet av varje sprint demonstrera den senaste versionen av produkten och låta 20 personer testa att spela spelet. Dessa personer ska sedan fylla i enkät där de svarar på frågor gällande: responsitivitet, stabilitet, enkelhet att följa vad som händer på skärmen och enkelhet att använda kontroller (se appendix för en mock-enkät). Dessa fyra kriterier representerar kvalitetskrav och ges ett betyg mellan ett och tio, där tio är positivt. Vid den sista sprinten måste det genomsnittliga betyget på den sista enkäten vara åtminstone sex för frågorna gällande responsitivitet och stabilitet. De andra två kriterierna måste också få ett genomsnittligt betyg av åtminstone sex vid den sista demonstrationen. Kraven på dessa betyg kan anses låga, men de är inte vad teamet eftersträvar att nå utan ska ses som en minimum gräns för vad som måste klaras av för att produkten kan anses hålla hög kvalitet.
-	
-	Själva arbetsprocessen blir alltså ett demo och en enkät för att utvärdera hur väl kvalitetskraven uppfylls för tillfället. Den sista sprinten utförs demot på samma sätt, men nu så måste de ovannämnda betygen uppfyllas för att produkten ska sägas uppnå sina kvalitetskrav. Denna kontinuerliga process visar ifall projektet rör sig i rätt riktning, hur nära målet vi är, samt som ett smoke test ifall en förändring skapar en stark negativ upplevelse hos användarna.
+	\textbf{Relaterat kvalitetskrav:} 4,5,6,7
 	\\\\
-	\textbf{Relaterat kvalitetskrav:} 4, 5, 6, 7
-	\\
+	\textbf{Utförande:} För att kontinuerligt utvärdera dessa centrala kvalitetskrav så ska teamet vid slutet av varje sprint (från sprint 3 och framåt) demonstrera den senaste versionen av produkten och låta 20 personer testa att spela spelet. Dessa personer ska sedan fylla i enkät där de svarar på frågor gällande: responsitivitet, stabilitet, enkelhet att följa vad som händer på skärmen och enkelhet att använda kontroller (se appendix för en mock-enkät). Dessa fyra kriterier representerar kvalitetskrav och ges ett betyg mellan ett och tio, där tio är positivt. För att kunna hålla i en demonstration så krävs det också att teamet förbereder sig genom att mergea in de senaste uppdateringarna och ser till att det är en någorlunda stabil build som testas av de 20 personerna. Resultatet av enkäterna måste sammanställas så att det kan presenteras vid planneringen av nästa sprint, och användas som underlag för att prioritera teamets olika aktiviteterna. De faktiska frågorna på enkäten ska bestämmas till det första utförandet av enkäten och i alla enkäter efter det ska frågorna vara exakt likadana så att en jämförelse mellan sprintar kan göras.
+	\\\\
+	\textbf{Utvärdering:} Denna process kommer bland annat att utvärdas baserat på hur bra teamet gör ifrån sig på enkäten som ska besvaras. Vid de första enkäterna så används enkäterna enbart som ett smoke-test för att se ifall vi av misstag påverkat någon av dessa kvalitetsaspekter när produkten förändrats. Dessutom så visar betygen hur nära teamet är att klara av ett kvalitetskrav, och vilken aspekt som behöver förbättras mest. Vid den sista enkäten så måste teamet uppnå åtminstone betyget 6/10 gällande aspekterna: responsitivitet, stabilitet och användarbarhet. Dessutom så måste den alternativa styrning också få ett betyg på åtminstone 6/10.
+	\\\\
+	\textbf{Problem hantering:} Ifall teamet inte lyckas nå upp till minimum betygen vid den sista sprintents slut, så ska produkten inte ses som färdig. Eftersom projektet är tidsbegränsat kommer det antagligen inte finnas en möjlighet att förbättra den efter projektetsslut. Det teamet i sånna fall måste göra är att tydligt föra fram denna brist på kvalitet i utökningar av produkten, såsom teamets kandidatarbete, samt meddela var och hur produkten brister till kunden.
+	Ifall produkten får ett för lågt betyg vid någon annan enkät än den sista så ska detta ses som en indikator om vad som behöver förbättras och fungera som material för nästa sprints plannering.
+	Ett annat potentielt problem blir att antalet personer i undersökning blir färre än den önskade siffran av 20, ifall detta händer ska det dokumenteras tillsammans med reslutatet. Ifall antalet personer som skriver enkäten blir färre än sex så kan enkätens resultat ignoreras och ses som ej statistiskt signifikant.
+	\\\\
+	\textbf{Roller:} Åtminstone två teammedlemar kommer att hålla i demonstrationen och då anta roller där de ska visa upp spelet, förklara hur det fungera, starta upp en spel session samt svara på alla frågor deltagarna kan ha. En annan roll är att hålla i förarbetet såsom att mergea ihop de senaste stabila grenarna och göra ett urval av vad som inte borde tas med i demot. Denna person måste också testa den senaste builden så att den är någorlunda stabil. Den sista rollen en teammedlem kan ha blir att sammanställa resultatet av enkäterna så att teamet med lätthet kan jämföra resultatet med tidigare sprinter.	Den allra sista rollen i denna process blir den av deltagarna, de ska testa spelet och svara på enkäten. Deltagar rollen kommer framförallt att uppfyllas av vänner till teamet, så risken finns att svaren blir positivare än de borde. En deltagarroll får inte antas av en teammedlem.
 	
 	
 	\subsection{Trello}
-	\textbf{Syfte:} En viktig del av kvalitet är att ge processer den tid som krävs, för att uppnå detta behöver teamet uttnytja sin tid på ett effektivt sätt.
-	\\\\
-	\textbf{Metod:} Teamet ska inför varje sprint, och under en sprint vid behov, dela upp de uppgifter som behöver genomföras till mindre uppgifter och lägga upp detta på Trello. Sedan är det varje medlems uppgift att ta den uppgift personen ska arbeta med och inte arbeta på någon annans del.
+	\textbf{Syfte:}	I ett tidsbegränsat projekt så är det viktigt att synkronisera mellan medlemmar så att samma uppgift inte görs två gånger. Det är också viktigt att varje teammedlem har det klart och tydligt vad som ska göras, vad som kan göras och vad man själv kan börja med. Detta projekt utförs av åtta teammedlemmar så en tydlig process för att klargöra alla dessa problem behövs då det inte är rimligt att enbart fråga resterande medlemmar arbetar med.
 	\\\\
 	\textbf{Relaterat kvalitetskrav:} Alla
-	\\
+	\\\\
+	\textbf{Utförande:} Teamet ska i början av varje sprint skapa Trello kort av de uppgifter som teamet förväntas göra under den nuvarande iterationen. När en teammedlem ska börja arbeta med en uppgift så ska motsvarande Trellokort tas ifrån "To do" eller "Do-able" kolumnen, placeras i "In Progress" så fort personen börjar med uppgiften. Ifall det saknas uppgiftskort på Trello så ska teammedlemen undersöka ifall det finns någon uppgift som kan läggas till Trelloboarden. Om det inte är möjligt ska de andra medlemmarna rådfrågas ifall de behöver hjälp eller ifall de kan skapa en självständig aktivitet och lägga på Trello. Om det mot all förmodan fortfarande inte finns en aktivitet att göra så ska en diskussion hållas på Slack och sprinten planeras om.
+	\\\\
+	\textbf{Utvärdering:} Denna process kommer inte att utvärderas explicit, utan det är upp till varje teammedlem att aktivt följa den. Ifall en teammedlem jobbar med en uppgift de inte har tagit Trellokortet för så kan de förlora rätten att jobba med den uppgiften ifall någon annan tar Trellokortet.
+	\\\\
+	\textbf{Problem hantering:} Om en teammedlem inte använder sig av Trello korrekt ska detta tas upp på nästa teammöte och en genomgång av hur Trello ska användas ges. Om två personer jobbar på samma uppgift men bara en har skrivit sig själv på kortet så har denna person förtur till att jobba med kortet ifall enbart en av dem kan jobba med just denna uppgift.
+	\\\\
+	\textbf{Roller:} Alla teammedlemar kommer att ha samma roll på denna aktivitet, rollen av Trello-användare. Det är allas ansvar att använda sig av Trello korrekt och det är allas ansvar att se till att hela teamet efterföljer Trellostandarden på ett korrekt sätt.
+	
+	
 	
 	\subsection{Prettier}
-	\textbf{Syfte:} För att koden ska gå att vidareutveckla är det viktigt att det är enkelt att läsa den.
-	\\\\
-	\textbf{Metod:} Teamet ska använda sig av verktyget Prettier för att automatiskt indentera koden, vilket gör indenteringen konsekvent och koden mer lättläslig. Prettier ska användas innan kod trycks in i huvudgrenen av produkten.
+	\textbf{Syfte:}	Kunden har ett intresse att potentiellt utöka produkten efter projekt och har därför ett intresse i att koden är lätt att sätta sig in i. Teamet i sig tjänar också på att ha lättläslig kod för göra det lättare att hitta buggar och skriva tester.
 	\\\\
 	\textbf{Relaterat kvalitetskrav:} 3
-	\\
+	\\\\
+	\textbf{Utförande:} Teamet ska kontinuerligt använda sig av verktyget Prettier för att formatera koden enligt Airbnbs Javascript standard. Detta verktyg måste installeras och konfigueras till teamets standard innan det kan användas. Det ska köras på alla javascript filer i projekt för att få dem att bli mer lättläsliga.
+	\\\\
+	\textbf{Utvärdering:} Denna process kommer inte att utvärderas utan det är upp till varje teammedlem att se till att de installerar och använder Prettier. Ifall någon inte använder Prettier så kommer inget att göras, men med all sannolikhet kommer de då inte följa vår kodstandard och då kommer det att uppdagas. 
+	\textbf{Problem hantering:} Om en teammedlem har problem att installera eller använda Prettier ska denne be teamet om hjälp då dessa problem sannolikt uppkommit för någon annan också.
+	\\\\
+	\textbf{Roller:} Denna aktiviteter har enbart en roll, användare av Prettier, och denna roll ska antas av alla i teamet som skriver javascript kod.
 	
 	
-\pagebreak
-\section{Standarder	och	Arbetsflöden}
-	För att garantera att produkten håller hög kvalitet ska teamet inte enbart genomföra de SQA-processerna utan även följa dessa standarder.
+	\subsection{Git}
+	\textbf{Syfte:} En viktigt del i ett projekt är att varje medlem kan hållas ansvarig för vad denne gjort, ifall en person inte följer teamets kvalitetsstandarder så ska det gå att se var någonstans i koden dessa standarder brutits. För att upptäcka brister så är det viktigt att ha en process för att undersöka koden.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} Alla
+	\\\\
+	\textbf{Utförande:} Teamet ska använda sig av git för versionshantering av produkten och varje medlem ska se till att de följer den uppsatta gitrutinen. Den fungerar på så sätt att varje medlem skapar en gren för varje ''feature'' de jobbar på, när en gren sedan är färdig och tester skrivis och utförts på den så ska en pull begäran skickas till master-grenen. Denna begäran måste godkännas av en annan teammedlem som utvärderar att koden följer teamets kod och kommenteringsstandard. En mer utförlig beskrivning av gitprocessen finns på github repot.
+	\\\\
+	\textbf{Utvärdering:} Denna process kommer att utvärderas av teamets konfigurationsansvarig som också är ansvarig att svara på frågor ifall det finns några oklarheter gällande denna process. Ifall denne anser att en del av processen skapar för många frågor eller problem så finns möjligheten att ta beslut gällande förändring av processen. Ifall ingen förändring behövs utan enbart utbildning så kan denna ges över antingen Slack eller vid nästa gruppmöte.
+	\\\\
+	\textbf{Problem hantering:} Projektets git-repo har regler som förhindrar ''push-requests'' som inte blivit inspekterande av en annan teammedlem och även automatiska tester som måste gå igenom innan en pull-request till master kan godkännas Ifall master-grenen på något sätt fortfarande lyckas bli instabil så ska konfigurationsansvarig återställa master-grenen till ett stabilt tillstånd och låta teammedlem som skrev den instabila kod att skriva om sin kod.\\\\
+	Ett annat möjligt problem är att den inspekterande teammedlemmen godkänner kod som inte bör godkännas, ifall koden till exempel bryter mot Airbnbs kodstandard eller ifall den saknar kommentarer. Vid ett sådant tillfälle ska den teammedlem som godkännt koden anses vara ansvarig för att skriva om koden så att den bristande koden når teamets krav. Ett exempel på detta skulle vara ifall en teammedlem godkänner en fil utan kommentarer, då blir teamedlem som godkände koden ansvarig att skriva korrekta kommentarer till filen.
+	\\\\
+	\textbf{Roller:} Denna aktiviteter innefattar rollerna: skribent, inspektör och konfigurationsansvarig. Skribenten skriver koden som ska läggas till i master-grenen, inspektören går igenom skribentens kod och konfigurationsansvarig hjälper till att förklara processen ifall det behövs. Inspektören och skribenten får inte antas av samma person, men konfigurationsansvarig kommer att anta båda de andra rollerna under projektetsgång.
 	
-	\subsection{Cybercoms standard}
-	Standarden Cybercom använder sig av ska även detta projekt följa för att göra det lättare att utöka. Projektet ska använda sig av JavaScript-biblioteket React och följa den standard som används där. Dessutom så ska koden i enlighet med Cybercoms standard indenteras med två blanksteg och sparas i formatet UTF-8.
-	
-	
-	\subsection{Kommenteringsstandard}
-	Teamet ska följa en tydlig kommenteringsstandard som utvärderas vid slutet av varje sprint och som kan utökas och minskas vid behov.
-	
-	\begin{itemize}
-		\item 	Ovan varje funktion ska en kommentar skrivas som beskriver vad funktionen gör, vad dess parametrar är och vad vad dess returvärde är.
-		\item Alla kommentarer ska vara på engelska med amerikansk stavning
-		\item Kommentarer ska skrivas ovan komplicerade stycken med målet att underlätta för läsaren.
-		\item Teamet ska skriva kommentarer i enlighet med Airbnbs JavaScript standard.
-	\end{itemize}
-
-	
-	\subsection{Kodstandard}
-	För att se till att koden blir lätt att sätta sig in i och utöka så har teamet en standard att följa. Vid slutet av sprints ska denna standard utvärderas efter ifall punkterna upplevs som onödigt begränsade, överflödiga eller inte applicerbara. Dessutom kan nya punkter att läggas till då ett behov upptäcks.
-
-	\paragraph{Nuvarande kodningsprinciper} \mbox{}
-	\\
-	Teamet ska följa Airbnbs JavaScripts standard med följande utökningar:
-	\begin{itemize}
-	\item All kod ska vara på engelska med amerikansk stavning
-	\item Koden ska skrivas med målet att vara lättläst, inte efter hur lätt den är att skriva
-	\item Undvik ovanliga och komplicerade metoder/lösningar då de gör det svårare att hitta buggar samt sätta sig in i koden efter projektet är över.
-	\item Undvik att fylla upp den globala namnrymd om möjligt.
-	\item Inga  ''and'' i funktionsnamn ifall de inte kan motiveras väl
-	
-	\end{itemize}
-	
-	\subsection{Arbetsflödet för Git}
-	Teamets arbetsflöde för git är att varje självstående funktionalitet ska arbetas på en egen gren om möjligt. Commits ska ske oftare än dagligen, och med korta men beskrivande kommentarer skriva på engelska i nutid (ex ''Add this new cool feature''). När en gren ska ''pushas'' till master-grenen måste åtminstone en annan teammedlem gå igenom grenen som ska läggas till och godkänna denna. Innan ett godkännandes ges måste inspektören ha en helhetsbild av vad som läggs till. När en gren sedan läggs till ska automatiska tester köras, som sedan kan neka en gren.
-	
-	En mer utförlig beskrivning av arbetsflödet finns tillgänglig på git-repot. Där finns även en mer detaljerad beskrivning av de automatiska testerna som kommer att köras av testprogrammet Travis.
 	
 \pagebreak
 \section*{Appendix}
