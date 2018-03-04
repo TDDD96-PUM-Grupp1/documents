@@ -1,89 +1,25 @@
 \section{Introduktion}
 \label{sec:tim-introduction}
+Under projektet fick vi tilldelat Deepstream som ett gränssnitt för att implementera spelet på Cybercoms backend. Men utöver att få det tilldelat finns det motivation att undersöka andra gränssnitt och hur de har löst de olika problemen som uppkommer vid nätverk.
 
-The introduction shall be divided into these subsections:
-
-\subsection{Motivation}
-\label{subsec:motivation}
-
-% \cite{scigen}
-
-This is where the studied problem is described from a general
-point of view and put in a context which makes it clear that
-it is interesting and well worth studying. The aim is to make
-the reader interested in the work and create an urge to
-continue reading.
-
-\subsection{Mål}
-\label{subsec:aim}
-
-
-What is the underlying purpose of the thesis project?
+\subsection{Syfte \& Mål}
+\label{subsec:tim-aim}
+Projektet som har utförts bygger en hel del på att nätverkslösningen som implementerats är snabb och skalbar för att uppnå maximal responsivitet för många användare. För att uppnå detta krävs en djupare förståelse för olika nätverksbibliotek och deras för- och nackdelar inom skalbarhet.
 
 \subsection{Frågeställning}
-\label{subsec:research-questions}
-
-
-This is where the research questions are described.
-Formulate these as explicit questions, terminated with a
-question mark. A report will usually contain several different
-research questions that are somehow thematically connected.
-There are usually 2-4 questions in total.
-
-Examples of common types of research questions (simplified
-and generalized):
+\label{subsec:tim-research-questions}
+För att göra denna undersökninen krävs några fundementala frågor som behöver besvaras, dessa presenteras nedan:
 
 \begin{enumerate}
-\item How does technique X affect the possibility of achieving the
-  effect Y?
+\item Hur påverka de olika biblioteken nätverket under större belastningar?
 
-\item How can a system (or a solution) for X be realized so
-  that the effect Y is achieved?
+\item Vad utmärker de olika biblioteken och hur påverka detta skalbarheten inom dem?
 
-\item What are the alternatives to
-  achieving X, and which alternative gives the best effect considering
-  Y and Z? (This research question is normally broken down in to 2
-  separate questions.)
+\item Skulle slutprodukten fungerat bättre om den byggdes upp i ett annat bibliotek?
 
 \end{enumerate}
-
-
-Observe that a very specific research question almost always
-leads to a better thesis report than a general research question
-(it is simply much more difficult to make something good
-from a general research question.)
-
-The best way to achieve a really good and specific research
-question is to conduct a thorough literature review and get
-familiarized with related research and practice. This leads to
-ideas and terminology which allows one to express oneself
-with precision and also have something valuable to say in the
-discussion section. And once a detailed research question
-has been specified, it is much easier to establish a suitable
-method and thus carry out the actual thesis work much faster
-than when starting with a fairly general research question. In
-the end, it usually pays off to spend some extra time in the
-beginning working on the literature review. The thesis
-supervisor can be of assistance in deciding when the research
-question is sufficiently specific and well-grounded in related
-research.
-
 \subsection{Avgränsingar}
-\label{subsec:delimitations}
-
-This is where the main delimitations are described. For
-example, this could be that one has focused the study on a
-specific application domain or target user group. In the
-normal case, the delimitations need not be justified.
-
-%\nocite{scigen}
-%We have included Paper \ref{art:scigen}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Intro.tex ends here
+\label{subsec:tim-delimitations}
+Detta papret kommer endast att diskutera realtidslösningar från två bibiotek, Deepstream och Firebase. Med tanke på resurserna som finns tillgängligt kommer inte ett verkligt experiment att utföras vilket kan påverka slutresultatet. 
 
 
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: "demothesis"
-%%% End: 
