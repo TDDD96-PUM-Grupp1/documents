@@ -5,6 +5,8 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{scrextend}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
+\usepackage{multirow}
 \selectlanguage{swedish}
 \input{../projectdefinitions.tex}
 
@@ -70,7 +72,52 @@
 \section{Testföremål}
 	Varje enhet som skapas kommer mer eller mindre genomgå enhetstest. Beroende på dess storlek kan de testas olika. T.ex. en liten service som skrivs på backend kan testas manuellt medan för större enheter t.ex. Kontrollerdelen, kan behöva automatiska tester.
 	\\
+	Nedan visas de krav från kravspecifikationen som behöver testas speciellt för att få en godkänd produkt.
+	\\
+	\begin{tabular}{| p{1.5cm} | p{8cm} | p{8cm}|}
 	
+  \hline
+    \multicolumn{2}{|c|}{Krav}&{Test}\\
+    \hline
+    
+		Krav 1&En mobil eller surfplatta ska användas som spelkontroll för spelet.&Testning av Kontroll-applikationen med mobil enhet.\\
+		\hline
+		Krav 4& Flera instanser av spelet ska kunna köras samtidigt. & Testa att skapa flera instanser av backend.\\
+		\hline
+		Krav 5& En unik slumpmässig identifikationskod ska genereras för en spelinstans. &Testa att kod skapas som fungerar för hotjoin.\\
+		\hline
+		Krav 6& Spelet ska stödja flera gamemodes. &Testa att flera olika spelvarianter implementerats.\\
+		\hline
+		Krav 8& Kontrollapplikationen ska ha ett grafiskt gränssnitt. &Visuellt kontrollera att Kontrollapplikationen ser bra ut.\\
+		\hline
+		Krav 9& Spelaren ska kunna sätta ett användarnamn. &Ange ett användarnamn och verifiera att namnet används i spelsessionen.\\
+		\hline
+		Krav 10& Om en spelare inte anger ett användarnamn, ska ett användarnamn ges till spelaren. &Testa att inte ange användarnamn vid start av spel, och få ett slumpat istället. \\
+		\hline
+		Krav 11& Kontrollapplikationen ska köras på en enhet som har minst version 64 av Google Chrome. &Testa spelet i Google Chrome version 64 och senare.\\
+		\hline
+		Krav 13& Kontrollapplikationen ska ha en sökruta, för att kunna söka bland de olika spelinstanserna. &Testa sökrutan utförligt och verifiera resultat. \\
+		\hline
+		Krav 15& Kontrollapplikationen ska kunna kalibrera en accelerometer. &Verifiera att kalibreringen av accelerometern fungerar korrekt.\\
+		\hline
+		Krav 16& Kontrollapplikationen ska stödja alternativa styrningsmetoder i de fall sensorer saknas. &Testa att de knappar som ersätter accelerometer ger likvärdig upplevelse som accelerometer.\\
+		\hline
+		Krav 17& Kontrollapplikationen ska stödja styrning med tangentbord och mus. &Testa att tangentbord och mus har samma funktionalitet som en mobil enhet.\\
+		\hline
+		Krav 18& UI-applikationen ska stödja minst fem spelare samtidigt. &Ansluta minst fem kontroller till en session samtidigt utan märkvärd prestandaförlust.\\
+		\hline
+		Krav 19& UI-applikationen ska ha ett grafiskt gränssnitt. &Visuellt kontrollera att UI-applikationen ser bra ut.\\
+		\hline
+		Krav 20& UI-applikationen ska kunna köras på en enhet som har minst version 64 av Google Chrome. &Testa spelet i Google Chrome version 64 och senare. \\
+		\hline
+		Krav 22& UI-applikationen ska visa en unik kod för sin spelinstans. &Visuellt verifiera att en unik kod visas i varje spelinstans.\\
+		\hline
+		Krav 23& UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare. Hårdvara, prestanda och plats på skärmen begränsar. &Verifiera att kod inte har begränsningar gällande antalet spelare. \\
+		\hline
+
+
+   
+  \end{tabular}
 	
 
 

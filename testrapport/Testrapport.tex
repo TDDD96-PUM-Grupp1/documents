@@ -83,16 +83,48 @@ Under projektets första iteration utfördes inget utvecklingsarbete och därfö
 Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning,
 
 \section{Enhetstestrapport}
-  \begin{tabular}{|l| c|}
+	\begin{tabular}{| p{1.5cm} | p{8cm} | p{1.2cm}| p{8cm}|}
+	
   \hline
-    \multicolumn{2}{|c|}{Kontroll}\\
+    \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
     \hline
-    Test&godkänt\\
-   \hline
-   Kan skapa användarnamn&19/2\\
-   \hline
-   Kan ta ut sensordata&18/2\\
-   \hline
+    
+		Krav 1&Testning av Kontroll-applikationen med mobil enhet.&&\\
+		\hline
+		Krav 4& Testa att skapa flera instanser av backend.&&\\
+		\hline
+		Krav 5&Testa att kod skapas som fungerar för hotjoin.&&\\
+		\hline
+		Krav 6&Testa att flera olika spelvarianter implementerats.&&\\
+		\hline
+		Krav 8&Visuellt kontrollera att Kontrollapplikationen ser bra ut.&&\\
+		\hline
+		Krav 9&Ange ett användarnamn och verifiera att namnet används i spelsessionen.&&\\
+		\hline
+		Krav 10&Testa att inte ange användarnamn vid start av spel, och få ett slumpat istället.&& \\
+		\hline
+		Krav 11&Testa spelet i Google Chrome version 64 och senare.&&\\
+		\hline
+		Krav 13&Testa sökrutan utförligt och verifiera resultat.&& \\
+		\hline
+		Krav 15&Verifiera att kalibreringen av accelerometern fungerar korrekt.&&\\
+		\hline
+		Krav 16&Testa att de knappar som ersätter accelerometer ger likvärdig upplevelse som accelerometer.&&\\
+		\hline
+		Krav 17&Testa att tangentbord och mus har samma funktionalitet som en mobil enhet.&&\\
+		\hline
+		Krav 18&Ansluta minst fem kontroller till en session samtidigt utan märkvärd prestandaförlust.&&\\
+		\hline
+		Krav 19&Visuellt kontrollera att UI-applikationen ser bra ut.&&\\
+		\hline
+		Krav 20&Testa spelet i Google Chrome version 64 och senare. &&\\
+		\hline
+		Krav 22&Visuellt verifiera att en unik kod visas i varje spelinstans.&&\\
+		\hline
+		Krav 23&Verifiera att kod inte har begränsningar gällande antalet spelare.&& \\
+		\hline
+
+
    
   \end{tabular}
   \\
@@ -162,18 +194,30 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
   Beskrivande text UI
   \\
 \section{Systemtestrapport}
-  \begin{tabular}{|l| c|}
+	\begin{tabular}{| p{1.5cm} | p{8cm} | p{1.2cm}| p{8cm}|}
+	
   \hline
-    \multicolumn{2}{|c|}{System}\\
+    \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
     \hline
-    Test&godkänt\\
-   \hline
-   Kommuniktation mellan UI och Kontroll&19/2\\
-   \hline
-   Kommunikation mellan UI och flera kontroller&19/2\\
-   \hline
-   Flera instanser av UI aktiva samtidigt&\\
-   \hline
+		Krav 2&Verifiera att ingen kommunikation går direkt mellan UI-applikationen och kontrollapplikationen.&&\\
+		\hline
+		Krav 3&Starta upp en spelinstans och låta en användare ansluta.&& \\
+		\hline
+		Krav 7& Testa låta samtliga spelare i en session rösta på nästa spel och låta det spel med flest röster vara nästa spel.&&\\
+		\hline
+		Krav 12& Verifiera att kontrollapplikationen har en lista på samtliga tillgängliga sessioner och att spelare kan ansluta till dem direkt.&& \\
+		\hline
+		Krav 14& Verifiera att kontrollapplikationen har direkt kontakt med backend.&& \\
+		\hline
+		Krav 21& Verifiera att UI-applikationen har direkt kontakt med backend.&& \\
+		\hline
+		Krav 24& Testa gå in i en aktiv spelsession med ett nytt UI.&& \\
+		\hline
+		Krav 32& Testa hålla en UI-session aktiv i minst 4 timmar utan nertid.&& \\
+		\hline
+		Krav 34& Mäta tiden en kontrollapplikation tar på sig att ansluta till en aktiv spelsession.&& \\
+		\hline
+
    
   \end{tabular}
   \\
@@ -182,7 +226,25 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
   \\
   
 \section{Acceptanstestrapport}
+	\begin{tabular}{| p{1.5cm} | p{8cm} | p{1.2cm}| p{8cm}|}
 	
+  \hline
+    \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
+    \hline
+
+
+		Krav 35& En grupp på 20 deltagare ska utvärdera responsiviteten i slutet av projektet med betyg 6 av 10.&& \\
+		\hline
+		Krav 36& En grupp på 20 deltagare ska utvärdera användarbarheten i slutet av projektet med betyg 6 av 10.&& \\
+		\hline
+		Krav 37& En grupp på 20 deltagare ska utvärdera den alternativa styrningen i slutet av projektet med betyg 6 av 10.&& \\
+		\hline
+		Krav 38& En grupp på 20 deltagare ska utvärdera hur ''lätt spelet är att förstå'' i slutet av projektet med betyg 6 av 10.&& \\
+		\hline
+
+   
+  \end{tabular}
+  
 
 \printbibliography
 	
