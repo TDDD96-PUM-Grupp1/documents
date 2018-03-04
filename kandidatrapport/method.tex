@@ -1,35 +1,3 @@
-%%% lorem.tex ---
-%%
-%% Filename: lorem.tex
-%% Description:
-%% Author: Ola Leifler
-%% Maintainer:
-%% Created: Wed Nov 10 09:59:23 2010 (CET)
-%% Version: $Id$
-%% Version:
-%% Last-Updated: Wed Nov 10 09:59:47 2010 (CET)
-%%           By: Ola Leifler
-%%     Update #: 2
-%% URL:
-%% Keywords:
-%% Compatibility:
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%%% Commentary:
-%%
-%%
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%%% Change log:
-%%
-%%
-%% RCS $Log$
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%%% Code:
-
 \chapter{Metod}
 \label{cha:method}
 Det här kapitlet beskriver hur projektet har utförts samt beskrivningar av de metoder och verktyg som använts för de olika områden projektet omfattar.
@@ -103,7 +71,7 @@ En gemensam Google kalender skapades där alla möten samt viktiga moment och de
 Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom rollerna team ledare och analysansvarig. Slack användes för både den interna- och externa kommunikationen under projektetsgång. En Slack arbetsplats skapades, där enbart projektgruppen var medverkande i, skedde majoriteten av all den interna kommunikationen. Olika kanaler skapades på denna Slack arbetsplats för att diskutera olika ärenden och hålla kommunikationen strukturerad. Det fanns ytterligare en slack arbetsplats där både projektgruppen och kunden medverkade i, på denna arbetsplats skedde majoriteten av den externa kommunikationen med kunden. Även denna arbetsplats var uppdelad i olika kanaler, frågor och allmänt. Tanken bakom frågor kanalen var att projektgruppen kunde fylla kanalen med frågor rörande utvecklingen och kunden kunde bearbeta frågorna när de hade tid. Allmänt kanalen användes för all övrig kommunikation.
 
 \subsection{Versionshantering}
-Git användes för att versionshantera våran kod. Själva gitrepot lagrades på GitHub för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan GitHub hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på mastern. 
+Git användes för att versionshantera våran kod. Själva gitrepot lagrades på GitHub för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan GitHub hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på master-branchen. 
 
 Utöver det så fungerar master-branchen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna branch. För att garantera detta laddades aldrig kod upp direkt till branchen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en request ska bli godkänd ska granskaren läsa igenom koden och testa relevanta områden för att garantera att det fungerar som det ska.
 
@@ -152,16 +120,9 @@ Under projektet hölls olika möten för att diskutera saker som har kommit upp.
 Dokumenten som skapades under projektets gång lagrades på Google Drive för att både versionshantera de olika färdiga iterationerna av dokumenten, men även för att enkelt kunna se dokumenten om LaTeX inte finns till hand. Dessutom versionshanterades dokumenten under arbetets gång med hjälp av git genom GitHub. Detta hjälpte dokumentskrivning genom att hantera olika konflikter när olika personer sitter i samma fil och skriver. 
 
 \subsection{Dokumentskrivning}
-Själva dokumentskrivningen utfördes genom att skriva i LaTeX, vilket gjorde det lättare att dela upp dokumenten i olika sektioner.   
+Själva dokumentskrivningen utfördes genom att skriva i LaTeX, vilket gjorde det lättare att dela upp dokumenten i olika sektioner. Utöver LaTeX användes Google Drive för mer inofficiella dokument såsom mötesprotokoll, veckorapporter och seminarieförberedelser. 
 
 \section{Metod för att fånga erfarenheter}
+Då teamet är samlat från olika program på universitetet och alla har olika erfarenheter om olika områden, vare sig det gäller spelprogrammering eller generell JavaScript, behövdes det en struktur för att samla och ta nytta av varje projektmedlems kunskaper. För att uppnå detta samlade teamet in och skrev ner de olika kundskaperna som teamet hade och utifrån det höll olika workshops för att få alla projektmedlemmar på ungefär samma nivå. 
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% lorem.tex ends here
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "demothesis"
-%%% End:
+Utöver det jobbade teamet i grupper om två till tre vilket underlättade arbetet då man lättare kunde utbyta erfarenheter. Dessa grupper växlades även vid jämna mellanrum så alla kan ta del av alla andras erfaranheter.
