@@ -73,8 +73,9 @@ Syftet med denna testrapport är att sammanställa och utvärdera de tester som 
   \input{definitioner}
 
 \section{Metod}
-
+{\color{red}Varför funkar inte referenser i detta dokument?!?!} \cite{bib-projektplan} För att få fram en bra produkt har projektgruppen bestämt sig för att följa IEEE 829 test-standard {\color {red} add standard reference} och testa produkten utförligt under utveckling. För mer ingående information om hur testningen gått till, hänvisas läsaren till Master testplan {\color {red} länk} för mer ingående information.
 \section{Resultat}
+
 \section{Iterationer}
 Detta kapitel ger en överskådlig blick över resultaten av testningen under varje iteration.
 \subsection{Iteration 1}
@@ -83,11 +84,14 @@ Under projektets första iteration utfördes inget utvecklingsarbete och därfö
 Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning,
 
 \section{Enhetstestrapport}
-	\begin{tabular}{| p{1.5cm} | p{8cm} | p{1.2cm}| p{8cm}|}
+	Nedan följer de enhetstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspecifikation} som måste vara godkända för att produkten ska kunna klassas som färdig.
+\\ \\
+\noindent
+\begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
 	
-  \hline
-    \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
-    \hline
+	\hline
+	\multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
+    	\hline
     
 		Krav 1&Testning av Kontroll-applikationen med mobil enhet.&&\\
 		\hline
@@ -130,48 +134,29 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
   \\
   \\
   
-  beskrivande text Enhetstestrapport
-  \\
+  Nedanför följer enhetstester som ej är med i kravspecifikationen.
+\\ \\
+\noindent
+\begin{tabular}{ | p{5cm} | p{1.2cm}| p{7cm}|}
+  	\hline
+	Test&Godkänt&Kommentar\\
+   	\hline
+	
+	Kompilering&&Varje gång kod pushas till versionshanteringsprogrammet {\color {red} länk Git} kör Travis {\color {red} länk Travis} automatiskt igenom koden och testar så att den kan kompilera. Detta underlättar utvecklingen genom att man inte råkar pusha kod som inte fungerar.\\
+   	\hline
+   
+  \end{tabular}
   
-  \noindent
-    \begin{tabular}{|l| c|}
-    \hline
-    \multicolumn{2}{|c|}{UI}\\
-    \hline
-    Test&godkänt\\
-   \hline
-   Kan skapa användarnamn&20/2\\
-   \hline
-   
-  \end{tabular}
-  \\
-  \\
-  beskrivande text UItestrapport
-\\
 
-  \noindent
-\begin{tabular}{|l| c|}
-  \hline
-    \multicolumn{2}{|c|}{Backend}\\
-    \hline
-    Test&godkänt\\
-   \hline
-   
-   
-  \end{tabular}
-  \\
-  \\
-  beskrivande text Backend
-  \\
 \section{Integrationstestrapport}
-  \begin{tabular}{|l| c|}
-  \hline
-    \multicolumn{2}{|c|}{Kontroll}\\
-    \hline
-    Test&godkänt\\
-   \hline
-   Kan koppla upp sig mot Backend&19/2\\
-   \hline
+\begin{tabular}{ | p{5cm} | p{1.2cm}| p{7cm}|}
+  	\hline
+	Test&Godkänt&Kommentar\\
+   	\hline
+  	 Kommunikation mellan UI och backend-stub&19/2&Kod har inte implementerats på backend än, därför har vi skrivit en dummyserver som får agera backend än så länge\\
+  	\hline
+   	Kommunikation mellan kontroll och backend-stub&19/2&Kod har inte implementerats på backend än, därför har vi skrivit en dummyserver som får agera backend än så länge\\
+   	\hline
    
   \end{tabular}
   \\
@@ -179,22 +164,18 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
   Beskrivande text Kontroll
   \\
   \noindent
-\begin{tabular}{|l| c|}
-  \hline
-    \multicolumn{2}{|c|}{UI}\\
-    \hline
-    Test&godkänt\\
-    \hline
-    Kan koppla upp sig mot Backend&19/2s\\
-    \hline
-   
-  \end{tabular}
   \\
   \\
-  Beskrivande text UI
   \\
+
+
+
+
 \section{Systemtestrapport}
-	\begin{tabular}{| p{1.5cm} | p{8cm} | p{1.2cm}| p{8cm}|}
+Nedan följer de systemtest som motsvarar kraven på kravspecifikationen \cite{bib-kravspecifikation} som måste vara godkända för att produkten ska kunna klassas som färdig.
+\\ \\
+\noindent
+	\begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
 	
   \hline
     \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
@@ -220,13 +201,12 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
 
    
   \end{tabular}
-  \\
-  \\
-  Beskrivande text system
-  \\
   
 \section{Acceptanstestrapport}
-	\begin{tabular}{| p{1.5cm} | p{8cm} | p{1.2cm}| p{8cm}|}
+Nedan följer de acceptanstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspecifikation} som måste vara godkända för att produkten ska kunna klassas som färdig.
+\\ \\
+\noindent
+	\begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
 	
   \hline
     \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
@@ -246,6 +226,6 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
   \end{tabular}
   
 
-\printbibliography
+\printbibliography	
 	
 \end{document}

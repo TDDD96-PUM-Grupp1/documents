@@ -30,9 +30,11 @@
 %% 
 %%% Code:
 
-\usepackage[backend=biber,hyperref]{biblatex}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \usepackage{scrextend}
-
+\input{../projectdefinitions.tex}
+\setlength\parindent{0pt}
+\parskip = \baselineskip
 
 %% To set the font of your thesis, use the \setmainfont{} command,
 %% surrounded with \ifxetex if you want to switch between xelatex and pdflatex
@@ -83,12 +85,4 @@
 
 %% Change this to your appropriate BibTeX reference file (.bib)
 
-\addbibresource{references.bib}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% settings.tex ends here
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: "demothesis"
-%%% End: 
+\addbibresource{../references.bib}
