@@ -1,4 +1,19 @@
-\title{Projektplan\\
+\newcommand{\titel}[1]{
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage[swedish]{babel}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
+\selectlanguage{swedish}
+
+\input{../projectdefinitions.tex}
+\addbibresource{../references.bib}
+
+
+\title{#1\\
     \large Projektgrupp 1}
 \author{
     Joel Almqvist\\
@@ -27,13 +42,4 @@
 }
 
 \date{\today \\Version 2.0}
-
-
-\maketitle
-\pagebreak
-\input{historik}
-\pagebreak
-\tableofcontents
-\pagebreak
-\listoffigures
-\pagebreak
+}

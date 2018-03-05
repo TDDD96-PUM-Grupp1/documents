@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{filecontents}
 \usepackage{etoolbox}
+\usepackage{hyperref}
 \usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \graphicspath{ {images/}}
 
@@ -49,13 +50,14 @@
     \texttt{alewi684@student.liu.se}
 }
 
-
+\date{\today \\Version 2.0}
 
 
 \begin{document}
 
 \maketitle
 \pagebreak
+\section*{Dokumenthistorik}
 \begin{center}
 	\begin{tabular}{| l | l | p{12cm} |  }
 		\hline
@@ -133,7 +135,7 @@
 	\\\\
 	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas under kodinspektionerna som måste göras innan en git-branch accepteras in till huvudprojektet\cite{bib-gitguide}. För mer detaljer gällande denna process se sektion gällande git. Lite kortfarrat så ska alla kod inspekteras av en annan teammedlem innan den accepteras in i huvud projektet, det är då inspektörens uppgift att se till att koden är väldokumenterad och att kommentererna följer denna standard. 
 	\\\\
-	\textbf{Problem hantering:} Ifall det upptäcks att kod inte följer denna kommenteringsstandard så kommer personen som skrev den få uppgiften att lägga till saknade kommentarer alternativt skriva om de kommentarer som finns. Efter omskrivning ska en ny git-push requests göras och koden ska då återigen inspekteras innan den godkänns. Notera att inspektionerna inte nödvändigtvis behöver göras av samma person.
+	\textbf{Problemhantering:} Ifall det upptäcks att kod inte följer denna kommenteringsstandard så kommer personen som skrev den få uppgiften att lägga till saknade kommentarer alternativt skriva om de kommentarer som finns. Efter omskrivning ska en ny git-push requests göras och koden ska då återigen inspekteras innan den godkänns. Notera att inspektionerna inte nödvändigtvis behöver göras av samma person.
 	Ifall en inspektör godkänner kod med bristfälliga eller icke existerande kommentarer så ska inspektören och kodskribenten bestämma sig sinsemellan vem som ska lägga till kommentarer till koden. Dessa nya kommentarer ska sen läggas till huvudgrenen genom den standardiserade git processen, och då får inte koden inspekteras av den gamla inspektören eller ursprungliga kodskribenten.
 	\\\\
 	\textbf{Roller:} Personen som skriver koden är ansvarig för att kommentarer skrivs på korrekt sätt. Ansvaret att se till att koden faktiskt följer denna kommenteringsstandarden ligger hos inspektören, som också har möjligheten att neka en git-push request ifall den inte följer standarden. De båda rollerna kommer att kontinuerligt antas av alla teammedlemmar vid olika faser av projektet och det är på så sätt allas ansvar att koden följer denna standard.
@@ -148,7 +150,7 @@
 	\\\\
 	\textbf{Utvärdering:} Denna process saknar en egen utvärderingsprocess utan kommer istället att utvärderas då en git-branch begärs gå ihop med huvudgrenen. I sektionen git-processer så skrivs mer om detta i detalj, men kortfattat så ska alla grenar inspekteras innan de tillåts gå ihop med huvudgrenen. Under denna inspektion ska inspektören undersöka ifall koden överensstämmer med Airbnbs kodstandard och neka grenen ifall den inte gör det.
 	\\\\
-	\textbf{Problem hantering:} Ifall det upptäcks att kod inte följer denna kodstandard så ska personen som skrev den få uppgiften att skriva om koden så att den gör det. Efter omskrivning ska en ny git-push requests göras och koden ska då återigen inspekteras innan den godkänns. Notera att inspektionerna inte nödvändigtvis behöver göras av samma person.
+	\textbf{Problemhantering:} Ifall det upptäcks att kod inte följer denna kodstandard så ska personen som skrev den få uppgiften att skriva om koden så att den gör det. Efter omskrivning ska en ny git-push requests göras och koden ska då återigen inspekteras innan den godkänns. Notera att inspektionerna inte nödvändigtvis behöver göras av samma person.
 	Ifall en inspektör godkänner kod som inte följer denna standard ska det diskuteras på nästa möte varför detta gjordes, ifall det var okunskap så är det viktigt att gå igenom så att problemet inte uppkommer igen hos en annan teammedlem. Ifall en inspektör medvetet godkännde kod som ej medhör standarden ska inspektören ändra koden så att den följer kodstandarden.
 	\\\\
 	\textbf{Roller:} Personen som skriver koden är ansvarig för att den följer Airbnbs Javascript standard. Ansvaret att påpeka ifall den inte gör det ligger hos inspektören, som också har möjlighet att neka en git-push ifall den inte uppfyller kraven. Ansvaret att koden följer standarden ligger alltså hos båda parterna och med gits historik är det transparant vem som lagt till vilken kod.
@@ -164,7 +166,7 @@
 	\\\\
 	\textbf{Utvärdering:} Denna process kommer bland annat att utvärdas baserat på hur bra teamet gör ifrån sig på enkäten som ska besvaras. Vid de första enkäterna så används enkäterna enbart som ett smoke-test för att se ifall vi av misstag påverkat någon av dessa kvalitetsaspekter när produkten förändrats. Dessutom så visar betygen hur nära teamet är att klara av ett kvalitetskrav, och vilken aspekt som behöver förbättras mest. Vid den sista enkäten så måste teamet uppnå åtminstone betyget 6/10 gällande aspekterna: responsitivitet, stabilitet och användarbarhet. Dessutom så måste den alternativa styrning också få ett betyg på åtminstone 6/10.
 	\\\\
-	\textbf{Problem hantering:} Ifall teamet inte lyckas nå upp till minimum betygen vid den sista sprintents slut, så ska produkten inte ses som färdig. Eftersom projektet är tidsbegränsat kommer det antagligen inte finnas en möjlighet att förbättra den efter projektetsslut. Det teamet i sånna fall måste göra är att tydligt föra fram denna brist på kvalitet i utökningar av produkten, såsom teamets kandidatarbete, samt meddela var och hur produkten brister till kunden.
+	\textbf{Problemhantering:} Ifall teamet inte lyckas nå upp till minimum betygen vid den sista sprintents slut, så ska produkten inte ses som färdig. Eftersom projektet är tidsbegränsat kommer det antagligen inte finnas en möjlighet att förbättra den efter projektetsslut. Det teamet i sånna fall måste göra är att tydligt föra fram denna brist på kvalitet i utökningar av produkten, såsom teamets kandidatarbete, samt meddela var och hur produkten brister till kunden.
 	Ifall produkten får ett för lågt betyg vid någon annan enkät än den sista så ska detta ses som en indikator om vad som behöver förbättras och fungera som material för nästa sprints plannering.
 	Ett annat potentielt problem blir att antalet personer i undersökning blir färre än den önskade siffran av 20, ifall detta händer ska det dokumenteras tillsammans med reslutatet. Ifall antalet personer som skriver enkäten blir färre än sex så kan enkätens resultat ignoreras och ses som ej statistiskt signifikant.
 	\\\\
@@ -180,7 +182,7 @@
 	\\\\
 	\textbf{Utvärdering:} Denna process kommer inte att utvärderas explicit, utan det är upp till varje teammedlem att aktivt följa den. Ifall en teammedlem jobbar med en uppgift de inte har tagit Trellokortet för så kan de förlora rätten att jobba med den uppgiften ifall någon annan tar Trellokortet.
 	\\\\
-	\textbf{Problem hantering:} Om en teammedlem inte använder sig av Trello korrekt ska detta tas upp på nästa teammöte och en genomgång av hur Trello ska användas ges. Om två personer jobbar på samma uppgift men bara en har skrivit sig själv på kortet så har denna person förtur till att jobba med kortet ifall enbart en av dem kan jobba med just denna uppgift.
+	\textbf{Problemhantering:} Om en teammedlem inte använder sig av Trello korrekt ska detta tas upp på nästa teammöte och en genomgång av hur Trello ska användas ges. Om två personer jobbar på samma uppgift men bara en har skrivit sig själv på kortet så har denna person förtur till att jobba med kortet ifall enbart en av dem kan jobba med just denna uppgift.
 	\\\\
 	\textbf{Roller:} Alla teammedlemar kommer att ha samma roll på denna aktivitet, rollen av Trello-användare. Det är allas ansvar att använda sig av Trello korrekt och det är allas ansvar att se till att hela teamet efterföljer Trellostandarden på ett korrekt sätt.
 	
@@ -194,7 +196,7 @@
 	\textbf{Utförande:} Teamet ska kontinuerligt använda sig av verktyget Prettier för att formatera koden enligt Airbnbs Javascript standard\cite{bib-airbnb}. Detta verktyg måste installeras och konfigueras till teamets standard innan det kan användas. Det ska köras på alla javascript filer i projekt för att få dem att bli mer lättläsliga.
 	\\\\
 	\textbf{Utvärdering:} Denna process kommer inte att utvärderas utan det är upp till varje teammedlem att se till att de installerar och använder Prettier. Ifall någon inte använder Prettier så kommer inget att göras, men med all sannolikhet kommer de då inte följa vår kodstandard och då kommer det att uppdagas. 
-	\textbf{Problem hantering:} Om en teammedlem har problem att installera eller använda Prettier ska denne be teamet om hjälp då dessa problem sannolikt uppkommit för någon annan också.
+	\textbf{Problemhantering:} Om en teammedlem har problem att installera eller använda Prettier ska denne be teamet om hjälp då dessa problem sannolikt uppkommit för någon annan också.
 	\\\\
 	\textbf{Roller:} Denna aktiviteter har enbart en roll, användare av Prettier, och denna roll ska antas av alla i teamet som skriver javascript kod.
 	
@@ -208,10 +210,23 @@
 	\\\\
 	\textbf{Utvärdering:} Denna process kommer att utvärderas av teamets konfigurationsansvarig som också är ansvarig att svara på frågor ifall det finns några oklarheter gällande denna process. Ifall denne anser att en del av processen skapar för många frågor eller problem så finns möjligheten att ta beslut gällande förändring av processen. Ifall ingen förändring behövs utan enbart utbildning så kan denna ges över antingen Slack eller vid nästa gruppmöte.
 	\\\\
-	\textbf{Problem hantering:} Projektets git-repo har regler som förhindrar ''push-requests'' som inte blivit inspekterande av en annan teammedlem och även automatiska tester som måste gå igenom innan en pull-request till master kan godkännas Ifall master-grenen på något sätt fortfarande lyckas bli instabil så ska konfigurationsansvarig återställa master-grenen till ett stabilt tillstånd och låta teammedlem som skrev den instabila kod att skriva om sin kod.\\\\
+	\textbf{Problemhantering:} Projektets git-repo har regler som förhindrar ''push-requests'' som inte blivit inspekterande av en annan teammedlem och även automatiska tester som måste gå igenom innan en pull-request till master kan godkännas Ifall master-grenen på något sätt fortfarande lyckas bli instabil så ska konfigurationsansvarig återställa master-grenen till ett stabilt tillstånd och låta teammedlem som skrev den instabila kod att skriva om sin kod.\\\\
 	Ett annat möjligt problem är att den inspekterande teammedlemmen godkänner kod som inte bör godkännas, ifall koden till exempel bryter mot Airbnbs kodstandard eller ifall den saknar kommentarer. Vid ett sådant tillfälle ska den teammedlem som godkännt koden anses vara ansvarig för att skriva om koden så att den bristande koden når teamets krav. Ett exempel på detta skulle vara ifall en teammedlem godkänner en fil utan kommentarer, då blir teamedlem som godkände koden ansvarig att skriva korrekta kommentarer till filen.
 	\\\\
 	\textbf{Roller:} Denna aktiviteter innefattar rollerna: skribent, inspektör och konfigurationsansvarig. Skribenten skriver koden som ska läggas till i master-grenen, inspektören går igenom skribentens kod och konfigurationsansvarig hjälper till att förklara processen ifall det behövs. Inspektören och skribenten får inte antas av samma person, men konfigurationsansvarig kommer att anta båda de andra rollerna under projektetsgång.
+
+	\subsection{Förändring av dokument}
+	\textbf{Syfte:} Projektgruppen kommer under projektets gång förändra dokument beorende på olika förändring i projektet. Därför behövs en tydlig process för att dokumentera vilka modifikationer som gjorts.
+	\\\\
+	\textbf{Relaterat kvalitetskrav:} Inga
+	\\\\
+	\textbf{Utförande:} Vid förändringar av dokumentens ickespråkliga innehåll ska en tydlig förklaring av ändringarna ges. Denna förklaring ska skrivas in i dokumentets dokumenthistorik tillsammans med ett nytt versionsnummer och datum. Vid officiell inlämning av ökas den första siffran i versionsnumret, medan alla andra förändringar leder till ökning av den andra siffran. 
+	\\\\
+	\textbf{Utvärdering:} Denna process kommer inte kunna utvärderas på samma sätt som de andra processerna. Det blir upp till varje teammedlemm att se till att processen följs. 
+	\\\\
+	\textbf{Problemhantering:} Det är mycket svårt att undersöka om processen har följts. Om det upptäckts att den inte följs kommer ansvarig för ändringarna försöka komplettera historiken från minne.
+	\\\\
+	\textbf{Roller:} Skribenten för dokumenten är utförare av processen.
 	
 	
 \pagebreak
