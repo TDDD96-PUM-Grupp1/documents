@@ -303,7 +303,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{palatino}
 \RequirePackage{mathabx}
-\RequirePackage{mathpazo}
+%\RequirePackage{mathpazo}
 \RequirePackage[T1]{fontenc}
 \fi
 
