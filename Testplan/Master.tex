@@ -1,6 +1,5 @@
 \input{titel.tex}
 \titel{Master Test Plan}
-
 \begin{document}
 
 \pagenumbering{gobble}
@@ -17,9 +16,9 @@
  	       \hline
  	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
  	       \hline
- 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+ 	       \centering 1.0 & 2018-02-12 & Första utkast\\
 		\hline
- 	       \centering 1.0 & 2018-02-12 & Iteration 2\\
+ 	       \centering 2.0 & 2018-03-05 & Iteration 2\\
  	       \hline
  	   \end{tabular}
 	\end{center}
@@ -32,11 +31,12 @@
 \pagenumbering{arabic}
 
 \section{Inledning}
-	Den här testplanen är framtagen för att kvalitetssäkra utvecklingen av ett IoT-spel som skapas av en studentgrupp som läser kursen TDDD96 på Linköpings universitet. Planen kommer endast innefatta tester som påverkar spelet både direkt och indirekt, och som är relaterade till utvecklingen. Primärt fokus kommer ligga på att säkerställa att spelet lever upp till de förväntningar som kund har på oss. {\color{red}Se kravspecifikationen}. Testplanen följer standard IEEE829. \\
+	Den här testplanen är framtagen för att kvalitetssäkra utvecklingen av ett IoT-spel som skapas av en studentgrupp som läser kursen TDDD96 på Linköpings universitet. Planen kommer endast innefatta tester som påverkar spelet både direkt och indirekt, och som är relaterade till utvecklingen. Primärt fokus kommer ligga på att säkerställa att spelet lever upp till de förväntningar som kund har på oss. Se kravspecifikationen \cite{bib-kravspec}. Testplanen följer standard IEEE829. \\
 
 Det här projektet kommer ha 4 olika nivåer av tester, vilket innefattar enhetstester, integrationstester, systemtester och acceptanstest. Detaljer angående testerna kan finnas under respektive testplan.
 
-Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och testplanen kommer med största sannolikhet modifieras under arbetets gång då arbetssättet är agilt.
+Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen kommer med störst sannolikhet modifieras under arbetets gång då arbetssättet är agilt.
+
 
 
 
@@ -48,7 +48,7 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 \section{Testföremål}
 	Nedan följer en lista över de stora delarna projektet är uppdelat i, som måste testas var för sig.
 	\begin{itemize}
-	\item [Backend] Eftersom målet med projektet är att visa hastigheten av Cybercoms backend är detta en central punkt i projektet.
+	\item [Backend] Gruppen kommer använda sig utav Cybercoms backend för kommunikation mellan Kontroller och UI, backend i sig kommer inte att testas utan den kod som läggs till på backend för att hantera kommunikationen.
 	\item [Kontroller] Spelet ska kontrolleras med hjälp av accelerometern i t.ex. en mobil eller surfplatta.
 	\item [UI] Spelet ska kunna visas på en skärm som får all användardata från Cybercoms backend.
 	\end{itemize}
@@ -86,7 +86,7 @@ Projektet förväntas vara färdigt för leverans vid {\color{red}28-5-2018} och
 	Väldigt få tester kommer att genomföras under denna iteration då de kommer vara svåra att definiera pga att det är en web-applikation som utvecklas. Tester kommer bli mer genomgående när servern är klart.
 	
 \subsection{Iteration 3}
-	I iteration 3 kommer huvudfokus ligga på att vidareutveckla applikationen för att få mer funktionalitet. Gruppen ska lägga mer tid på att skapa tester vilket kommer förenkla framtidiga utveckling. 
+	I iteration 3 kommer huvudfokus ligga på att vidareutveckla applikationen för att få mer funktionalitet. Systemet ska ha de flesta funktionerna implementerade vid slutet av iterationen och samtliga ska testas. Vidare information kan återfinnas i testplan.
 	
 	
 	

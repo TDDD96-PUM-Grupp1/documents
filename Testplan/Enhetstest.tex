@@ -1,6 +1,8 @@
 \input{titel.tex}
 \titel{Enhetstestplan}
 
+\date{\today \\ Version 2.0}
+
 \begin{document}
 \pagenumbering{gobble}
 \maketitle
@@ -13,9 +15,9 @@
  	       \hline
  	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
  	       \hline
- 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+ 	       \centering 1.0 & 2018-02-12 & Första utkast\\
 		\hline
- 	       \centering 1.0 & 2018-02-12 & Iteration 2\\
+ 	       \centering 2.0 & 2018-03-05 & Iteration 2\\
  	       \hline
  	   \end{tabular}
 	\end{center}
@@ -81,12 +83,58 @@
 
    
   \end{tabular}
+	\\ \\
+	Nedanför kommer de tester som inte är definierade i kravspecifikationen \cite{bib-kravspec} men som ska göras ändå för att verifiera ett stabilt system.
 	
+	\begin{tabular}{| p{2.1cm}| p{2cm} | p{8cm}|}
+	
+      \hline
+      NR&Enhet&Test\\
+      \hline
+    
+		Enhetstest 1&UI&Funktionalitet för startknapp.\\
+		\hline
+		Enhetstest 2&UI&Funktionalitet för spelalternativknapp.\\
+		\hline
+		Enhetstest 3&UI&Max antal spelare.\\
+		\hline
+		Enhetstest 4&UI&Spelalternativ, stänga av vissa speltyper.\\
+		\hline
+		Enhetstest 5&UI&Vem som får bestämma speltyper.\\
+		\hline
+		Enhetstest 6&UI&välja unik identifikationskod för instansen.\\
+		\hline
+		Enhetstest 7&UI&Tillbakaknapp för spelalternativmeny.\\
+		\hline
+		Enhetstest 8&UI&Startknapp för spelalternativmeny.\\
+		\hline
+		Enhetstest 8&UI&Varning om annan webbläsare än Chrome version 64 används.\\
+		\hline
+		Enhetstest 9&Kontroll&Splashscreen för kontroller vid första anslutning.\\
+		\hline
+		Enhetstest 10&Kontroll&Hotjoinknapp med tillhörande sökruta.\\
+		\hline
+		Enhetstest 11&Kontroll&Hotjoin ska fungera med listan av olika instanser.\\
+		\hline
+		Enhetstest 12&Kontroll&Knapp för funktionalitet i spelet.\\
+		\hline
+		Enhetstest 13&Kontroll&Ändra bakgrundsfärg.\\
+		\hline
+		Enhetstest 14&Kontroll&Redigerbar text i spelet.\\
+		\hline
+		Enhetstest 15&Kontroll&Highscorelista eller scoreboard.\\
+		\hline
+		Enhetstest 16&Backend&Hantera flera instanser.\\
+		\hline
 
+
+
+   
+  \end{tabular}
 
 \section{Tillvägagångssätt}
 	Hurvida en enhets testning ska gå till är på fall till fall basis, där testaren ansvarig över enheten själv bestämmer om den är stor nog att meritera automatisk testning.
-	Om så är fallet, bör {\color{red}Jasmine}, Javascript testframework, användas. Test som automatiseras skall övervägas att läggas in som regressionstester i Travis för att funktionalitet inte går förlorad i utvecklingsprocessen. \\
+	Om så är fallet, bör Jest, Javascript testframework, användas. Test som automatiseras skall övervägas att läggas in som regressionstester i Travis för att funktionalitet inte går förlorad i utvecklingsprocessen. \\
 	\\
 	För att ha en bra teststandard bör följande punkter has i åtanke:
 	\begin {itemize}
@@ -125,7 +173,7 @@ Datum för dessa är samma som återfinnes i Master Testplan.
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
 	 \item Varje enhet ska ha testas enligt den standard beskriven under Tillvägagångssätt.
-	 \item Större enheter ska testas automatiskt genom {\color{red}Jasmine} och sedan skapa regressionstester att lägga till i Travis.
+	 \item Större enheter ska testas automatiskt genom Jest och sedan skapa regressionstester att lägga till i Travis.
 	\end{itemize}
 	
 
