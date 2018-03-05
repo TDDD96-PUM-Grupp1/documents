@@ -13,9 +13,9 @@
  	       \hline
  	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
  	       \hline
- 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+ 	       \centering 1.0 & 2018-02-12 & Första utkast\\
 		\hline
- 	       \centering 1.0 & 2018-02-12 & Iteration 2\\
+ 	       \centering 2.0 & 2018-03-05 & Iteration 2\\
  	       \hline
  	   \end{tabular}
 	\end{center}
@@ -33,14 +33,14 @@
 
 	
 \section{Testföremål}
-	För ett godkänt systemtest ska samtliga av nedanstående tester vara godkända. \\
+	För ett godkänt systemtest ska samtliga av nedanstående tester vara godkända. Dessa test är definierade utefter kravspecifikation. \\
   
 	\begin{tabular}{| p{1.5cm} | p{6cm} | p{8cm}|}
 	
   \hline
     \multicolumn{2}{|c|}{Krav}&{Test}\\
     \hline
-		Krav 2&UI-applikationen ska endast kommunicera med \newline kontrollapplikationen via Cybercoms IoT-backend.&Verifiera att ingen kommunikation går direkt mellan UI-applikationen och kontrollapplikationen.\\
+		Krav 2&UI-applikationen ska endast kommunicera med kontrollapplikationen via Cybercoms IoT-backend.&Verifiera att ingen kommunikation går direkt mellan UI-applikationen och kontrollapplikationen.\\
 		\hline
 		Krav 3& En användare ska kunna ansluta sig till en spelinstans. &Starta upp en spelinstans och låta en användare ansluta. \\
 		\hline
@@ -61,9 +61,28 @@
 
    
   \end{tabular}
+    \\  \\ \\
+  Dessa test nedanför är test som behöver göras men som ej är definierade utefter kravspecifikation.
+  \\
   
-  
+  \noindent
+	\begin{tabular}{| p{2.1cm}| p{8cm}|}
+	
+      \hline
+      NR&Test\\
+      \hline
+    
+		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.\\
+		\hline
+		Systemtest 2&Användning av knapp i kontroller ska motsvara en händelse i spelet.\\
+		\hline
+		Systemtest 3&Funktionalitet för startknapp.\\
+		\hline
 
+
+
+   
+  \end{tabular}
 	
 	
 
