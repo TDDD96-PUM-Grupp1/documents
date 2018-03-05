@@ -32,16 +32,33 @@
 
 	
 \section{Testföremål}
-	Varje gång en ny enhet läggs till på projektet behöver integrationstester genomföras. t.ex. Kommunikation mellan UI och Backend.
+	Varje gång en ny enhet läggs till på projektet behöver integrationstester genomföras. t.ex. Kommunikation mellan UI och Backend.\\
+	\\
+	Nedan visas de test som behöver göras för att säkerställa att de implementerade funktionerna fungerar som de ska efter implementation.\\
 	
 	
+\noindent
+	\begin{tabular}{| p{2.8cm}| p{2cm} | p{8cm}|}
 	
+      \hline
+      NR&Enheter&Test\\
+      \hline
+    
+		Integrationstest 1&UI och backend&Kommunikation mellan UI och backend.\\
+		\hline
+		Integrationstest 2&backend och kontroll&Kommunikation mellan backend och kontroll.\\
+		\hline
+		Integrationstest 3&UI, backend och kontroll&Kommunikation mellan UI och kontroll via backend.\\
+		\hline
+
+
+  \end{tabular}
 	
 
 
 
 \section{Tillvägagångssätt}
-	Under projektets gång kommer de enheter som utvecklas parallellt skapas på olika branches i git. När enheterna börjar bli redo att implementeras på projektet kommer konfigurationsansvarig att överse mergen mellan de olika grenarna.\\
+	Under projektets gång kommer de enheter som utvecklas parallellt skapas på olika grenar i git. När enheterna börjar bli redo att implementeras på projektet kommer konfigurationsansvarig att överse mergen mellan de olika grenarna.\\
 	\\
 	Testerna som följer kommer skapas med konfigurationsansvarig i spetsen uppbackad av de gruppmedlemmar som hjälpt till att utveckla den del av produkten som är i fokus. Under testningen kommer det ske whiteboxtesting för att se till att samtliga funktioner sammankopplade fungerar som de ska. 
 
