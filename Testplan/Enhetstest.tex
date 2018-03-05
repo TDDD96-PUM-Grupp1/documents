@@ -30,10 +30,8 @@
 	Det här dokumentet går igenom hur Enhetstestningen kommer ske.
 
 
-  \input{definitioner}
-	
+\input{definitioner}
 
-	
 \section{Testföremål}
 	Varje enhet som skapas kommer mer eller mindre genomgå enhetstest. Beroende på dess storlek kan de testas olika. T.ex. en liten service som skrivs på backend kan testas manuellt medan för större enheter t.ex. Kontrollerdelen, kan behöva automatiska tester.
 	\\
@@ -51,9 +49,9 @@
 		\hline
 		Krav 5& En unik slumpmässig identifikationskod ska genereras för en spelinstans. &Testa att kod skapas som fungerar för hotjoin.\\
 		\hline
-		Krav 6& Spelet ska stödja flera gamemodes. &Testa att flera olika spelvarianter implementerats.\\
+		Krav 6& Spelet ska stödja flera gamemodes. &Verifiera att flera olika spelvarianter implementerats.\\
 		\hline
-		Krav 8& Kontrollapplikationen ska ha ett grafiskt gränssnitt. &Visuellt kontrollera att Kontrollapplikationen ser bra ut.\\
+		Krav 8& Kontrollapplikationen ska ha ett grafiskt gränssnitt. &Visuellt kontrollera att kontrollapplikationen ser bra ut.\\
 		\hline
 		Krav 9& Spelaren ska kunna sätta ett användarnamn. &Ange ett användarnamn och verifiera att namnet används i spelsessionen.\\
 		\hline
@@ -63,13 +61,13 @@
 		\hline
 		Krav 13& Kontrollapplikationen ska ha en sökruta, för att kunna söka bland de olika spelinstanserna. &Testa sökrutan utförligt och verifiera resultat. \\
 		\hline
-		Krav 15& Kontrollapplikationen ska kunna kalibrera en accelerometer. &Verifiera att kalibreringen av accelerometern fungerar korrekt.\\
+		Krav 15& Kontrollapplikationen ska kunna kalibrera en accelerometer. &Kalibrera accelerometern i en mobil enhet.\\
 		\hline
 		Krav 16& Kontrollapplikationen ska stödja alternativa styrningsmetoder i de fall sensorer saknas. &Testa att de knappar som ersätter accelerometer ger likvärdig upplevelse som accelerometer.\\
 		\hline
 		Krav 17& Kontrollapplikationen ska stödja styrning med tangentbord och mus. &Testa att tangentbord och mus har samma funktionalitet som en mobil enhet.\\
 		\hline
-		Krav 18& UI-applikationen ska stödja minst fem spelare samtidigt. &Ansluta minst fem kontroller till en session samtidigt utan märkvärd prestandaförlust.\\
+		Krav 18& UI-applikationen ska stödja minst fem spelare samtidigt. &Ansluta minst fem kontroller till en session samtidigt utan märkbar prestandaförlust.\\
 		\hline
 		Krav 19& UI-applikationen ska ha ett grafiskt gränssnitt. &Visuellt kontrollera att UI-applikationen ser bra ut.\\
 		\hline
@@ -96,11 +94,11 @@
 		\hline
 		Enhetstest 2&UI&Funktionalitet för spelalternativknapp.\\
 		\hline
-		Enhetstest 3&UI&Max antal spelare.\\
+		Enhetstest 3&UI&Spelalternativ, max antal spelare.\\
 		\hline
 		Enhetstest 4&UI&Spelalternativ, stänga av vissa speltyper.\\
 		\hline
-		Enhetstest 5&UI&Vem som får bestämma speltyper.\\
+		Enhetstest 5&UI&Spelalternativ, vem som får bestämma speltyper.\\
 		\hline
 		Enhetstest 6&UI&välja unik identifikationskod för instansen.\\
 		\hline
@@ -123,8 +121,6 @@
 		Enhetstest 14&Kontroll&Redigerbar text i spelet.\\
 		\hline
 		Enhetstest 15&Kontroll&Highscorelista eller scoreboard.\\
-		\hline
-		Enhetstest 16&Backend&Hantera flera instanser.\\
 		\hline
 
 
