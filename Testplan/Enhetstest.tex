@@ -1,48 +1,13 @@
-\documentclass[10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=2cm]{geometry}
-\usepackage[swedish]{babel}
-\usepackage{hyperref}
-\usepackage{color}
-\usepackage{scrextend}
-\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
-\usepackage{multirow}
-\selectlanguage{swedish}
-\input{../projectdefinitions.tex}
+\input{titel.tex}
+\titel{Enhetstestplan}
 
-\title{Enhetstestplan\\
-    \large Projektgrupp 1}
-\author{
-    Joel Almqvist\\
-    \texttt{joeal360@student.liu.se}
-    \and
-    Björn Detterfelt\\
-    \texttt{bjode786@student.liu.se}
-    \and
-    Tim Håkansson\\
-    \texttt{timha404@student.liu.se}
-    \and
-    David Kjellström\\
-    \texttt{davkj168@student.liu.se}
-    \and
-    Axel Löjdquist\\
-    \texttt{axelo225@student.liu.se}
-    \and
-    Joel Oskarsson\\
-    \texttt{joeos014@student.liu.se}
-    \and
-    Lieth Wahid\\
-    \texttt{liewa893@student.liu.se}
-    \and
-    Alexander Wilkens\\
-    \texttt{alewi684@student.liu.se}
-}
+\date{\today \\ Version 2.0}
 
 \begin{document}
 \pagenumbering{gobble}
 \maketitle
 \pagebreak
-	\section*{Revisionshistorik}
+	\section*{Dokumenthistorik}
 
 	
 	\begin{center}
@@ -50,9 +15,9 @@
  	       \hline
  	       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\
  	       \hline
- 	       \centering 0.1 & 2018-02-12 & Första utkast\\
+ 	       \centering 1.0 & 2018-02-12 & Första utkast\\
 		\hline
- 	       \centering 1.0 & 2018-02-12 & Iteration 2\\
+ 	       \centering 2.0 & 2018-03-05 & Iteration 2\\
  	       \hline
  	   \end{tabular}
 	\end{center}
@@ -118,12 +83,58 @@
 
    
   \end{tabular}
+	\\ \\
+	Nedanför kommer de tester som inte är definierade i kravspecifikationen \cite{bib-kravspec} men som ska göras ändå för att verifiera ett stabilt system.
 	
+	\begin{tabular}{| p{2.1cm}| p{2cm} | p{8cm}|}
+	
+      \hline
+      NR&Enhet&Test\\
+      \hline
+    
+		Enhetstest 1&UI&Funktionalitet för startknapp.\\
+		\hline
+		Enhetstest 2&UI&Funktionalitet för spelalternativknapp.\\
+		\hline
+		Enhetstest 3&UI&Max antal spelare.\\
+		\hline
+		Enhetstest 4&UI&Spelalternativ, stänga av vissa speltyper.\\
+		\hline
+		Enhetstest 5&UI&Vem som får bestämma speltyper.\\
+		\hline
+		Enhetstest 6&UI&välja unik identifikationskod för instansen.\\
+		\hline
+		Enhetstest 7&UI&Tillbakaknapp för spelalternativmeny.\\
+		\hline
+		Enhetstest 8&UI&Startknapp för spelalternativmeny.\\
+		\hline
+		Enhetstest 8&UI&Varning om annan webbläsare än Chrome version 64 används.\\
+		\hline
+		Enhetstest 9&Kontroll&Splashscreen för kontroller vid första anslutning.\\
+		\hline
+		Enhetstest 10&Kontroll&Hotjoinknapp med tillhörande sökruta.\\
+		\hline
+		Enhetstest 11&Kontroll&Hotjoin ska fungera med listan av olika instanser.\\
+		\hline
+		Enhetstest 12&Kontroll&Knapp för funktionalitet i spelet.\\
+		\hline
+		Enhetstest 13&Kontroll&Ändra bakgrundsfärg.\\
+		\hline
+		Enhetstest 14&Kontroll&Redigerbar text i spelet.\\
+		\hline
+		Enhetstest 15&Kontroll&Highscorelista eller scoreboard.\\
+		\hline
+		Enhetstest 16&Backend&Hantera flera instanser.\\
+		\hline
 
+
+
+   
+  \end{tabular}
 
 \section{Tillvägagångssätt}
 	Hurvida en enhets testning ska gå till är på fall till fall basis, där testaren ansvarig över enheten själv bestämmer om den är stor nog att meritera automatisk testning.
-	Om så är fallet, bör {\color{red}Jasmine}, Javascript testframework, användas. Test som automatiseras skall övervägas att läggas in som regressionstester i Travis för att funktionalitet inte går förlorad i utvecklingsprocessen. \\
+	Om så är fallet, bör Jest, Javascript testframework, användas. Test som automatiseras skall övervägas att läggas in som regressionstester i Travis för att funktionalitet inte går förlorad i utvecklingsprocessen. \\
 	\\
 	För att ha en bra teststandard bör följande punkter has i åtanke:
 	\begin {itemize}
@@ -162,19 +173,13 @@ Datum för dessa är samma som återfinnes i Master Testplan.
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
 	 \item Varje enhet ska ha testas enligt den standard beskriven under Tillvägagångssätt.
-	 \item Större enheter ska testas automatiskt genom {\color{red}Jasmine} och sedan skapa regressionstester att lägga till i Travis.
+	 \item Större enheter ska testas automatiskt genom Jest och sedan skapa regressionstester att lägga till i Travis.
+	 \item Samtliga test under testföremål ska vara godkända.
 	\end{itemize}
 	
 
 
-\section{Referenser}
-	\begin{itemize}
-	\item [1] Grupp 1. Kravspecifikation. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\item [2] Grupp 1. Projektplan. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\item [3] Grupp 1. Kvalitetsplan. Tekn. rapport. Linköpings universitet, febr. 2018.
-	\end{itemize}
-	
 
-
+\printbibliography
 
 \end{document}
