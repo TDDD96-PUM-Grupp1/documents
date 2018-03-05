@@ -1,16 +1,17 @@
 \section{Metod}
 \label{sec:joel_a-method}
-Tanken är att samla in data genom att skriva ett script som går igenom repositiories för open-source javascript projekt. En begränsad mängd av projekt att undersöka kan väljas genom att exempelvis se till de högst rankade projekten på github. Hur detta urval görs är dock viktigt och bör poängteras noga.
 
-Själva datainsamlingen kan göras genom att i dessa  projekt läsa av deras beroenden från filen package.json, som används av npm. Detta ger direkta beroenden.
+Undersökning är tänkt att genomföras genom att använda sig av Trepn för att jämföra hur mycket ström vår produkt drar jämför med native appar som då inte använder sig av någon browser. Dessa appar ska delar in i 3 kategorier, appar som troligtvis drar mycket mer ström (tex ett spel eller videospelare av något slag), appar som troligtvis drar mycket mindre (tex en simpel text editor av något slag), och appar som drar ungefär lika mycket. Problem kan uppkomma med den sista kategorin eftersom det blir lite godtyckligt vad som borde dra ungefär lika mycket, men skulle tro tex google maps borde vara liknande då den likt vår app konstant skickar ut sensor data.
 
-Hela trädet av beroenden kan fås från package-lock.json, som ofta lagras tillsammans med package.json. Detta ger indirekta beroenden och det kan vara möjligt att göra vidare undersökningar på denna graf (exempelvis nivåer av beroenden)
-
-För att få fram inforamtion om effekterna av beroenden får en större informationssökning genomföras. Det verkar finnas gott om akademiska källor av intresse för detta och troligen även bloggposter från personer med stor erfarenhet av javascript-projekt (som kan användas ur ett kritiskt perspektiv).
-
-Till viss del kan den egna gruppens erfarenheter presenteras. Det vore även möjligt att intervjua någon/några från en annan grupp inom kursen och därmed få in en större bredd av erfarenheter.\\
+De valda apparna ska sen användas kontinuerligt i 10s, 30s, 2min, och 5min och skriva ner hur mycket processorkraft och minne de använder samt hur mycket information de skickar ut mot internet. Möjligtvis ska Trepns inbyggda estimering av batteri-användning också användas.
 
 \textbf{Här följer några källor som kan användas}\\
-\href{https://dspace.cvut.cz/bitstream/handle/10467/68195/F8-DP-2017-Zitny-Jakub-thesis.pdf?sequence=1&isAllowed=y}{Liknande undersökning}\\
-\href{https://arxiv.org/pdf/1709.04638.pdf}{Effekter av micro-paket i npm}\\
-\href{https://repository.tudelft.nl/islandora/object/uuid:3a15293b-16f6-4e9d-b6a2-f02cd52f1a9e?collection=education}{Effekter av beroenden i npm för säkerhet}\\ \href{https://arxiv.org/pdf/1710.04936.pdf}{Jämförelse mellan pakethantering i olika programmeringsspråk}\\ \href{http://www.scotthenry.ca/wp-content/uploads/2018/01/Report.pdf}{Undersökning om uppdatering av beroenden i npm}\\
+
+\begin{enumerate}
+	\item ''Empirical evaluation of two best practices for energy- efficient software development'' -- Artikel 1 ifrån hållbarhetsseminariet
+	\item ''Framing sustainability as a property of software'' -- Artikel 2 ifrån hållbarhetsseminariet
+	\item ''Developing a sustainability non-functional requirements framework'' -- Artikel 3 ifrån hållbarhetsseminariet
+	\item ''The GREENSOFT model: A reference model for green and sustainable software and its engineering'' -- Artikel 4 ifrån hållbarhetsseminariet
+\end{enumerate}
+
+Antagligen så kommer inte alla dessa hålbarhetsartiklar användas utan det som kommer att lyftas ifrån dem är framförallt hur man kan optimera olika operationer för att minska ström användning (artikel 1 nämner detta) vilket relaterar till webläsare vs native app. Ifrån de andra tre artiklarna är det framförallt hur mycket ström som mjukvara användar och miljöpåverkan av detta, samt hur miljöpåverkan av att producera ny hårdvara och vikten att stödja gammal hårdvara är ifrån ett hållbarhetsperspektiv.
