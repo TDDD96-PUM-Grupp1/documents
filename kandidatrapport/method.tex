@@ -52,19 +52,19 @@ Efter projektet gjordes efterstudier för att granska det resultat teamet fick f
 }
 \subsection{Utvecklingsmetod}
 Projektgruppen bestämde tidigt att utveckla med det agila ramverket Scrum med en viss modifikation. Alla medlemmar var överens att delen i ramverket kring Stand-up meetings kändes redundant och valdes därav bort. Bortsett från denna modifikationen följdes ramverket väl. Vid början av varje sprint samlades projektgruppen för att organisera en sprint-backlog från product-backlogen. Product-backlogen uppdaterades med aktiviteter kontinuerligt av alla medlemmar när en aktivitet upptäcktes.
-\\ \
+
 Trello användes för att organisera och representera varje sprint-backlog i projektet. Ett trello-board för en sprint bestod av kolumnerna TODO, currently doable, in progress, stalled och done. Under TODO hamnade alla aktiviteter projektgruppen kunde producera. Aktiviteter kunde läggas till i denna kolumn under en pågående sprint. TODO-kolumnen kan liknas med en product backlog i Scrum. I kolumnen currently doable hamnade alla aktiviter som förväntades bli klara till en sprints slut. Varje aktivitet bestod av två attribut, prioritet och tidsestimering. Dessa attribut sattes när en sprint planerades och hjälpte gruppen att belasta varje sprint med en bra mängd aktiviteter. Under rubriken in progress hamnade alla aktiviteter som en eller flera projektmedlemmar arbetade med. I stalled kolumnen hamnade alla aktiviterer som påbörjats men pausats på grund av andra prioriteringar. I Done-kolumnen hamnade alla aktiviteter som blvit avklarade. Kolumnen användes för att utvärdera sprinten och fungerade som en logg över vad som hade gjorts.
 
 \subsection{Testning}
 Under förstudiefasen undersökte testledaren vilka vertyg som kunde användas för projektet samt hur hela testningsprocessen skulle gå till. Projektgruppen beslutade om att verktyget Travis skulle användas.
-\\ \
+
 Travis är ett verktyg som kör förskrivna tester vid varje pull request, om dessa tester skulle misslyckas neckas pull requesten. Vertyget sparade projektgruppens tid genom att verifiera att koden verkligen fungerade givet att bra tester hade skrivits.
-\\ \
+
 Yterliggare en testingsmetodik projektgruppen införde var kodgranskning vid varje pull request. Det innebar att om travis-testerna lyckades köras behövde en projektmedlem sedan granska och verifiera koden innan pull requesten kunde godkännas.
 
 \subsection{Möten}
 Vid början av varje vecka hade projektgruppen ett möte för att diskutera vad som skulle hända framöver och där funderingar eller problem kunde tas upp och diskuteras. Dessutom hade projektgruppen ett handledarmöte varje vecka. På handledarmötet kunde generella frågor kring projektet ställas och vägledning gavs för diverse problem eller funderingar projektgruppen hade. Alla möten dokumenterades med hjälp av ett mötesprotokoll som projektgruppen formulerat.
-\\ \
+
 En gemensam Google-kalender skapades där alla möten samt viktiga moment och deadlines lades till. Alla moment som lades till i kalendern ansågs vara obligatoriska av projektgruppen där alla medlemmar förväntades medverka.
 
 \subsection{Kommunikation}
@@ -72,7 +72,7 @@ Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom r
 
 \subsection{Versionshantering}
 Git användes för att versionshantera koden. Själva gitrepot lagrades på GitHub för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan GitHub hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på master-branchen.
-\\ \
+
 Utöver det så fungerar master-branchen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna branch. För att garantera detta laddades aldrig kod upp direkt till branchen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en request ska bli godkänd ska granskaren läsa igenom koden och testa relevanta områden för att garantera att det fungerar som det ska.
 
 \section{Dokumentation}
