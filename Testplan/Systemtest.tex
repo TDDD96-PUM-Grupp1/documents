@@ -29,14 +29,14 @@
 
 
   \input{definitioner}
-	
 
-	
+
+
 \section{Testföremål}
 	För ett godkänt systemtest ska samtliga av nedanstående tester vara godkända. Dessa test är definierade utefter kravspecifikation. \\
-  
+
 	\begin{tabular}{| p{1.5cm} | p{6cm} | p{8cm}|}
-	
+
   \hline
     \multicolumn{2}{|c|}{Krav}&{Test}\\
     \hline
@@ -44,7 +44,7 @@
 		\hline
 		Krav 3& En användare ska kunna ansluta sig till en spelinstans. &Starta upp en spelinstans och låta en användare ansluta. \\
 		\hline
-		Krav 7& En spelare ska ha möjligheten att rösta på vilket gamemode som ska spelas. & Testa låta samtliga spelare i en session rösta på nästa spel och låta det spel med flest röster vara nästa spel.\\
+		Krav 7& En spelare ska ha möjligheten att rösta på vilket gamemode som ska spelas. & Testa att låta samtliga spelare i en session rösta på nästa spel och låta det spel med flest röster vara nästa spel.\\
 		\hline
 		Krav 12& Kontrollapplikationen ska ansluta sig till en spelinstans genom att välja en spelinstans från en lista. & Verifiera att kontrollapplikationen har en lista på samtliga tillgängliga sessioner och att spelare kan ansluta till dem direkt. \\
 		\hline
@@ -59,19 +59,19 @@
 		Krav 34& Tiden att ansluta sig till en spelsession får inte överskrida 10 sekunder under vanliga nätverksförhållanden. & Mäta tiden en kontrollapplikation tar på sig att ansluta till en aktiv spelsession. \\
 		\hline
 
-   
+
   \end{tabular}
     \\  \\ \\
   Dessa test nedanför är test som behöver göras men som ej är definierade utefter kravspecifikation.
   \\
-  
+
   \noindent
 	\begin{tabular}{| p{2.1cm}| p{8cm}|}
-	
+
       \hline
       NR&Test\\
       \hline
-    
+
 		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.\\
 		\hline
 		Systemtest 2&Användning av knapp i kontroller ska motsvara en händelse i spelet.\\
@@ -87,19 +87,19 @@
 
 
 
-   
+
   \end{tabular}
-	
-	
+
+
 
 
 \section{Tillvägagångssätt}
-	Systemtester ska göras för de krav från kravspecifikationen, nuvarande iteration är byggd för att klara. Testen görs framåt slutet av varje iteration och när ett systemtest klarats, bör det läggas till som ett regressionstest i Travis.\\
-	\\
-	Samtliga systemtester ska följa Enhetstestens standard, och vara automatiska. 		
-	
-	
-	
+	Systemtester ska göras för de krav från kravspecifikationen nuvarande iteration är byggd för att klara. Testen görs framåt slutet av varje iteration och när ett systemtest klarats, bör det läggas till som ett regressionstest i Travis.\\
+
+	Samtliga systemtester ska följa Enhetstestens standard, och vara automatiska.
+
+
+
 
 \section{Föremåls godkännande/misslyckande kriterier}
 	För att ett systemtest ska vara godkänt, måste det uppfylla det krav det är specifierat efter. Krav med prioritet 2 är inte nödvändigt att de är avklarade för ett komplett projekt.\\
@@ -107,7 +107,7 @@
 
 \section{Avbrott och fortsättningskriterier}
 	Om ett test ej blir godkänt och ej går att fixa inom en rimlig tid måste gruppen kalla till möte för diskussion över vilken väg projektet ska ta härnäst. Om ett krav skulle vara näst intill omöjligt, kan kund behöva kallas till möte.
-	
+
 
 
 
@@ -120,10 +120,10 @@
 \section{Ansvarsområden}
 	Ansvaret för välspecifierade krav har fallit på analysansvarig, sedan är det upp till projektledaren att se till att projektet lever upp till kraven medan testledaren ska visa att projektet uppfyller kraven.
 
-  
 
-	
-	
+
+
+
 \section{Godkännande}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
@@ -131,7 +131,7 @@
 	\item Samtliga test ska vara automatiserade och implementerade för regressionstestning när de är godkända.
 
 	\end{itemize}
-	
+
 
 
 \section{Referenser}
