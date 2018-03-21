@@ -61,7 +61,7 @@
     \texttt{alewi684@student.liu.se}
 }
 
-\date{\today \\Version 2.0}
+\date{\today \\Version 2.1}
 
 \begin{document}
 
@@ -79,6 +79,7 @@
         \History{1.2}{2018-02-19}{Uppdaterat stavning, formulerat om krav 8 \& 16. (Kund)}
         \History{1.3}{2018-02-22}{Uppdaterat stavning, formulerat om krav 6, 8, 10, 13, 15, 17, 22, 23, 28 \& 32. (Kund)}
         \History{2.0}{2018-02-27}{Uppdaterat stavning och struktur. Lagt till en översiktlig bild av systemet. Formulerat om krav 17, 24, 33  \& 34. (Handledare)}
+        \History{2.1}{2018-03-21}{Uppdaterat stavning och upplösning av Figur 1. Formulerat om krav 24. (Handledare)}
     \end{tabular}
 \end{center}
 
@@ -105,7 +106,7 @@
 	Kunden till projektet är Cybercom Sweden. Projektet utförs av projektgruppens medlemmar.
 	
 	\subsection{Syfte \& mål}
-	Syftet med kravspecifikationen är att förtydliga vad som förväntas vara klart vid projektets slut. Dokumentet fungerar som överenskommelse mellan kunden Cybercom Sweden och projektgruppen. Kraven specificerar vilken funktionallitet, kvalitet och design produkten ska uppfylla. Dokumentet utgör grunden för hur hela projektet ska struktureras och utformas. Kraven är framtagna efter Cybercom Swedens önskemål och formulerade för att ligga till stöd för projektgruppensarbete.
+	Syftet med kravspecifikationen är att förtydliga vad som förväntas vara klart vid projektets slut. Dokumentet fungerar som överenskommelse mellan kunden Cybercom Sweden och projektgruppen. Kraven specificerar vilken funktionallitet, kvalitet och design produkten ska uppfylla. Dokumentet utgör grunden för hur hela projektet ska struktureras och utformas. Kraven är framtagna efter Cybercom Swedens önskemål och formulerade för att ligga till stöd för projektgruppens arbete.
 	
 	\subsection{Användning}
 		För att kunna använda produkten måste två olika applikationer köras på minst två olika enheter. En mobil eller surfplatta ska användas som kontroll för att styra spelet och kommer att köra kontrollapplikationen. Utöver detta ska en enhet som t.ex. en dator vara uppkopplad till en skärm. Datorn ska köra själva spelet och kommer att köra UI-applikationen. Se figur \ref{fig:overview} för en översiktlig bild av systemet. \\
@@ -119,7 +120,7 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.8]{overview}
+		\includegraphics[scale=0.35]{overview}
 		\caption{Översikt av systemet}
 		\label{fig:overview}
 	\end{figure}
@@ -196,7 +197,7 @@ För att kunna använda produkten startar man UI-applikationen. Då UI-applikati
 		\Krav{UI-applikationen ska kommunicera med Cybercoms IoT-backend.}{1}
 		\Krav{UI-applikationen ska visa en unik kod för sin spelinstans.}{1}
 		\Krav{UI-applikationen ska arkitekturellt ha stöd för godtyckligt antal spelare. Hårdvara, prestanda och plats på skärmen begränsar.}{2}
-		\Krav{UI-applikationen ska kunna visa det som andra UI-applikationer visar i realtid.}{2}
+		\Krav{UI-applikationen ska i realtid kunna åskåda en instans av spelet som körs på en annan dator.}{2}
 						
 	\end{tabular}
 	
