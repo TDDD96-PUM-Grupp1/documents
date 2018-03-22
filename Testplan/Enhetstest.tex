@@ -9,7 +9,7 @@
 \pagebreak
 	\section*{Dokumenthistorik}
 
-	
+
 	\begin{center}
  	   \begin{tabular}{| l | l | p{12cm} |  }
  	       \hline
@@ -33,16 +33,16 @@
 \input{definitioner}
 
 \section{Testföremål}
-	Varje enhet som skapas kommer mer eller mindre genomgå enhetstest. Beroende på dess storlek kan de testas olika. T.ex. en liten service som skrivs på backend kan testas manuellt medan för större enheter t.ex. Kontrollerdelen, kan behöva automatiska tester.
-	\\
-	Nedan visas de krav från kravspecifikationen som behöver testas speciellt för att få en godkänd produkt.
-	\\
+	Varje enhet som skapas kommer mer eller mindre genomgå enhetstest. Beroende på dess storlek kan de testas olika. T.ex. en liten service som skrivs på backend kan testas manuellt medan för större enheter t.ex. Kontrollerdelen, kan behöva automatiska tester.\\
+
+	Nedan visas de krav från kravspecifikationen som behöver testas speciellt för att få en godkänd produkt.\\
+
 	\begin{tabular}{| p{1.5cm} | p{6cm} | p{8cm}|}
-	
+
   \hline
     \multicolumn{2}{|c|}{Krav}&{Test}\\
     \hline
-    
+
 		Krav 1&En mobil eller surfplatta ska användas som spelkontroll för spelet.&Testning av Kontroll-applikationen med mobil enhet.\\
 		\hline
 		Krav 4& Flera instanser av spelet ska kunna köras samtidigt. & Testa att skapa flera instanser av backend.\\
@@ -79,17 +79,17 @@
 		\hline
 
 
-   
+
   \end{tabular}
 	\\ \\
 	Nedanför kommer de tester som inte är definierade i kravspecifikationen \cite{bib-kravspec} men som ska göras ändå för att verifiera ett stabilt system.
-	
+
 	\begin{tabular}{| p{2.1cm}| p{2cm} | p{8cm}|}
-	
+
       \hline
       NR&Enhet&Test\\
       \hline
-    
+
 		Enhetstest 1&UI&Funktionalitet för startknapp.\\
 		\hline
 		Enhetstest 2&UI&Funktionalitet för spelalternativknapp.\\
@@ -108,7 +108,7 @@
 		\hline
 		Enhetstest 8&UI&Varning om annan webbläsare än Chrome version 64 används.\\
 		\hline
-		Enhetstest 9&Kontroll&Splashscreen för kontroller vid första anslutning.\\
+		Enhetstest 9&Kontroll&Startskärm för kontroller vid första anslutning.\\
 		\hline
 		Enhetstest 10&Kontroll&Hotjoinknapp med tillhörande sökruta.\\
 		\hline
@@ -125,22 +125,22 @@
 
 
 
-   
+
   \end{tabular}
 
 \section{Tillvägagångssätt}
-	Hurvida en enhets testning ska gå till är på fall till fall basis, där testaren ansvarig över enheten själv bestämmer om den är stor nog att meritera automatisk testning.
-	Om så är fallet, bör Jest, Javascript testframework, användas. Test som automatiseras skall övervägas att läggas in som regressionstester i Travis för att funktionalitet inte går förlorad i utvecklingsprocessen. \\
+	Hurvida en enhetstestning ska gå till är på fall till fall basis, där testaren ansvarig över enheten själv bestämmer om den är stor nog att meritera automatisk testning.
+	Om så är fallet bör Jest, ett Javascript testframework, användas. Test som automatiseras skall övervägas att läggas in som regressionstester i Travis för att funktionalitet inte går förlorad i utvecklingsprocessen. \\
 	\\
 	För att ha en bra teststandard bör följande punkter has i åtanke:
-	\begin {itemize}
+	\begin {itemize}[leftmargin=2cm]
 	 \item [Genomgående] Testa alla vägar och möjliga scenarion för varje enhet och försök uppnå maximal täckning.
 	 \item [Repeterbar] Ett test som lyckats en gång bör lyckas varje gång. Tester bör alltid producera samma resultet.
 	 \item [Oberoende] Varje test bör endast testa en sak i taget. Flera antaganden är acceptabelt så länge de testar en funktion. Tester ska ej vara beroende av varandra, varje test ska kunna köras separat.
 	 \item [Kodstandard] Tester ska skriva på så sätt att det ser professionellt ut. Bra funktionsnamn, inga dubletter, osv.
 	\end {itemize}
 
-	
+
 
 \section{Föremåls godkännande/misslyckande kriterier}
 	För att en enhet ska vara helt godkänd ska samtliga tester den genomgått vara godkända. Upptäcks problem av mindre magnitud som har försumbar inverkan på projektet kan det förbigås.
@@ -148,31 +148,31 @@
 
 
 \section{Avbrott och fortsättningskriterier}
-	Om en enhet trots flertalet revederingar och omskrivningar fortfarande misslyckas sina tester bör de avbrytas och ett möte med majoriteten utav gruppen sammankallas. 
+	Om en enhet trots flertalet revederingar och omskrivningar fortfarande misslyckas sina tester bör de avbrytas och ett möte med majoriteten utav gruppen sammankallas.
 	Gruppen ska bestämma om det testerna berör är viktiga nog så att de måste behandlas, och sedan fatta ett gemensamt beslut om hur de ska hanteras, t.ex. skriva om en enhet från grunden.
 
 
 \section{Test leveranser}
 
-Leveranser från enhetstesten kommer bestå utav automatiska tester för regressionstestning som kommer implementeras direkt och köras vid varje pushning till git. 
-\\
+Leveranser från enhetstesten kommer bestå utav automatiska tester för regressionstestning som kommer implementeras direkt och köras vid varje pushning till git.\\
+
 Datum för dessa är samma som återfinnes i Master Testplan.
 
 
 
 \section{Ansvarsområden}
 	En enhets utvecklare är ansvarig över de tester som utförs på enheten för att se till att den lever upp till kraven. Vid testning av större enheter kan fler medlemmar behövas för att sammanställa de nödvändiga testerna.
-	
-	
-	
+
+
+
 \section{Godkännande}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
-	 \item Varje enhet ska ha testas enligt den standard beskriven under Tillvägagångssätt.
+	 \item Varje enhet ska ha testats enligt den standard beskriven under Tillvägagångssätt.
 	 \item Större enheter ska testas automatiskt genom Jest och sedan skapa regressionstester att lägga till i Travis.
 	 \item Samtliga test under testföremål ska vara godkända.
 	\end{itemize}
-	
+
 
 
 

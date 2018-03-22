@@ -10,7 +10,7 @@
 \pagebreak
 	\section*{Dokumenthistorik}
 
-	
+
 	\begin{center}
  	   \begin{tabular}{| l | l | p{12cm} |  }
  	       \hline
@@ -23,28 +23,28 @@
  	   \end{tabular}
 	\end{center}
 
-	
-	
+
+
 \pagebreak
 \tableofcontents
 \pagebreak
 \pagenumbering{arabic}
 
 \section{Inledning}
-	Den här testplanen är framtagen för att kvalitetssäkra utvecklingen av ett IoT-spel som skapas av en studentgrupp som läser kursen TDDD96 på Linköpings universitet. Planen kommer endast innefatta tester som påverkar spelet både direkt och indirekt, och som är relaterade till utvecklingen. Primärt fokus kommer ligga på att säkerställa att spelet lever upp till de förväntningar som kund har på oss. Se kravspecifikationen \cite{bib-kravspec}. Testplanen följer standard IEEE829. \\
+	Den här testplanen är framtagen för att kvalitetssäkra utvecklingen av ett IoT-spel som skapas av en studentgrupp som läser kursen TDDD96 på Linköpings universitet. Planen kommer endast innefatta tester som påverkar spelet både direkt och indirekt, och som är relaterade till utvecklingen. Primärt fokus kommer ligga på att säkerställa att spelet lever upp till de förväntningar som kund har på oss. Se kravspecifikationen \cite{bib-kravspec}. Testplanen följer standard IEEE829.\\
 
-Det här projektet kommer ha 4 olika nivåer av tester, vilket innefattar enhetstester, integrationstester, systemtester och acceptanstest. Detaljer angående testerna kan finnas under respektive testplan.
+  Det här projektet kommer ha 4 olika nivåer av tester, vilket innefattar enhetstester, integrationstester, systemtester och acceptanstest. Detaljer angående testerna kan finnas under respektive testplan.\\
 
-Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen kommer med störst sannolikhet modifieras under arbetets gång då arbetssättet är agilt.
+  Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen kommer med störst sannolikhet modifieras under arbetets gång då arbetssättet är agilt.
 
 
 
 
   \input{definitioner}
-	
 
 
-	
+
+
 \section{Testföremål}
 	Nedan följer en lista över de stora delarna projektet är uppdelat i, som måste testas var för sig.
 	\begin{itemize}
@@ -52,8 +52,8 @@ Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen k
 	\item [Kontroller] Spelet ska kontrolleras med hjälp av accelerometern i t.ex. en mobil eller surfplatta.
 	\item [UI] Spelet ska kunna visas på en skärm som får all användardata från Cybercoms backend.
 	\end{itemize}
-	
-	
+
+
 \section{Funktioner som inte ska testas}
 	Nedan följer en lista på de delar av projektet som ligger utanför fokus av olika anledningar.
 	\begin{itemize}
@@ -61,7 +61,7 @@ Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen k
 	\item React
 	\item Mobila enheter som kör ett annat OS än Android eller iOS
 	\end{itemize}
-	Vi kommer ej att testa Google Chrome eller React som systemet kommer vara beroende utav, detta för att vi utgår från att det är rigoröst testat av sina respektive utvecklare och på grund av den tiden vi har, ej valt att lägga vår begränsade tid på det. Den tredje punkten har att göra med hur ovanliga dessa mobila enheter är och att vi inte har resurserna att införskaffa en sådan enhet för testning. 
+	Vi kommer ej att testa Google Chrome eller React som systemet kommer vara beroende utav, detta för att vi utgår från att det är rigoröst testat av sina respektive utvecklare och på grund av den tiden vi har, ej valt att lägga vår begränsade tid på det. Den tredje punkten har att göra med hur ovanliga dessa mobila enheter är och att vi inte har resurserna att införskaffa en sådan enhet för testning.
 
 
 
@@ -73,23 +73,23 @@ Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen k
 	\\
 	Integrationstestningen kommer i huvuddel styras av konfigurationsansvarig för projektet. När en ny enhet ska integreras ska den först ha klarat enhetstestet och beroende på storleken kan fler projektmedlemmar kopplas in och hjälpa till med att testa samtliga delar av de olika interaktionerna mellan enheterna. \\
 	\\
-	Systemtester kommer utföras i slutet av varje iteration för att säkerställa att spelet uppfyller kraven. Detta kommer utföras dels internt till en början för att sedan visa demo inför kund för att få feedback.  \\ 
+	Systemtester kommer utföras i slutet av varje iteration för att säkerställa att spelet uppfyller kraven. Detta kommer utföras dels internt till en början för att sedan visa demo inför kund för att få feedback.  \\
 	\\
 	Acceptanstest utförs i slutet vid leverans för att låta kund avgöra om produkten lever upp till förväntningar. De kommer själva få köra igenom spelet och fylla i ett formulär enligt Kvalitetsplanen där vi kan bocka av de sista kraven. \\
 	\\
 	Regressionstester är något som kommer fortgå under hela projektet med hjälp av automatisering. Automatiska tester kommer göras när nya delar läggs till på Github med hjälp av Travis. Detta är ett extra säkerhetssteg för att försäkra att ingen essentiell funktionalitet går förlorad som existerade i en tidigare version.\\
 	För mer information om varje modul, se respektive testplan.
-	
+
 \subsection{Iteration 2}
-	Under Iteration 2 kommer utvecklingen ha påbörjats och kommer till största del bestå utav enhetstester där utvecklarna gör sina egna manuella tester. Vidare ska något eller några automatiska tester ha påbörjats för att bygga upp ett bibliotek av funktionstester som körs vid regressionstestning. Planen för första iterationen är att skapa grundläggande kommunikation mellan de olika delarna så testen kommer skapas därutefter.
-	\\
+	Under Iteration 2 kommer utvecklingen ha påbörjats och kommer till största del bestå utav enhetstester där utvecklarna gör sina egna manuella tester. Vidare ska något eller några automatiska tester ha påbörjats för att bygga upp ett bibliotek av funktionstester som körs vid regressionstestning. Planen för första iterationen är att skapa grundläggande kommunikation mellan de olika delarna så testen kommer skapas därutefter.\\
+
 	Väldigt få tester kommer att genomföras under denna iteration då de kommer vara svåra att definiera pga att det är en web-applikation som utvecklas. Tester kommer bli mer genomgående när servern är klar.
-	
+
 \subsection{Iteration 3}
-	I iteration 3 kommer huvudfokus ligga på att vidareutveckla applikationen för att få mer funktionalitet. Systemet ska ha de flesta funktionerna implementerade vid slutet av iterationen och samtliga ska testas. 
-	
-	
-	
+	I iteration 3 kommer huvudfokus ligga på att vidareutveckla applikationen för att få mer funktionalitet. Systemet ska ha de flesta funktionerna implementerade vid slutet av iterationen och samtliga ska testas.
+
+
+
 
 \section{Föremåls godkännande/misslyckande kriterier}
 	\subsection{Backend}
@@ -101,38 +101,39 @@ Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen k
 
 
 \section{Avbrott och fortsättningskriterier}
-	Om något av prioritet 1 kraven i kravspecifikationen \cite{bib-kravspec} misslyckas, avbryts vidareutveckling av produkten tills kravet åter är uppfyllt. Om kravet av någon anledning skulle visa sig vara ouppnåeligt kommer problemet först diskuteras internt för att sedan förhandlas om med kund. 
+	Om något av prioritet 1 kraven i kravspecifikationen \cite{bib-kravspec} misslyckas, avbryts vidareutveckling av produkten tills kravet åter är uppfyllt. Om kravet av någon anledning skulle visa sig vara ouppnåeligt kommer problemet först diskuteras internt för att sedan förhandlas om med kund.
 
 
 
 \section{Test leveranser}
-	I slutet av varje iteration ska en testrapport lämnas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.
-	\\
-	I samband med leveranser kommer även testfall levereras på de olika tester som genomförts. 
+	I slutet av varje iteration ska en testrapport lämnas. Rapporten kommer innefatta olika testfall, testdata och anomaliteter.\\
+
+	I samband med leveranser kommer även testfall levereras på de olika tester som genomförts.
 
 
-	
+
 
 \section{Miljöbehov}
-	För att genomföra flera utav testerna behövs viss hårdvara. Nedan listas det som behövs för att genomföra de olika testerna. 
+	För att genomföra flera utav testerna behövs viss hårdvara. Nedan listas det som behövs för att genomföra de olika testerna.
 
 	\begin{itemize}
 	\item Stabil nätverksuppkoppling
 	\item Dator med tillhörande mus och tangentbord
-	\item Mobiltelefon av både typ Android och typ Iphone 
+	\item Mobiltelefon av både typ Android och typ Iphone
 	\item Surfplatta
 	\end{itemize}
 
 \section{Ansvarsområden}
-	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet \cite{bib-projektplan}. Dock betyder inte detta att t.ex. testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen. \\
+	Samtliga gruppmedlemmar har ett eget ansvarsområde i projektet \cite{bib-projektplan}. Dock betyder inte detta att t.ex. testledaren ska utföra alla test själv, utan mer att testledaren har en mer ingående förståelse i rollen.\\
+  
 	En av poängerna med projektet är att utbilda sig, så var och en i projektet kommer få prova på det mesta. För stora beslut gällande testning ska vi rösta demokratiskt över vad som är mest lämpligt, vilket fördelar ansvaret på samtliga medlemmar.
-	
+
 
 \section{Personal och utbildningsbehov}
 	För att utföra testerna på detta system krävs inga extra utbildningar, men det uppmuntras att vara kunnig i automatisering utav tester och känna till Javascripts stil. Testverktyget som kommer användas är Jest som väldigt få har tidigare kunskap om, därför kommer testledaren sätta sig in i verktygets styrkor och svagheter för att sedan hjälpa resten av gruppen att skriva tester för att optimera arbetsflödet.
 
-	
-	
+
+
 \section{Godkännande}
 	För att Testplanen ska vara avklarad behöver följande vara godkänt:
 	\begin{itemize}
@@ -144,7 +145,7 @@ Projektet förväntas vara färdigt för leverans vid 28-5-2018 och testplanen k
 	\end{itemize}
 \noindent
 	Sista ordet lämnas till gruppens handledare Carl Brage. För att denna testplan ska vara godkänd krävs hans godkännande.
-	
-\printbibliography	
+
+\printbibliography
 
 \end{document}

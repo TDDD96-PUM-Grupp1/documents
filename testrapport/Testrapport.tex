@@ -76,18 +76,17 @@ Syftet med denna testrapport är att sammanställa och utvärdera de tester som 
   \input{definitioner}
 
 \section{Metod}
-{\color{red}Varför funkar inte referenser i detta dokument?!?!} \cite{bib-projektplan} För att få fram en bra produkt har projektgruppen bestämt sig för att följa IEEE 829 test-standard {\color {red} add standard reference} och testa produkten utförligt under utveckling. För mer ingående information om hur testningen gått till, hänvisas läsaren till Master testplan {\color {red} länk} för mer ingående information.
+ För att få fram en bra produkt har projektgruppen bestämt sig för att följa IEEE 829 test-standard \cite{ieee829} och testa produkten utförligt under utveckling. För mer ingående information om hur testningen gått till, hänvisas läsaren till Master testplan \cite{bib-mastertestplan} för mer ingående information.
 \section{Resultat}
-
-\section{Iterationer}
 Detta kapitel ger en överskådlig blick över resultaten av testningen under varje iteration.
+
 \subsection{Iteration 1}
 Under projektets första iteration utfördes inget utvecklingsarbete och därför har inga tester utförts. Endast dokumentskrivning förekom under denna iteration.
 \subsection{Iteration 2}
-Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning,
+Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning.
 
 \section{Enhetstestrapport}
-	Nedan följer de enhetstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspecifikation} som måste vara godkända för att produkten ska kunna klassas som färdig.
+	Nedan följer de enhetstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspec} som måste vara godkända för att produkten ska kunna klassas som färdig.
 \\ \\
 \noindent
 \begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
@@ -140,49 +139,80 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
   \noindent Nedanför följer enhetstester som ej är med i kravspecifikationen.
 \\ \\
 \noindent
-\begin{tabular}{ | p{5cm} | p{1.2cm}| p{7cm}|}
-  	\hline
-	Test&Godkänt&Kommentar\\
-   	\hline
+	\begin{tabular}{| p{2.1cm}|  p{5cm} | p{1.2cm}| p{7cm}|}
 	
-	Kompilering&&Varje gång kod pushas till versionshanteringsprogrammet {\color {red} länk Git} kör Travis {\color {red} länk Travis} automatiskt igenom koden och testar så att den kan kompilera. Detta underlättar utvecklingen genom att man inte råkar pusha kod som inte fungerar.\\
-   	\hline
+      \hline
+      NR&Test&Godkänt&Kommentar\\
+      \hline
+    
+		Enhetstest 1&Funktionalitet för startknapp.&&\\
+		\hline
+		Enhetstest 2&Funktionalitet för spelalternativknapp.&&\\
+		\hline
+		Enhetstest 3&Spelalternativ, max antal spelare.&&\\
+		\hline
+		Enhetstest 4&Spelalternativ, stänga av vissa speltyper.&&\\
+		\hline
+		Enhetstest 5&Spelalternativ, vem som får bestämma speltyper.&&\\
+		\hline
+		Enhetstest 6&välja unik identifikationskod för instansen.&&\\
+		\hline
+		Enhetstest 7&Tillbakaknapp för spelalternativmeny.&&\\
+		\hline
+		Enhetstest 8&Startknapp för spelalternativmeny.&&\\
+		\hline
+		Enhetstest 8&Varning om annan webbläsare än Chrome version 64 används.&&\\
+		\hline
+		Enhetstest 9&Startskärm för kontroller vid första anslutning.&&\\
+		\hline
+		Enhetstest 10&Hotjoinknapp med tillhörande sökruta.&&\\
+		\hline
+		Enhetstest 11&Hotjoin ska fungera med listan av olika instanser.&&\\
+		\hline
+		Enhetstest 12&Knapp för funktionalitet i spelet.&&\\
+		\hline
+		Enhetstest 13&Ändra bakgrundsfärg.&&\\
+		\hline
+		Enhetstest 14&Redigerbar text i spelet.&&\\
+		\hline
+		Enhetstest 15&Highscorelista eller scoreboard.&&\\
+		\hline
+
+
+
    
   \end{tabular}
   
 
 \section{Integrationstestrapport}
-\begin{tabular}{ | p{5cm} | p{1.2cm}| p{7cm}|}
-  	\hline
-	Test&Godkänt&Kommentar\\
-   	\hline
-  	 Kommunikation mellan UI och backend-stub&19/2&Kod har inte implementerats på backend än, därför har vi skrivit en dummyserver som får agera backend än så länge\\
-  	\hline
-   	Kommunikation mellan kontroll och backend-stub&19/2&Kod har inte implementerats på backend än, därför har vi skrivit en dummyserver som får agera backend än så länge\\
-   	\hline
-   
-  \end{tabular}
-  \\
-  \\
-  Beskrivande text Kontroll
-  \\
-  \noindent
-  \\
-  \\
-  \\
+Nedanför följer de integrationstester som behöver genomföras för att få ett fungerande system. \\
+\\
+
+\noindent
+	\begin{tabular}{| p{2.8cm}| p{2cm} | p{5cm}|p{1.2cm}| p{5cm}|}
+      		\hline
+      		NR&Enheter&Test&Godkänt&Kommentar\\
+      		\hline
+		Integrationstest 1&UI och backend&Kommunikation mellan UI och backend.&&\\
+		\hline
+		Integrationstest 2&backend och kontroll&Kommunikation mellan backend och kontroll.&&\\
+		\hline
+		Integrationstest 3&UI, backend och kontroll&Kommunikation mellan UI och kontroll via backend.&&\\
+		\hline
+ 	 \end{tabular}
+ 
 
 
 
 
 \section{Systemtestrapport}
-Nedan följer de systemtest som motsvarar kraven på kravspecifikationen \cite{bib-kravspecifikation} som måste vara godkända för att produkten ska kunna klassas som färdig.
+Nedan följer de systemtest som motsvarar kraven på kravspecifikationen \cite{bib-kravspec} som måste vara godkända för att produkten ska kunna klassas som färdig.
 \\ \\
 \noindent
 	\begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
-	
-  \hline
-    \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
-    \hline
+  		\hline
+    		\multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
+    		\hline
 		Krav 2&Verifiera att ingen kommunikation går direkt mellan UI-applikationen och kontrollapplikationen.&&\\
 		\hline
 		Krav 3&Starta upp en spelinstans och låta en användare ansluta.&& \\
@@ -200,13 +230,37 @@ Nedan följer de systemtest som motsvarar kraven på kravspecifikationen \cite{b
 		Krav 32& Testa hålla en UI-session aktiv i minst 4 timmar utan nertid.&& \\
 		\hline
 		Krav 34& Mäta tiden en kontrollapplikation tar på sig att ansluta till en aktiv spelsession.&& \\
+		\hline   
+  	\end{tabular}
+\\ \\ \\
+De systemtest nedan är de görs för att säkerställa att produkten fungerar som den ska.
+\\ \\
+\noindent
+	\begin{tabular}{| p{2.1cm}| p{5cm}| p{1.2cm}| p{7cm}|}
+      		\hline
+      		NR&Test&Godkänt&Kommentar\\
+      		\hline
+    
+		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.&&\\
 		\hline
+		Systemtest 2&Användning av knapp i kontroller ska motsvara en händelse i spelet.&&\\
+		\hline
+		Systemtest 3&Användarnamn i kontroll ska visas på UI.&&\\
+		\hline
+		Systemtest 4&En spelare ska kunna lämna ett spel och dess representation i spelet försvinner.&&\\
+		\hline
+		Systemtest 5&Spelare ska bli utkastade ur sessionen när UI stängs ned.&&\\
+		\hline
+		Systemtest 6&Om poäng ges till spelare ska highscorelistan uppdateras i kontrollen.&&\\
+		\hline
+
+
 
    
   \end{tabular}
   
 \section{Acceptanstestrapport}
-Nedan följer de acceptanstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspecifikation} som måste vara godkända för att produkten ska kunna klassas som färdig.
+Nedan följer de acceptanstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspec} som måste vara godkända för att produkten ska kunna klassas som färdig.
 \\ \\
 \noindent
 	\begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
