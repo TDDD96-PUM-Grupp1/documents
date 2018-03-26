@@ -6,6 +6,11 @@
 \usepackage[margin=2cm]{geometry}
 
 \selectlanguage{swedish}
+\setlength{\parindent}{0pt}
+
+\newcommand{\History}[3]{
+	\centering #1 & #2 & #3 \\ \hline
+}
 
 \input{../projectdefinitions.tex}
 
@@ -13,7 +18,7 @@
 
 \title{Systemanatomi\\
     \large Projektgrupp 1}
-    
+
 \author{
     Joel Almqvist\\
     \texttt{joeal360@student.liu.se}
@@ -43,31 +48,43 @@
 \begin{document}
   \pagenumbering{gobble}
 	\maketitle
-  \pagebreak	
+
+  \begin{center}
+    \begin{tabular}{| l | l | p{12cm} |}
+      \hline
+      \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\ \hline
+      \History{1.0}{2018-02-19}{Första inlämningen}
+    \end{tabular}
+  \end{center}
+
+  \pagebreak
+  \section*{Dokumenthistorik}
+
+
 	\tableofcontents
 
 	\pagebreak
   \pagenumbering{arabic}
-	
+
 	\section{Definitioner}
   \begin{itemize}[leftmargin=5cm]
     \definition{IoT-backend}
     \definition{UI-applikation}
     \definition{Speldata}
 	\end{itemize}
-	
-	\section{Systemanatomi}	
+
+	\section{Systemanatomi}
 		I figur \ref{fig:graf} visas en systemanatomi över det realtidsspel som ska utvecklas. Gröna noder representerar handlingar som sker på kontrollen i spelet. Röda noder representerar handlingar som sker på UI-applikationen, som hanterar och visar upp spelplanen. Beteckningen ``$= 1$`` betecknar logisk XOR.\\
-	
+
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=0.4]{systemanatomi_graf}
 			\caption{Systemanatomi över realtidsspel på IoT-Backend}
 			\label{fig:graf}
-		\end{figure}	
+		\end{figure}
 	\pagebreak
 	En spelinstans ska tolkas som den instans av spelet som startas från UI-applikationen och spelare kan gå med i för att spela spelet tillsammans. Spelarna lämnar denna instans genom att avsluta spelet på kontrollen, men instansen avslutas från UI-delen.\\
-	
+
 	IoT-Backend beskriver det system som Cybercom har skapat för kommunikation mellan enheter. Detta kommer ha en viktig roll i det slutgiltiga systemet och har därmed en central roll i systemanatomin.\\
-	
+
 \end{document}
