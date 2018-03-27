@@ -54,6 +54,7 @@
       \hline
       \textbf{Version} & \textbf{Datum} & \textbf{Förändring och kommentar} \\ \hline
       \History{1.0}{2018-02-19}{Första inlämningen}
+      \History{1.1}{2018-03-27}{Förtydling av anatomi för speldelen av systemet.}
     \end{tabular}
   \end{center}
 
@@ -82,9 +83,21 @@
 			\caption{Systemanatomi över realtidsspel på IoT-Backend}
 			\label{fig:graf}
 		\end{figure}
-	\pagebreak
-	En spelinstans ska tolkas som den instans av spelet som startas från UI-applikationen och spelare kan gå med i för att spela spelet tillsammans. Spelarna lämnar denna instans genom att avsluta spelet på kontrollen, men instansen avslutas från UI-delen.\\
+  	\pagebreak
 
-	IoT-Backend beskriver det system som Cybercom har skapat för kommunikation mellan enheter. Detta kommer ha en viktig roll i det slutgiltiga systemet och har därmed en central roll i systemanatomin.\\
+  	En spelinstans ska tolkas som den instans av spelet som startas från UI-applikationen och spelare kan gå med i för att spela spelet tillsammans. Spelarna lämnar denna instans genom att avsluta spelet på kontrollen, men instansen avslutas från UI-delen. En spelinstans kör ett visst spelläge. Spelet innehåller många olika sådana spellägen. Anatomin för ett sådant spelläge kan ses i figur \ref{fig:spel}.\\
+
+  	IoT-Backend beskriver det system som Cybercom har skapat för kommunikation mellan enheter. Detta kommer ha en viktig roll i det slutgiltiga systemet och har därmed en central roll i systemanatomin.\\
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.4]{systemanatomi_spel}
+      \caption{Systemanatomi över ett bollspel}
+      \label{fig:spel}
+    \end{figure}
+
+    Figur \ref{fig:spel} detaljerar anatomin för use case ``Spela'' från figur \ref{fig:graf}. Detta är ett exempel på den sortens spellägen som systemet kommer att ha. I detta spelläge kontrollerar användarna bollar på en spelplan och har som mål att putta ut de andra spelarna från planen. Komponenten ``Kommunikation och hårdvara'' representerar de två nedersta lagren från figur \ref{fig:graf}.
+
+
 
 \end{document}
