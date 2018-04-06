@@ -1,5 +1,44 @@
 \section{Teori}
 \label{sec:joel_o-theory}
+För att analysera beroenden till paket i npm behövs först en robust beskrvning av hur dessa beroenden fungerar ges. Här presenteras hur npm implementerar beroenden samt den graf-modell som används vid analysen. För att kunna svara på frågeställning \ref{joel_o-fs:3} definieras även de relevanta kvalitetsfaktorerna.
+
+\subsection{Beroenden i npm}
+Projekt som använder sig av npm sparar sina egenskaper i json-filen \texttt{package.json}\cite{npm-package.json}. Detta gäller både projekt som i sig ska publiceras som paket i npm-registret och projekt som endast använder sig av npm-paket.
+Denna fil beskriver ett projekts beroenden. \texttt{package.json} även innehåller fält så som namn, version och licens som är relevanta då projektet ska publiceras på npm.
+
+Npm delar upp beroenden i flera kategorier. De kategorier som har undersökts i detta arbete är \textit{dependencies} och \textit{devDependencies}. \textit{dependencies} är de beroenden som det färdiga projektet kommer att förlita sig på. Dessa paket innehåller funktionalitet som används då den färdiga Javascript-applikationen körs. \textit{devDependencies} innehåller beroenden till paket som endast är nödvändiga under utvecklingen av projektet. Dessa innefattar exempelvis testramverk eller verktyg för kodanalys. I \texttt{package.json} finns även möjlighet att ange \textit{peerDependencies}, \textit{bundledDependencies} och \textit{optionalDependencies}. Dessa har dock lämnats utanför denna undersökning eftersom de sällan används och har liten påverkan på resultatet.
+
+I \texttt{package.json} anges varje beroende som en samling där namn på paket kopplas till vilken version av paketet beroendet hänvisar till. Se exempel i figur \ref{fig:package.json}. Npm tillåter dessa versionsnummer att skrivas på flera olika sätt. Npm följer ett versionssytem med tre siffror separerade med punkter.\cite{npm-semver}
+
+\lstset{language=Java}
+\begin{figure}[h]
+  \center
+  \begin{minipage}[c]{5cm}
+    \begin{lstlisting}
+...,
+"dependencies": {
+    "util": "0.10.3"
+  },
+  "devDependencies": {
+    "mocha": "~1.21.4",
+    "zuul": "~3.10.0",
+    "zuul-ngrok": "^4.0.0"
+  },
+...
+    \end{lstlisting}
+  \end{minipage}
+  \caption{Beroenden i \texttt{package.json} för version 1.4.1 av paketet \textit{assert}.\cite{npm-assert}}
+  \label{fig:package.json}
+\end{figure}
+
+hur version anges, referenser utanför github
+
+\subsection{Grafmodell beroenden}
+
+\subsection{GitHub}
+
+\subsection{Säkerhet och tillförlitlighet}
+
 Här presenteras vad direkta och indirekta beroenden är på en konceptuell nivå. Möjligen någon koppling till grafstrukturer om detta visar sig nödvändigt för resten av arbetet.
 
 Någon beskrivning av javascript som språk och struktur för javascript-projekt.
