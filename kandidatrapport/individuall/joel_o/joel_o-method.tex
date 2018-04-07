@@ -1,5 +1,34 @@
 \section{Metod}
 \label{sec:joel_o-method}
+För att svara på frågeställningarna har information från flera källor inhämtats. En udersökning av olika Javascript-projekt har gett kvantitativa data om dess beroenden. Denna har kompletterats information från tidigare forskning och erfarenheter från det utförda projektet för att ge en helhetsbild över beroendens påverkan.
+
+\subsection{Analys av Javascript-projekt}
+I denna anlys har beroenden för 1000 open-source projekt från GitHub undersökts. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig realtionsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns på GitHub\footnote{https://github.com/joelnir/dependency-analysis}..
+
+I databasen skapades tabeller för att spara data om Javascript-projekt, npm-paket och relationer mellan dem. Tabeller för intressant statistik så som hur många versionsreferenser som var ogiltiga skapades också. Ett diagram över databasen visas i figur \ref{fig:dependency-db}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.42]{npm_db}
+  \caption{Databasen som har använts under undersökningen}
+  \label{fig:dependency-db}
+\end{figure}
+
+Tabellerna innehåller följande:
+
+\begin{enumerate}[leftmargin=3cm]
+  \item [\textbf{Project}] Samtliga projekt som övervägs för undersökningen
+  \item [\textbf{SampleProject}] Det urval av 1000 projekt som undersöks
+\end{enumerate}
+
+Då analysen enligt frågeställning \ref{joel_o-fs:1} ska utföras på populära Javascript-projekt behöver populäritet först definieras. GitHubs system med stjärnor valdes som ett bra mått på populäritet. Projekt med mer än 500 stjärnmarkeringar definierades som populära. Denna gräns är godtycklig, men den ger en stor datamängd att utgå ifrån.
+
+
+
+\subsection{Informationsinsamling}
+
+\subsection{Projekterfarenheter}
+
 Tanken är att samla in data genom att skriva ett script som går igenom repositiories för open-source javascript projekt. En begränsad mängd av projekt att undersöka kan väljas genom att exempelvis se till de högst rankade projekten på github. Hur detta urval görs är dock viktigt och bör poängteras noga.
 
 Själva datainsamlingen kan göras genom att i dessa  projekt läsa av deras beroenden från filen package.json, som används av npm. Detta ger direkta beroenden.
