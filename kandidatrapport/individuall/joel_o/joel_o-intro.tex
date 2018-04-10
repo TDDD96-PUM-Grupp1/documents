@@ -1,41 +1,27 @@
 \section{Introduktion}
 \label{sec:joel_o-introduction}
-Tanken med arbetet är att undersöka beroenden till paket i javascript-projekt. I de flesta moderna mjukvaruprojekt som utvecklas i javascript används node package manager för få tillgång till stora mängder färdig kod. Detta gör att projekten får stora beroenden till en kodbas som man inte har direkt kontroll över. I detta arbete vill jag utvärdera kvantitativt hur stora dessa beroenden är, samt hur detta påverkar mjukvarukvalitet och utvecklingsprocessen.
+Stora ekosystem av färdigskrivna paket med mjukvara har på senare år nått stor populäritet.\cite{Wittern:2016} Från dessa system kan utvecklare hämta färdig funktionalitet som har skapats av andra programmerare och publicerats under open source license. Detta gör att mycket funktionalitet kan importeras direkt från denna sorts paket och utvecklare kan fokusera på att koppla ihop den importerade generella funktionaliteten med specifika funktioner i de projekt som de jobbar på. Det största ekosystemet av denna typ är det register som ligger bakom npm, Node Package Manager, för Javascript.\cite{Decan2018} I detta arbete undersöks beroenden till sådana npm-paket.
+
+En kvantitativ undersökning av beroenden mellan Javascript-projekt och npm-paket har gjorts för att ge en tydligare bild över beroendens roll i modern Javascript-utveckling. Denna data tillsammans med projekterfarenheter och tidigare forskning ligger till bas för en analys av beroendens påverkan på mjukvara. I denna analys undersöks hur utvecklingsprocessen och mjukvarukvalitet påverkas då projekt förlitar sig på färdiga paket ur npm-systemet.
 
 \subsection{Syfte}
-Undersöka beroenden för att bli mer medveten om effekterna av dessa. Förstå hur dessa effekter påverkar existerande mjukvara skriven i javascript.
+Detta arbete syftar till att ge en bättre bild över hur beroenden används i Javascript-ekosystemet och till vilken grad paket beror av varandra. Detta för att bättre förstå utvecklingsprocessen för många av populära Javascript-projekt och deras roll för ny mjukvara skriven i Javascript.
+
+Arbetet berör även hur beroenden kan påverka utvecklingsprocessen samt kvalitet på mjukvara. Detta har till syfte att ge insikt i de effekter beroenden har på projekt och produkter. Förhoppningen är att detta kan ge utvecklare av Javascript-mjukvara en större medvetenhet hur val gällande beroenden påverkarar kvalitet och processer. Arbete syftar även till att ge viss information om beroendens påverkan på underhåll av mjukvara.
 
 \subsection{Frågeställning}
 \label{subsec:joel_o-research-questions}
-Här är några idéer till frågeställningar. Dessa kan behöva begränsas yttterligare.
 
 \begin{enumerate}
-\item Hur många direkta beroenden finns i populära open-source javascript-projekt?
+\item\label{joel_o-fs:1} Hur många beroenden till färdiga paket finns i populära open source Javascript-projekt?
 
-\item Hur många indirekta beroenden finns i populära open-source javascript-projekt?
+\item\label{joel_o-fs:2} Hur påverkar beroenden till färdiga paket utvecklingsprocessen för Javascript-projekt?
 
-\item Hur påverkar beroenden till färdiga paket utvecklingsprocessen för javascript-projekt?
-
-\item Hur påverkar beroenden till färdiga paket olika kvalitetsattribut för mjukvara skriven i javascript?
-
-\item (Hur har beroenden i javascript-projekt förändrats historiskt?)
-
+\item\label{joel_o-fs:3} Hur påverkar beroenden till färdiga paket säkerhet och tillförlitlighet för mjukvara skriven i javascript?
 \end{enumerate}
 
-\subsection{Avgränsingar}
+\subsection{Avgränsningar}
 \label{subsec:joel_o-delimitations}
-För att göra det möjligt att få fram tillräckliga mängder information bör arbetet begränsas till open-source projekt. Beroenden i dessa kan hittas på exempelvis github.
+Arbetet berör endast beroenden inom npm-ekosystemet för Javascript. Detta system är mycket populärt och innehåller det största register av färdiga mjukvaru-paket av system av denna typ.\cite{Decan2018} Det finns även erfarenheter från att arbeta med npm från det utförda projektet samt relevant tidigare forskning på området. Npm tycks därmed vara den bästa kandidaten för denna analys.
 
-Undersökningen kommer också behöva begränsas till projekt som använder pakethanteraren npm eller andra inom ekosystemet Node.js.
-
-%\nocite{scigen}
-%We have included Paper \ref{art:scigen}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Intro.tex ends here
-
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "demothesis"
-%%% End:
+De Javascript-projekt som undersöks hämtas endas från open source\footnote{I detta sammanhang menas med open source projekt som delar sin källkod öppet genom ett publikt GitHub-arkiv. Det finns flera olika klassifieringar av öppen programmvara, men här har inga specifika krav på licenser ställts. \cite{what-is-open-source}} projekt på plattformen GitHub\footnote{https://github.com/}. GitHub är en plattform som tillåter versionshantering av projekt och underlättar samarbete mellan utvecklare. GitHub är en mycket populär plattform för många mjukvaruprojekt och erbjuder därför en bra utgångspunkt för denna analys. Projekt på GitHub anses vara representativa för typiska open source Javascript-projekt och kan därför användas för att dra slutsatser om hur dessa projekt bedrivs.
