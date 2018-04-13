@@ -29,14 +29,15 @@ Tabellerna innehåller följande:
 
 Då analysen enligt frågeställning \ref{joel_o-fs:1} ska utföras på populära Javascript-projekt behöver populäritet först definieras. GitHubs system med stjärnor valdes som ett bra mått på populäritet. Projekt med mer än 500 stjärnmarkeringar definierades som populära. Denna gräns är godtycklig, men den ger en stor datamängd att utgå ifrån.
 
-Python-scriptet hämtar och lagrar information om dessa Javascript-projekt. För varje projekt utförs sedan en anlalys av de beroenden som hittas i \texttt{package.json}.
-Antalet direkta beroenden läses ut direkt ur \texttt{package.json}. För att undersöka indirekta beroenden används en rekursiv metod som ser till npm-paketens vidare beroenden. Dessa undersöks med hjälp av npm-kommandon på formen
+Python-scriptet hämtar och lagrar information om dessa Javascript-projekt. En slumpmässig delmängd av dessa väljs därefter ut att ingå i undersökningen. För varje av dessa projekt utförs sedan en anlalys av de beroenden som hittas i \texttt{package.json}. Antalet direkta beroenden läses ut direkt ur \texttt{package.json}. För att undersöka indirekta beroenden används en rekursiv metod som ser till npm-paketens vidare beroenden. Dessa undersöks med hjälp av npm-kommandon på formen
 
 \begin{center}
   \texttt{npm view paket@version dependencies --json}.
 \end{center}
 
 Scriptet undersöker antalet indirekta beroenden samt det maximala djupet på dessa kedjor av beroenden från ett projekt. Då det även är av intresse att se hur beroenden påverkar utveckling skrevs scriptet så att det både undersöker \textit{dependencies} och \textit{devDependencies}. För en mer detaljerade beskrivning av programflödet se algoritm \ref{alg:analys} i bilaga \ref{app:algorithm}.
+
+Då det till en början var okänt hur lång tid scriptet skulle behöva för att utföra undersökningen utfördes flera körningar med olika många utvalda projekt. Först valdes 1000 slumpmässiga paket som hade klassats som populärära att ingå i undersökningen. Då scriptet kunde köras igenom under rimlig tid utfördes därefter en undersökning på samtliga projekt matchande popularitetskriteriet.
 
 \subsection{Informationsinsamling}
 För att få en mer robust förståelse för beroendens roll i Javascript utfördes en informationsinsamling av tidigare arbeten på området. Denna undersökning fokuserades till mer eller mindre akademiska källor. Sökningar efter relevanta rapporter gjordes på Google Scholar\footnote{https://scholar.google.se/} och Linköpings Universitetsbibliotek\footnote{https://www.bibl.liu.se/}.
@@ -48,4 +49,4 @@ I det utförda projektet har Javascript varit det huvudsakliga programmeringsspr
 
 Förutom en mängd beroenden som till en början krävdes för att påbörja arbetet tillkom flera under projektets gång. Detta inkluderar både \textit{dependencies} och \textit{devDependencies} i \texttt{package.json}. Under projektet uppkom flera öppna diskussioner om huruvida egna mjukvarukomponenter skulle implementeras eller färdiga paket användas. I dessa situationer övervägdes ofta kvalitet hos komponenterna samt till vilken grad de fyllde just det syfte som var nödvändigt.
 
-Då projektet består av flera separata applikationer finns i slutprodukten 3 separata kodbaser med varsin \texttt{package-json}-fil. Eftersom dessa filer har befunnit sig under versionshantering under hela projektet erbjuder de en logg över hur projektets beroenden har förändrats. Dessa ändringar tillsammans med de diskussioner och konsekvenser som har omgärdat dessa har givit upphov till en mängd erfarenheter för hur beroenden påverkat projektets utveckling och till viss del även slutproduktens kvalitet.
+Då projektet består av flera separata applikationer finns i slutprodukten 3 separata kodbaser med varsin \texttt{package.json}-fil. Eftersom dessa filer har befunnit sig under versionshantering under hela projektet erbjuder de en logg över hur projektets beroenden har förändrats. Dessa ändringar tillsammans med de diskussioner och konsekvenser som har omgärdat dessa har givit upphov till en mängd erfarenheter för hur beroenden påverkat projektets utveckling och till viss del även slutproduktens kvalitet.
