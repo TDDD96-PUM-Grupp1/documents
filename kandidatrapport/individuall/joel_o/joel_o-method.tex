@@ -3,6 +3,7 @@
 För att svara på frågeställningarna har information från flera källor inhämtats. En udersökning av olika Javascript-projekt har gett kvantitativa data om dess beroenden. Denna har kompletterats information från tidigare forskning och erfarenheter från det utförda projektet för att ge en helhetsbild över beroendens påverkan.
 
 \subsection{Analys av Javascript-projekt}
+\label{subsec:joel_o-method-analys}
 I denna anlys har beroenden för 1000 open-source projekt från GitHub undersökts. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig realtionsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns på GitHub\footnote{https://github.com/joelnir/dependency-analysis}..
 
 I databasen skapades tabeller för att spara data om Javascript-projekt, npm-paket och relationer mellan dem. Tabeller för intressant statistik så som hur många versionsreferenser som var ogiltiga skapades också. Ett diagram över databasen visas i figur \ref{fig:dependency-db}.
@@ -28,100 +29,24 @@ Tabellerna innehåller följande:
 
 Då analysen enligt frågeställning \ref{joel_o-fs:1} ska utföras på populära Javascript-projekt behöver populäritet först definieras. GitHubs system med stjärnor valdes som ett bra mått på populäritet. Projekt med mer än 500 stjärnmarkeringar definierades som populära. Denna gräns är godtycklig, men den ger en stor datamängd att utgå ifrån.
 
-Python-scriptet hämtar och lagrar information om dessa Javascript-projekt. För varje projekt utförs sedan en anlalys av de beroenden som hittas i \texttt{package.json}.
-Antalet direkta beroenden läses ut direkt ur \texttt{package.json}. För att undersöka indirekta beroenden används en rekursiv metod som ser till npm-paketens vidare beroenden. Dessa undersöks med hjälp av npm-kommandon på formen
+Python-scriptet hämtar och lagrar information om dessa Javascript-projekt. En slumpmässig delmängd av dessa väljs därefter ut att ingå i undersökningen. För varje av dessa projekt utförs sedan en anlalys av de beroenden som hittas i \texttt{package.json}. Antalet direkta beroenden läses ut direkt ur \texttt{package.json}. För att undersöka indirekta beroenden används en rekursiv metod som ser till npm-paketens vidare beroenden. Dessa undersöks med hjälp av npm-kommandon på formen
 
 \begin{center}
   \texttt{npm view paket@version dependencies --json}.
 \end{center}
 
-Scriptet undersöker antalet indirekta beroenden samt det maximala djupet på dessa kedjor av beroenden från ett projekt. Då det även är av intresse att se hur beroenden påverkar utveckling skrevs scriptet så att det både undersöker \textit{dependencies} och \textit{devDependencies}. För en mer detaljerade beskrivning av programflödet se algoritm \ref{alg:analys}.
+Scriptet undersöker antalet indirekta beroenden samt det maximala djupet på dessa kedjor av beroenden från ett projekt. Då det även är av intresse att se hur beroenden påverkar utveckling skrevs scriptet så att det både undersöker \textit{dependencies} och \textit{devDependencies}. För en mer detaljerade beskrivning av programflödet se algoritm \ref{alg:analys} i bilaga \ref{app:algorithm}.
 
-\begin{algorithm}[H]
-\caption{Javascript Project Analysis} \label{alg:analys}
-\begin{algorithmic}[1]
-  \Function{AnalysePackage}{$package$}
-    \If{\Call{InDatabase}{$package$}}
-      \State \Return
-    \EndIf
-    \State
-    \State $pkgDeps \gets$ \Call{GetNpmDependencies}{$package$}
-    \State \Call{SavePackageDependencies}{$pkgDeps$}
-    \State
-    \ForAll{$package \in pkgDps$}
-      \State \Call{AnalysePackage}{$package$}
-    \EndFor
-  \EndFunction
-  \State
-  \Function{AnalyseProjects}{}
-    \State $projects \gets $ \Call{GetGitHubProjects}{ }
-    \State $sampleProjects \gets n$ random entries from $projects$
-    \State
-    \State $nonNpmC \gets 0$
-    \ForAll {$project \in sampleProjects$}
-      \If{\Call{HasPackageJson}{$project$}}
-        \State $packageInfo \gets $ \Call{GetPackageJson}{$project$}
-        \State $deps \gets $ \textit{dependencies} in $packageInfo$
-        \State $devDeps \gets $ \textit{devDependencies} in $packageInfo$
-        \State
-        \State \Call{SaveProjectDependencies}{$deps, devDeps$}
-        \State
-        \State $directDependencies \gets |deps|$
-        \State $directDevDependencies \gets |devDeps|$
-        \State
-        \If {$directDependencies > 0$}
-          \ForAll {$package \in deps$}
-            \State\Call{AnalysePackage}{$package$}
-          \EndFor
-          \State
-          \State $depth \gets$ \Call{MaxDepth}{$deps$} $+ 1$
-        \Else
-          \State $depth \gets 0$
-        \EndIf
-        \State
-        \If{$directDevDependencies > 0$}
-          \ForAll {$package \in devDeps$}
-            \State \Call{AnalysePackage}{$package$}
-          \EndFor
-          \State
-          \State $devDepth \gets$ \Call{MaxDepth}{$devDeps$} $+ 1$
-        \Else
-          \State $DevDepth \gets 0$
-        \EndIf
-        \State
-        \State $indirectDependencies \gets$ \Call{countPackages}{$deps$}
-        \State $indirectDevDependencies \gets$ \Call{countPackages}{$devDeps$}
-        \State \Call{SaveProjectData}{$project, directDependencies, directDevDependencies, depth,$\par
-        \hskip\algorithmicindent\hskip\algorithmicindent\hskip\algorithmicindent $devDepth, indirectDependencies, indirectDevDependencies$}
-      \Else
-        \State $nonNpmC \gets nonNpmC + 1$
-      \EndIf
-    \EndFor
-  \EndFunction
-\end{algorithmic}
-\end{algorithm}
-
-Nedan följer förtyldliganden av de funktioner som används i algoritm \ref{alg:analys}.
-
-\begin{labeling}{\textbf{SaveProjectDependencies}}
-  \item [\textbf{InDatabase}] Kontrollerar om information om ett paket finns sparad i databasen
-  \item [\textbf{GetNpmDependencies}] Hämta beroenden (i detta fall endast \textit{dependencies}) för ett paket från npm
-  \item [\textbf{SavePackageDependencies}] Spara ett pakets beroenden i databasen
-  \item [\textbf{GetGitHubProjects}] Hämta data för projekt klassade som populära från GitHub
-  \item [\textbf{HasPackageJson}] Kontrollera om ett projekt innehåller filen \texttt{package.json} och därmed använder sig av npm som pakethanteringssytem
-  \item [\textbf{GetPackageJson}] Hämta data från filen \texttt{package.json} från projektet på GitHub
-  \item [\textbf{SaveProjectDependencies}] Spara beroenden från proejktet i databasen
-  \item [\textbf{MaxDepth}] Hitta det maximala djupet av beroenden från något av de givna paketen
-  \item [\textbf{CountPackages}] Räkna antalet paket som genom beroendereferenser kan nås från de givna paketen
-  \item [\textbf{SaveProjectData}] Spara kvantitativ information om ett pakets beroenden i databasen
-\end{labeling}
+Då det till en början var okänt hur lång tid scriptet skulle behöva för att utföra undersökningen utfördes flera körningar med olika många utvalda projekt. Först valdes 1000 slumpmässiga paket som hade klassats som populärära att ingå i undersökningen. Då scriptet kunde köras igenom under rimlig tid utfördes därefter en undersökning på samtliga projekt matchande popularitetskriteriet.
 
 \subsection{Informationsinsamling}
-För att få en mer robust förståelse beroendens roll i Javascript utfördes en informationsinsamling av tidigare arbeten på området. Denna undersökning fokuserades till mer eller mindre akademiska källor. Sökningar efter relevanta rapporter gjordes på Google Scholar\footnote{https://scholar.google.se/} och Linköpings Universitetsbibliotek\footnote{https://www.bibl.liu.se/}.
+För att få en mer robust förståelse för beroendens roll i Javascript utfördes en informationsinsamling av tidigare arbeten på området. Denna undersökning fokuserades till mer eller mindre akademiska källor. Sökningar efter relevanta rapporter gjordes på Google Scholar\footnote{https://scholar.google.se/} och Linköpings Universitetsbibliotek\footnote{https://www.bibl.liu.se/}.
 
 Sökord som användes var bland annat ``Javascript'', ``npm'', ``dependencies'' och ``package''. Det var tydligt att ämnet för undersökningen var aktuellt då många av de arbeten som hittades var skrivna nyligen. Flera bra informationskällor hittades genom dessa sökningar. I dessa arbeten refererades även till andra relevanta källor som då togs med i denna informationsinsamling.
 
 \subsection{Projekterfarenheter}
 I det utförda projektet har Javascript varit det huvudsakliga programmeringsspråket och npm har också använts för pakethantering. Det fanns redan i projektets krav att vissa färdiga paket skulle användas. Detta inkluderade både stora ramverk som React och utvecklingsverktyg som ESLint.
 
-Förutom en mängd beroenden som till en början krävdes för att börja arbeta tillkom flera under projektets gång. Detta inkluderar både \textit{dependencies} och \textit{devDependencies} i \texttt{package.json}.
+Förutom en mängd beroenden som till en början krävdes för att påbörja arbetet tillkom flera under projektets gång. Detta inkluderar både \textit{dependencies} och \textit{devDependencies} i \texttt{package.json}. Under projektet uppkom flera öppna diskussioner om huruvida egna mjukvarukomponenter skulle implementeras eller färdiga paket användas. I dessa situationer övervägdes ofta kvalitet hos komponenterna samt till vilken grad de fyllde just det syfte som var nödvändigt.
+
+Då projektet består av flera separata applikationer finns i slutprodukten 3 separata kodbaser med varsin \texttt{package.json}-fil. Eftersom dessa filer har befunnit sig under versionshantering under hela projektet erbjuder de en logg över hur projektets beroenden har förändrats. Dessa ändringar tillsammans med de diskussioner och konsekvenser som har omgärdat dessa har givit upphov till en mängd erfarenheter för hur beroenden påverkat projektets utveckling och till viss del även slutproduktens kvalitet.
