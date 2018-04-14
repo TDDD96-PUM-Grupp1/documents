@@ -32,6 +32,7 @@ I \texttt{package.json} anges varje beroende som en samling där namn på paket 
 \end{figure}
 
 \subsection{Grafmodell för beroenden}
+\label{subsec:joel_o-grafmodell}
 En tydlig modell över hur beroenden mellan paket i npm vävs samman till ett stort nätverk ges av en riktad graf. I denna graf motsvarar noderna olika paket. För att modellen ska överensstämma med npm-registret behöver olika versioner av samma paket behandlas som olika noder, eftersom beroenden är specifierade mot specifika versioner. Beroenden från ett paket kan också ändras mellan versioner, vilket gör att ett paket ej kan generaliseras till en nod. Kanterna mellan noderna modellerar beroenden med riktning från det beroende paketet till det paket som det beror på. Exempel på denna struktur kan ses i figur \ref{fig:beroende-graf-cykel}.
 
 I de fall ett paket specifierar flera accepterade versioner i ett beroende har i denna undersökning endast den senaste versionen använts. Detta är konsekvent med npm:s beteende då paket hämtas. Det anses därför ointressant för att behandla detta som flera olika beroenden.
