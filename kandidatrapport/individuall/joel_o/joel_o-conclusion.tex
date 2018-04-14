@@ -1,5 +1,17 @@
 \section{Slutsatser}
 \label{sec:joel_o-conclusion}
-Sammanfattning av resultatet och hur väl det uppfyller frågeställningar och syfte.
+De presenterade resultaten ger tydliga svar på frågesällning \ref{joel_o-fs:1}. Fråfrågeställning \ref{joel_o-fs:2} och \ref{joel_o-fs:3} är något mer öppna och inget resultat kan rimligen ge ett fullständig svar. De resultat som presenterats ger dock en kvalificerad insikt i hur beroenden till färdiga paket påverkar mjukvara.
 
-Vad läsaren kan ta med sig frånd detta arbete. Finns det något att vara medveten om i framtida javascript-projekt.
+\subsection*{\ref{joel_o-fs:1} Hur många beroenden till färdiga paket finns i populära open source Javascript-projekt?}
+
+En undersökning av open source Javascript-projekt på GitHub med minst 500 stjärnmarkeringar har genomförts. Data om direkta beroenden, indrekta beroenden och beroendedjup har tagits fram och presenteras till fullo i stycke \ref{sec:joel_o-results-kvant}. Dessa Javascript-projekt har i genomsnitt 6.76 direkta beroenden och 95.02 indirekta beroenden. Samma värden för beroenden som krävs för utvecklingsarbete på projekten är 14.21 respektive 466.07. I allmänhet har projekten mycket fler beroenden som är markerade nödvändiga vid utveckling av projekten.
+
+\subsection*{\ref{joel_o-fs:2} Hur påverkar beroenden till färdiga paket utvecklingsprocessen för Javascript-projekt?}
+
+Färdiga paket underlättar på många sätt utvecklingsarbetet då komponenter som annars hade behövts byggas från grunden kan importeras in i projekt. Dessa paket kan bland annat vara ramverk för hela system som utvecklaren behöver förhålla sig till. Färdiga paket kan även erbjuda verktyg för att underlätta själva utvecklingsprocessen, men inte direkt påverka slutprodukten. Arbete med färdiga paket ställer till viss del speciella krav på utvecklare. Det har visat sig viktigt att utvecklare kan integrera paketen korrekt i systemet.
+
+\subsection*{\ref{joel_o-fs:3} Hur påverkar beroenden till färdiga paket säkerhet och tillförlitlighet för mjukvara skriven i javascript?}
+
+Genom beroenden kan säkerhetsproblem i ett paket spridas till flera Javascript-projekt och paket. Om projekt förlitar sig på paket som inte aktivt underhålls finns risker att denna sorts säkerhetsproblem förblir okorrigerade. Det tycks vara viktigt att utvecklare har en viss insikt i säkerhet och underhåll för de paket som projekt har beroenden till.
+
+Färdiga pakets påverkan på tillförlitlighet beror till stor del på hur utvecklare integrerar paketen i projekt. Det finns anledningar att förvänta sig att kod i färdiga paket håller en hög kvalitet. Buggar kan dock introduceras om utvecklare på grund av okunskap använder paket felaktigt. Vid fel kan informationsresurser om olika paket underlätta reparation av mjukvarukomponenter och därmed sänka MTTR.
