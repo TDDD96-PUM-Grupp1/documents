@@ -2,23 +2,76 @@
 \label{sec:axel-theory}
 Det här kapitlet beskriver fundementala begrepp och koncept för studien.
 
-\subsection{HTML DOM}
-När en hemsida laddas in, skapar webbläsaren en HTML DOM (Document object module) av hemsidan. HTML DOM är ett träd som representerar HTML kod som objekt, se figur xx. Den definierar:
+\subsection{Document object module}
+När en hemsida laddas in, skapar webbläsaren en DOM (Document object module) av hemsidan. DOM är ett träd som representerar HTML/XML kod som objekt, se figur xx. Den definierar:
+
 \begin{itemize}
-\item HTML element som objekt
-\item HTML elementens attribut
-\item Metoder för att modifera HTML element
-\item Alla event för varje HTML element.
+\item HTML/XML element som objekt
+\item HTML/XML elementens attribut
+\item Metoder för att modifera HTML/XML element
+\item Alla event för varje HTML/XML element.
 \end{itemize} 
-Med andra ord kan HTML DOM beskrivas som en standard för hur man ska få tag på, lägga till och ta bort HTML element. Detta ger möjligheten för en hemsida att bli mer dynamisk eftersom dess innehåll och struktur kan modifieras och formas om. Ett programmeringsspråk, generellt sett JavaScript, brukas användas för att få tillgång till HTML DOMen. HTML DOM metoder är handlingar som utövas över HTML element medan HTML attribut är värden som kan sättas och ändras. Exemplet nedan visar hur JavaScript kan användas för att anropa en av HTML DOMens metoder och sätta ett attribut. I exemplet är variabeln document hemsidans HTML DOM. HTML DOM metoden getElementByID anropas för att hitta elementen med id-taggen demo. Sedan sätts attributet innerHTML hos de matchade elementen till Hello World!. 
+
+Med andra ord kan en DOM beskrivas som en standard för hur man ska få tag på, lägga till och ta bort HTML/XML element. Detta ger möjligheten för en hemsida att bli mer dynamisk eftersom dess innehåll och struktur kan modifieras och formas om. Ett programmeringsspråk, generellt sett JavaScript, brukas användas för att få tillgång till sidans DOM. DOM metoder är handlingar som utövas över HTML/XML element medan HTML/XML attribut är värden som kan sättas och ändras. Exemplet nedan visar hur JavaScript kan användas för att anropa en av DOMens metoder och sätta ett attribut. I exemplet är variabeln document hemsidans DOM. DOM metoden getElementByID anropas för att hitta elementen med id-taggen demo. Sedan sätts attributet innerHTML hos de matchade elementen till Hello World!. 
+
+DOM ger även annan slags funktionallitet, så som den tillåter Javascript att binda event lyssnare till objekten. På så sätt kan Javascript koden veta om till exempel en användare har klickat på ett objekt eller givit en annan input.
 
 %https://www.w3schools.com/js/js_htmldom.asp
+%https://www.w3schools.com/jsref/obj_events.asp
 
 \subsection{JavaScript och dess variationer}
+Både Angular 2.0 och ReactJS är JavaScript baserade språk, men båda språken brukar generellt använda olika typer av tillägg till JavaScript.
 
+\subsubsection{JSX}
+JSX är ett XML syntax likt tillägg till Javascript. JSX står för Javascript XML och ger ingen extra funktionallitet utöver XML. Idéen bakom JSX är på ett elegant sätt lägga till XML-syntaxen till Javascript för att bland annat öka läsbarheten av koden. JSX är ett preprocessor steg som transpilerar JSX kod till vanlig Javascript. Detta tillåter JSX att även optimera koden vilket innbär att JSX blir generellt sett snabbare än vanlig Javascript. JSX är även statiskt typat vilket underlättar utvecklingsprocessen eftersom kompliator fel kan specificeras ytterligare. 
+
+%https://jsx.github.io/doc/tutorial.html
+%https://reactjs.org/docs/introducing-jsx.html
+%https://facebook.github.io/jsx/
+%https://jsx.github.io/
+%http://buildwithreact.com/tutorial/jsx
+
+\subsubsection{TypeScript}
+Typescript är att Javascript tillägg utvecklat och framtaget av Microsoft. Idéen bakom Typescript är att introducera valbar statisk typning till Javascript. Detta för att öka läsbarheten av kod men framförallt för att underlätta utvecklingsprocessen genom att kunna peka ut typningsfel i koden. Som utvecklare med Typescript har man valet att bestämma vad som vill ska vara typat. Likt JSX, transpilerar Typescript kod till vanlig Javascript. 
+
+%https://basarat.gitbooks.io/typescript/docs/why-typescript.html
+%https://github.com/Microsoft/TypeScript
 
 \subsection{Angular 2.0}
-Angular 2.0 är ett TypeScript baserad open-source ramverk som underhålls främst av Google men även andra individer och företag. Angular 2.0 lanserades i septemeber 2016 med sin initiala release och lanserade sin stabila release i decemeber 2018. Angular 2.0 är en total rekonstruktion av det tidigare ramverket AngularJS som lanserades i october 2010. Målet med AngularJS var att skapa ett ramverk som underlättade utvecklingen och testningen vid skapandet av en webbapplikation. AngularJS ger funktionaliteten för utvecklaren att skapa egna HTML taggar (AngularJS directives) för att göra koden mer läsbar och förstålig. En HTML tagg skulle till exempel kunna vara en menurad. Efter att en HTML tagg har konstruerats kan den återanvändas fritt inom applikationen, vilket tar bort repetativ kod om samma komponent återanvänds. 
+Angular 2.0 är ett TypeScript baserad open-source ramverk som underhålls och utvecklas främst av Google. Angular 2.0 lanserades i septemeber 2016 med sin initiala release och lanserade sin stabila release i decemeber 2018. Angular 2.0 är en total rekonstruktion av det tidigare ramverket AngularJS som lanserades i october 2010. 
+
+\subsubsection{NgModules}
+Angular är ett modulärt ramverk och har sitt egna modularitetssystem kallat NgModules. En NgModule är en kontainer som innehåller kod för en specifik domän av applikationen, flödet för en arbetsprocess eller en mängd av förmågor. Den kan innehålla komponenter, service providers eller andra NgModuler. Idéen är att man ska kunna antigen exportera funktionallitet från en module eller importera funktionallitet från en annan module. NgModuler erbjuder alltså funktionalliteten för återanvändning av kod på ett simpelt sätt. 
+
+Alla Angular applikationer består av åtminstone en NgModule, root modulen, som konventionellt sett brukar namnges AppModule.    Root modulen kan ses som applikationens start punkt då denna är det första som anropas när en angular applikation ska startas.
+
+%https://angular.io/guide/architecture
+%https://angular.io/guide/architecture-modules
+
+\subsubsection{Dekoratör}
+Angular använder sig av något de kallar för en dekoratör. En dekoratör defineras med ett @ och sedan beskrivs vad det är för dekoratör, till exempel en dekoratör en komponent skrivs som, @Component. Dekoratören definerar modulens typ och består även av meta data. Meta datans innehåll varierar beroende på vilken typ modulen är. Till exempel meta datan för en komponent innehåller en selector, templateUrl och providers. Selector berättar vart komponentens CSS befinner sig, templateUrl berättar vart komponentens template finns och providers beskriver vilka services. Dessa termer förklaras mer genomgående senare.
+
+%https://angular.io/guide/architecture-modules
+%https://angular.io/guide/architecture-components
+
+\subsubsection{Vy}
+En vy i Angular, består utav en komponent och en template. Komponenten beskriver logiken och beteendet över vyn medan templaten beskriver vyns utseende. Vyer är oftast arrengerade i en hierarkisk struktur där man har en huvudvy som består av många olika subvyer. Detta ger funktionalliteten att man kan dölja och visa olika vyer lätt. 
+
+\subsubsection{Template}
+En template i Angular liknar vanlig HTML förutom att den innehåller Angular syntax dessutom. Templaten beskriver utseendet av en vy och är dynamisk då Angular modiferar HTML koden baserat på applikationens tillstånd, logik eller DOM data genom sin tillagda syntax. I Angular kan man ge html object fler attribut utöver dom som redan existerar i vanlig HTML som Angular kallar för directives. Ett exempel på en directive är *ngFor som itererar över en lista. *ngFor är en väldigt kraftfull directive eftersom for-loopar existerar inte i vanlig HTML vilket reducerar mängden repetativ kod avsevärt.
+
+\subsubsection{Databindning}
+I Angular finns det 4 olika former av databindning. Första är formen kallar Angular för interpolation. Interpolation låter en  injicera värdet av en variabel in i ett HTML element, dvs komponenten binder en variabel till ett objekt i DOMen. Ett exempel på hur det kan se ut är (KOD EXEMPEL HÄR).
+
+Den andra formen kallar Angular för property binding. Property binding låter en förälder komponent skicka vidare data till ett av sina barns komponenter. Med andra ord binder man värdet av något hos förälder komponenten till en variabel hos barn komponenten.
+
+Den tredje formen kallar Angular för event binding. Event binding tillåter en att binda ett en funktion hos en komponent till ett event hos ett object i DOMen. Detta tillåter en utvecklare att skriva logik och definiera ett beteende baserat på ett event DOMen har uppmärksammat. 
+
+Den sista formen är property- och event binding kombinerat till en notation. Angular kallar denna form av bindning för tvåvägsdatabindning. 
+
+Angular bearbetar alla databindningar på en Javascript event cykel från root komponenten till alla dess barns komponenter.
+
+\subsubsection{Directives}
 
 \subsection{ReactJS}
 
