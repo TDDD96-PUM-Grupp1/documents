@@ -4,7 +4,7 @@ För att svara på frågeställningarna har information från flera källor inh�
 
 \subsection{Analys av Javascript-projekt}
 \label{subsec:joel_o-method-analys}
-I denna anlys har beroenden för över 6000 open-source projekt från GitHub undersökts. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig realtionsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns tillgängliga på GitHub\footnote{https://github.com/joelnir/dependency-analysis}.
+I denna anlys har beroenden för över 6~000 open-source projekt från GitHub undersökts. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig relationsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns tillgängliga på GitHub\footnote{https://github.com/joelnir/dependency-analysis}.
 
 I databasen skapades tabeller för att spara data om Javascript-projekt, npm-paket och relationer mellan dem. Tabeller för intressant statistik så som hur många versionsreferenser som var ogiltiga skapades också. Ett diagram över databasen visas i figur \ref{fig:dependency-db}.
 
@@ -27,12 +27,12 @@ Tabellerna innehåller följande:
   \item [\textbf{Stats}] Statistik om hur många beroenden som refererar till paket utanför npm-ekosystemet
 \end{labeling}
 
-Då analysen enligt frågeställning \ref{joel_o-fs:1} ska utföras på populära Javascript-projekt behövde populäritet först definieras. GitHubs system med stjärnor valdes som ett bra mått på populäritet. Projekt med mer än 500 stjärnmarkeringar definierades som populära. Denna gräns är godtycklig, men ger en stor datamängd att utgå ifrån.
+Då analysen enligt frågeställning \ref{joel_o-fs:1} ska utföras på populära Javascript-projekt behövde popularitet först definieras. GitHubs system med stjärnor valdes som ett bra mått för detta. Projekt med mer än 500 stjärnmarkeringar definierades som populära. Denna gräns är godtycklig, men ger en stor datamängd att utgå ifrån.
 
 Python-scriptet hämtade och lagrade information om dessa Javascript-projekt. En slumpmässig delmängd av dessa valdes därefter ut att ingå i undersökningen. För varje av dessa projekt utfördes sedan en anlalys av de beroenden som hittats i \texttt{package.json}. Antalet direkta beroenden lästes ut direkt ur \texttt{package.json}. För att undersöka indirekta beroenden användes en rekursiv metod som såg till npm-paketens vidare beroenden. Dessa undersöktes med hjälp av npm-kommandon på formen
 
 \begin{center}
-  \texttt{npm view paket@version dependencies \hyphen\hyphen json}.
+  \texttt{npm view \textit{paket}@\textit{version} dependencies \hyphen\hyphen json}.
 \end{center}
 
 Scriptet undersökte även det maximala djupet på dessa kedjor av paketberoenden från projekten. Då det även är av intresse att se hur beroenden påverkar utveckling skrevs scriptet så att det både undersöker \textit{dependencies} och \textit{devDependencies}. För en mer detaljerade beskrivning av programflödet se algoritm \ref{alg:analys} i bilaga \ref{app:algorithm}.

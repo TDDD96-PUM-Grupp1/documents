@@ -1,13 +1,13 @@
 \section{Teori}
 \label{sec:joel_o-theory}
-För att analysera beroenden till paket i npm behövs först en robust beskrivning av hur dessa beroenden fungerar ges. Här presenteras hur npm implementerar beroenden samt den grafmodell som använts vid analysen. För att kunna svara på frågeställning \ref{joel_o-fs:3} definieras även de relevanta kvalitetsfaktorerna.
+För att analysera beroenden till paket i npm behövs en robust beskrivning av hur dessa beroenden fungerar. Här presenteras hur npm implementerar beroenden samt den grafmodell som använts vid analysen. För att kunna svara på frågeställning \ref{joel_o-fs:3} definieras även de relevanta kvalitetsfaktorerna.
 
 \subsection{Beroenden i npm}
 Projekt som använder sig av npm sparar sina egenskaper i json-filen \texttt{package.json}.\cite{npm-package.json} Detta gäller både projekt som i sig ska publiceras som paket i npm-registret och projekt som endast använder sig av npm-paket. Denna fil beskriver ett projekts beroenden. \texttt{Package.json} innehåller även fält så som namn, version och licens som är relevanta då projektet ska publiceras på npm.
 
-Npm delar upp beroenden i flera kategorier. De kategorier som har undersökts i detta arbete är \textit{dependencies} och \textit{devDependencies}. \textit{dependencies} är de beroenden som det färdiga projektet kommer att förlita sig på. Dessa paket innehåller funktionalitet som används då den färdiga Javascript-applikationen körs. \textit{devDependencies} innehåller beroenden till paket som endast är nödvändiga under utvecklingen av projektet. Dessa innefattar exempelvis testramverk eller verktyg för kodanalys. I \texttt{package.json} finns även möjlighet att ange \textit{peerDependencies}, \textit{bundledDependencies} och \textit{optionalDependencies}. Dessa har dock lämnats utanför denna undersökning eftersom de sällan används och har liten påverkan på resultatet.
+Npm delar upp beroenden i flera kategorier. De kategorier som har undersökts i detta arbete är \textit{dependencies} och \textit{devDependencies}. \textit{Dependencies} är de beroenden som det färdiga projektet kommer att förlita sig på. Dessa paket innehåller funktionalitet som används då den färdiga Javascript-applikationen körs. \textit{DevDependencies} innehåller beroenden till paket som endast är nödvändiga under utvecklingen av projektet. Dessa innefattar exempelvis testramverk och verktyg för kodanalys. I \texttt{package.json} finns även möjlighet att ange \textit{peerDependencies}, \textit{bundledDependencies} och \textit{optionalDependencies}. Dessa har dock lämnats utanför denna undersökning eftersom de sällan används och har liten påverkan på resultatet.
 
-I \texttt{package.json} anges beroenden som en samling namn på paket kopplade till vilken version av paketet beroendet hänvisar till. Se exempel i figur \ref{fig:package.json}. Versionsnummer anges med tre siffror separerade med punkter.\cite{npm-semver} Npm tillåter också dessa versionsreferenser att skrivas på flera olika sätt för att matcha flera olika versionsnummer. Exempelvis betyder \texttt{*} eller \texttt{x} att samtliga versioner är accepterade, \texttt{latest} endast den senaste versionen och \texttt{1.2.3} endast version 1.2.3. Det finns även mer komplicerade mönster som specifierar vissa omfång av versioner samt tecknen \texttt{\^} och {\textasciitilde} som gör skillnad på de tre olika siffrorna i versionsnumret. För en fullständig beskrivning av olika versionsreferenser se \cite{npm-semver}. I \texttt{package.json} tillåts även beroenden till paket utanför npm-ekosystemet. För dessa är versionsnumret istället en länk till det paket beroendet refererar till.
+I \texttt{package.json} anges beroenden som en samling namn på paket kopplade till vilken version av paketet beroendet hänvisar till. Se exempel i figur \ref{fig:package.json}. Versionsnummer anges med tre siffror separerade med punkter.\cite{npm-semver} Npm tillåter också dessa versionsreferenser att skrivas på flera olika sätt för att matcha flera olika versionsnummer. Exempelvis betyder \texttt{*} eller \texttt{x} att samtliga versioner är accepterade, \texttt{latest} endast den senaste versionen och \texttt{1.2.3} endast version 1.2.3. Det finns även mer komplicerade mönster som specificerar vissa omfång av versioner samt tecknen \texttt{\^} och {\textasciitilde} som gör skillnad på de tre olika siffrorna i versionsnumret. För en fullständig beskrivning av olika versionsreferenser se \cite{npm-semver}. I \texttt{package.json} tillåts även beroenden till paket utanför npm-ekosystemet. För dessa är versionsnumret istället en länk till det paket beroendet refererar till.
 
 \lstset{language=Java}
 \begin{figure}[h]
@@ -26,15 +26,15 @@ I \texttt{package.json} anges beroenden som en samling namn på paket kopplade t
 ...
     \end{lstlisting}
   \end{minipage}
-  \caption{Beroenden i \texttt{package.json} för version 1.4.1 av paketet assert.\cite{npm-assert}}
+  \caption{Beroenden i \texttt{package.json} för version 1.4.1 av paketet assert\cite{npm-assert}}
   \label{fig:package.json}
 \end{figure}
 
 \subsection{Grafmodell för beroenden}
 \label{subsec:joel_o-grafmodell}
-En tydlig modell över hur beroenden mellan paket i npm vävs samman till ett stort nätverk ges av en riktad graf. I denna graf motsvarar noderna olika paket. För att modellen ska överensstämma med npm-registret behöver olika versioner av samma paket behandlas som olika noder, eftersom beroenden är specifierade mot specifika versioner. Beroenden från ett paket kan också ändras mellan versioner, vilket gör att ett paket ej kan generaliseras till en nod. Kanterna mellan noderna modellerar beroenden med riktning från det beroende paketet till det paket som det beror på. Exempel på denna struktur kan ses i figur \ref{fig:beroende-graf}.
+En tydlig modell över hur beroenden mellan paket i npm vävs samman till ett stort nätverk ges av en riktad graf. I denna graf motsvarar noderna olika paket. För att modellen ska överensstämma med npm-registret behöver olika versioner av samma paket behandlas som olika noder, eftersom beroenden är specificerade mot specifika versioner. Beroenden från ett paket kan också ändras mellan versioner, vilket gör att ett paket ej kan generaliseras till en nod. Kanterna mellan noderna modellerar beroenden med riktning från det beroende paketet till det paket som det beror på. Exempel på denna struktur kan ses i figur \ref{fig:beroende-graf}.
 
-I de fall ett paket specifierar flera accepterade versioner i ett beroende har i denna undersökning endast den senaste versionen använts. Detta är konsekvent med npms beteende då paket hämtas. Det anses därför ointressant att behandla detta som flera olika beroenden.
+I de fall ett paket specificerar flera accepterade versioner i ett beroende har i denna undersökning endast den senaste versionen använts. Detta är konsekvent med npms beteende då paket hämtas. Det anses därför ointressant att behandla detta som flera olika beroenden.
 
 \begin{figure}
   \captionsetup{justification=centering}
@@ -61,23 +61,23 @@ I de fall ett paket specifierar flera accepterade versioner i ett beroende har i
   \label{fig:grafmodell}
 \end{figure}
 
-Något som gör denna modell något speciellt komplex att arbeta med är att npm ej ställer några krav på att beroenden inte får bilda cykler. Det kan tyckas ointuitivt att detta kan fungera. Beroende är dock endast krav på att ett visst paket måste ha hämtats. När en cykel följs och ett paket nås som redan har passerats behöver detta inte hämtas igen och därmed skapar dessa cykler inga större problem. Exempel på flera sådana cirkulära beroenden kan ses i figur \ref{fig:beroende-graf-cykel};
+Något som gör denna modell något speciellt komplex att arbeta med är att npm ej ställer några krav på att beroenden inte får bilda cykler. Det kan tyckas ointuitivt att detta kan fungera. Beroende är dock endast krav på att ett visst paket måste ha hämtats. När en cykel följs och ett paket nås som redan har passerats behöver detta inte hämtas igen och därmed skapar dessa cykler inga större problem. Exempel på flera sådana cirkulära beroenden kan ses i figur \ref{fig:beroende-graf-cykel}.
 
 \subsection{GitHub}
 De olika Javascript-projekt som undersöks i detta arbete hämtas från plattformen GitHub. För projekt som ligger under en open-source-licens är all källkod tillgänglig att hämtas från GitHubs server. Detta innefattar filen \texttt{package.json} som är av stort intresse för denna undersökning. För att npm ska kunna använda \texttt{package.json} korrekt behöver denna fil vara placerad i projektets rotmapp. Detta underlättar analysen, då ett antagande om sökvägen till \texttt{package.json} i projektets mappstruktur kan göras.
 
 Projekt på GitHub refereras till genom en unik kombination av ägarens användarnamn och projektets namn. Med denna information kan för ett visst projekt filen \texttt{package.json} hittas på adressen
 
-\texttt{raw.githubusercontent.com/användarnamn/projektnamn/master/package.json}.
+\texttt{raw.githubusercontent.com/\textit{användarnamn}/\textit{projektnamn}/master/package.json}.
 
 Om denna adress ej pekar på någon fil för ett visst projekt, och \texttt{package.json} därmed inte existerar, tyder det på att projektet ej använder sig av npm för pakethantering.
 
-GitHub erbjuder ett sök-api som kan användas för att hitta ett urval av projekt att analysera.\cite{github-api} Detta tillåter sökningar efter projekt skrivna i ett visst programmeringsspråk och med ett visst antal strjärnor. Stjärnor är systemet GitHub använder för att ranka omtyckta paket. Användare kan stjärnmarkera projekt de tycker om och därmed ger antalet stjärnor ett projekt har tilldelats en bra bild över hur populärt projektet är.
+GitHub erbjuder ett sök-api som kan användas för att hitta ett urval av projekt att analysera.\cite{github-api} Detta tillåter sökningar efter projekt skrivna i ett visst programmeringsspråk och med ett visst antal stjärnor. Stjärnor är systemet GitHub använder för att ranka omtyckta paket. Användare kan stjärnmarkera projekt de tycker om och därmed ger antalet stjärnor ett projekt har tilldelats en bra bild över hur populärt projektet är.
 
 \subsection{Säkerhet och tillförlitlighet}
 Säkerhet är en svårdefinierad term som kan betyda flera saker. En nyttig definition för mjukvarusäkerhet är till vilken grad säkerhetspolicies kan upprätthållas. Säkerhetspolicies i detta sammanhang refererar till regler för vad eller vem som kan ta del av eller manipulera olika resurser.\cite{secure-software} Typiska exempel är att hålla information dold från vissa användare eller motverka möjligheter att förändra data.
 
-Det finns flera säkerhetsproblem som är typiska för webbapplikationer och programmeringsspråket javascript. Då kod på webben ofta kommer från flera olika källor men körs med samma rättigheter finns en utmaning i att upprätthålla tidigare nämnda policies. Ett viktigt koncept för säkerheten är webbläsares \textit{same-origin-policy} som separerar kod och data från olika källor. Det finns dock sätt att omkringgå dessa mekanismer.\cite{Hejderup2017} Denna sorts attacker kallas \textit{cross site scritpting} och skydd mot dessa är en substantiell aspekt av säkerhet i webbapplikationer.
+Det finns flera säkerhetsproblem som är typiska för webbapplikationer och programmeringsspråket javascript. Då kod på webben ofta kommer från flera olika källor men körs med samma rättigheter finns en utmaning i att upprätthålla tidigare nämnda policies. Ett viktigt koncept för säkerheten är webbläsares \textit{same origin policy} som separerar kod och data från olika källor. Det finns dock sätt att omkringgå dessa mekanismer.\cite{Hejderup2017} Denna sorts attacker kallas \textit{cross site scritpting} och skydd mot dessa är en substantiell aspekt av säkerhet i webbapplikationer.
 
 Tillförlitlighet är ett mått baserat på sannolikheten att system fungerar felaktigt. Det har sin bas i fysiska system där slitningar med tiden orsakar större sannolikheter för fel. Från denna grund kommer mått som \textit{Mean Time To Failure}, MTTF och \textit{Mean Time Between Failure}, MTBF. MTTF definieras som medeltiden till att ett fel uppstår. MTBF definieras enligt $$MTBF = MTTF + MTTR$$, där MTTR står för \textit{Mean Time To Repair} och är medeltiden för att reparera ett fel.\cite{software-metrics}
 
