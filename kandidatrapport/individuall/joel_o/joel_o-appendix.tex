@@ -30,7 +30,7 @@ Algoritm \ref{alg:analys} användes för den analys av Javascript-paket som besk
         \State $deps \gets $ \textit{dependencies} in $packageInfo$
         \State $devDeps \gets $ \textit{devDependencies} in $packageInfo$
         \State
-        \State \Call{SaveProjectDependencies}{$deps, devDeps$}
+        \State \Call{SaveProjectDependencies}{$project, deps, devDeps$}
         \State
         \State $directDependencies \gets |deps|$
         \State $directDevDependencies \gets |devDeps|$
@@ -69,14 +69,14 @@ Algoritm \ref{alg:analys} användes för den analys av Javascript-paket som besk
 
 Nedan följer förtyldliganden av de funktioner som används i algoritm \ref{alg:analys}.
 
-\begin{labeling}{\textbf{SaveProjectDependencies}}
-  \item [\textbf{InDatabase}] Kontrollerar om information om ett paket finns sparad i databasen
+\begin{labeling}{\textbf{SavePackageDependencies}}
+  \item [\textbf{InDatabase}] Kontrollera om information om ett paket finns sparad i databasen
   \item [\textbf{GetNpmDependencies}] Hämta beroenden (i detta fall endast \textit{dependencies}) för ett paket från npm
   \item [\textbf{SavePackageDependencies}] Spara ett pakets beroenden i databasen
   \item [\textbf{GetGitHubProjects}] Hämta data för projekt klassade som populära från GitHub
   \item [\textbf{HasPackageJson}] Kontrollera om ett projekt innehåller filen \texttt{package.json} och därmed använder sig av npm som pakethanteringssytem
-  \item [\textbf{GetPackageJson}] Hämta data från filen \texttt{package.json} från projektet på GitHub
-  \item [\textbf{SaveProjectDependencies}] Spara beroenden från proejktet i databasen
+  \item [\textbf{GetPackageJson}] Hämta data från filen \texttt{package.json} för projektet på GitHub
+  \item [\textbf{SaveProjectDependencies}] Spara beroenden från projektet i databasen
   \item [\textbf{MaxDepth}] Hitta det maximala djupet av beroenden från något av de givna paketen
   \item [\textbf{CountPackages}] Räkna antalet paket som genom beroendereferenser kan nås från de givna paketen
   \item [\textbf{SaveProjectData}] Spara kvantitativ information om ett pakets beroenden i databasen
