@@ -3,7 +3,7 @@
 Det här kapitlet beskriver fundementala begrepp och koncept för studien.
 
 \subsection{Document object module}
-När en hemsida laddas in, skapar webbläsaren en DOM (Document object module) av hemsidan. DOM är ett träd som representerar HTML/XML kod som objekt, se figur xx. Den definierar:
+När en hemsida laddas in, skapar webbläsaren en DOM (Document object module) av hemsidan. DOM är ett träd som representerar HTML/XML kod som objekt. Den definierar:
 
 \begin{itemize}
 \item HTML/XML element som objekt
@@ -23,7 +23,7 @@ DOM ger även annan slags funktionallitet, så som den tillåter Javascript att 
 Både Angular 2.0 och ReactJS är JavaScript baserade språk, men båda språken brukar generellt använda olika typer av tillägg till JavaScript.
 
 \subsubsection{JSX}
-JSX är ett XML syntax likt tillägg till Javascript. JSX står för Javascript XML och ger ingen extra funktionallitet utöver XML. Idéen bakom JSX är på ett elegant sätt lägga till XML-syntaxen till Javascript för att bland annat öka läsbarheten av koden. JSX är ett preprocessor steg som transpilerar JSX kod till vanlig Javascript. Detta tillåter JSX att även optimera koden vilket innbär att JSX blir generellt sett snabbare än vanlig Javascript. JSX är även statiskt typat vilket underlättar utvecklingsprocessen eftersom kompliator fel kan specificeras ytterligare. 
+JSX är ett XML syntax likt tillägg till Javascript. JSX står för Javascript XML och ger ingen extra funktionallitet utöver XML. Idén bakom JSX är på ett elegant sätt lägga till XML-syntaxen till Javascript för att bland annat öka läsbarheten av koden. JSX är ett preprocessor steg som transpilerar JSX kod till vanlig Javascript. Detta tillåter JSX att även optimera koden vilket innbär att JSX blir generellt sett snabbare än vanlig Javascript. JSX är även statiskt typat vilket underlättar utvecklingsprocessen eftersom kompliator fel kan specificeras ytterligare. 
 
 %https://jsx.github.io/doc/tutorial.html
 %https://reactjs.org/docs/introducing-jsx.html
@@ -32,7 +32,7 @@ JSX är ett XML syntax likt tillägg till Javascript. JSX står för Javascript 
 %http://buildwithreact.com/tutorial/jsx
 
 \subsubsection{TypeScript}
-Typescript är att Javascript tillägg utvecklat och framtaget av Microsoft. Idéen bakom Typescript är att introducera valbar statisk typning till Javascript. Detta för att öka läsbarheten av kod men framförallt för att underlätta utvecklingsprocessen genom att kunna peka ut typningsfel i koden. Som utvecklare med Typescript har man valet att bestämma vad som vill ska vara typat. Likt JSX, transpilerar Typescript kod till vanlig Javascript. 
+Typescript är att Javascript tillägg utvecklat och framtaget av Microsoft. Idén bakom Typescript är att introducera valbar statisk typning till Javascript. Detta för att öka läsbarheten av kod men framförallt för att underlätta utvecklingsprocessen genom att kunna peka ut typningsfel i koden. Som utvecklare med Typescript har man valet att bestämma vad som vill ska vara typat. Likt JSX, transpilerar Typescript kod till vanlig Javascript. 
 
 %https://basarat.gitbooks.io/typescript/docs/why-typescript.html
 %https://github.com/Microsoft/TypeScript
@@ -41,7 +41,7 @@ Typescript är att Javascript tillägg utvecklat och framtaget av Microsoft. Id�
 Angular 2.0 är ett TypeScript baserad open-source ramverk som underhålls och utvecklas främst av Google. Angular 2.0 lanserades i septemeber 2016 med sin initiala release och lanserade sin stabila release i decemeber 2018. Angular 2.0 är en total rekonstruktion av det tidigare ramverket AngularJS som lanserades i october 2010. 
 
 \subsubsection{NgModules}
-Angular är ett modulärt ramverk och har sitt egna modularitetssystem kallat NgModules. En NgModule är en kontainer som innehåller kod för en specifik domän av applikationen, flödet för en arbetsprocess eller en mängd av förmågor. Den kan innehålla komponenter, service providers eller andra NgModuler. Idéen är att man ska kunna antigen exportera funktionallitet från en module eller importera funktionallitet från en annan module. NgModuler erbjuder alltså funktionalliteten för återanvändning av kod på ett simpelt sätt. 
+Angular är ett modulärt ramverk och har sitt egna modularitetssystem kallat NgModules. En NgModule är en kontainer som innehåller kod för en specifik domän av applikationen, flödet för en arbetsprocess eller en mängd av förmågor. Den kan innehålla komponenter, service providers eller andra NgModuler. Idén är att man ska kunna antigen exportera funktionallitet från en modul eller importera funktionallitet från en annan modul. NgModuler erbjuder alltså funktionalliteten för återanvändning av kod på ett simpelt sätt. 
 
 Alla Angular applikationer består av åtminstone en NgModule, root modulen, som konventionellt sett brukar namnges AppModule.    Root modulen kan ses som applikationens start punkt då denna är det första som anropas när en angular applikation ska startas.
 
@@ -58,22 +58,56 @@ Angular använder sig av något de kallar för en dekoratör. En dekoratör defi
 En vy i Angular, består utav en komponent och en template. Komponenten beskriver logiken och beteendet över vyn medan templaten beskriver vyns utseende. Vyer är oftast arrengerade i en hierarkisk struktur där man har en huvudvy som består av många olika subvyer. Detta ger funktionalliteten att man kan dölja och visa olika vyer lätt. 
 
 \subsubsection{Template}
-En template i Angular liknar vanlig HTML förutom att den innehåller Angular syntax dessutom. Templaten beskriver utseendet av en vy och är dynamisk då Angular modiferar HTML koden baserat på applikationens tillstånd, logik eller DOM data genom sin tillagda syntax. I Angular kan man ge html object fler attribut utöver dom som redan existerar i vanlig HTML som Angular kallar för directives. Ett exempel på en directive är *ngFor som itererar över en lista. *ngFor är en väldigt kraftfull directive eftersom for-loopar existerar inte i vanlig HTML vilket reducerar mängden repetativ kod avsevärt.
+En template i Angular liknar vanlig HTML förutom att den innehåller Angular syntax dessutom. Templaten beskriver utseendet av en vy och är dynamisk då Angular modiferar HTML koden baserat på applikationens tillstånd, logik eller DOM data genom sin tillagda syntax. I Angular kan man ge HTML element fler attribut utöver dom som redan existerar i vanlig HTML som Angular kallar för directives.
+
+\subsubsection{Directives}
+I Angular finns det två olika sorters directives, strukturella- och attribut directives. Strukturella directives tillåter en manipulera DOMen genom att ge funktionalliteten att ta bort, lägga till och ändra HTML element i DOMen. 
+
+Ett exempel på en strukturell directive är *ngFor. *ngFor itererar över en lista och skapar ett HTML element för varje element i listan. Dessa HTML element kommer att vara av samma typ som HTML elementet där *ngFor är angiven. Detta exempel visar på hur dessa strukturella directives kan reducera mängden repetativ kod avsevärt.
+
+Attribut directives ger funktionalliteten att modifera utseendet eller beteendet hos redan existerande HTML element. Attritbut directives brukar vanligtvis vara databindning vilket kan till exempel binda data från en modul till ett HTML element. Denna funktionallitet gör hemsidan mer dynamisk då innehåll kan förändras när till exempel en användare ger input.
+
+I Angular kan man även skriva egna strukturella- eller attribut directives genom att ange dekoratören @Directives hos sin modul.
 
 \subsubsection{Databindning}
-I Angular finns det 4 olika former av databindning. Första är formen kallar Angular för interpolation. Interpolation låter en  injicera värdet av en variabel in i ett HTML element, dvs komponenten binder en variabel till ett objekt i DOMen. Ett exempel på hur det kan se ut är (KOD EXEMPEL HÄR).
+I Angular finns det 4 olika former av databindning. Första är formen kallar Angular för interpolation. Interpolation låter en  injicera data in i ett HTML element, dvs modulen binder specifik data till ett objekt i DOMen. Interpolation används för att synkronisera data hos modulen med vyn.
 
-Den andra formen kallar Angular för property binding. Property binding låter en förälder komponent skicka vidare data till ett av sina barns komponenter. Med andra ord binder man värdet av något hos förälder komponenten till en variabel hos barn komponenten.
+Den andra formen kallar Angular för property binding. Property binding låter en förälder modul skicka vidare data till ett av sina barns moduler. Med andra ord binder man data hos en förälder modul till data hos en av förälderns barns modul. Property bindning används för att synkronisera data mellan moduler.
 
-Den tredje formen kallar Angular för event binding. Event binding tillåter en att binda ett en funktion hos en komponent till ett event hos ett object i DOMen. Detta tillåter en utvecklare att skriva logik och definiera ett beteende baserat på ett event DOMen har uppmärksammat. 
+Den tredje formen kallar Angular för event binding. Event binding tillåter en att binda data eller en metod hos en modul till ett specifikt event hos ett objekt i DOMen. Detta tillåter en utvecklare att skriva logik och definiera ett beteende baserat på ett event DOMen har uppmärksammat. Event binding används för att synkronisera användarinput med data hos en modul.
 
-Den sista formen är property- och event binding kombinerat till en notation. Angular kallar denna form av bindning för tvåvägsdatabindning. 
+Den sista formen är property- och event binding kombinerat till en notation. Angular kallar denna form av bindning för tvåvägsdatabindning. Tvåvägsdatabindning tillåter data hos en modul bli synkroniserat med användarinput samtidigt som modulen kan uppdatera en eller flera vyer baserat på användarinputen.
 
 Angular bearbetar alla databindningar på en Javascript event cykel från root komponenten till alla dess barns komponenter.
 
-\subsubsection{Directives}
+%https://www.w3schools.com/angular/angular_databinding.asp
+
+\subsubsection{Services}
+Angular introducerar något Angular kallar för services. En service omfattar ett breddt spektra av kategorier vars syfte är att göra en väl definerad sak väl. Detta kan vara att hämta data, vara en funktion eller något annat dylikt. Angular gör skillnad på komponenter och services för att öka modulariteten och återanvändbarheten av både komponenter och services. Idén bakom services är att komponenter inte ska behöva veta hur data  till exempel ska hämtas. Genom att göra uppdelningen, kan komponenter som behöver samma data som andra komponenter redan använder, använda sig av samma service. En service innehålla flera andra services inom sig.
+
+%https://angular.io/guide/architecture-services
+
+\subsubsection{Dependency injection}
+För att skapa en service använder man sig av @Injector dekoratören. Dekoratören möjliggör för Angular att injicera en service som ett beroende (Dependency) hos en komponent. Det vill säga, för att komponenten ska fungera, behöver komponenten tillgång till den specifierade servicen. Dependency injection är invirat i Angular ramverket. När en ny komponent skapas undersöker Angular om en annan komponent redan använder sig av samma service den nya komponenten är beroende av. Om servicen redan används, injicerar Angular samma service i den nya komponenten, annars startar Angular en ny instans av den servicen.
+
+%https://angular.io/guide/architecture-services
 
 \subsection{ReactJS}
+ReactJS är ett open-source Javascript biblotek framtaget och utvecklat av Facebook. ReactJS introducerades först 2011 och blev open-source 2013. 
+
+%https://www.infoworld.com/article/2608181/javascript/react--making-faster--smoother-uis-for-data-driven-web-apps.html
+
+\subsubsection{JSX}
+ReactJS rekommenderar att man använder sig av JSX även om det inte behövs för att använda ReactJS. Idén bakom att introducera JSX, är att samla funktionallitet och andra teknologier till en komponent istället för att sprida dessa bland olika filer.
+
+%https://reactjs.org/docs/introducing-jsx.html
+
+\subsubsection{Komponenter}
+ReactJS introducerar något dom kallar för komponenter. En komponent i ReactJS liknar en Javascript funktion som tar emot en parameter props (står för properties) och returnerar hur komponenten ska se ut. Parametern props är en objekt som kan innehålla data, funktioner med mera. Idén bakom att introducera komponenter är att konstruera en hemsida i små självständiga och återanvändbara komponenter. I ReactJS finns det två olika sorters komponenter, funktionella- och klass komponenter. En funktionell komponent är en funktion i Javascript medan en klass komponent är en klass i Javascript. Båda dessa komponenter har tillgång till props objektet genom antingen hela funktionen eller hela klassen. 
+
+Komponenter delas oftast upp i en hierarkisk struktur som består av andra komponenter. Alla ReactJS webapplikationer består av åtminstone en komponent, root komponenten, som konventionellt sett namnges App. För att använda sig av en komponent, behöver man först importera komponenten och sedan har man tillgång till den som ett HTML element. Detta gör det väldigt simplet att återanvända komponenter genom hela webapplikationen.
+
+\subsubsection{Props och States} 
 
 
-Här kommer de olika ramverken som undersökts att presenteras och vad som gäller specifikt för dom samt vad som gör dom unika. Det kommer även att tas upp hur vi har använt oss av React i vårt projekt och vad det har bidragit med. 
+%https://reactjs.org/docs/components-and-props.html
