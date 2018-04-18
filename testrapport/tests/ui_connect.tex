@@ -1,0 +1,49 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage[swedish]{babel}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{scrextend}
+\usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
+\usepackage{multirow}
+
+\begin{document}
+
+
+
+
+\begin{tabular}{| p{1cm}|  p{3cm} | p{3cm}| p{3cm}| p{2cm}| p{3cm}|}
+	\hline
+	  \multicolumn{3}{|l|}{Testfall ID:}&\multicolumn{3}{|l|}{Test designat av:}\\
+	  \hline
+	  \multicolumn{3}{|l|}{Test prioritet:}&\multicolumn{3}{|l|}{Test designat datum:}\\
+	  \hline
+	  \multicolumn{3}{|l|}{Modul:}&\multicolumn{3}{|l|}{Test utfört av:}\\
+	  \hline
+	  \multicolumn{3}{|l|}{Test titel:}&\multicolumn{3}{|l|}{Test utfört:}\\
+	  \hline
+	  \multicolumn{6}{|p{\textwidth}|}{Beskrivning:}\\
+	  \hline
+	  \multicolumn{6}{|p{\textwidth}|}{Förutsättningar:}\\
+	  \hline
+	  \multicolumn{6}{|p{\textwidth}|}{Beroenden:}\\
+  
+	\hline
+	\multicolumn{6}{|l|}{}\\
+	\multicolumn{6}{|l|}{}\\
+      	\hline
+	Steg&Tillvägagångssätt&Förväntat Resultat&Faktiskt Resultat&Status&Anteckningar \\
+	\hline
+	1&Starta UI-applikationen och gå in på hemsidan&&&&\\
+      	\hline
+	2&Klicka på knappen \textit{Create Game}&&&&\\
+      	\hline
+	3&Klicka på knappen \textit{Create}&Ett spel startas&Ett spel startas& OK&\\
+      	\hline
+\end{tabular}
+
+
+
+
+\end{document}

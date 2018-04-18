@@ -209,7 +209,7 @@
   \level{G}
   \gdef\@thesistypenameenglish{Bachelor}
   \gdef\@thesistypenameswedish{grundnivå}
-  \thesiscredits{16}
+  \thesiscredits{15}
   \PassOptionsToClass{oneside}{memoir}
 }
 
@@ -373,8 +373,8 @@
 \RequirePackage{calc}
 \RequirePackage{ragged2e}
 
-\definecolor{nicered}{rgb}{.647,.129,.149} 
-\newsavebox{\feline@article} 
+\definecolor{nicered}{rgb}{.647,.129,.149}
+\newsavebox{\feline@article}
 \newcommand\feline@article@marker[1][4cm]{%
   \sbox\feline@article{%
     \resizebox{!}{#1}{\fboxsep=1pt%
