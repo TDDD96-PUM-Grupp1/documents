@@ -1,4 +1,10 @@
 \section{Metod}
 \label{sec:tim-method}
+För att uppnå ett relevant resultat kring frågeställningarna så har olika former av analyser genomförts på en lokal deepstream server och client. Dessa olika delar presenteras nedan.
 
-För att uppnå ett relevant resultat sattes enklare simulationer upp på olika de olika gränssnitten. Detta gjordes genom att sätta upp en server på en dator som klarar av mer belasning och sedan ansluta flera olika instanser av clienter på några olika datorer. Genom att köra på några olika datorer minskar risken att clienterna kommer vara flaskhalsen i systemet.
+\subsection{Datamängd för JSON}
+När det gäller frågeställningen om hur datamängden förhåller sig till JSON-formattet över deepstream skickades olika typer av JSON-objekt över nätverket samtidigt som Wireshark (ett program som analysera paketdata som skickas) analyserade datan som skickades. Detta gav då en bättre uppfattning om hur deepstream komprimerar datan för att skicka så lite som möjligt.
+
+\subsection{Responstid}
+När datamängden blev analyserad var det tid för att analysera responstiderna givet olika parametrar. Dessa berodde på datastorleken och RPC gentemot event. Till en början behövs någon form av räknare som håller koll på hur lång tid det tar från att skicka data till att få tillbaka den. Detta uppnås genom att använda Javascripts inbyggda funktion \textit{Data.now()} vilket returnera tiden i millisekunder sedan starten av Unixtiden\cite{js-datenow}. Genom att spara undan denna tiden innan deepstream anropp och sedan ta differansen mellan det sparade värdet och det nuvarande värdet när svaret har kommit tillbaka fås tiden som det tog att skicka och ta emot ett svar. Detta svaret kallas då för RTT (rundturstiden) och är vad detta pappret jämför de olika parametrarna med. 
+
