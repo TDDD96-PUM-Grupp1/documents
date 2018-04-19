@@ -15,13 +15,17 @@ Genom att då undersöka dessa förhållanden kan teamet ta lärdom av hur data 
 För att göra denna undersökninen krävs några fundementala frågor som behöver besvaras, dessa presenteras nedan:
 
 \begin{enumerate}
-\item Hur påverkas responsiviteten i nätverket beroende på datastorleken?  
+
+\item Vad gör deepstream för att minimera JSON-formattet över nätverket?
 
 \item Under vilka förhållanden är det bättre att använda RPC över event och vise versa?
 
-\item Lämpar det sig att använda sig av deepstream för att hantera indata i ett realtidsspel?
+\item Hur påverkas responsiviteten i nätverket beroende på datastorleken?  
+
+\item Är det lämpligt att använda deepstream för att hantera indata i ett realtidsspel?
 
 \end{enumerate}
+
 \subsection{Avgränsingar}
 \label{subsec:tim-delimitations}
 Då det inte går att deligera hur mycket tid och resurser som helst på undersökningen behöver vissa avgränsningar göras. Till en början så undersöks inte deepstream i en verklig miljö, dvs undersökningen görs på ett lokalt nätverk. Detta leder till att responstiderna till stor del inte reflektera rundturstiden (RTT) för nätverket då all data skickas på ett lokalt nätverk.
