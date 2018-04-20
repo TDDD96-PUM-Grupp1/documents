@@ -1,3 +1,37 @@
 \section{Resultat}
 \label{sec:tim-results}
-Här presenteras resultaten för undersökningen och svaren på frågeställningarna från avsnitt \ref{subsec:tim-research-questions}.
+Efter att ha följt metoderna från ovan beskrivs resultaten för de olika undersökningarna nedan. 
+
+\subsection{Datakomprimering}
+När endast ett objekt skickades kunde man observera att datan som skickades över RPC såg ut som i figur \ref{fig:tim-eventdata1}. Datan för RPC och event samt 1-5 objekt finns i appendixet \ref{app:hexdumps}. Vad man kan se från resultatet är att deepstream inte gör någon form av komprimering av JSON-objekt för att minimera datan som skickas över nätverket. Dock så tar den bort alla former av blanksteg och tabbar, då dessa inte har någon påverkan på slutresultatet av ett JSON-Objekt. Från att kolla på datan ser vi att deepstream även skickar med lite extra data för att hålla koll på vad för anropp som görs. Det går även att se att antalet bytes som skickas för JSON-objektet är 74 bytes per objekt med 1 byte som komma till att separera alla JSON-objekt. Denna anmärkningen används för resultatdelen av avsnitt \ref{subsec:tim-result-response}.
+
+\subsection{Responstid}
+\label{subsec:tim-result-response}
+Resultatet från responstiden från metoden som beskrevs i avsnitt \ref{subsec:tim-method-response} presenteras i figur \ref{fig:tim-response-graph}. Från detta kan det ses att responstiden beror linjärt på hur mycket data som skickas. Skickas mer data tar responstiden längre tid. Dock så kan detta till stora del försummas då datamängden ökar radikalt medans responstiden knappt ökar 1 ms. Vad som är mer intressant är att en RPC är mycket snabbare med att skicka data när det gäller att få ett svar tillbaka, samtidigt som att responstiden varierar mycket mindre. Det går dock inte att se någon speciell skillnad på komplexiteten hos båda då responstiden ser ut att öka med samma hastighet.
+
+\begin{figure}[h]
+    \center
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Antal JSON-objekt},
+            ylabel={Medeltid (ms)},
+            ytick={0,1,...,6},
+            xtick={0,33,...,99},
+            xticklabels={0,330,...,990},
+            legend pos=north west,
+            ymin=0,
+            ymax=6,
+            grid style=dashed,
+            domain=0:100,
+        ]
+        \addplot[color=red,]
+            table[x expr=\coordindex+1, y index=0]{individuall/tim/data/event_avg.dat};
+            \addlegendentry{Event}
+        \addplot[color=blue,]
+            table[x expr=\coordindex+1, y index=0]{individuall/tim/data/rpc_avg.dat};
+            \addlegendentry{RPC}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Responstiden i jämförelse med antal objekt som skickas.}
+    \label{fig:tim-response-graph}
+\end{figure}
