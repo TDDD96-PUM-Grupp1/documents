@@ -1,8 +1,19 @@
 \section{Introduktion}
 \label{sec:joel_a-introduction}
-Denna del ska introducera varför denna rapport skrivs och vad den försöker uppnå.
+Denna del ska introducera varför denna rapport skrivs och vad den försöker uppnå. TLDR: Jämför vårt spel med native appar, drar den rimligt mycket ström?
 
 \subsection{Bakgrund}
+
+Miljön HÄR
+
+Många applikationer som skrivs idag försöks göras plattformsoberoende så att enbart en version av applikationen behöver framställas och underhållas. Det finns flera sätt att framställa en plattformsoberoende app, en populär metod är att skriva appen som en hemsida som sedan alla enheter med en modern browser kan använda sig av.
+
+Detta kan åstakommas på flera sätt, en av de vanligare är att skriva applikationen i javascript och låta webläsare rendera applikationen som en hemsida. Denna metod har tagits ännu längre med Googles koncept av ''progressive web apps'' som låter applikationer skriva som hemsidor att användas som lokala applikationer utan tillgång till internet. Detta ger samma funktionalitet som en vanlig applikation men är strukturellt väldigt annorlunda eftersom programet körs i en webläsare. Denna skillnad är dold för användaren, men kan påverka saker såsom mängden klockcykler, mängden data som skickas samt användningen av GPU:n. 
+
+
+
+
+
 Progresive Web Apps har blivit mer och mer populära sen termen myntades 2015 av Google. Framförallt så nämns fördelarna de ger såsom platformsoberoende, enkelhet att installera och offline möjligheter. Men detta betyder också att applikationen sparas undan även ifall den enbart används en gång. Dessutom så körs en PWA genom en browser vars primära funktionalitet är att visa hemsidor av flera olika slag, inte nödvändigtvis att spela spel på. Dessa faktorer påverkar antalet klockcykler en processor använder sig av, och kan potentielt påverka batteritiden PWA:n har jämtemot en ''native app''.
 
 TODO NÄMN NÅGOT OM BATTERIANVÄNDING OCH MILJÖN I DETTTA STYCKE
@@ -11,6 +22,8 @@ Kanske: hög battarianvänding -> medelgamla mobiler med sämre batterier upplev
 Alt: Hög battarianvänding -> de måste laddas mer -> dåligt för miljön
 
 \subsection{Syfte}
+Syftet med denna bilaga är att utreda hur mycket ström plattformsoberoende PWA:s drar jämtemot native appar. 
+
 Produkten som gruppen framställde skrevs som en PWA och kan 
 
 Syf
