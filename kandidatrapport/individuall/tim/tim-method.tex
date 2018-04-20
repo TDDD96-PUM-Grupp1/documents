@@ -1,4 +1,18 @@
 \section{Metod}
 \label{sec:tim-method}
+För att uppnå ett relevant resultat kring frågeställningarna så har olika former av analyser genomförts på en lokal deepstream server och client. Dessa olika delar presenteras nedan.
 
-För att uppnå ett relevant resultat sattes enklare simulationer upp på olika de olika gränssnitten. Detta gjordes genom att sätta upp en server på en dator som klarar av mer belasning och sedan ansluta flera olika instanser av clienter på några olika datorer. Genom att köra på några olika datorer minskar risken att clienterna kommer vara flaskhalsen i systemet.
+\subsection{Datakomprimering}
+\label{subsec:tim-method-datacomp}
+När det gäller frågeställningen om hur datamängden förhåller sig till JSON-formattet över deepstream, skickades olika mängder av JSON-objekt över nätverket samtidigt som Wireshark analyserade datan som skickades. Detta ger då en bättre uppfattning om deepstream använder sig av några komprimeringsmetoder för att förminska datan som skickas över nätverket.
+
+JSON-objektet som kommer skickas är en lista av objektet som beskrivs i figur \ref{fig:tim-jsonformat}. Antalet objekt i listan skickas inkrementelt från noll objekt till tio objekt. Det vill säga undersökningen kollar inte bara på datamängden för ett objekt utan även hur detta skalas upp till fler objekt. 
+
+För att analysera paketet så sätts Wiresharks interface till loopback och sedan skickas datan till deepstream via ett event anropp. Interface är loopback då undersökningen endast är intresserad av att analysera de paketen som skickas internt på datorn, eftersom den görs på en enda lokal dator. För att få tag i rätt paket att analysera användes ett filter\footnote{Filter för paketanalys: tcp.srcport == 60020 and !webSocket and (tcp and not tcp.len == 0)}. Datan som är intressant finns innuti O[...] detta visualeseras i \ref{tim-wireshark-data}.
+
+\subsection{Responstid}
+\label{subsec:tim-method-response}
+När datamängden blev analyserad var det tid för att analysera responstiderna givet olika parametrar. Dessa parametrar är datastorleken och RPC gentemot event. Till en början behövs någon form av räknare som håller koll på hur lång tid det tar från att skicka data till att få tillbaka den. Detta uppnås genom att använda en prestanda funktion \textit{performance.now()} från \textit{''performace-now''}\cite{performance-now} npm-paketet. Denna funktionen returnera tiden i mikrosekunder sedan starten av programmet. Genom att spara undan denna tiden innan deepstream anropp och sedan ta differansen mellan det sparade värdet och det nuvarande värdet när svaret har kommit tillbaka, fås tiden som det tog att skicka och ta emot ett svar. Detta svaret kallas då för RTT (rundturstiden) och är vad detta pappret jämför de olika parametrarna med. 
+
+Hur denna datan skickades finns tillgängligt på GitHub\footnote{\url{https://github.com/Thraix/Deepstream-responsetime} } tillsammans med den data kommer tas upp i kapitel \ref{sec:tim-results}. Den översiktliga idén är att vid RPC så skickas ett anropp som svaras på direkt med ett respons objekt. När det gäller event så skickas datan över ett event, som senare svara med ett annat event anropp tillbaka. Detta gjordes 100 gånger för varje lista med JSON-objekt. Dessa listor innehöll JSON-objektet som beskrivs i figur \ref{fig:tim-jsonformat} 0-99 gånger. Det vill säga första listan som skickades var tom, den andra hade ett objekt och den tredje had två och så vidare. 
+

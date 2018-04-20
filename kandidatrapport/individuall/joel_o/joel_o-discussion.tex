@@ -1,25 +1,23 @@
 \section{Diskussion}
 \label{sec:joel_o-discussion}
-Diskussion om resultatet och metoden
+Detta arbete bör ge en viss insikt i tillståndet för Javascript och npm-ekosystemet. Det erbjuder en ytlig, kvantitativ insikt i beroenden, men ger inga svar på varför utvecklingen har lett till dessa sammankopplingar av mjukvaruprojekt. Här finns definitivt plats för en analys som täcker både teknisk implementation, sociala interaktioner i utvecklargemenskaper och affärsmässiga beslut. Eftersom trender visar att beroenden till färdiga paket i Javascript ökar\cite{Wittern:2016} och liknande ekosystem som npm existerar även för andra programmeringsspråk kommer en ökad förståelse för denna utveckling troligen vara av intresse i framtiden.
 
-\subsection{Resultat}
-\label{subsec:tim-discussion-results}
-Vad betyder resultatet i en större kontext.
-
-Är kritik mot npm och moderna arbetsmetoder för javascript framförd från andra befogad.
-
-Finns det något som vore av intresse att undersöka vidare.
-
-Vad kan man ta med sig från detta arbete när man jobbar på javascript-projekt.
-
-Jämförelse med beroenden i andra programmeringsspråk.
+Något värt att fundera kring är naturen av populära Javascript-projekt. Det är mycket tänkbart att de flesta av dessa är projekt som i sig består av paket för utvecklare att använda. I många fall är projekten antagligen även npm-paket. Det kan finnas ett värde i att göra en skillnad på olika kategorier av Javascript-projekt. En uppdelning i exempelvis paket, färdiga webbapplikationer och server-applikationer skulle kunna erbjuda intressanta resultat. Det finns dock svårigheter i att göra den uppdelningen så att en kvantitativ analys av samma typ som i detta arbete kan utföras. Kategoriseringen skulle troligen behöva förlita sig på metadata så som beskrivningstexter för projekt.
 
 \subsection{Metod}
 \label{subsec:joel_o-discussion-method}
-Diskussion om hur undersökning har utförts. Var urvalet av projekt som undersöktes bra.
+Den metod som har använts för analys av Javascript-projekt anses ge en till stor del korrekt bild av den undersökta datamängden. Då den rena datan tillhandahålls från GitHub och npm är korrektheten hos denna direkt beroende till att dessa tjänster erbjuder rätt information. Vissa felaktigheter kan dock ha uppstått av förändringar i projekt eller paket under den tid analysen har utförts. Då den fullständiga undersökningen tagit en längre tid kan datan inte sägas representera ett tillstånd vid en specifik tidpunkt. Dessa felaktigheter anses dock vara mycket små i förhållande till storleken på den datamängd som har analyserats.
 
-Något om huruvida begränsningarna är vettiga. Endast open-source projekt kan diskuteras.
+En stor del av beroendens konsekvenser på utvecklingsprocessen beskrivs baserat på erfarenheter från det utförda projektet. Det finns i detta en viss risk att resultaten blir begränsade till att endast beskriva påverkan på utvecklingsarbete i liknande projekt. Exempelvis har projektets paketanvändningen till viss del kretsat kring React och npm-paket som fungerar bra med detta ramverk. Att avgöra till vilken grad erfarenheterna av pakethantering är projektspecifika är komplext. Troligen ger en stor del av de mer generella erfarenheterna en givande bild av påverkan på utvecklingsprocessen. Mer specifika erfarenheter av enskilda paket har dock undvikits då dess värde för att svara på frågeställningarna är högst osäkert.
 
-Är något speciellt med det projekt som gruppen har utfört som påverkar relevans hos erfarenheterna från detta.
+De källor som har använts i detta arbete är till stor del av akademisk natur i form av rapporter, examensarbeten och böcker. Detta är ett aktivt val, som har tagits med förhoppningen att dessa ska hålla en hög kvalitet och trovärdighet. Examensarbeten hålls möjligen inte till samma standard som publicerade akademiska rapporter, men de som har använts anses vara trovärdiga. För en bedömning av källors trovärdighet har författares tidigare och fortsatta arbete undersökts ytligt. Examensarbeten har till viss del även bedömts baserat på handledares arbete och intressen.
 
-Källkritik.
+\subsection{Resultat}
+\label{subsec:tim-discussion-results}
+Resultaten från detta arbete pekar på att mjukvaruutveckling i Javascript baserad runt färdiga paket är en etablerad metod och inget tyder på att denna utveckling avtar. Dessa arbetssätt påverkar definitivt utvecklingsprocesser och den mjukvara som levereras idag. Om detta dras till sin spets är det tänkbart att programmerarens roll kan få vissa förändringar i framtiden.
+
+En förhoppning är att resultaten ska erbjuda viss vägledning för arbete med beroenden i Javascript-projekt. Det ger troligen en god introduktion till hur beroenden hanteras i npm-ekosystemet. Resultaten för frågeställning \ref{joel_o-fs:2} ger någon insikt av vad som kan förväntas i ett projekt med beroenden till färdiga paket. Förhoppningar finns också att resultaten från frågeställning \ref{joel_o-fs:3} ska erbjuda vissa riktlinjer för hur arbete med beroenden bör bedrivas för att maximera säkerhet och tillförlitlighet.
+
+Resultaten från den genomförda undersökningen visar på en skillnad mellan beroenden i form av \textit{dependencies} och \textit{devDependencies}, men ger ingen tydlig förklaring till denna. En vidare analys av detta skulle kunna göras baserat på fallstudier. Baserat på det utförda projektet är det troligt att det höga antalet \textit{devDependencies} har att göra med grupper av utvecklingsverktyg som mycket ofta används tillsammans. En undersökning som grupperar paket på detta sätt skulle kunna erbjuda en bra bild över npm-ekosystemet.
+
+Undersökningen som har utförts berör endast open-source Javascript-projekt. Arbetet bör därför endast anses ge en bild av denna sorts projekt. Det är tänkbart att proprietära projekt besitter andra egenskaper än vad som presenteras här. Resultat för frågeställning \ref{joel_o-fs:2} och \ref{joel_o-fs:3} påverkas dock troligen inte av detta.

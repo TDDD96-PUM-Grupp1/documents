@@ -1,119 +1,124 @@
-%%% lorem.tex --- 
-%% 
-%% Filename: lorem.tex
-%% Description: 
-%% Author: Ola Leifler
-%% Maintainer: 
-%% Created: Wed Nov 10 09:59:23 2010 (CET)
-%% Version: $Id$
-%% Version: 
-%% Last-Updated: Wed Nov 10 09:59:47 2010 (CET)
-%%           By: Ola Leifler
-%%     Update #: 2
-%% URL: 
-%% Keywords: 
-%% Compatibility: 
-%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
-%%% Commentary: 
-%% 
-%% 
-%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
-%%% Change log:
-%% 
-%% 
-%% RCS $Log$
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
-%%% Code:
-
-\chapter{Discussion}
+\chapter{Diskussion}
 \label{cha:discussion}
 
-This chapter contains the following sub-headings.
+I följande del presenteras olika tankar och idéer som uppkommit baserat på denna rapports innehåll och det genomförda projektet. De resultat som har uppnåtts väcker flera intressanta tankar och frågor. Det finns möjliga förbättringar till metoden som i efterhand har uppdagats. Arbetet existerar även i en samhällslig och etisk kontext som bör lyftas.
 
-\section{Results}
+\section{Resultat}
 \label{sec:discussion-results}
 
-Are there anything in the results that stand out and need be
-analyzed and commented on? How do the results relate to the
-material covered in the theory chapter? What does the theory
-imply about the meaning of the results? For example, what
-does it mean that a certain system got a certain numeric value
-in a usability evaluation; how good or bad is it? Is there
-something in the results that is unexpected based on the
-literature review, or is everything as one would theoretically
-expect?
+%Fanns alternativa implementationssätt?
+Det fanns i det genomförda projektet många val som kunde leda till annorlunda resultat. Många teknikval har behövt tagits för att färdigställa produkten. En stor andel av dessa har tagits enligt önskemål från kunden och det är inte troligt att kundens värde skulle kunna öka om dessa inte följdes. I denna kategori faller använding av React samt att koden skrevs i ren Javascript.
 
-\section{Method}
+Många av de val tekniska val som gruppen har tagit relaterar till speldelen av produkten. Ett stort sådant var att skapa spelet som ett mer allmänt ramverk för olika spellägen istället för ett specifikt spel. Det är troligt att projektet hade förändrats mycket om det andra alternativet hade valts. Då en av kundens viktigaste önskemål var att enkelt kunna vidareutveckla projektet bedömdes dock det mer generella valet ge mer värde. Val av bibliotek för spelet var också ett viktigt avgörande i projektet. Flera alternativ diskuterades som till olika grad förlitade sig på färdiga paket för fysik, grafik och logik. Den slutgiltiga lösningen med PIXIjs har givit stora möjligheter att skapa det system som önskades och gav även mycket stöd i rendering av spelets grafik. Utan färdiga bibliotek hade arbetet troligen tagit alldeles för lång tid. Använding av många stora bibliotek kan istället introducera oönskade begränsningar på projektetss struktur.
+
+%Vad återstår för att kunden skall få ut fullt värde av produkten?
+Den slutgiltiga produkten innehåller några enkla spellägen som fungerar till fullo. Dessa kräver ingen vidareutveckling från kundens sida utan kan användas som tilltänkt efter leverans. Det är dock troligt att kunden vill introducera fler spellägen. En viss del av produktens värde ligger i hur hög utökningsbarhet som har uppnåtts för att underlätta denna process. Utförlig dokumentation har även skapats för att minimera tiden som krävs för att sätta sig in i systemet. Med detta är förhoppningen att skapandet av nya spellägen ska gå mycket smidigt och inte kräva förståelse för implementationsdetaljer.
+
+%Lyckades ni förbättra/fortsätt något från tidigare projekt?
+
+%Viktigaste lärdomar inför framtiden.
+
+% Övrig mumbo-jumbo :S
+Det fanns genom projektet en viss förvirring och osäkerhet gällande arbetet med systemanatomin. Ofta fanns stora skillnader i olika medlemmars uppfattning av hur anatomin skulle vara konstruerad. Det är möjligt att en otillräcklig förståelse för konceptet kan ha lett till att den framtagna modellen tappat mycket värde. Det är möjligt att svaret på frågeställning \ref{fs:fs_3} kunde haft ett större värde om det fanns fler ingående erfarenheter av arbete med systemanatomier. Gruppen diskuterade även huruvida relevansen av detta dokument kan förändras mycket mellan olika typer av projekt och utvecklingsmetodik. Det genomförda projektet befinner sig på en hög abstraktionsnivå med liten hårdvarukoppling. Det är av intresse hur systemanatomins nytta skulle se ut i mer hårdvarunära projekt, men detta har inte undersökts vidare.
+
+Det är mycket troligt att resultat av projekterfarenheter har påverkats av att denna studie av processen har pågått parallellt. Gruppmedlemmarna har haft en medvetenhet om att projektet ligger till grund för detta arbete och även tagit del av seminarier som skapat en djupare reflektion. Detta delade fokus har troligen påverkat projektets utveckling. Det är dock troligt att utförandet av denna undersökningen parallellt är nödvändigt för att ge en tillräcklig insikt i projektet. Även om gruppens erfarenheter är att projektet ej kan anses till fullo representera typisk mjukvaruutveckling bedöms detta inte påverka resultaten i alltför stor utsträckning.
+
+% Are there anything in the results that stand out and need be
+% analyzed and commented on? How do the results relate to the
+% material covered in the theory chapter? What does the theory
+% imply about the meaning of the results? For example, what
+% does it mean that a certain system got a certain numeric value
+% in a usability evaluation; how good or bad is it? Is there
+% something in the results that is unexpected based on the
+% literature review, or is everything as one would theoretically
+% expect?
+
+\section{Metod}
 \label{sec:discussion-method}
+%Vilka konsekvenser fick de valda metoderna för resultaten?
+Den rolluppdelning som har gjorts har troligen påverkat delar av projektet coh därmed resultatet. Rollerna har fört med sig dokumentationsbeslut och arbetsprocesser. Vissa ansvarsområden överlappar delvis och det är tänkbart att andra resultat hade nåtts om dessa hade slagits ihop till färre roller. Det finns även specifika roller som inte använts. Exempel på detta är tekniska experter över vissa områden i projektet. Denna sorts roll har i det utförda projektet till viss del uppstått spontant genom personer som är mer insatta i viss teknik. Det är möjligt att resultaten hade sett annorlunda ut om denna uppdelning hade skett i förtid och mer explicit.
 
-This is where the applied method is discussed and criticized.
-Taking a self-critical stance to the method used is an
-important part of the scientific approach.
+%Fanns det alternativ?
+Ett alternativ till den iterativa, agila arbetsmetodiken i projektet hade varit en mer traditionell vattenfallsmodell. Detta går dock mot gruppmedlemmarnas tidigare erfarenheter av problem med denna sorts arbetsprocess. Det skulle även finnas organisatoriska problem med detta utifrån planeringen av den kurs projektet ingår i. Även inom iterativa arbetsmetoder finns det olika alternativ som har övervägts. Istället för att basera arbetsmetodiken på Scrum skulle exempelvis Kanban\cite{kanban} eller Rational Unified Process\cite{RUP} kunnat använts.
 
-A study is rarely perfect. There are almost always things one
-could have done differently if the study could be repeated or
-with extra resources. Go through the most important
-limitations with your method and discuss potential
-consequences for the results. Connect back to the method
-theory presented in the theory chapter. Refer explicitly to
-relevant sources.
+Inom den variant av Scrum som har använts genom projektet finns många valmöjligheter som har förändrat utvecklingsprocessen. Längden på sprints, tid avsatt för vissa möten och uppdelning av arbetsuppgifter är saker som troligen har påverkat arbetet märkbart. Vilka delar av Scrum som har tagits med i projektets utförande har troligen också påverkat mycket. Exkludering av stand-up meetings är ett sådant centralt beslut. I det fallet ansågs det inte effektivt logistiskt. Här hade andra alternativ till daglig kommunikation kunnat övervägts för att uppnå samma effekter.
 
-The discussion shall also demonstrate an awareness of methodological
-concepts such as replicability, reliability, and validity. The concept
-of replicability has already been discussed in the Method chapter
-(\ref{cha:method}). Reliability is a term for whether one can expect
-to get the same results if a study is repeated with the same method. A
-study with a high degree of reliability has a large probability of
-leading to similar results if repeated. The concept of validity is,
-somewhat simplified, concerned with whether a performed measurement
-actually measures what one thinks is being measured. A study with a
-high degree of validity thus has a high level of credibility. A
-discussion of these concepts must be transferred to the actual context
-of the study.
+%Källkritik.
+En del av de använda källorna kommer från dokumentation över produkter skapade av företag. Här finns anledning att tro att ett visst intresse finns för att presentera dessa produkter med viss positiv vinkling. Dock har dessa källor endast används för tekniska specifikationer och i detta anses inte någon möjlig vinkling påverka korrektheten.
 
-The method discussion shall also contain a paragraph of
-source criticism. This is where the authors’ point of view on
-the use and selection of sources is described.
+% This is where the applied method is discussed and criticized.
+% Taking a self-critical stance to the method used is an
+% important part of the scientific approach.
+%
+% A study is rarely perfect. There are almost always things one
+% could have done differently if the study could be repeated or
+% with extra resources. Go through the most important
+% limitations with your method and discuss potential
+% consequences for the results. Connect back to the method
+% theory presented in the theory chapter. Refer explicitly to
+% relevant sources.
+%
+% The discussion shall also demonstrate an awareness of methodological
+% concepts such as replicability, reliability, and validity. The concept
+% of replicability has already been discussed in the Method chapter
+% (\ref{cha:method}). Reliability is a term for whether one can expect
+% to get the same results if a study is repeated with the same method. A
+% study with a high degree of reliability has a large probability of
+% leading to similar results if repeated. The concept of validity is,
+% somewhat simplified, concerned with whether a performed measurement
+% actually measures what one thinks is being measured. A study with a
+% high degree of validity thus has a high level of credibility. A
+% discussion of these concepts must be transferred to the actual context
+% of the study.
+%
+% The method discussion shall also contain a paragraph of
+% source criticism. This is where the authors’ point of view on
+% the use and selection of sources is described.
+%
+% In certain contexts it may be the case that the most relevant
+% information for the study is not to be found in scientific
+% literature but rather with individual software developers and
+% open source projects. It must then be clearly stated that
+% efforts have been made to gain access to this information,
+% e.g. by direct communication with developers and/or through
+% discussion forums, etc. Efforts must also be made to indicate
+% the lack of relevant research literature. The precise manner
+% of such investigations must be clearly specified in a method
+% section. The paragraph on source criticism must critically
+% discuss these approaches.
+%
+% Usually however, there are always relevant related research.
+% If not about the actual research questions, there is certainly
+% important information about the domain under study.
 
-In certain contexts it may be the case that the most relevant
-information for the study is not to be found in scientific
-literature but rather with individual software developers and
-open source projects. It must then be clearly stated that
-efforts have been made to gain access to this information,
-e.g. by direct communication with developers and/or through
-discussion forums, etc. Efforts must also be made to indicate
-the lack of relevant research literature. The precise manner
-of such investigations must be clearly specified in a method
-section. The paragraph on source criticism must critically
-discuss these approaches.
-
-Usually however, there are always relevant related research.
-If not about the actual research questions, there is certainly
-important information about the domain under study.
-
-\section{The work in a wider context}
+\section{Samhälleliga och etiska aspekter}
 \label{sec:work-wider-context}
 
-There must be a section discussing ethical and societal
-aspects related to the work. This is important for the authors
-to demonstrate a professional maturity and also for achieving
-the education goals. If the work, for some reason, completely
-lacks a connection to ethical or societal aspects this must be
-explicitly stated and justified in the section Delimitations in
-the introduction chapter.
+Projektet som har utvecklats har helt publicerats som open-source under licensen MIT\cite{MIT-license}. Detta är en mycket öppen licens som tillåter fri användning av programvaran för de flesta syften. Genom att dela med sig av all kod kan andra utvecklare välja att använda delar av den producerade koden i egna projekt eller lära sig av de designbeslut som tagits. Denna spridning av information och erfarenheter gör att mängden resurser för liknande framtida projekt ökar. Eftersom projektet är helt öppet och inte dolt bakom någon betaltjänst eller liknande hinder erbjuds alla samma möjlighet att ta del av det.
 
-In the discussion chapter, one must explicitly refer to sources
-relevant to the discussion.
+Projektet som har genomförts har från kundens sida syftet att demonstrera ett system för Internet of Things. Detta gör att projektet till viss del kan anses marknadsföra IoT som koncept. Direkta effekter av den utvecklade produkten på samhälle och miljö anses mycket små. Istället läggs här ett större fokus på indirekt påverkan från den mer uppkopplade värld som slutprodukten bidrar till att demonstrera.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% lorem.tex ends here
+%Samhälleliga
+\subsection{Samhälle}
+Introduktionen av IoT-koncept innebär stora förändringar av samhället. På en stor skala kan bussar och bilar tänkas vara uppkopplade mot servrar som kan erbjuda många logistiska optimeringsmöjligheter. Även i andra viktiga samhällsinstanser som sjukvård och räddningstjänst kan en mer uppkopplad värld erbjuda många möjligheter. På en mindre skala påverkar IoT varje enskild person och interaktionen mellan människor. Allt fler av objekten i vårt hem kopplas mot internet. Detta påverkar hur vi använder dessa och därmed våra levnadsmönster.
 
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: "demothesis"
-%%% End: 
+%Miljö
+\subsection{Miljö}
+Då fler och fler saker kopplas upp mot internet skapas nya behov av nätverk. Både i de uppkopplade apparaterna och i den runtliggande infrastrukturen krävs hårdvara som klarar av större mängder nätverkstrafik. Detta introducerar en ökad energianvändning på flera nivåer i nätverksstrukturen. Små objekt som tidigare innehållit ingen eller endast väldigt enkel elektronik behöver kunna upprätthålla nätverkskommunikation. Även behandling av de stora mängder data som kan skapas är en stor del av IoT-konceptet. Servrar som under lång tid utför tunga datanalyser kräver stora mängder energi för att utföra sina uppgifter.
+
+IoT erbjuder även många möjligheter för miljöarbete. Insamling av data genom många små sensorer och behandling av denna kan tänkas möjliggöra övervakning av processer som påverkar miljön. IoT tillåter också effektivisering av många industrier, vilket kan tänkas leda till en mer hållbar utveckling. Exempel på en industri med stor miljöpåverkan och möjligheter inom IoT är jordbruk. Här kan olika uppkopplade lösningar optimera resursanvändning och effektivisera processer, vilket ger en positiv miljöpåverkan.\cite{IoT-agriculture}
+
+%Etiska
+\subsection{Etik}
+Med många små uppkopplade moduler skapas stora mängder data. Denna data har ofta en obetydlig natur i sig självt, men kan få värde i kombination med annan. I de fall denna data beskriver egenskaper hos personer eller deras aktiviteter introducerar detta flera etiska dilemman. Det blir aktuellt att ställa frågor om vem som äger datan och vad den får användas till. Många IoT-lösningar erbjuds som tjänster där all data lagras och hanteras på företags servrar. Det är då förståeligt att användare känner en viss oro för hur den används och sprids. Här läggs ett stort ansvar på företag och organisationer att ta fram riktlinjer för hur man behandlar denna data.
+
+% There must be a section discussing ethical and societal
+% aspects related to the work. This is important for the authors
+% to demonstrate a professional maturity and also for achieving
+% the education goals. If the work, for some reason, completely
+% lacks a connection to ethical or societal aspects this must be
+% explicitly stated and justified in the section Delimitations in
+% the introduction chapter.
+%
+% In the discussion chapter, one must explicitly refer to sources
+% relevant to the discussion.

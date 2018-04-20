@@ -1,3 +1,54 @@
 \section{Teori}
+
 \label{sec:tim-theory}
-Här beskrivs de underliggande teknikerna av de olika gränssnitten för att få en bättre uppfattning till varför ett fungera bättre än ett annat.
+För att göra undersökningen behövs en viss grund av begrepp och teminologier fastställas för att underlätta arbetet i senare skedde.
+
+\subsection{JSON}
+JSON\cite{json} är ett dataformat för att lätt kunna hantera data, både för en dator och en användare. Formattet bygger översiktligt på fält med värden, objekt med flera fält och listor med objekt. Men listor kan även finnas i objekt och listor kan också innehålla fält. Formatteringen kan se ut som i figur \ref{fig:jsonformat} där det finns ett objekt med en lista av anställda.
+
+\lstset{language=Java}
+\begin{figure}[h]
+  \begin{minipage}[c]{5cm}
+    \begin{lstlisting}
+{
+    "name": "John",
+    "age": 30,
+    "cars": {
+        "car1": "Ford",
+        "car2": "BMW",
+        "car3": "Fiat"
+    }
+} 
+    \end{lstlisting}
+  \caption{JSON formattering}
+  \label{fig:tim-jsonformat}
+  \end{minipage}
+\end{figure}
+
+\subsection{Deepstream}
+\label{subsec:tim-deepstream}
+Deepstream är en Javascript-baserad tjänst med skalbarhet och datahantering i realtid i åtanke. Saker som utmärker detta gränssnitt är dess realtidsdatabaser, autentisering och behöver ingen backend utveckling för att fungera. För att få en fungerande backend behöver man endast starta en deepstream server och sedan är allt igång. Resten av integreringen sker på klientsidan av applikationen, så all datahantering sker utan någon form av serverprogrammering. För att få denna moduläriteten hanteras all data av servern med hjälp av tre enkla koncept. Dessa koncept är records, events och RPCs (Remove Procedure Call) och beskrivs mer ingående nedan. 
+
+\subsubsection{Deepstream record}
+Idén med records är att kunna lagra, updatera och ta bort data utan att denna datan försvinner efter körning. Detta samtidigt som att datan ska vara synkroniserad mellan alla uppkopplade enheter. För att uppnå detta använder deepstream en databas server som kan konfigueras till att hantera Postgres, MongoDB, ElasticSearch eller RethinkDB. 
+
+Då detta pappret inte kommer hantera records så kommer ingen mer ingående förklaring ges\cite{ds-storingdata}.
+
+\subsubsection{Deepstream event}
+Ett event (även kallad kanal) kan ses som en direkt länk mellan flera publicerare och prenumeranter. En publicerare är helt enkelt en användare som skickar data till deepstream server via en viss kanal som ges av en sträng (vanligtvis med format ''projekt/kanalnamn''). När deepstream servern mottagit datan skickas den vidare till alla användare som prenumerera på samma kanal. 
+
+Datan som skickas är i JSON-format och kommer inte lagras på deepstream servern. Därmed är tanken med events att det ska vara snabbt och enkelt att skicka data. 
+
+\subsubsection{Deepstream RPC}
+Utifrån events och records behövs det något enkelt sätt att skicka data samt få ett svar på den skickade datan. Detta kan vara ett enkelt fall då man implementera en addition RPC på en client och anropa den från en annan för att få ett svar på beräkningen. Detta är ett av de mest triviala exemplet, men all form av validering, beräkning eller liknande som man vill göra på en annan klient görs enklast med hjälp utav RPCs.
+
+På samma sätt som i events så skickas datan i ett JSON-format, både för anropp och svaret från RPCn.
+
+\subsection{Rundturstid}
+När rundturstid nämns i denna delen av pappret menas tiden det tar att skicka en förfrågan till en annan klient i nätverket och få tillbaka ett svar. Det vill säga tiden det tar att skicka ett meddelande till deepstream servern, få servern att skicka vidare till en annan klient som sedan skicka tillbaka ett svar genom servern. Det betyder \textbf{inte} tiden det tar att få ett direkt svar från deepstream servern då detta inte ger ett relevant värde eftersom att klienter aldrig kommunicera direkt med servern.
+
+\subsection{Wireshark}
+Wireshark är ett verktyg för att analysera nätverkstrafik för att se över vad som skickas, över vilket protokol och vem som skicka eller tar emot datan. Detta ger användaren en bra förståelse för hur olika protokol fungera på en lägre nivå.
+
+\subsubsection{Interface}
+Utifrån det kan man ställa in vilket interface\cite[p.~364]{networking} man lyssnar på, detta inkluderar generellt bluetooth, ethernet och loopback. I detta pappret kommer loopback interface användas, detta interface är till för att skicka nätverksdata till och från samma dator. Det vill säga den data som inte skickas till en annan dator.
