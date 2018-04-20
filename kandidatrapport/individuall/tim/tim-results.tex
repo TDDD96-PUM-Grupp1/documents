@@ -9,7 +9,7 @@ När endast ett objekt skickades kunde man observera att datan som skickades öv
 \label{subsec:tim-result-response}
 Resultatet från responstiden från metoden som beskrevs i avsnitt \ref{subsec:tim-method-response} presenteras i figur \ref{fig:tim-response-graph}. Från detta kan det ses att responstiden beror linjärt på hur mycket data som skickas. Skickas mer data tar responstiden längre tid. Dock så kan detta till stora del försummas då datamängden ökar radikalt medans responstiden knappt ökar 1 ms. Vad som är mer intressant är att en RPC är mycket snabbare med att skicka data när det gäller att få ett svar tillbaka, samtidigt som att responstiden varierar mycket mindre. Det går dock inte att se någon speciell skillnad på komplexiteten hos båda då responstiden ser ut att öka med samma hastighet.
 
-\begin{figure}[h]
+\begin{figure}[t]
     \center
     \begin{tikzpicture}
         \begin{axis}[

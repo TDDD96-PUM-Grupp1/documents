@@ -1,11 +1,21 @@
 \section{Diskussion}
 \label{sec:tim-discussion}
-Under arbetets gång har flera olika resultat uppståt, vilket ger en bra bild av hur storleken på datan över deepstream påverkar tiden det tar att skicka den. 
+Under arbetets gång har flera olika resultat uppståt, vilket ger en bra bild av hur storleken på datan över deepstream påverkar tiden det tar att skicka den. För att få en bättre förståelse av resultaten så diskuteras resultat, metod och hur metoden har påverkat resultatet. 
 
 \subsection{Resultat}
 \label{subsec:tim-discussion-results}
+Från studien har två olika resultat beskrivits där ena handlar om hur deepstream komprimera data och den andra hur deepstream skalas beroende på datastorleken.
+
+\subsubsection{Datakomprimering}
+När det gäller datakomprimering så gör deepstream inga direkta förbättringar för att minska datastorleken, detta beror troligtvis på att Javascript till stor del bygger på JSON-objekt och i och med det finns det en motivering av att fortsätta jobba med just det formattet. Därav behöver inte mycket göras för att omvandla klasser, datastrukturer eller liknande då allt till stor del bygger på JSON och listor.
+
+Frågan är då om deepstream hade tagit nytta av att göra om datan till binär, vilket enligt avsnitt \ref{sec:tim-background} skulle ge ett bättre resultat. Problemet här är att den binära serialiseringen bygger på att datastrukturen är upplagd på ett visst sätt, och i fallet med Javascript och Protobuf behövs ett helt nytt objekt med setters användas för att skicka datan. Detta kan då leda till att binärdatan får mer overhead för att ens börja serialisera datan. Vilket kan visa sig ta längre tid än JSON-Objekt, detta skulle behövas undersökas vidare för att få en bättre uppfattning.
+
+\subsubsection{Responstid}
+Från resultatet kunde man se att RPC är snabbare än att använda sig av event när det gäller att skicka och ta emot data. Anledningen till detta kan ligga i att ett event måste kolla upp vilka användare som prenumerera på en viss kanal två gånger medan RPC endast gör det en gång då den inte behöver leta upp vem som frågade efter RPCn eftersom denna skickas med i anroppet. Detta kan ses i källkoden för deepstream på GitHub\footnote{\url{https://github.com/deepstreamIO/deepstream.io} \newline commit: 98a2f53b0f7ca984a0f0f2f5a89c225c21467687}. 
 
 \subsection{Metod}
 \label{subsec:tim-discussion-method}
+Metoden som har använts har givit en bättre insyn om hur de olika funktionerna RPC och event fungera i en djupare nivå, samt om deepstream gör någon form av komprimering. För komprimering och analysen i Wireshark, så speglar metoden exakt på hur datan hanteras då detta verken beror på CPU-hastighet, nätverk eller andra oförutsägbara ändringar. Så det går direkt att säga deepstream inte använder sig av någon form av komprimering.
 
-
+Om man dock blickar bort mot responstiden så finns det mycket som kan påverka resultatet, till en början spelar CPUn roll, då en snabbare CPU ger bättre värden. Dock så borde detta inte reflektera över att RPC är snabbare än event då detta borde dra ner responstiden lika mycket. Andra saker som spelar större roll är hur Javascripten exekveras, i termer av hur datastrukturer hanteras på olika CPUer. Detta kan ge större påverkningar på resultatet eftersom sätter Javascript hanterade datastrukturen på datorn som användes för undersökningen kanske fungerade bättre för RPC än för event och därav gav de resulterande resultaten. Detta är något som borde undersökas vidare mellan olika datorer.
