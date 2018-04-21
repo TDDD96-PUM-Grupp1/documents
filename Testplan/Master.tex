@@ -20,6 +20,8 @@
 		\hline
  	       \centering 2.0 & 2018-03-05 & Iteration 2\\
  	       \hline
+ 	       \centering 3.0 & 2018-04-21 & Iteration 3. Expanderat pga till på grund av under 4.2 Iteration 2. Lagt till beskrivande text under Föremåls godkännande/misslyckande kriterier. Under 5.1 ändrat kvalitetsplanen till kvalitetsplanens. Under 5.2 ändrat Kontrolller till kontroller. \\
+ 	       \hline
  	   \end{tabular}
 	\end{center}
 
@@ -83,20 +85,24 @@
 \subsection{Iteration 2}
 	Under Iteration 2 kommer utvecklingen ha påbörjats och kommer till största del bestå utav enhetstester där utvecklarna gör sina egna manuella tester. Vidare ska något eller några automatiska tester ha påbörjats för att bygga upp ett bibliotek av funktionstester som körs vid regressionstestning. Planen för första iterationen är att skapa grundläggande kommunikation mellan de olika delarna så testen kommer skapas därutefter.\\
 
-	Väldigt få tester kommer att genomföras under denna iteration då de kommer vara svåra att definiera pga att det är en web-applikation som utvecklas. Tester kommer bli mer genomgående när servern är klar.
+	Väldigt få tester kommer att genomföras under denna iteration då de kommer vara svåra att definiera på grund av att det är en web-applikation som utvecklas. Tester kommer bli mer genomgående när servern är klar.
 
 \subsection{Iteration 3}
 	I iteration 3 kommer huvudfokus ligga på att vidareutveckla applikationen för att få mer funktionalitet. Systemet ska ha de flesta funktionerna implementerade vid slutet av iterationen och samtliga ska testas.
+\subsection{Iteration 4}
+	Iteration 4 kommer utvecklingen dra igång ordentligt, och därmed även testningen. Både manuella tester och automatiska kommer sättas igång, och förhoppningsvis kommer även flertalet av testerna utformade efter kravspecifikationen vara godkända. 
 
 
 
 
 \section{Föremåls godkännande/misslyckande kriterier}
+	Under denna sektion kommer de stora komponenterna i projektet gås igenom och kraven för att de ska bli godkända.
+
 	\subsection{Backend}
-		För att backend ska vara godkänd måste den uppnå de krav på hastighet som kan hittas i kravspecifikationen \cite{bib-kravspec}. All kommunikation mellan UI och kontroller ska gå genom kundens backend och för att samtliga krav ska bli uppfyllda måste alla lösningar följa kvalitetsplanen  \cite{bib-kvalitetsplan} krav.
+		För att backend ska vara godkänd måste den uppnå de krav på hastighet som kan hittas i kravspecifikationen \cite{bib-kravspec}. All kommunikation mellan UI och kontroller ska gå genom kundens backend och för att samtliga krav ska bli uppfyllda måste alla lösningar följa kvalitetsplanens  \cite{bib-kvalitetsplan} krav.
 
 	\subsection{Kontroller och UI}
-		För att kontroller och UI-delen ska vara godkänd krävs det att den kan köras på Chrome, version 64. För godkännande av Kontroller måste den godkännas enligt kvalitetsplanen \cite{bib-kvalitetsplan}, en enkät genomförs mot en testgrupp som besvarar frågor angående responsivitet, stabilitet och användarvänlighet.
+		För att kontroller och UI-delen ska vara godkänd krävs det att den kan köras på Chrome, version 64. För godkännande av kontroller måste den godkännas enligt kvalitetsplanen \cite{bib-kvalitetsplan}, en enkät genomförs mot en testgrupp som besvarar frågor angående responsivitet, stabilitet och användarvänlighet.
 
 
 
