@@ -6,7 +6,7 @@ Här sammanfattas resultaten och diskussionen i formen av att svara på frågest
 Som nämnt tidigare görs ingen direkt komprimering av datan när man använder sig av deepstream som server och klient. Datan som skickas är i formen av JSON-objekt med blanksteg och tabbar borttagna då detta inte ändrar beteendet hos JSON-objekt.
 
 \subsection*{\ref{tim-fs:2} Under vilka förhållanden är det bättre att använda RPC över event och vise versa?}
-Från undersökningen ser det ut som att RPCs ska användas vid alla lägen eftersom att den tar minst tid att exekvera och därmed ger en kortare responstid. Detta stämmer i fallet då tiden till deepstream servern är väldigt kort och om man vill få ett svar tillbaka, vilket man inte alltid vill. Om användingsområdet är att skicka data till en klienter utan att få ett svar, så är rundturstiden troligtvis väldigt snarlik. Dessutom kan events skicka data till inte bara en klient utan flera, vilket är något RPCs inte kan bidra till. En RPC kan endast hanteras av en klient.
+Från undersökningen ser det ut som att RPCs ska användas vid alla lägen eftersom att den tar minst tid att exekvera och därmed ger en kortare responstid. Detta stämmer i fallet då tiden till deepstream servern är väldigt kort och om man vill få ett svar tillbaka, vilket man inte alltid vill. Om användningsområdet är att skicka data till en klienter utan att få ett svar, så är rundturstiden troligtvis väldigt snarlik. Dessutom kan events skicka data till inte bara en klient utan flera, vilket är något RPCs inte kan bidra till. En RPC kan endast hanteras av en klient.
 
 Så om man vill skicka data och få ett svar borde RPC användas. Men om man ska skicka data till flera klienter och inte förvänta sig ett svar tillbaka så borde events användas.
 
