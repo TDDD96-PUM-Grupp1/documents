@@ -1,0 +1,72 @@
+\newcounter{teststep}
+
+\newcommand{\printtestid}{}
+\newcommand{\printtestpriority}{}
+\newcommand{\printtestmodule}{}
+\newcommand{\printtesttitle}{}
+\newcommand{\printtestby}{}
+\newcommand{\printtestdate}{}
+\newcommand{\printtestexecby}{}
+\newcommand{\printtestexecdate}{}
+\newcommand{\printtestdesc}{}
+\newcommand{\printtestpreq}{}
+\newcommand{\printtestdep}{}
+
+\newcommand{\testid}[1]{\renewcommand{\printtestid}{#1}}
+\newcommand{\testpriority}[1]{\renewcommand{\printtestpriority}{#1}}
+\newcommand{\testmodule}[1]{\renewcommand{\printtestmodule}{#1}}
+\newcommand{\testtitle}[1]{\renewcommand{\printtesttitle}{#1}}
+\newcommand{\testby}[1]{\renewcommand{\printtestby}{#1}}
+\newcommand{\testdate}[1]{\renewcommand{\printtestdate}{#1}}
+\newcommand{\testexecby}[1]{\renewcommand{\printtestexecby}{#1}}
+\newcommand{\testexecdate}[1]{\renewcommand{\printtestexecdate}{#1}}
+\newcommand{\testdesc}[1]{\renewcommand{\printtestdesc}{#1}}
+\newcommand{\testpreq}[1]{\renewcommand{\printtestpreq}{#1}}
+\newcommand{\testdep}[1]{\renewcommand{\printtestdep}{#1}}
+
+\newcommand{\teststepheader}{Steg & Tillvägagångssätt & Förväntat Resultat & Faktiskt Resultat & Status & Anteckningar \\ \hline
+}
+\newcommand{\teststep}[5]{
+    \stepcounter{teststep}
+    \theteststep & #1 & #2 & #3 & #4 & #5 \\
+    \hline
+}
+\newenvironment{manualtest}
+{
+    \setcounter{teststep}{0}
+    \begin{tabular}{| p{1cm}|  p{3cm} | p{3cm}| p{3cm}| p{2cm}| p{3cm}|}
+    \hline
+    \multicolumn{3}{|l|}{ID: \printtestid} & \multicolumn{3}{|l|}{Designat av: \printtestby} \\ 
+    \hline
+    \multicolumn{3}{|l|}{Prioritet: \printtestpriority} & \multicolumn{3}{|l|}{Datum designat: \printtestdate} \\ 
+    \hline
+    \multicolumn{3}{|l|}{Modul: \printtestmodule} & \multicolumn{3}{|l|}{Utfört av: \printtestexecby} \\ 
+    \hline
+    \multicolumn{3}{|l|}{Titel: \printtesttitle} & \multicolumn{3}{|l|}{Datum utfört: \printtestexecdate} \\ 
+    \hline
+    \multicolumn{6}{|p{\textwidth}|}{Beskrivning: \printtestdesc}\\
+    \hline
+    \multicolumn{6}{|p{\textwidth}|}{Förutsättningar: \printtestpreq}\\
+    \hline
+    \multicolumn{6}{|p{\textwidth}|}{Beroenden: \printtestdep}\\
+    \hline
+    \multicolumn{6}{|l|}{}\\
+    \multicolumn{6}{|l|}{}\\
+    \hline
+    \teststepheader
+}
+{
+    \end{tabular}
+    \vspace{5mm}
+    \renewcommand{\printtestid}{}
+    \renewcommand{\printtestpriority}{}
+    \renewcommand{\printtestmodule}{}
+    \renewcommand{\printtesttitle}{}
+    \renewcommand{\printtestby}{}
+    \renewcommand{\printtestdate}{}
+    \renewcommand{\printtestexecby}{}
+    \renewcommand{\printtestexecdate}{}
+    \renewcommand{\printtestdesc}{}
+    \renewcommand{\printtestpreq}{}
+    \renewcommand{\printtestdep}{}
+}
