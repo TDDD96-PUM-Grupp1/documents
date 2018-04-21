@@ -1,4 +1,31 @@
 \section{Resultat}
 \label{sec:axel-results}
+Detta avsnitt presenterar resultatet av den utförda studien.
 
-Här kommer att skillnaderna mellan ramverken att presenteras efter metoden. Det är ganska stora skillnader mellan React och Angular så här bör de finnas mycket information att reflektera om och analysera. Om det skulle vara för tunt, kan fler ramverk väljas in till undersökningen. 
+\subsection{Ramverk jämfört med biblotek}
+Till att börja med är det värt att notera att ReactJS är ett Javscript biblotek medan Angular är ett ramverk. Detta är en viktig detalj eftersom ett ramverk dikterar hur flödet av ett program ska gå till. Angular har alltså redan tänkt ut en struktur till hur en webapplikation ska utvecklas med deras ramverk. Denna struktur saknas hos ReactJS, utvecklaren har valet att strukturera upp flödet i webapplikationen som utvecklaren vill. På så sätt kan ReactJS anses vara mer flexibelt än Angular. Hurvida denna flexibilitet är en fördel eller nackdel beror på vilken aspekt man undersöker och vilket stadium ett projekt befinner sig i. 
+
+\subsection{Beroenden till andra biblotek}
+Då en applikation utvecklas med ReactJS är det väldigt troligt att utvecklaren kommer introducera andra Javascript biblotek för att komplettera viss funktionalitet. En fördel med detta är valmöjligheten som ges till utvecklaren, att kunna få välja vilken funktionalitet som ska importeras. Detta kan dock bli problematiskt för två aspekter.
+
+Den ena aspekten är att ansvaret att sköta integereringar av uppdateringar från dessa externa biblotek hamnar hos utvecklaren, vilket kan leda till kompatibilitets problem. Risken för att ett biblotek slutar underhållas existerar även.
+
+Den andra aspekten är att desto fler Javascript biblotek man introducerar till ett projekt, desto svårare blir det för en ny utvecklare att förstå och komma igång med utvecklingen för applikationen. Detta är en viktig aspekt beroende på hur stort utvecklingsprojektet är. Båda ovannämnda aspekter existerar även för Angular, men är mindre troliga eftersom Angular är ett större ramverk med mycket mer inbyggd funktionallitet än ReactJS.
+
+\subsection{Filosofier}
+Trots att både ReactJS och Angular är komponentbaserade ramverk och biblotek, har de två helt olika filosofier kring hur en webapplikation ska struktureras. Angulars filosofi är att seperera alla teknologier i olika moduler, där varje modul gör en specifik sak väldigt väl. ReactJS filosofi är att samla alla relevanta teknologier till en komponent. Detta syns tydligt när man jämför Angulars vyer med ReactJS komponenter. Angular gör valet att dela upp en vy med en komponent och en template, där beteendet för vyn existerar i komponenten och utseendet existerar i templaten. ReactJS integerar både utseendet och beteendet till en komponent och låter komponenten i sig bli mer självständig. 
+
+Fördelen med att integrera allt relevant till en komponent är att man minskar beroenden mellan komponenterna och ökar sammanhållningen inom komponenten. Detta är fördelaktigt när modifikationer måste ske som pete hunt tar upp på JSconf ref här. I Angular kan till exempel olika komponenter använda sig av samma template. Vid vissa modifikationer i templaten skulle det innebära att man måste även modifiera alla komponenter som är beroende av den templaten. Detta gör det svårare att underhålla webapplikationen. Det här problemet gäller även för Angulars services.
+
+%https://www.youtube.com/watch?v=x7cQ3mrcKaY
+
+\subsection{Användbarhet}
+Hur lätt det är för en utvecklare att sätta sig in i ett projekt och utveckla beror på väldigt många faktorer. Vid större projekt lämpar Angular bättre på grund av den fördefinierade flödet ramverket bidrar med. Framförallt om utvecklaren har tidigare erfarenheter med Angular eftersom allmänna flödet i webapplikationen kommer vara likna tidigare projekt. Medan flödet i ReactJS kommer att variera i stor grad mellan olika projekt utvecklarna har friheten att bestämma hur flödet ska se ut. 
+
+Däremot om utvecklaren har varken tidigare erfarenhet med Angular eller ReactJS är det betydligt mycket lättare att lära sig ReactJS över Angular. Tröskeln för Angular är betydligt mycket större just för att utvecklaren måste förstå alla koncept för hur Angular har tänkt sig hur något ska implementeras. Samtidigt kommer utvecklaren behöva lära sig Typescript samt all specifik syntax för Angular så som directives. Eftersom ReactJS liknar vanlig Javascript tackvare JSX och har inte det förbestämda flödet, är det betydligt mycket lättare för en utvecklare att lära sig ReactJS.
+
+\subsection{Data bindning}
+En annan skillnad mellan ReactJS och Angular är att Angular stödjer tvåvägsdatabindning medan ReactJS enbart stödjer envägsdatabindning. Med tvåvägsdatabinding kan man binda på ett simplare och snyggare sätt än med ReactJS.
+
+\subsection{Angular i det utförda projektet}
+ 
