@@ -1,51 +1,28 @@
 \section{Introduktion}
 \label{sec:joel_a-introduction}
-Denna del ska introducera varför denna rapport skrivs och vad den försöker uppnå. TLDR: Jämför vårt spel med native appar, drar den rimligt mycket ström?
+Denna del ska introducera varför denna rapport skrivs och vad den försöker uppnå.
 
 \subsection{Bakgrund}
-
-Miljön HÄR
-
-Många applikationer som skrivs idag försöks göras plattformsoberoende så att enbart en version av applikationen behöver framställas och underhållas. Det finns flera sätt att framställa en plattformsoberoende app, en populär metod är att skriva appen som en hemsida som sedan alla enheter med en modern browser kan använda sig av.
-
-Detta kan åstakommas på flera sätt, en av de vanligare är att skriva applikationen i javascript och låta webläsare rendera applikationen som en hemsida. Denna metod har tagits ännu längre med Googles koncept av ''progressive web apps'' som låter applikationer skriva som hemsidor att användas som lokala applikationer utan tillgång till internet. Detta ger samma funktionalitet som en vanlig applikation men är strukturellt väldigt annorlunda eftersom programet körs i en webläsare. Denna skillnad är dold för användaren, men kan påverka saker såsom mängden klockcykler, mängden data som skickas samt användningen av GPU:n. 
-
-
-
-
-
-Progresive Web Apps har blivit mer och mer populära sen termen myntades 2015 av Google. Framförallt så nämns fördelarna de ger såsom platformsoberoende, enkelhet att installera och offline möjligheter. Men detta betyder också att applikationen sparas undan även ifall den enbart används en gång. Dessutom så körs en PWA genom en browser vars primära funktionalitet är att visa hemsidor av flera olika slag, inte nödvändigtvis att spela spel på. Dessa faktorer påverkar antalet klockcykler en processor använder sig av, och kan potentielt påverka batteritiden PWA:n har jämtemot en ''native app''.
-
-TODO NÄMN NÅGOT OM BATTERIANVÄNDING OCH MILJÖN I DETTTA STYCKE
-Referera till någon av miljöartiklarna här
-Kanske: hög battarianvänding -> medelgamla mobiler med sämre batterier upplevs som dåliga -> de slängs för nya -> massa slösari
-Alt: Hög battarianvänding -> de måste laddas mer -> dåligt för miljön
+Vid skapandet av produkten gjorde gruppen många avvägningar, vilken typ av arkitektur uppfyller produktens syfte bäst, hur bör vi arbeta för att vara så effektiva som möjligt, vilka kvalitetsfaktorer är viktigast för kunden. En aspekt som inte togs upp var dock den miljömässiga aspekten av produkten. Varken kunden eller gruppen satte miljömässiga krav på produkten, så denna aspekt hamnade helt i skymundan. Mjukvara är tänkt att köras på hårdvara, så all mjukvara har en direkt negativ påverkan på miljön genom sin energiförbrukning. Men detta är inte en fullständig bild då mjukvara kan användas för att uppfylla ett behov som fanns ifrån tidigare, och göra det på ett mer hållbart sätt än tidigare. För att göra en djupgående analys av mjukvarans miljöpåverkan så skapade Green Software Engineering (GREENSOFT TODO) en modell för just detta syfte.
 
 \subsection{Syfte}
-Syftet med denna bilaga är att utreda hur mycket ström plattformsoberoende PWA:s drar jämtemot native appar. 
+Syftet med denna rapport är att använda Greensofts modell för att utvärdera miljöpåverkan utvecklingen av gruppens produkt har haft. Detta skapar en bild av en aspekt i utvecklingsproccessen som gruppen till stor del ignorerat tidigare och kan även lyfta fram vilka delar i utvecklingen som kunde ha gjorts annorlunda för att få en mer hållbar utvecklingsproccess.
 
-Produkten som gruppen framställde skrevs som en PWA och kan 
 
-Syf
-Det som ska utredas är hur resursanvändningen av minne, processor och mängden data skickat genom internet skiljer sig mellan mellan olika typer av appar. Med hjälp av detta ska det utredas hur mycket ström vår applikation drar jämfört med applikationer som inte körs i en browser.
 
 \subsection{Frågeställning}
 \label{subsec:joel_a-research-questions}
 
 \begin{enumerate}
-\item Hur många klockcykler använder vår applikation jämfört med andra typer av applikationer?
+\item Vilken negativ påverkan på miljön har utvecklandet av produkten haft?
 
-\item Hur mycket minne använder vår applikation jämfört med andra typer av applikationer?
+\item Vilken positiv påverkan på miljön har produkten haft eller kommer troligtvis att ha?
 
-\item Hur mycket data skickar vår app jämfört med andra typer av applikationer?
-
-\item Hur mycket batteritid drar en applikation skriven i javascript jämfört med en applikation skriven i ett annat språk.
+\item Vad i utvecklingsproccessen kunde gjorts annorlunda för att få en mer miljömässigt hållbar produkt eller utvecklingsproccess?
 
 \end{enumerate}
 
 \subsection{Avgränsingar}
 \label{subsec:joel_a-delimitations}
 
-Denna undersökning är en del av ett annat separat projekt och har därav en begränsad tidsbudget så produkten som utvecklades i projektet jämförs enbart med tre andra typer av appar. Detta är få applikationer för att kunna dra absoluta slutsatser gällande javascript och webläsares energianvändning, men kan fungera som en indikator.\\\\
-Det tre kategorierna som produkten testas mot kommer enbart att representeras av en applikation, vilket kan skapa fel då applikationen som ska representera sin kategori kan vara en avvikare i hur den använder mobilens resurser.
-
+*Lägg till
