@@ -7,6 +7,7 @@
 \usepackage{scrextend}
 \usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \usepackage{multirow}
+\usepackage{verbatim}
 \input{manualtest_environment}
 \addbibresource{../references.bib}
 \selectlanguage{swedish}
@@ -62,7 +63,7 @@
  	       \hline
  	       \centering 2.0 & 2018-03-05 & Rapport för iteration 2\\
 		\hline
- 	       \centering 3.0 & 2018-04-21 & Rapport för iteration 3. Samtliga enhetstest som ej är direkt kopplade mot kravspecifikationen är borttagna. \\
+ 	       \centering 3.0 & 2018-04-21 & Rapport för iteration 3. Samtliga enhetstest som ej är direkt kopplade mot kravspecifikationen är borttagna. Uppdaterat de test som utförts och lagt till testrapporter.\\
 		\hline
  	   \end{tabular}
 	\end{center}
@@ -100,7 +101,7 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
 	\multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
     	\hline
     
-		Krav 1&Testning av Kontroll-applikationen med mobil enhet.&&\\
+		Krav 1&Testning av Kontroll-applikationen med mobil enhet.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: kontroll-styrning\\
 		\hline
 		Krav 4& Testa att skapa flera instanser av backend.&&\\
 		\hline
@@ -124,7 +125,7 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
 		\hline
 		Krav 17&Testa att tangentbord och mus har samma funktionalitet som en mobil enhet.&&\\
 		\hline
-		Krav 18&Ansluta minst fem kontroller till en session samtidigt utan märkvärd prestandaförlust.&&\\
+		Krav 18&Ansluta minst fem kontroller till en session samtidigt utan märkvärd prestandaförlust.&EJ OK&Spelare upplevde fördröjningar och dålig responstid. Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: flera-spelare-simultant\\
 		\hline
 		Krav 19&Visuellt kontrollera att UI-applikationen ser bra ut.&&\\
 		\hline
@@ -153,11 +154,11 @@ Nedanför följer de integrationstester som behöver genomföras för att få et
       		\hline
       		NR&Enheter&Test&Godkänt&Kommentar\\
       		\hline
-		Integrationstest 1&UI och backend&Kommunikation mellan UI och backend.&&\\
+		Integrationstest 1&UI och backend&Kommunikation mellan UI och backend.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix}\\
 		\hline
-		Integrationstest 2&backend och kontroll&Kommunikation mellan backend och kontroll.&&\\
+		Integrationstest 2&backend och kontroll&Kommunikation mellan backend och kontroll.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix}\\
 		\hline
-		Integrationstest 3&UI, backend och kontroll&Kommunikation mellan UI och kontroll via backend.&&\\
+		Integrationstest 3&UI, backend och kontroll&Kommunikation mellan UI och kontroll via backend.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix}\\
 		\hline
  	 \end{tabular}
  
@@ -175,7 +176,7 @@ Nedan följer de systemtest som motsvarar kraven på kravspecifikationen \cite{b
     		\hline
 		Krav 2&Verifiera att ingen kommunikation går direkt mellan UI-applikationen och kontrollapplikationen.&&\\
 		\hline
-		Krav 3&Starta upp en spelinstans och låta en användare ansluta.&& \\
+		Krav 3&Starta upp en spelinstans och låta en användare ansluta.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: kontroll-styrning \\
 		\hline
 		Krav 7& Testa låta samtliga spelare i en session rösta på nästa spel och låta det spel med flest röster vara nästa spel.&&\\
 		\hline
@@ -201,17 +202,17 @@ De systemtest nedan är de görs för att säkerställa att produkten fungerar s
       		NR&Test&Godkänt&Kommentar\\
       		\hline
     
-		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.&ok&\ref{sec:test_spelkontroll}\\
+		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: kontroll-styrning\\
 		\hline
 		Systemtest 2&Användning av knapp i kontroller ska motsvara en händelse i spelet.&&\\
 		\hline
-		Systemtest 3&Användarnamn i kontroll ska visas på UI.&&\\
+		Systemtest 3&Användarnamn i kontroll ska visas på UI.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: ui-highscoresort\\
 		\hline
 		Systemtest 4&En spelare ska kunna lämna ett spel och dess representation i spelet försvinner.&&\\
 		\hline
 		Systemtest 5&Spelare ska bli utkastade ur sessionen när UI stängs ned.&&\\
 		\hline
-		Systemtest 6&Om poäng ges till spelare ska highscorelistan uppdateras i kontrollen.&ok&\ref{sec:test_scoreboard}\\
+		Systemtest 6&Om poäng ges till spelare ska highscorelistan uppdateras i kontrollen.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: ui-highscoresort\\
 		\hline
 
 
@@ -245,38 +246,17 @@ Nedan följer de acceptanstest som motsvarar kraven på kravspecifikationen \cit
 \pagebreak
 \setlength{\parindent}{0pt}
 \section{Appendix}
+\label{sec:appendix}
 Manuella tester utfört av någon i gruppen listas nedan.
 \input{manualtests.tex}
+
+
+\pagebreak
 \section{Appendix 2}
-\label{sec:test_scoreboard}
-\input{tests/test_scoreboard.tex} 
-\vspace{5mm}
-\label{sec:test_spelkontroll}
-\input{tests/test_spelkontroll.tex} 
-\vspace{5mm}
-\label{sec:controller_disconnect}
-\input{tests/controller_disconnect.tex} 
-\vspace{5mm}
-\label{sec:controller_new_session}
-\input{tests/controller_new_session.tex} 
-\vspace{5mm}
-\label{sec:controller_update_playercount}
-\input{tests/controller_update_playercount.tex} 
-\vspace{5mm}
-\label{sec:controller_view_session}
-\input{tests/controller_view_session.tex} 
-\vspace{5mm}
-\label{sec:controller_view_started}
-\input{tests/controller_view_started.tex} 
-\vspace{5mm}
-\label{sec:ui_connect}
-\input{tests/ui_connect.tex} 
-\vspace{5mm}
-
-\pagebreak
+\label{sec:apendix2}
 Automatiska tester skapade av någon i gruppen listas nedan.
-\pagebreak
 
+\pagebreak
 \printbibliography	
 	
 \end{document}

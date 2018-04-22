@@ -1,3 +1,31 @@
+
+% TEST TEMPLATE
+\begin{comment}
+%START
+\testid{}
+\testpriority{}
+\testmodule{}
+\testtitle{}
+\testby{}
+\testdate{}
+\testexecby{}
+\testexecdate{}
+\testdesc{}
+\testpreq{}
+\testdep{}
+
+\begin{manualtest}
+    %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
+    \teststep{}{}{}{}{}
+    \teststep{}{}{}{}{}
+\end{manualtest}
+%END
+\end{comment}
+
+
+
+
+
 % SCOREBOARD TEST
 \testid{ui-highscoresort}
 \testpriority{Låg}
@@ -20,21 +48,47 @@
     \teststep{Spelarna lämnat instansen}{Spelarna försvinner från highscore-listan}{förväntat}{ok}{}
 \end{manualtest}
 
-
-% Testa Testa om spelsession försvinner 
-\testid{}
-\testpriority{}
-\testmodule{}
-\testtitle{}
-\testby{}
-\testdate{}
-\testexecby{}
-\testexecdate{}
-\testdesc{}
-\testpreq{}
+%Test av spelkontroll
+\testid{kontroll-styrning}
+\testpriority{Hög}
+\testmodule{sensoravläsning, spellogik}
+\testtitle{spelarkontroll}
+\testby{Joel Oskarsson}
+\testdate{2018-02-22}
+\testexecby{Joel Oskarsson, David Kjellström}
+\testexecdate{2018-02-22}
+\testdesc{ Test av ansluta från kontrollapplikationen till en spelinstans. Efter anslutningen är upprättad ska sensordata på kontrollen röra en seplare som visas på UI-appikationen.}
+\testpreq{Sensoravläsning, kommunikation, enkel spelimplementation}
 \testdep{}
 
 \begin{manualtest}
-    \teststep{Gå till listan av sessioner}{}{}{}{Detta test kräver att minst en spelsession är aktiv}
-    \teststep{Stäng av spelsessionen}{Sessionen försvinner ur listan}{Sessionen försvinner ur listan}{ok}{}
+    %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
+    \teststep{Starta service och UI-Applikation }{ Systemet startar}{ förväntat}{OK}{}
+    \teststep{Starta spelet på UI}{spelet startas}{förväntat}{OK}{}
+    \teststep{Starta kontrollapplikation}{kontrollapplikation startas}{förväntat}{OK}{}
+    \teststep{Spelare ansluter till spelet}{spelarna visas i UI}{förväntat}{OK}{}
+    \teststep{Spelare lutar sin telefon}{spelare rör sig i spelet}{förväntat}{OK}{}
+\end{manualtest}
+
+\testid{flera-spelare-simultant}
+\testpriority{Medium}
+\testmodule{Hela systemet}
+\testtitle{Flera spelare}
+\testby{David Kjellström}
+\testdate{2018-04-16}
+\testexecby{Gruppen med Cybercomgroup}
+\testexecdate{2018-04-16}
+\testdesc{Skapa en session där flera spelare kör samtidigt. Testades direkt med kund genom en demonstration av produkten.}
+\testpreq{Spelare kan knuffa ut varandra och en highscorelista visar poäng}
+\testdep{Grundspel}
+
+\begin{manualtest}
+    %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
+    \teststep{Starta service och UI-applikation}{Systemet startar}{förväntat}{OK}{}
+    \teststep{Starta spelet på UI}{spelet startas}{förväntat}{OK}{}
+    \teststep{Starta kontrollapplikation}{kontrollapplikationen startas}{förväntat}{OK}{}
+    \teststep{Spelare ansluter}{spelare ansluts}{förväntat}{OK}{}
+    \teststep{Spelare väljer utseende på karaktär}{Spelare får utseendet}{långsammare än väntat}{OK}{Långa laddtider mellan de olika utseendena}
+    \teststep{Spelare går med i spelet}{spelare är med i spelet}{förväntat}{OK}{Spelare tappade förvald färg när knapp trycktes ned på kontroll}
+    \teststep{Flera spelare är med i spelet}{flera spelare i samma spel utan problem}{flera spelare i samma spel med fördröjningsproblem}{EJ OK}{flera spelare upplevde fördröjningar och bristande responsivitet}
 \end{manualtest}
