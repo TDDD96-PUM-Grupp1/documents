@@ -1,3 +1,31 @@
+
+% TEST TEMPLATE
+\begin{comment}
+%START
+\testid{}
+\testpriority{}
+\testmodule{}
+\testtitle{}
+\testby{}
+\testdate{}
+\testexecby{}
+\testexecdate{}
+\testdesc{}
+\testpreq{}
+\testdep{}
+
+\begin{manualtest}
+    %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
+    \teststep{}{}{}{}{}
+    \teststep{}{}{}{}{}
+\end{manualtest}
+%END
+\end{comment}
+
+
+
+
+
 % SCOREBOARD TEST
 \testid{ui-highscoresort}
 \testpriority{Låg}
@@ -20,6 +48,27 @@
     \teststep{Spelarna lämnat instansen}{Spelarna försvinner från highscore-listan}{förväntat}{ok}{}
 \end{manualtest}
 
+%Test av spelkontroll
+\testid{}
+\testpriority{Hög}
+\testmodule{sensoravläsning, spellogik}
+\testtitle{spelarkontroll}
+\testby{Joel Oskarsson}
+\testdate{2018-02-22}
+\testexecby{Joel Oskarsson, David Kjellström}
+\testexecdate{2018-02-22}
+\testdesc{ Test av ansluta från kontrollapplikationen till en spelinstans. Efter anslutningen är upprättad ska sensordata på kontrollen röra en seplare som visas på UI-appikationen.}
+\testpreq{Sensoravläsning, kommunikation, enkel spelimplementation}
+\testdep{}
+
+\begin{manualtest}
+    %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
+    \teststep{Starta service och UI-Applikation }{ Systemet startar}{ förväntat}{OK}{}
+    \teststep{Starta spelet på UI}{spelet startas}{förväntat}{OK}{}
+    \teststep{Starta kontrollapplikation}{kontrollapplikation startas}{förväntat}{OK}{}
+    \teststep{Spelare ansluter till spelet}{spelarna visas i UI}{förväntat}{OK}{}
+    \teststep{Spelare lutar sin telefon}{spelare rör sig i spelet}{förväntat}{OK}{}
+\end{manualtest}
 
 % Testa Testa om spelsession försvinner 
 \testid{}
