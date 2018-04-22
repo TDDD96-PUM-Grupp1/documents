@@ -1,35 +1,32 @@
 \section{Introduktion}
 
-Under de senaste åren så har allt fler och fler enheter blivit inkopplade i IoT ekosystemet och än så länge ser det ut att fortsätta frammåt med hela 24 miljarder förväntade enheter uppkopplade\cite{IoT-ecosystem}. För att realisera denna utvecklingen behövs det robusta lösningar som klarar av att hantera, lagra och slussa data i realtid, samtidigt som lösningen behöver vara enormt skalbart. Det är här tjänsten deepstream\cite{deepstream} kommer in i bilden. Tjänsten annonserar sig att vara en snabb, enkel och säker tjänst som sedan 2015 börjat komma upp lite här och där. Deepstream används i ett flertal olika tjänster, med de mest noterbara briteback och ticketmaster\cite{ds-usecases}.
+Under de senaste åren så har allt fler och fler enheter blivit inkopplade i IoT ekosystemet och än så länge ser det ut att fortsätta framåt med hela 24 miljarder förväntade enheter uppkopplade år 2020\cite{IoT-ecosystem}. För att realisera denna utvecklingen behövs det robusta lösningar som klarar av att hantera, lagra och slussa data i realtid, samtidigt som lösningen behöver vara enormt skalbart. Det är här tjänsten deepstream\cite{deepstream} kommer in i bilden. Tjänsten annonserar sig att vara en snabb, enkel och säker tjänst som sedan 2015 börjat komma upp lite här och där. Deepstream används i ett flertal olika tjänster, med de mest noterbara briteback och ticketmaster\cite{ds-usecases}.
 
-Projektet, som pappret utgår ifrån, utfördes under vårterminen 2018 och använde sig utav deepstream för att skicka, ta emot och hantera data. Anledningen till just deepstream var att våran kund, Cybercom, använde sig av denna tjänsten under sin utveckling av IoT lösningar. Eftersom deepstream annonserar sig att vara en kraftfull server som klarar av att hantera data mellan olika enheter i realtid, så finns det en motivering att undersöka hur väl det anpassar sig in i spelvärlden, där responsivitet för indata är a och o.
+Projektet, som pappret utgår ifrån, utfördes under vårterminen 2018 och använde sig av deepstream för att skicka, ta emot och hantera data. Anledningen till just deepstream var att våran kund, Cybercom, använde sig av denna tjänsten under sin utveckling av IoT lösningar. Eftersom deepstream annonserar sig att vara en kraftfull server som klarar av att hantera data mellan olika enheter i realtid, så finns det en motivering att undersöka hur väl det anpassar sig in i spelvärlden, där responsivitet för indata är a och o.
 
 \subsection{Syfte}
 \label{subsec:tim-aim}
 Projektet som har utförts bygger en hel del på att nätverkslösningen som implementerats är snabb och skalbar för att uppnå maximal responsivitet för många användare. För att uppnå detta krävs en djupare förståelse för hur deepstream hanterar data beroende på olika inverkningar i systemet. Inverkningarna som tas upp i detta pappret är belastning, datastorlek och hur biblioteket används (gällande RPC gentemot event).
 
-Genom att då undersöka dessa förhållanden kan teamet ta lärdom av hur data ska hanteras och när och hur data ska skickas.
+Genom att då undersöka dessa förhållanden kan teamet ta lärdom av hur data ska hanteras och när och hur data ska skickas. Denna undersökningen tittar även på hur deepstream serialisera sin data för att få en bättre synvinkel av hur datastorleken förhåller sig till relevant data.
 
 \subsection{Frågeställning}
 \label{subsec:tim-research-questions}
-För att göra denna undersökninen krävs några fundementala frågor som behöver besvaras, dessa presenteras nedan:
-
+För att göra denna undersökningen krävs några fundamentala frågor som behöver besvaras, dessa presenteras nedan:
 \begin{enumerate}
 
-\item Vad gör deepstream för att minimera JSON-formattet över nätverket?
+\item\label{tim-fs:1} Hur serialisera deepstream datan som skickas över nätverket?
 
-\item Under vilka förhållanden är det bättre att använda RPC över event och vise versa?
+\item\label{tim-fs:2} Under vilka förhållanden är det bättre att använda RPC över event och vise versa?
 
-\item Hur påverkas responsiviteten i nätverket beroende på datastorleken?  
-
-\item Är det lämpligt att använda deepstream för att hantera indata i ett realtidsspel?
+\item\label{tim-fs:3} Hur påverkas rundturstiden i nätverket beroende på datastorleken?  
 
 \end{enumerate}
 
 \subsection{Avgränsingar}
 \label{subsec:tim-delimitations}
-Då det inte går att deligera hur mycket tid och resurser som helst på undersökningen behöver vissa avgränsningar göras. Till en början så undersöks inte deepstream i en verklig miljö, dvs undersökningen görs på ett lokalt nätverk. Detta leder till att responstiderna till stor del inte reflektera rundturstiden (RTT) för nätverket då all data skickas på ett lokalt nätverk.
+Då det inte går att delegera hur mycket tid och resurser som helst på undersökningen behöver vissa avgränsningar göras. Till en början så undersöks inte deepstream i en verklig miljö, dvs undersökningen görs på ett lokalt nätverk. Detta leder till att rundturstiden till stor del inte reflektera tiden att skicka data mellan olika enheter på nätverket då all data skickas på ett lokalt nätverk.
 
-Dessutom så kommer inte responstiderna ta skalbarheten in i beräkningen då resurser för att koppla upp ett stort antal användare inte finns tillgängligt. Så responstiderna är endast med avseende på ett tomt nätverk och därmed handlar det mer om hur snabbt deepstream kan arbeta med datan innan den skicka datan vidare.
+Dessutom så kommer inte rundturstiden ta skalbarheten in i beräkningen då resurser för att koppla upp ett stort antal användare inte finns tillgängligt. Så rundturstiden är endast med avseende på ett tomt nätverk och därmed handlar det mer om hur snabbt deepstream kan serialisera/deserialisera datan.
 
 I pappret hanteras inte heller deepstreams records då denna strukturen inte är relevant för projektet.

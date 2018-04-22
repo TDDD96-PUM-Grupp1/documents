@@ -1,0 +1,40 @@
+% SCOREBOARD TEST
+\testid{ui-highscoresort}
+\testpriority{Låg}
+\testmodule{Spellogik}
+\testtitle{Sortering av highscorelista}
+\testby{Joel Oskarsson}
+\testdate{2018-04-18}
+\testexecby{Joel Oskarsson, David Kjellström}
+\testexecdate{2018-04-18}
+\testdesc{Test av att spelare får poäng som reflekterar deras position i listan på skärmen. Test av att spelare får poäng som reflekterar deras position i listan på skärmen.}
+\testpreq{Spelare kan ansluta och röra sig runt på spelplanen. Ett spelläge tilldelar spelare poäng.}
+\testdep{Grundspel, spelläge, kommunikation, fungerande kontrollapplikation}
+
+\begin{manualtest}
+    \teststep{Starta instans av Service och UI}{Systemet startar}{förväntat}{ok}{}
+    \teststep{Skapa spelinstans}{Spelplanen visas på skärmen med tom highscorelista}{förväntat}{ok}{}
+    \teststep{Två spelare starar kontrollapplikationer och går med i spelinstansen}{Spelarna kan gå med i instansen}{förväntat}{ok}{}
+    \teststep{Spelare ett knuffar ut den andra så att den får mest poäng}{Spelare ett visas högst på listan}{förväntat}{ok}{}
+    \teststep{Spelare två knuffar ut den andra så att den får mest poäng}{Spelare två visas högst på listan}{förväntat}{ok}{}
+    \teststep{Spelarna lämnat instansen}{Spelarna försvinner från highscore-listan}{förväntat}{ok}{}
+\end{manualtest}
+
+
+% Testa Testa om spelsession försvinner 
+\testid{}
+\testpriority{}
+\testmodule{}
+\testtitle{}
+\testby{}
+\testdate{}
+\testexecby{}
+\testexecdate{}
+\testdesc{}
+\testpreq{}
+\testdep{}
+
+\begin{manualtest}
+    \teststep{Gå till listan av sessioner}{}{}{}{Detta test kräver att minst en spelsession är aktiv}
+    \teststep{Stäng av spelsessionen}{Sessionen försvinner ur listan}{Sessionen försvinner ur listan}{ok}{}
+\end{manualtest}

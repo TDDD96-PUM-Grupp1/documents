@@ -7,6 +7,7 @@
 \usepackage{scrextend}
 \usepackage[backend=bibtex,sorting=none,style=numeric,natbib=true]{biblatex}
 \usepackage{multirow}
+\input{manualtest_environment}
 \addbibresource{../references.bib}
 \selectlanguage{swedish}
 \input{../projectdefinitions.tex}
@@ -60,6 +61,8 @@
 			\centering 0.1 & 2018-02-12 & Första utkast\\
  	       \hline
  	       \centering 2.0 & 2018-03-05 & Rapport för iteration 2\\
+		\hline
+ 	       \centering 3.0 & 2018-04-21 & Rapport för iteration 3. Samtliga enhetstest som ej är direkt kopplade mot kravspecifikationen är borttagna. \\
 		\hline
  	   \end{tabular}
 	\end{center}
@@ -138,52 +141,7 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
   \\
   \\
   
-  \noindent Nedanför följer enhetstester som ej är med i kravspecifikationen.
-\\ \\
-\noindent
-	\begin{tabular}{| p{2.1cm}|  p{5cm} | p{1.2cm}| p{7cm}|}
-	
-      \hline
-      NR&Test&Godkänt&Kommentar\\
-      \hline
-    
-		Enhetstest 1&Funktionalitet för startknapp.&&\\
-		\hline
-		Enhetstest 2&Funktionalitet för spelalternativknapp.&&\\
-		\hline
-		Enhetstest 3&Spelalternativ, max antal spelare.&&\\
-		\hline
-		Enhetstest 4&Spelalternativ, stänga av vissa speltyper.&&\\
-		\hline
-		Enhetstest 5&Spelalternativ, vem som får bestämma speltyper.&&\\
-		\hline
-		Enhetstest 6&välja unik identifikationskod för instansen.&&\\
-		\hline
-		Enhetstest 7&Tillbakaknapp för spelalternativmeny.&&\\
-		\hline
-		Enhetstest 8&Startknapp för spelalternativmeny.&&\\
-		\hline
-		Enhetstest 8&Varning om annan webbläsare än Chrome version 64 används.&&\\
-		\hline
-		Enhetstest 9&Startskärm för kontroller vid första anslutning.&&\\
-		\hline
-		Enhetstest 10&Hotjoinknapp med tillhörande sökruta.&&\\
-		\hline
-		Enhetstest 11&Hotjoin ska fungera med listan av olika instanser.&&\\
-		\hline
-		Enhetstest 12&Knapp för funktionalitet i spelet.&&\\
-		\hline
-		Enhetstest 13&Ändra bakgrundsfärg.&&\\
-		\hline
-		Enhetstest 14&Redigerbar text i spelet.&&\\
-		\hline
-		Enhetstest 15&Highscorelista eller scoreboard.&&\\
-		\hline
 
-
-
-   
-  \end{tabular}
   
 
 \section{Integrationstestrapport}
@@ -227,7 +185,7 @@ Nedan följer de systemtest som motsvarar kraven på kravspecifikationen \cite{b
 		\hline
 		Krav 21& Verifiera att UI-applikationen har direkt kontakt med backend.&& \\
 		\hline
-		Krav 24& Testa gå in i en aktiv spelsession med ett nytt UI.&& \\
+		Krav 24&Testa med ett nytt UI gå in i en spelsession startad av ett annat UI.&& \\
 		\hline
 		Krav 32& Testa hålla en UI-session aktiv i minst 4 timmar utan nertid.&& \\
 		\hline
@@ -243,7 +201,7 @@ De systemtest nedan är de görs för att säkerställa att produkten fungerar s
       		NR&Test&Godkänt&Kommentar\\
       		\hline
     
-		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.&&\\
+		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.&ok&\ref{sec:test_spelkontroll}\\
 		\hline
 		Systemtest 2&Användning av knapp i kontroller ska motsvara en händelse i spelet.&&\\
 		\hline
@@ -253,7 +211,7 @@ De systemtest nedan är de görs för att säkerställa att produkten fungerar s
 		\hline
 		Systemtest 5&Spelare ska bli utkastade ur sessionen när UI stängs ned.&&\\
 		\hline
-		Systemtest 6&Om poäng ges till spelare ska highscorelistan uppdateras i kontrollen.&&\\
+		Systemtest 6&Om poäng ges till spelare ska highscorelistan uppdateras i kontrollen.&ok&\ref{sec:test_scoreboard}\\
 		\hline
 
 
@@ -285,6 +243,40 @@ Nedan följer de acceptanstest som motsvarar kraven på kravspecifikationen \cit
   \end{tabular}
   
 \pagebreak
+\setlength{\parindent}{0pt}
+\section{Appendix}
+Manuella tester utfört av någon i gruppen listas nedan.
+\input{manualtests.tex}
+\section{Appendix 2}
+\label{sec:test_scoreboard}
+\input{tests/test_scoreboard.tex} 
+\vspace{5mm}
+\label{sec:test_spelkontroll}
+\input{tests/test_spelkontroll.tex} 
+\vspace{5mm}
+\label{sec:controller_disconnect}
+\input{tests/controller_disconnect.tex} 
+\vspace{5mm}
+\label{sec:controller_new_session}
+\input{tests/controller_new_session.tex} 
+\vspace{5mm}
+\label{sec:controller_update_playercount}
+\input{tests/controller_update_playercount.tex} 
+\vspace{5mm}
+\label{sec:controller_view_session}
+\input{tests/controller_view_session.tex} 
+\vspace{5mm}
+\label{sec:controller_view_started}
+\input{tests/controller_view_started.tex} 
+\vspace{5mm}
+\label{sec:ui_connect}
+\input{tests/ui_connect.tex} 
+\vspace{5mm}
+
+\pagebreak
+Automatiska tester skapade av någon i gruppen listas nedan.
+\pagebreak
+
 \printbibliography	
 	
 \end{document}
