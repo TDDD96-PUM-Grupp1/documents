@@ -4,7 +4,7 @@ För att svara på frågeställningarna har information från flera källor inh�
 
 \subsection{Analys av Javascript-projekt}
 \label{subsec:joel_o-method-analys}
-I denna analys har beroenden för över 6~000 open-source projekt från GitHub undersökts. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig relationsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns tillgängliga på GitHub\footnote{https://github.com/joelnir/dependency-analysis}.
+I denna analys har beroenden för över 6~000 open-source projekt från GitHub undersökts. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig relationsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns tillgängliga på GitHub\footnote{\url{https://github.com/joelnir/dependency-analysis}}.
 
 I databasen skapades tabeller för att spara data om Javascript-projekt, npm-paket och relationer mellan dem. Tabeller för intressant statistik så som hur många versionsreferenser som var ogiltiga skapades också. Ett diagram över databasen visas i figur \ref{fig:dependency-db}.
 
@@ -40,7 +40,7 @@ Scriptet undersökte även det maximala djupet på dessa kedjor av paketberoende
 Då det till en början var okänt hur lång tid scriptet skulle behöva för att utföra undersökningen utfördes flera körningar med olika många utvalda projekt. Först valdes 1000 slumpmässiga paket som hade klassats som populära att ingå i undersökningen. Då scriptet kunde köras igenom under rimlig tid utfördes därefter en undersökning på samtliga projekt matchande popularitetskriteriet.
 
 \subsection{Informationsinsamling}
-För att få en mer robust förståelse för beroendens roll i Javascript utfördes en informationsinsamling av tidigare arbeten på området. Denna undersökning fokuserades på mer akademiska källor. Sökningar efter relevanta rapporter gjordes genom Google Scholar\footnote{https://scholar.google.se/} och Linköpings Universitetsbibliotek\footnote{https://www.bibl.liu.se/}.
+För att få en mer robust förståelse för beroendens roll i Javascript utfördes en informationsinsamling av tidigare arbeten på området. Denna undersökning fokuserades på mer akademiska källor. Sökningar efter relevanta rapporter gjordes genom Google Scholar\footnote{\url{https://scholar.google.se/}} och Linköpings Universitetsbibliotek\footnote{\url{https://www.bibl.liu.se/}}.
 
 Sökord som användes var bland annat ``Javascript'', ``npm'', ``dependencies'' och ``package''. Det var tydligt att ämnet för undersökningen var aktuellt då många av de arbeten som hittades var skrivna nyligen. Flera bra informationskällor hittades genom dessa sökningar. I dessa arbeten refererades även till andra relevanta källor som togs med i denna informationsinsamling.
 
