@@ -9,9 +9,9 @@ Analysen för detta arbete baseras på hur olika typning i språket påverkar ko
 
 Javascript har totalt fem primitiva datatyper: \textit{String}, \textit{Number}, \textit{Boolean}, \textit{null} och \textit{undefined}.
 
-\subsection{Påtvingning av typer}
+\subsection{Påtvingade typer}
 
-Från sin design som ett dynamiskt typat språk följer att Javascript är väldigt uttrycksfullt. Med detta menas att språket väljer att tolka en hel del saker själv istället för att låta användaren specificera det explicit. Detta hänger ihop med Javascripts påtvingning av typer. Ett snabbt exempel visar hur Javascript själv väljer att konvertera värden beroende på vilken operator som används:
+Från sin design som ett dynamiskt typat språk följer att Javascript är väldigt uttrycksfullt. Med detta menas att språket väljer att tolka en hel del saker själv istället för att låta användaren specificera det explicit. Detta hänger ihop med Javascripts sätt tvinga typer. Ett snabbt exempel visar hur Javascript själv väljer att konvertera värden beroende på vilken operator som används:
 
 \begin{lstlisting}[language=JavaScript]
 var a = 1; // Number
@@ -30,7 +30,7 @@ Denna typ av uttrycksfullhet ger utvecklare möjlighet att snabbt utveckla appli
 
 \subsection{Introduktion av Flow och Typescript}
 
-Eventuella problem med påtvingning av typer som beskrivs ovan är något som är väldebatterat när det kommer till Javascript. Många anser att språket fungerar utmärkt som det är och utvecklar storskaliga projekt med det. Andra är dock inte lika nöjda med det\cite{js-bad} och flera stora mjukvaruföretag har utvecklat egna verktyg för att lösa de eventuella problem de har med språket. Två av dessa är Facebook och Microsoft som har utvecklat Flow\cite{info-flow} respektive Typescript\cite{typescript}.
+Eventuella problem med påtvingade typer som beskrivs ovan är något som är väldebatterat när det kommer till Javascript. Många anser att språket fungerar utmärkt som det är och utvecklar storskaliga projekt med det. Andra är dock inte lika nöjda med det\cite{js-bad} och flera stora mjukvaruföretag har utvecklat egna verktyg för att lösa de eventuella problem de har med språket. Två av dessa är Facebook och Microsoft som har utvecklat Flow\cite{info-flow} respektive Typescript\cite{typescript}.
 
 \textbf{Flow:}
 
