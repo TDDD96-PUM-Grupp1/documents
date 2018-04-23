@@ -63,11 +63,12 @@
 
 \begin{manualtest}
     %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
-    \teststep{Starta service och UI-Applikation }{ Systemet startar}{ förväntat}{OK}{}
+    \teststep{Starta service och UI-Applikation }{ Systemet startar}{ förväntat}{OK}{I Google Chrome}
     \teststep{Starta spelet på UI}{spelet startas}{förväntat}{OK}{}
-    \teststep{Starta kontrollapplikation}{kontrollapplikation startas}{förväntat}{OK}{}
+    \teststep{Starta kontrollapplikation}{kontrollapplikation startas}{förväntat}{OK}{I Google Chrome}
     \teststep{Spelare ansluter till spelet}{spelarna visas i UI}{förväntat}{OK}{}
     \teststep{Spelare lutar sin telefon}{spelare rör sig i spelet}{förväntat}{OK}{}
+    \teststep{Spelaren stänger kontroll-applikationen}{spelarens figur försvinner från spelplanen}{förväntat}{OK}{inom 5 sekunder (förväntat beteende)}
 \end{manualtest}
 
 \testid{flera-spelare-simultant}
@@ -91,4 +92,45 @@
     \teststep{Spelare väljer utseende på karaktär}{Spelare får utseendet}{långsammare än väntat}{OK}{Långa laddtider mellan de olika utseendena}
     \teststep{Spelare går med i spelet}{spelare är med i spelet}{förväntat}{OK}{Spelare tappade förvald färg när knapp trycktes ned på kontroll}
     \teststep{Flera spelare är med i spelet}{flera spelare i samma spel utan problem}{flera spelare i samma spel med fördröjningsproblem}{EJ OK}{flera spelare upplevde fördröjningar och bristande responsivitet}
+\end{manualtest}
+
+%START
+\testid{spelare-namn}
+\testpriority{Låg}
+\testmodule{Kontroll, UI}
+\testtitle{Spelarnamn visas i highscorelista}
+\testby{Joel Oskarsson, David Kjellström}
+\testdate{2018-04-23}
+\testexecby{Joel Oskarsson, David Kjellström}
+\testexecdate{2018-04-23}
+\testdesc{Skapa spelare med slumpgenererat användarnamn och inskrivet användarnamn. Se till att de dyker upp på highscorelistan.}
+\testpreq{kommunikation, poängsystem, namnval}
+\testdep{}
+
+\begin{manualtest}
+    %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
+    \teststep{Starta UI-applikation}{UI startar}{förväntat}{OK}{}
+    \teststep{Starta kontroll-applikation}{kontroll-applikation startar}{förväntat}{OK}{}
+    \teststep{Ange användarnamn och gå med i spel}{Rätt användarnamn syns på highscorelistan}{förväntat}{OK}{}
+    \teststep{Starta ny kontroll-applikation}{kontroll-applikation startar}{förväntat}{OK}{}
+    \teststep{Ange inget användarnamn och gå med i spel}{Slumpat användarnamn syns på highscorelistan}{förväntat}{OK}{}
+\end{manualtest}
+
+\testid{knapp-funktion}
+\testpriority{Medium}
+\testmodule{UI, kontroll}
+\testtitle{Knapptryckningar ger konsekvenser i spelet}
+\testby{Joel Oskarsson, David Kjellström}
+\testdate{2018-04-23}
+\testexecby{Joel Oskarsson, David Kjellström}
+\testexecdate{2018-04-23}
+\testdesc{Spelare trycker på en knapp och spelfiguren byter färg.}
+\testpreq{Knappar, kommunikation, färger i spelet}
+\testdep{}
+
+\begin{manualtest}
+    %Tillvägagångssätt - Förväntat resultat - Faktiskt resultat - Status - Anteckningar
+    \teststep{Starta UI- och kontroll-applikation}{Startas}{förväntat}{OK}{}
+    \teststep{Spelare går med i spelet}{Spelaren dyker upp på spelplanen}{förväntat}{OK}{}
+    \teststep{Spelaren trycker på knapp på kontrollen}{Spelarens figur byter färg}{förväntat}{OK}{}
 \end{manualtest}

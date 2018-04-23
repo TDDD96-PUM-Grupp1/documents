@@ -53,7 +53,7 @@
 \pagebreak
 	\section*{Revisionshistorik}
 
-	
+
 	\begin{center}
  	   \begin{tabular}{| l | l | p{12cm} |  }
  	       \hline
@@ -68,8 +68,8 @@
  	   \end{tabular}
 	\end{center}
 
-	
-	
+
+
 \pagebreak
 \tableofcontents
 \pagebreak
@@ -78,7 +78,7 @@
 \section{Inledning}
 
 \subsection{Syfte}
-Syftet med denna testrapport är att sammanställa och utvärdera de tester som utförts under utvecklingen utav IoT-spelet. 
+Syftet med denna testrapport är att sammanställa och utvärdera de tester som utförts under utvecklingen utav IoT-spelet.
   \input{definitioner}
 
 \section{Metod}
@@ -90,32 +90,34 @@ Detta kapitel ger en överskådlig blick över resultaten av testningen under va
 Under projektets första iteration utfördes inget utvecklingsarbete och därför har inga tester utförts. Endast dokumentskrivning förekom under denna iteration.
 \subsection{Iteration 2}
 Under den andra iterationen har en grund lagts för projektets vidarutveckling. grundläggande kommunikation mellan backend, kontroller och UI har tillförts. Tester under denna period har utförts ad-hoc och utav utvecklaren själv, och i huvudsak bestått utav enhetstestning och integrationstestning. Ett automatiskt test har lagts till för att säkerställa att det som versionshanteras på github går att kompilera. Inför kommande iteration föreslås bättre uppstrukturering utav testning.
+\subsection{Iteration 3}
+
 
 \section{Enhetstestrapport}
 	Nedan följer de enhetstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspec} som måste vara godkända för att produkten ska kunna klassas som färdig.
 \\ \\
 \noindent
 \begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
-	
+
 	\hline
 	\multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
     	\hline
-    
+
 		Krav 1&Testning av Kontroll-applikationen med mobil enhet.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: kontroll-styrning\\
 		\hline
-		Krav 4& Testa att skapa flera instanser av backend.&&\\
+		Krav 4& Testa att skapa flera instanser av UI.&&\\
 		\hline
-		Krav 5&Testa att kod skapas som fungerar för hotjoin.&&\\
+		Krav 5&Testa hotjoin-funktionen för spelet.& OK & Test utfört manuellt. Återfinnes i \ref{sec:appendix}, ID: flera-spelare-simultant\\
 		\hline
-		Krav 6&Testa att flera olika spelvarianter implementerats.&&\\
+		Krav 6&Testa att flera olika spelvarianter implementerats.& OK & Test utfört manuellt. Återfinnes i \ref{sec:appendix}, ID: flera-spelare-simultant\\
 		\hline
 		Krav 8&Visuellt kontrollera att Kontrollapplikationen ser bra ut.&&\\
 		\hline
-		Krav 9&Ange ett användarnamn och verifiera att namnet används i spelsessionen.&&\\
+		Krav 9&Ange ett användarnamn och verifiera att namnet används i spelsessionen.&OK&Test utfört manuellt. Återfinnes i \ref{sec:appendix}, ID: spelare-namn\\
 		\hline
-		Krav 10&Testa att inte ange användarnamn vid start av spel, och få ett slumpat istället.&& \\
+		Krav 10&Testa att inte ange användarnamn vid start av spel, och få ett slumpat istället.&OK&Test utfört manuellt. Återfinnes i \ref{sec:appendix}, ID: spelare-namn\\
 		\hline
-		Krav 11&Testa spelet i Google Chrome version 64 och senare.&&\\
+		Krav 11&Testa Kontrollapplikationen i Google Chrome version 64 och senare.&OK&Test utfört manuellt. Återfinnes i \ref{sec:appendix}, ID: kontroll-styrning\\
 		\hline
 		Krav 13&Testa sökrutan utförligt och verifiera resultat.&& \\
 		\hline
@@ -129,7 +131,7 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
 		\hline
 		Krav 19&Visuellt kontrollera att UI-applikationen ser bra ut.&&\\
 		\hline
-		Krav 20&Testa spelet i Google Chrome version 64 och senare. &&\\
+		Krav 20&Testa UI-applikationen i Google Chrome version 64 och senare. &OK&Test utfört manuellt. Återfinnes i \ref{sec:appendix}, ID: kontroll-styrning\\
 		\hline
 		Krav 22&Visuellt verifiera att en unik kod visas i varje spelinstans.&&\\
 		\hline
@@ -137,13 +139,13 @@ Under den andra iterationen har en grund lagts för projektets vidarutveckling. 
 		\hline
 
 
-   
+
   \end{tabular}
   \\
   \\
-  
 
-  
+
+
 
 \section{Integrationstestrapport}
 Nedanför följer de integrationstester som behöver genomföras för att få ett fungerande system. \\
@@ -161,7 +163,7 @@ Nedanför följer de integrationstester som behöver genomföras för att få et
 		Integrationstest 3&UI, backend och kontroll&Kommunikation mellan UI och kontroll via backend.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix}\\
 		\hline
  	 \end{tabular}
- 
+
 
 
 
@@ -182,16 +184,16 @@ Nedan följer de systemtest som motsvarar kraven på kravspecifikationen \cite{b
 		\hline
 		Krav 12& Verifiera att kontrollapplikationen har en lista på samtliga tillgängliga sessioner och att spelare kan ansluta till dem direkt.&& \\
 		\hline
-		Krav 14& Verifiera att kontrollapplikationen har direkt kontakt med backend.&& \\
+		Krav 14& Verifiera att kontrollapplikationen har direkt kontakt med backend.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix}\\
 		\hline
-		Krav 21& Verifiera att UI-applikationen har direkt kontakt med backend.&& \\
+		Krav 21& Verifiera att UI-applikationen har direkt kontakt med backend.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix}\\
 		\hline
 		Krav 24&Testa med ett nytt UI gå in i en spelsession startad av ett annat UI.&& \\
 		\hline
 		Krav 32& Testa hålla en UI-session aktiv i minst 4 timmar utan nertid.&& \\
 		\hline
 		Krav 34& Mäta tiden en kontrollapplikation tar på sig att ansluta till en aktiv spelsession.&& \\
-		\hline   
+		\hline
   	\end{tabular}
 \\ \\ \\
 De systemtest nedan är de görs för att säkerställa att produkten fungerar som den ska.
@@ -201,31 +203,31 @@ De systemtest nedan är de görs för att säkerställa att produkten fungerar s
       		\hline
       		NR&Test&Godkänt&Kommentar\\
       		\hline
-    
+
 		Systemtest 1&Styrning från kontroll ska motsvara styrning på UI.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: kontroll-styrning\\
 		\hline
-		Systemtest 2&Användning av knapp i kontroller ska motsvara en händelse i spelet.&&\\
+		Systemtest 2&Användning av knapp i kontroller ska motsvara en händelse i spelet.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: knapp-funktion\\
 		\hline
 		Systemtest 3&Användarnamn i kontroll ska visas på UI.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: ui-highscoresort\\
 		\hline
-		Systemtest 4&En spelare ska kunna lämna ett spel och dess representation i spelet försvinner.&&\\
+		Systemtest 4&En spelare ska kunna lämna ett spel och dess representation i spelet försvinner.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: kontroll-styrning\\
 		\hline
 		Systemtest 5&Spelare ska bli utkastade ur sessionen när UI stängs ned.&&\\
 		\hline
-		Systemtest 6&Om poäng ges till spelare ska highscorelistan uppdateras i kontrollen.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: ui-highscoresort\\
+		Systemtest 6&Om poäng ges till spelare ska highscorelistan uppdateras.&OK&Test utfört manuellt, testrapport kan återfinnas här: \ref{sec:appendix} ID: ui-highscoresort\\
 		\hline
 
 
 
-   
+
   \end{tabular}
-  
+
 \section{Acceptanstestrapport}
 Nedan följer de acceptanstest som motsvarar kraven på kravspecifikationen \cite{bib-kravspec} som måste vara godkända för att produkten ska kunna klassas som färdig.
 \\ \\
 \noindent
 	\begin{tabular}{| p{1.5cm} | p{5cm} | p{1.2cm}| p{7cm}|}
-	
+
   \hline
     \multicolumn{2}{|c|}{Test}&{Godkänt}&{Kommentar}\\
     \hline
@@ -240,9 +242,9 @@ Nedan följer de acceptanstest som motsvarar kraven på kravspecifikationen \cit
 		Krav 38& En grupp på 20 deltagare ska utvärdera hur ''lätt spelet är att förstå'' i slutet av projektet med betyg 6 av 10.&& \\
 		\hline
 
-   
+
   \end{tabular}
-  
+
 \pagebreak
 \setlength{\parindent}{0pt}
 \section{Appendix}
@@ -257,6 +259,6 @@ Manuella tester utfört av någon i gruppen listas nedan.
 Automatiska tester skapade av någon i gruppen listas nedan.
 
 \pagebreak
-\printbibliography	
-	
+\printbibliography
+
 \end{document}
