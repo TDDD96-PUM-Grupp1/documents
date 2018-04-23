@@ -3,7 +3,7 @@
 Det här kapitlet beskriver hur projektet har utförts samt beskrivningar av de metoder och verktyg som använts för de olika områden projektet omfattar.
 
 \section{Projektorganisation}
-Projektetgruppen är strukturerad av förbestämda roller. Varje gruppmedlem tilldelades en roll efter en intern valprocess vid projektets start. Rollerna är väldefinierade och dess ansvarsområden beskrivs nedan.
+Projektgruppen är strukturerad av förbestämda roller. Varje gruppmedlem tilldelades en roll efter en intern valprocess vid projektets start. Rollerna är väldefinierade och dess ansvarsområden beskrivs nedan.
 
 \subsubsection*{Teamledare}
 Teamledaren ska se till att samtliga processer som ska utföras under projektets gång följs. Denna person representerar också teamet utåt och har kontakt med handledaren. Om det behövs har teamledaren sista ordet.
@@ -27,10 +27,10 @@ Analysansvarig ansvarar för majoriteten av kundkontakt och jobbar ständigt med
 Testledaren beslutar systemets status genom att arbeta tillsammans med kvalitetssamordnaren för att testa så systemet uppnår kraven. Testledaren skriver testplan och testrapport.
 
 \subsubsection*{Konfigurationsansvarig}
-Konfigurationsansvarig ansvarar för generell versionshantering i projektet. Rollen arbetar mycket med utvecklingledaren och dokumentansvarig för att bestämma vilka arbetsprodukter som ska ingå i en utgåva.
+Konfigurationsansvarig ansvarar för generell versionshantering i projektet. Rollen arbetar mycket med utvecklingsledaren och dokumentansvarig för att bestämma vilka arbetsprodukter som ska ingå i en utgåva.
 
 \section{Utvecklingsmetodik}
-Det här avsnittet beskriver utvecklingssmetodiken projektgruppen har följt. Detta innefattar hur olika metoder och verktyg har använts för att uppnå ett resultat.
+Det här avsnittet beskriver utvecklingsmetodiken projektgruppen har följt. Detta innefattar hur olika metoder och verktyg har använts för att uppnå ett resultat.
 
 \subsection{Projektfaser}
 Nedan beskrivs faserna projektet uppdelades i.
@@ -48,19 +48,19 @@ Under denna fasen finslipades diverse funktioner för att ge användaren en bät
 Efter projektet gjordes efterstudier för att granska det resultat teamet fick för att göra en utvärdering av projektet.
 
 \subsection{Utvecklingsmetod}
-Projektgruppen bestämde tidigt att utveckla med det agila ramverket Scrum med en viss modifikation. Alla medlemmar var överens att delen i ramverket kring Stand-up meetings kändes redundant och valdes därav bort. Bortsett från denna modifikationen följdes ramverket väl. Vid början av varje sprint samlades projektgruppen för att organisera en sprint-backlog från product-backlogen. Product-backlogen uppdaterades med aktiviteter kontinuerligt av alla medlemmar när en aktivitet upptäcktes.
+Projektgruppen bestämde tidigt att utveckla med det agila ramverket Scrum med modifikationer. Delarna från ramverket som valdes till projektet var sprintutvärdering, sprint-backlog, produkt-backlog, Scrum-bräde och sprint-planering. Resterande delar från ramverket valdes bort då projektgruppen tyckte koncepten kändes onödiga för projektet. Vid början av varje sprint samlades projektgruppen för att organisera en sprint-backlog från produkt-backlogen. Produkt-backlogen uppdaterades med aktiviteter kontinuerligt av alla medlemmar när en aktivitet upptäcktes. Projektet bestod av tre olika kodbaser. Varje aktivitet hade en eller flera tillhörande etiketter som beskrev vilka kodbaser aktiviteten berörde.  Detta gjorde att ett gemensamt Scrum-bräde kunde användas för samtliga kodbaser. Vid slutet av varje sprint utvärderades sprinten i form av ett kortare möte där varje projektmedlem kunde uttrycka sina åsikter kring utvecklingsprocessen. 
 
-Trello användes för att organisera och representera varje sprint-backlog i projektet. Ett trello-board för en sprint bestod av kolumnerna Product backlog, sprint backlog, in progress, stalled och done. Under product backlog hamnade alla aktiviteter projektgruppen kunde producera. Aktiviteter kunde läggas till i denna kolumn under en pågående sprint. Under kolumnen sprint backlog hamnade alla aktiviter som förväntades bli klara till en sprints slut. Varje aktivitet bestod av två attribut, prioritet och tidsestimering. Dessa attribut sattes när en sprint planerades och hjälpte gruppen att belasta varje sprint med en bra mängd aktiviteter. Under rubriken in progress hamnade alla aktiviteter som en eller flera projektmedlemmar arbetade med. I stalled kolumnen hamnade alla aktiviterer som påbörjats men pausats på grund av andra prioriteringar. I done-kolumnen hamnade alla aktiviteter som blvit avklarade. Kolumnen användes för att utvärdera sprinten och fungerade som en logg över vad som hade gjorts.
+Verktyget trello användes som ett Scrum-bräde och hjälpte att organisera och representera varje sprint-backlog under projektets gång. Ett trello-bräde för en sprint bestod av kolumnerna Produkt-backlog, sprint-backlog, in progress, stalled och done. Under produkt-backlog hamnade alla aktiviteter som behövde utföras för att få en färdig produkt. Aktiviteter kunde läggas till i denna kolumn under en pågående sprint. Under kolumnen sprint-backlog plockades aktiviter från produkt-backlogen som förväntades bli klara vid den pågående sprintens slut. Varje aktivitet bestod av tre attribut, en prioritet, en tidsestimering och en etikett. Dessa attribut sattes under sprintplaneringen och hjälpte gruppen att belasta varje sprint med en rimlig mängd aktiviteter. Under rubriken in progress hamnade alla aktiviteter som en eller flera projektmedlemmar arbetade med. I stalled kolumnen hamnade alla aktiviteter som påbörjats men stoppats på grund av andra prioriteringar. I done-kolumnen hamnade alla aktiviteter som blivit avklarade. Done-kolumnen användes för att utvärdera sprinten och användes som en logg över vad som hade gjorts för en sprint.
 
 \subsection{Testning}
 Under förstudiefasen undersökte testledaren vilka vertyg som kunde användas för projektet samt hur hela testningsprocessen skulle gå till. Projektgruppen beslutade om att verktyget Travis skulle användas.
 
-Travis är ett verktyg som kör förskrivna tester vid varje pull request eller push till en gren. Om dessa tester skulle misslyckas vid en pull request från master-branchen nekas integrationen. En push kommer alltid lyckas även vid ett misslyckat test, men travis noterar att testet har misslyckats. Vertyget sparade projektgruppens tid genom att verifiera att koden verkligen fungerade givet att bra tester hade skrivits.\\
+Travis är ett verktyg som kör förskrivna tester vid varje pull request eller push till en gren. Om dessa tester skulle misslyckas vid en pull request från master-grenen nekas integrationen. En push kommer alltid lyckas även vid ett misslyckat test, men travis noterar att testet har misslyckats. Vertyget sparade projektgruppens tid genom att verifiera att koden verkligen fungerade givet att bra tester hade skrivits.
 
 Yterliggare en testingsmetodik projektgruppen införde var kodgranskning vid varje pull request. Det innebar att om travis-testerna lyckades köras behövde en projektmedlem sedan granska och verifiera koden innan pull requesten kunde godkännas.
 
 \subsection{Möten}
-Vid början av varje vecka hade projektgruppen ett möte för att diskutera vad som skulle hända framöver och där funderingar eller problem kunde tas upp och diskuteras. Dessutom hade projektgruppen ett handledarmöte varje vecka. På handledarmötet kunde generella frågor kring projektet ställas och vägledning gavs för diverse problem eller funderingar projektgruppen hade. Alla möten dokumenterades med hjälp av ett mötesprotokoll som projektgruppen formulerat.\\
+Vid början av varje vecka hade projektgruppen ett möte för att diskutera vad som skulle hända framöver och där funderingar eller problem kunde tas upp och diskuteras. Dessutom hade projektgruppen ett handledarmöte varje vecka. På handledarmötet kunde generella frågor kring projektet ställas och vägledning gavs för diverse problem eller funderingar projektgruppen hade. Alla möten dokumenterades med hjälp av ett mötesprotokoll som projektgruppen formulerat.
 
 En gemensam Google-kalender skapades där alla möten samt viktiga moment och deadlines lades till. Alla moment som lades till i kalendern ansågs vara obligatoriska av projektgruppen där alla medlemmar förväntades medverka.
 
@@ -68,9 +68,10 @@ En gemensam Google-kalender skapades där alla möten samt viktiga moment och de
 Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom rollerna teamledare och analysansvarig. Slack användes för både den interna och externa kommunikationen under projektets gång. En Slack-arbetsplats skapades, där enbart projektgruppen var medlemmar. Majoriteten av den interna kommunikationen skedde genom denna. Olika kanaler skapades på denna Slack-arbetsplats för att diskutera olika ärenden och hålla kommunikationen strukturerad. Det fanns ytterligare en Slack-arbetsplats där både projektgruppen och kunden medverkade i. På denna arbetsplats skedde majoriteten av den externa kommunikationen med kunden. Även denna arbetsplats var uppdelad i olika kanaler: frågor och allmänt. Tanken bakom kanalen frågor var att projektgruppen kunde fylla kanalen med frågor rörande utvecklingen och kunden kunde bearbeta frågorna när de hade tid. Kanalen allmänt användes för all övrig kommunikation.
 
 \subsection{Versionshantering}
-Git användes för att versionshantera koden. Själva gitrepot lagrades på GitHub för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan GitHub hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på master-branchen.\\
+Git användes för att versionshantera koden. Själva gitrepot lagrades på GitHub för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan GitHub hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på master-grenen.
 
-Utöver det så fungerar master-branchen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna branch. För att garantera detta laddades aldrig kod upp direkt till branchen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en request ska bli godkänd ska granskaren läsa igenom koden och testa relevanta områden för att garantera att det fungerar som det ska.
+Utöver det så fungerar master-grenen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna gren. För att garantera detta laddades aldrig kod upp direkt till grenen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en request ska bli godkänd ska granskaren läsa igenom koden och testa relevanta områden för att garantera att det fungerar som det ska.
+
 
 \section{Dokumentation}
 \label{sec:method-documentation}
@@ -84,10 +85,10 @@ Projektplan består av en beskrivning utav projektet, resurser som teamet har ti
 göras under projektet.
 
 \subsubsection*{Kravspecifikation}
-Kravspecifikationen förtydligar vad som förväntas vara klart vid projektets slut. Dokumentet fungerar som överenskommelse mellan kunden och projektgruppen. Kraven specificerar vilken funktionallitet, kvalitet och design produkten ska uppfylla. Dokumentet utgör grunden för hur hela projektet ska struktureras och utformas. Kraven är framtagna efter kundens önskemål och formulerade för att ligga till stöd för projektgruppens arbete.
+Kravspecifikationen förtydligar vad som förväntas vara klart vid projektets slut. Dokumentet fungerar som överenskommelse mellan kunden och projektgruppen. Kraven specificerar vilken funktionalitet, kvalitet och design, produkten ska uppfylla. Dokumentet utgör grunden för hur hela projektet ska struktureras och utformas. Kraven är framtagna efter kundens önskemål och formulerade för att ligga till stöd för projektgruppens arbete.
 
 \subsubsection*{Kvalitetsplan}
-Kvalitetsplanen definierar processer vars syften är att säkerställa att produkten håller en hög kvalitet. Kvaliteterna som är i huvudfokus är definerade i kravspecifikationen och är baserade på kundens önskemål.
+Kvalitetsplanen definierar processer vars syften är att säkerställa att produkten håller en hög kvalitet. Kvaliteterna som är i huvudfokus är definierade i kravspecifikationen och är baserade på kundens önskemål.
 
 \subsubsection*{Statusrapport}
 Statusrapporten är som en mindre projektplan för
@@ -107,7 +108,7 @@ Testplanen beskriver hur de olika delarna av produkten ska testas och även hur 
 Projektgruppen producerade och undertecknade ett gruppkontrakt som skrevs vid ett tidigt stadie för att förtydliga vad som förväntades av varje gruppmedlem.
 
 \subsubsection*{Tidrapport}
-Tidrapporteringen under projektet skedde i ett excelblad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs ner fick inte överstiga två timmar och arbetspass som varade längre skrevs som två eller flera olika arbetstillfällen. Detta för att få en bättre bild av vad som har jobbats på under arbetspassen. I och med tidsrapporteringen kunde även en burndown-chart genereras för att få en bättre uppfattning om hur teamet låg till i tidsåtgång.
+Tidrapporteringen under projektet skedde i ett Excel blad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs ner fick inte överstiga två timmar och arbetspass som varade längre skrevs som två eller flera olika arbetstillfällen. Detta för att få en bättre bild av vad som har jobbats på under arbetspassen. I och med tidsrapporteringen kunde även en burndown-chart genereras för att få en bättre uppfattning om hur teamet låg till i tidsåtgång.
 
 \subsubsection*{Mötesprotokoll}
 Under projektet hölls olika möten för att diskutera saker som har kommit upp. Dessa behövdes dokumenteras vilket gjordes med hjälp av en mötesprotokollmall som fylldes ut under varje möten.
@@ -119,6 +120,7 @@ Själva dokumentskrivningen utfördes genom att skriva i LaTeX, vilket gjorde de
 Dokumenten som skapades under projektets gång lagrades på Google Drive för att både versionshantera de olika färdiga iterationerna av dokumenten, men även för att enkelt kunna se dokumenten om LaTeX inte finns till hand. Dessutom versionshanterades dokumenten under arbetets gång med hjälp av git genom GitHub. Detta hjälpte dokumentskrivning genom att hantera olika konflikter när olika personer sitter i samma fil och skriver.
 
 \section{Metod för att fånga erfarenheter}
-Då teamet är samlat från olika program på universitetet och alla har olika erfarenheter om olika områden, vare sig det gäller spelprogrammering eller generell JavaScript, behövdes det en struktur för att samla och ta nytta av varje projektmedlems kunskaper. För att uppnå detta samlade teamet in och skrev ner de olika kunskaperna som teamet hade och utifrån det höll olika workshops för att få alla projektmedlemmar på ungefär samma nivå.\\
+Då teamet är samlat från olika program på universitetet och alla har olika erfarenheter om olika områden, vare sig det gäller spelprogrammering eller generell JavaScript, behövdes det en struktur för att samla och ta nytta av varje projektmedlems kunskaper. För att uppnå detta samlade teamet in och skrev ner de olika kunskaperna som teamet hade och utifrån det höll olika workshops för att få alla projektmedlemmar på ungefär samma nivå.
 
-Utöver det jobbade teamet i grupper om två till tre vilket underlättade arbetet då man lättare kunde utbyta erfarenheter. Dessa grupper växlades även vid jämna mellanrum så alla kan ta del av alla andras erfaranheter.
+Utöver det jobbade teamet i grupper om två till tre vilket underlättade arbetet då man lättare kunde utbyta erfarenheter. Dessa grupper växlades även vid jämna mellanrum så alla kan ta del av alla andras erfarenheter.
+
