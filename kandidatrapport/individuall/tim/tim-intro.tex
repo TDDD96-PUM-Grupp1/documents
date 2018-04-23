@@ -1,12 +1,12 @@
 \section{Introduktion}
 
-Under de senaste åren så har allt fler och fler enheter blivit inkopplade i IoT ekosystemet och än så länge ser det ut att fortsätta framåt med hela 24 miljarder förväntade enheter uppkopplade år 2020\cite{IoT-ecosystem}. För att realisera denna utvecklingen behövs det robusta lösningar som klarar av att hantera, lagra och slussa data i realtid, samtidigt som lösningen behöver vara enormt skalbart. Det är här tjänsten deepstream\cite{deepstream} kommer in i bilden. Tjänsten annonserar sig att vara en snabb, enkel och säker tjänst som sedan 2015 börjat komma upp lite här och där. Deepstream används i ett flertal olika tjänster, med de mest noterbara briteback och ticketmaster\cite{ds-usecases}.
+Under de senaste åren har allt fler och fler enheter blivit inkopplade i IoT ekosystemet och än så länge ser det ut att fortsätta framåt med hela 24 miljarder förväntade enheter uppkopplade år 2020\cite{IoT-ecosystem}. För att realisera denna utvecklingen behövs det robusta lösningar som klarar av att hantera, lagra och slussa data i realtid, samtidigt som lösningen behöver vara enormt skalbart. Det är här tjänsten deepstream\cite{deepstream} kommer in i bilden. Denna tjänst skickar och tar emot data mellan flera olika klienter i realtid, mer om detta i avsnitt \ref{subsec:tim-deepstream}. Tjänsten annonserar sig att vara en snabb, enkel och säker tjänst som sedan 2015 börjat komma upp lite överallt. Deepstream används i ett flertal olika tjänster, med de mest noterbara briteback och ticketmaster\cite{ds-usecases}.
 
-Projektet, som pappret utgår ifrån, utfördes under vårterminen 2018 och använde sig av deepstream för att skicka, ta emot och hantera data. Anledningen till just deepstream var att våran kund, Cybercom, använde sig av denna tjänsten under sin utveckling av IoT lösningar. Eftersom deepstream annonserar sig att vara en kraftfull server som klarar av att hantera data mellan olika enheter i realtid, så finns det en motivering att undersöka hur väl det anpassar sig in i spelvärlden, där responsivitet för indata är a och o.
+Projektet, som pappret utgår ifrån, utfördes under vårterminen 2018 och använde sig av deepstream för att skicka, ta emot och hantera data. Anledningen till just deepstream var att vår kund, Cybercom, använde sig av denna tjänsten under sin utveckling av IoT lösningar. Eftersom deepstream annonserar sig att vara en kraftfull server som klarar av att hantera data mellan olika enheter i realtid, så finns det en motivering att undersöka hur väl det anpassar sig in i spelvärlden, där responsivitet för indata är a och o.
 
 \subsection{Syfte}
 \label{subsec:tim-aim}
-Projektet som har utförts bygger en hel del på att nätverkslösningen som implementerats är snabb och skalbar för att uppnå maximal responsivitet för många användare. För att uppnå detta krävs en djupare förståelse för hur deepstream hanterar data beroende på olika inverkningar i systemet. Inverkningarna som tas upp i detta pappret är belastning, datastorlek och hur biblioteket används (gällande RPC gentemot event).
+Projektet som har utförts bygger en hel del på att nätverkslösningen som implementerats är snabb och skalbar för att uppnå maximal responsivitet för många användare. För att uppnå detta krävs en djupare förståelse för hur deepstream hanterar data beroende på olika inverkningar i systemet. Inverkningarna som tas upp i detta pappret är belastning, datastorlek och hur biblioteket används (gällande RPC gentemot event). RPC står för remote procedure call och beskrivs i avsnitt \ref{subsec:ds-RPC} mer ingånde tillsammans med event i avsnitt \ref{subsec:ds-event}
 
 Genom att då undersöka dessa förhållanden kan teamet ta lärdom av hur data ska hanteras och när och hur data ska skickas. Denna undersökningen tittar även på hur deepstream serialisera sin data för att få en bättre synvinkel av hur datastorleken förhåller sig till relevant data.
 
@@ -15,9 +15,9 @@ Genom att då undersöka dessa förhållanden kan teamet ta lärdom av hur data 
 För att göra denna undersökningen krävs några fundamentala frågor som behöver besvaras, dessa presenteras nedan:
 \begin{enumerate}
 
-\item\label{tim-fs:1} Hur serialisera deepstream datan som skickas över nätverket?
+\item\label{tim-fs:1} Hur serialiserar deepstream datan som skickas över nätverket?
 
-\item\label{tim-fs:2} Under vilka förhållanden är det bättre att använda RPC över event och vise versa?
+\item\label{tim-fs:2} Under vilka förhållanden är det bättre att använda RPC över event och vice versa?
 
 \item\label{tim-fs:3} Hur påverkas rundturstiden i nätverket beroende på datastorleken?  
 
@@ -25,8 +25,8 @@ För att göra denna undersökningen krävs några fundamentala frågor som beh�
 
 \subsection{Avgränsingar}
 \label{subsec:tim-delimitations}
-Då det inte går att delegera hur mycket tid och resurser som helst på undersökningen behöver vissa avgränsningar göras. Till en början så undersöks inte deepstream i en verklig miljö, dvs undersökningen görs på ett lokalt nätverk. Detta leder till att rundturstiden till stor del inte reflektera tiden att skicka data mellan olika enheter på nätverket då all data skickas på ett lokalt nätverk.
+Då det inte går att delegera hur mycket tid och resurser som helst på undersökningen behöver vissa avgränsningar göras. Till en början så undersöks inte deepstream i en verklig miljö, det vill säga undersökningen görs på ett lokalt nätverk. Detta leder till att rundturstiden till stor del inte reflekterar tiden att skicka data mellan olika enheter på nätverket då all data skickas på ett lokalt nätverk.
 
-Dessutom så kommer inte rundturstiden ta skalbarheten in i beräkningen då resurser för att koppla upp ett stort antal användare inte finns tillgängligt. Så rundturstiden är endast med avseende på ett tomt nätverk och därmed handlar det mer om hur snabbt deepstream kan serialisera/deserialisera datan.
+Dessutom så kommer inte rundturstiden ta skalbarheten in i beräkningen då resurser för att koppla upp ett stort antal användare inte finns tillgängligt. Därmed är rundturstiden endast med avseende på ett tomt nätverk och handlar då mer om hur snabbt deepstream kan serialisera/deserialisera datan.
 
-I pappret hanteras inte heller deepstreams records då denna strukturen inte är relevant för projektet.
+I rapporten hanteras inte heller deepstreams records då denna strukturen inte är relevant för projektet. Denna strukturen hanterar endast data som lagras på deepstream servern och används inte för rundturstider.
