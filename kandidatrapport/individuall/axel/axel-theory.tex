@@ -107,18 +107,20 @@ React är ett open-source Javascript-biblotek framtaget och utvecklat av Faceboo
 %https://www.infoworld.com/article/2608181/javascript/react--making-faster--smoother-uis-for-data-driven-web-apps.html
 
 \subsubsection{JSX}
-ReactJS rekommenderar att man använder sig av JSX även om det inte behövs för att använda ReactJS. Idén bakom att introducera JSX är att samla funktionallitet och andra teknologier till en komponent istället för att sprida dessa bland olika filer. \cite{react-jsx}
+React rekommenderar att man använder sig av JSX även om det inte behövs för att använda React. Idén bakom att introducera JSX är att samla funktionallitet och andra teknologier till en komponent istället för att sprida dessa bland olika filer. \cite{react-jsx}
 
 %https://reactjs.org/docs/introducing-jsx.html
 
 \subsubsection{Komponenter}
-React introducerar något de kallar för komponenter. En komponent i ReactJS liknar en Javascript-funktion som tar emot en parameter \texttt{props} (står för eng. properties) och returnerar hur komponenten ska se ut. Parametern \texttt{props} är ett objekt som kan innehålla data, funktioner med mera. Idén bakom att introducera komponenter är att konstruera en hemsida i små, självständiga och återanvändbara komponenter. \cite{react-components} I React finns det två olika sorters komponenter, funktionella- och klasskomponenter. En funktionell komponent är en funktion i Javascript medan en klasskomponent är en klass i Javascript. Båda dessa komponenter har tillgång till \texttt{props}-objektet genom antingen hela funktionen eller hela klassen. Klasskomponenter måste ha en metod som ska namnges \texttt{render()}. Denna metod returnerar utseendet för komponenten.
+React introducerar något de kallar för komponenter. En komponent i React liknar en Javascript-funktion som tar emot en parameter \texttt{props} (står för eng. properties) och returnerar hur komponenten ska se ut. Parametern \texttt{props} är ett objekt som kan innehålla data, funktioner med mera. Idén bakom att introducera komponenter är att konstruera en hemsida i små, självständiga och återanvändbara komponenter. \cite{react-components} I React finns det två olika sorters komponenter, funktionella- och klasskomponenter. En funktionell komponent är en funktion i Javascript medan en klasskomponent är en klass i Javascript. Båda dessa komponenter har tillgång till \texttt{props}-objektet genom antingen hela funktionen eller hela klassen. Klasskomponenter måste ha en metod som ska namnges \texttt{render()}. Denna metod returnerar utseendet för komponenten.
 
 Komponenter delas oftast upp i en hierarkisk struktur som består av andra komponenter. Alla React webbapplikationer består av åtminstone en komponent, root-komponenten, som konventionellt sett namnges \texttt{App}. För att använda sig av en komponent behöver man först importera komponenten och sedan har man tillgång till den som ett HTML-element. Detta gör det väldigt simpelt att återanvända komponenter genom hela webbapplikationen.
 
-
-\subsubsection{Props och States} 
-
-
-
 %https://reactjs.org/docs/components-and-props.html
+
+
+\subsubsection{States} 
+React introducerar något de kallar för \texttt{states}.\cite{react-states} States kan enbart användas i klasskomponenter och deklareras i klasskonstruktorn. Idén bakom states är att göra komponenter mer självständiga och minska på beroenden till andra komponenter. Man kan förklara states så simpelt som globala variabler för klassen. Detta hjälper delvis komponenten att lagra viktig information komponenten måste hålla reda på, men också ett sätt för komponenten att veta vilket läge den befinner sig i. States har en inbyggd metod, \texttt{setState()}, som måste användas för att modifiera värdet av en state-variabel. 
+
+\subsubsection{Dataflöde och props}
+I React flödar data alltid neråt\cite{react-states}, från en förälderkomponent till ett av förälderns barns komponenter och så vidare. En förälderkomponent måste importera den komponent den vill skicka data till och skickar datan genom att sätta ett icke-upptaget attribut vid komponentens HTML-element. Ett exempel på hur detta kan se ut är, <Barnkomponent test=\{data\} />. Komponenter i React får tillgång till datan genom parametern \texttt{props}. I exemplet får komponenten Barnkomponent tillgång till datan kopplad till attributet test genom att skriva, \texttt{props.test}. Detta ger en utvecklare möjligheten att skicka annan data till samma komponenter som återanvänds. Denna funktionalitet gör att en komponent kan se annorlunda ut eller få ett annorlunda beteende beroende på vad för data som skickas till komponenten. I React kan man även skicka funktioner hos förälderkomponenten genom props. 
