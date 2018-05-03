@@ -11,10 +11,12 @@ Ramverket React användes för att utveckla UI-applikationen samt kontroller-app
 JavaScript bygger på ett flertal olika bibliotek som kan utöka och förenkla JavaScripts funktioner. Yarn fungerar som en pakethanterare som skapar beroende mellan paket och underhåller dessa. Detta gör det enklare att lägga till och ta bort bibliotek till ett projekt.
 
 \subsection*{Prettier}
-Detta verktyget hjälper en programmerare att formattera koden på ett sätt så alla filer håller en enhetlig standard oavsätt vilken utvecklingsmiljö man befinner sig i.
+Prettier är ett verktyg för att formatera kod på ett standardiserat och lättläsigt sätt\cite{prettier}. Prettier går igenom koden och lägger till eller tar bort blanksteg och nya rader enligt förutbestämda regler. Syntaktiskt blir koden samma före och efter att Prettier körts, men läsbarheten lär ha förändrats. Prettier tar även bort stilpreferenser som olika kodskribenter då den alltid formaterar koden enligt samma regler.
+
 
 \subsection*{Eslint}
-Utöver prettier finns eslint som kommer att klaga på dåliga sätt att skriva kod. Detta gäller mindre om strukturen utav koden och mer om funktioner som inte ska användas för bättre kod.
+Eslint är ett \textit{open source} program som definerar stilregler för hur Javascriptkod skrivs. Dessa stilregler handlar  om hur kod ska formateras och att följa bra programmeringspraxis. Eslint söker sen igenom koden för rader som bryter mot de satta reglerna och påpekar alla fall som deta sker. Oftast så integreras Eslint in till programet där koden skrivs för att få Eslints varningar direkt när koden skrivs. De regler Eslint efterföljer är bra praxis för kodning i Javascript och de går att ändra på efter behov.
+
 
 \subsection*{Node.js}
 Node.js är en exekveringsmiljö för Javascript. Nodes.js ger funktionallitet att emulera en server med sin applikation på lokalt på sin dator. Att Node.js skulle användas var ett krav från kunden.
