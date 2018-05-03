@@ -18,20 +18,20 @@ Kontrollern i produkten som utvecklats är gränsnittet som används för att st
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.3]{controller_selection}
+    \includegraphics[scale=0.2]{controller_selection}
     \caption{Skärm för att anpassa sin spelare innan anslutning till en spelinstans}
     \label{fig:controller_selection}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.3]{controller_gamescreen}
+    \includegraphics[scale=0.15]{controller_gamescreen}
     \caption{Skärmdump av kontrollern i spelläget \texttt{Knockoff}}
     \label{fig:controller_gamescreen}
 \end{figure}
 
-\subsection{UI}
-Denna del av produkten ansvarar för att välja vilket spelläge som ska spelas, samt visa spelet för alla användare. 
+\subsection{UI och nätverk}
+Denna del av produkten ansvarar för att välja vilket spelläge som ska spelas, samt köra och visa spelet för alla användare. Spellägena som finns är fokuserade på en spelplan man ser överifrån där varje spelare styr en egen cirkel. Nedan i figur \ref{fig:ui-dodgebot} och figur \ref{fig:ui-knockoff} kan man se två av de spellägen som finns att välja på. Båda spellägena går ut på att styra sin cirkel för att överleva spellägets hinder. För att användarna ska ha god möjlighet till att undika dessa hinder behöver spelet svara responsivt till input från kontrollern. Detta var en utmaning för gruppen då datan som skickas från kontrollern till spelet skickas över nätverk och därför påverkas av nätverkets svarstid. Eftersom spelet spelas i realtid är det alltså viktigt att användarens input också påverkar spelet i realtid. För att spelupplevelsen ska vara responsiv har därför gruppen jobbat mycket med att optimera hur mycket data som skickas via nätverket. Detta uppnås genom att kontrollern enbart skickar data då sensorvärdena uppdaterats. Sensorvärdena är också avrundade till närmaste heltal då gruppen ansåg att ytterligare upplösning inte skulle leda till en bättre spelupplevelse. Utöver åtgärderna på kontrollern kalibrerade också gruppen hantering av sensordata på UI:t. Kalibreringen skedde manuellt tills gruppen var nöjd med känslan att styra en spelare. I verkligheten betydde detta en styrning som direkt reagerar på ny input, men också tar hänsyn till tidigare värden som tagit emot. Detta ledde till robust styrsystem som ger mjuka rörelser i spelet och klarar av eventuella nätverksstörningar utan att spelaren tappar kontrollen. 
 
 
 \begin{figure}[h]

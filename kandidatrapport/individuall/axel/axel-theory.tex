@@ -102,6 +102,7 @@ För att skapa en \texttt{service} använder man sig av \texttt{@Injector} dekor
 %https://angular.io/guide/architecture-services
 
 \subsection{React}
+\label{axel:react}
 React är ett open-source Javascript-biblotek framtaget och utvecklat av Facebook. React introducerades först 2011 och blev open-source 2013. \cite{react-date}
 
 %https://www.infoworld.com/article/2608181/javascript/react--making-faster--smoother-uis-for-data-driven-web-apps.html
@@ -119,7 +120,8 @@ Komponenter delas oftast upp i en hierarkisk struktur som består av andra kompo
 %https://reactjs.org/docs/components-and-props.html
 
 
-\subsubsection{States} 
+\subsubsection{States}
+\label{axel:react-states} 
 React introducerar något de kallar för \texttt{states}.\cite{react-states} States kan enbart användas i klasskomponenter och deklareras i klasskonstruktorn. Idén bakom states är att göra komponenter mer självständiga och minska på beroenden till andra komponenter. Man kan förklara states så simpelt som globala variabler för klassen. Detta hjälper delvis komponenten att lagra viktig information komponenten måste hålla reda på, men är också ett sätt för komponenten att veta vilket läge den befinner sig i. States har en inbyggd metod, \texttt{setState()}, som måste användas för att modifiera värdet av en state-variabel. 
 
 \subsubsection{Dataflöde och props}
