@@ -1,0 +1,49 @@
+\section{Produkt}
+Nedan följer de resultaten teamet har tagit fram i form av den utvecklade produkten. Detta resultat relaterar till frågeställning 1\ref{fs:fs_1}. Produkten som utvecklats kan delas upp i tre olika delar, som kan ses tidigare i figur \ref{fig:konceptarkitektur}. Dessa delar är kontroller, UI och service, där den sistnämnda implementerades som en del av Cybercoms backend.
+
+
+\subsection{Service}
+När kraven för produkten samlades in tidigt i projektet var det tydligt att kunden ville ha ett system för att ansluta sig till fler är ett spel. Detta betyder att flera instanser av UI:t ska kunna vara igång samtidigt och att användaren ska ha möjlighet att välja vilket spel denne vill ansluta sig till. Detta implementerades med hjälp av en \texttt{Service} i Cybercoms backend. Denna service registrerar när nya instanser skapas eller tas bort i UI:t och skickar denna information vidare till kontrollern. Kontrollern kan sedan visa dessa instanser, vilket kan ses i figur \ref{fig:controller_instances}.
+
+\subsection{Kontroller}
+Kontrollern i produkten som utvecklats är gränsnittet som används för att styra en spelare på spelplanen i UI:t. Som det nämns ovan kan användaren i en lista se och välja vilken spelinstans som ska anslutas till\ref{fig:controller_instances}. När användaren valt sin instans finns möjligheten att anpassa namnet och utseendet av sin spelare, som kan ses i figur \ref{fig:controller_selection}. När användaren är nöjd med utseendet av sin spelare kan denne ansluta till spelsessionen genom \texttt{Join}-knappen. Efter detta är kontrollern ansluten till den spelinstans som valdes innan. Användaren kan styra sin spelare på planen genom att luta mobiltelefonen, och använda eventuella funktioner i spelet genom att klicka på deras tillhörande knapp. Exempel på detta kan ses i \ref{fig:controller_gamescreen}. Det spelläge som visas i denna figur, \texttt{Knockoff}, har endast en extra funktion, \texttt{Super Heavy}, som användaren kan använda sig av. Användaren kan också se sitt egna namn, svarstid och utseende, kalibrera sin rörelsesensor och lämna spelet från denna skärm. 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{controller_instances}
+    \caption{Exempel hur visningen av instanser ser ut på kontrollern}
+    \label{fig:controller_instances}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{controller_selection}
+    \caption{Skärm för att anpassa sin spelare innan anslutning till en spelinstans}
+    \label{fig:controller_selection}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{controller_gamescreen}
+    \caption{Skärmdump av kontrollern i spelläget \texttt{Knockoff}}
+    \label{fig:controller_gamescreen}
+\end{figure}
+
+\subsection{UI}
+Denna del av produkten ansvarar för att välja vilket spelläge som ska spelas, samt visa spelet för alla användare. 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{ui-dodgebot}
+    \caption{Skärmdump av UI:t i spelläget \texttt{Dodgebot}}
+    \label{fig:ui-dodgebot}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{ui-knockoff}
+    \caption{Skärmdump av UI:t i spelläget \texttt{Knockoff}}
+    \label{fig:ui-knockoff}
+\end{figure}
