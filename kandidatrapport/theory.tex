@@ -11,16 +11,18 @@ Ramverket React användes för att utveckla UI-applikationen samt kontroller-app
 Yarn är ett Javascript bibliotek. Biblioteket fungerar som en pakethanterare som skapar beroende mellan paket och underhåller dessa. Detta gör det enklare att lägga till och ta bort bibliotek till ett projekt \cite{GettingS85:online}.
 
 \subsection*{Prettier}
-Detta verktyget hjälper en programmerare att formattera koden på ett sätt så alla filer håller en enhetlig standard oavsätt vilken utvecklingsmiljö man befinner sig i.
+Prettier är ett verktyg för att formatera kod på ett standardiserat och lättläsigt sätt\cite{prettier}. Prettier går igenom koden och lägger till eller tar bort blanksteg och nya rader enligt förutbestämda regler. Syntaktiskt blir koden samma före och efter att Prettier körts, men läsbarheten lär ha förändrats. Prettier tar även bort stilpreferenser som olika kodskribenter då den alltid formaterar koden enligt samma regler.
+
 
 \subsection*{Eslint}
-Utöver prettier finns eslint som kommer att klaga på dåliga sätt att skriva kod. Detta gäller mindre om strukturen utav koden och mer om funktioner som inte ska användas för bättre kod.
+Eslint är ett \textit{open source} program som definerar stilregler för hur Javascriptkod skrivs. Dessa stilregler handlar  om hur kod ska formateras och att följa bra programmeringspraxis. Eslint söker sen igenom koden för rader som bryter mot de satta reglerna och påpekar alla fall som deta sker. Oftast så integreras Eslint in till programet där koden skrivs för att få Eslints varningar direkt när koden skrivs. De regler Eslint efterföljer är bra praxis för kodning i Javascript och de går att ändra på efter behov.
+
 
 \subsection*{Node.js}
 Node.js är en exekveringsmiljö för Javascript. Nodes.js ger funktionallitet att emulera en server med sin applikation på lokalt på sin dator \cite{Nodejs11:online}. Att Node.js skulle användas var ett krav från kunden.
 
 \subsection*{PIXI}
-PIXI är ett kraftfullt opensource renderingsbiblotek för Javascript\cite{PixiJSv473:online}.
+PIXI är ett kraftfullt \textit{opensource} renderingsbiblotek för Javascript\cite{PixiJSv473:online}. Den erbjuder funktioner som att rendera geometriska former och bilder samt en uppdateringsloop varje gång ett objekt ritas ut igen. PIXI är väldigt populärt och används av många stora företag såsom Google, Ubisoft och Spotify. 
 
 \subsection*{Scrum}
 Scrum är en populär agil utvecklingsmetodik inom mjukvaruutveckling. Metoden är anpassad för en mindre grupp på 5-9 medlemmar. Scrum använder ett iterativt, inkrementellt tillvägagångssätt som är relevant för detta projekt då den tillåter ändringar att ske när det behövs\cite{TheScrum81:online}. I Scrum delas arbetet i mindre iterationer kallas för \textit{sprint}. En sprint kan vara 1-4 veckor lång. Varje sprint planeras vid dess början och då bestäms mål som ska vara färdiga vid sprintensslut. Efter en sprint så utvärderas hur väl arbetet gick under denna sprint samt vad som bör göras annorlunda till nästa sprint. Scrum har många inslag som är typiska för just Scrum, de som tas upp i denna rapport är följande:
@@ -37,10 +39,11 @@ Scrum är en populär agil utvecklingsmetodik inom mjukvaruutveckling. Metoden �
 \end{itemize}
 
 \subsection*{Trello}
-Trello är en hemsida för att lägga till och fördela uppgifter bland flera personer, kan liknas en whiteboard som postit lappar fästs på.
+Trello är en hemsida för att skapa och fördela uppgifter bland flera personer. Det kan liknas till en anslagstavla där lappar med uppgifter kan klistras på. Anslagstavlan i sig är uppdelad i kategorier som användarna själva kan skapa och modifiera. Oftast så har dessa kategorier namn som att ''att göra'', ''pågående'' och ''färdigt''. Lappar fästs sen vid den första kategorien ''att göra'' och flyttas sedan till de andra när det anses passande. Varje lapp har sedan möjlighet att innehålla extra information bland annat: vem som arbetar med den, en beskrivning av lappen samt en tidsuppskattning. Alla fält på en lapp bortsett dess namn är friviliga, och därav så kan en Trello-lapp innehålla väldigt mycket, eller väldigt lite, information.
 
 \subsection{Git}
-Ett opensource projekt som används för versionhantering av kod \cite{Git52:online}.
+Git är ett decentraliserat versionshanteringsprogram för kod. Git fungerar på så sätt att en person som vill använda koden klonar hela Gitrepot, skriver sina ändringar, 
+Ett opensource projekt som används för versionhantering av kod \cite{Git52:online} .
 \begin{itemize}
 	\item \textit{Push}: Skickar utvecklingsfiler från det lokala repot som man utvecklar i till Gitrepot.
 	\item \textit{Pull request}: En begäran som skickas när en utvecklare laddar ner en kod från Git, modiferar den och vill \textit{pusha} tillbaka den. När en pull request är gjord intresserade partier kan se över modifieringar som har gjorts och sammanfoga den i huvudgrenen, begära ytterligare modifieringar, eller pushar egna modifieringar. 
@@ -48,10 +51,10 @@ Ett opensource projekt som används för versionhantering av kod \cite{Git52:onl
 \end{itemize}
 
 \subsection*{Github}
-
+Github är en hemsida som integrerar Git och tillåter användare att lägga upp sin kod där gratis förutsatt att den är offentlig. Github erbjuder även en visualisering av många av Gits funktionaliteter såsom en grafisk vy över hur koden förändrats över tid eller skillnaderna mellan två versioner. Github erbjuder även verktyg för att strukturera ett projekt såsom möjligheten att enkelt bjuda in medlemmar och ändra hur vilka rättigheter de ska ha. Dessa rättigheter kan vara allt mellan att inte ha tillgång till någon förändring till att få ändra all kod i alla grenar. Github möjliggör också för integration med Travis på sin plattform. Dess primära funktionen är dock en att tillhandahålla ett Gitrepo på en server för att minimera risken av förlorat arbete vid en krash.
 
 \subsection*{Travis}
-Ett opensource testningstjänst som erbjudst av gratis Github på deras plattform. Travis används i kontinuerlig integration för att köra tester på alla grenar innan de kan mergeas in i huvudgrenen.
+Ett opensource testningstjänst som erbjuder autmatisering för projekt som använder Github. Travis är gratis för opensource projek. Tjänsten används i kontinuerlig integration för att köra tester på alla grenar innan de kan sammanfogas in i huvudgrenen\cite{Travis:online}.
 
 \subsection*{Slack}
 Slack är ett kommunikationsverktyg som ofta används proffesionelt inom IT och mjukvaruutveckling. Funktionsmässigt är det ett chatprogram för datorer och mobila enheter.
