@@ -8,13 +8,6 @@ I denna analys har beroenden för över 6~000 open-source projekt från GitHub u
 
 I databasen skapades tabeller för att spara data om Javascript-projekt, npm-paket och relationer mellan dem. Tabeller för intressant statistik så som hur många versionsreferenser som var ogiltiga skapades också. Ett diagram över databasen visas i figur \ref{fig:dependency-db}.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.42]{npm_db}
-  \caption{Databasen som har använts under undersökningen}
-  \label{fig:dependency-db}
-\end{figure}
-
 Tabellerna innehåller följande:
 
 \begin{labeling}{\textbf{ProjectDevDependency}}
@@ -26,6 +19,13 @@ Tabellerna innehåller följande:
   \item [\textbf{PackageDependency}] Beroenden från ett paket till ett annat
   \item [\textbf{Stats}] Statistik om hur många beroenden som refererar till paket utanför npm-ekosystemet
 \end{labeling}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.42]{npm_db}
+  \caption{Databasen som har använts under undersökningen}
+  \label{fig:dependency-db}
+\end{figure}
 
 Då analysen enligt frågeställning \ref{joel_o-fs:1} ska utföras på populära Javascript-projekt behövde popularitet först definieras. GitHubs system med stjärnor valdes som ett bra mått för detta. Projekt med mer än 500 stjärnmarkeringar definierades som populära. Denna gräns är godtycklig, men ger en stor datamängd att utgå ifrån.
 
