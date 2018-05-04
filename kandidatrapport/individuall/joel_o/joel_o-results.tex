@@ -4,7 +4,7 @@ Från de beskrivna metoderna har en mängd resultat sammanställts för att ge s
 
 \subsection{Kvantitativa resultat}
 \label{sec:joel_o-results-kvant}
-Den 6 april 2018 passade 6~743 Javascript-projekt på GitHub in på tidigare nämnda definition av populära projekt. Av dessa innehöll 5~402, 80.1\% en \texttt{package.json} fil och ansågs därför vara av intresse för undersökningen. Samtliga data som presenteras här är baserade på dessa 5~402 projekt. Totalt hittades 114~249 beroenden varav 991, 0.87\% refererade till paket utanför npm-systemet.
+Den 6 april 2018 passade 6~743 Javascript-projekt på Github in på tidigare nämnda definition av populära projekt. Av dessa innehöll 5~402, 80.1\% en \texttt{package.json} fil och ansågs därför vara av intresse för undersökningen. Samtliga data som presenteras här är baserade på dessa 5~402 projekt. Totalt hittades 114~249 beroenden varav 991, 0.87\% refererade till paket utanför npm-systemet.
 
 De värden som är av intresse är projekts direkta beroenden, indirekta beroenden samt det maximala djupet på beroendekedjor. Medelvärde ($\bar{x}$), standardavvikelse ($\sigma$) och maxvärde ($x_{max}$) för dessa finns presenterade i tabell \ref{tab:beroende-data}. Minvärdet för samtliga är 0.
 
@@ -94,7 +94,7 @@ Datan från undersökningen av Javascript-projekt visar att hjälppaket för utv
 \subsection{Påverkan på säkerhet och tillförlitlighet}
 Inkludering av färdiga paket ökar mängden kod i projekt och därmed möjliga problem med säkerhet och tillförlitlighet. Att paket oftast är publicerade som open-source och används i många olika projekt är dock anledningar att tro att denna kod har en hög kvalitet.\cite{coverity-scan2013}
 
-Det finns trots detta flera exempel där säkerhetsproblem har förekommit i npm-paket och genom beroenden påverkat andra paket och projekt. Joseph Hejderup utförde 2015 en undersökning av dessa problem.\cite{Hejderup2017} De vanligaste problemen i npm-paket har visat sig vara känslighet för attacker som \textit{cross site scripting} och \textit{denial of service}(då Javascript används som server-språk). Hejderup identifierade i sin undersökning över 1~500 paket med beroenden till paket med säkerhetsproblem. En grov uppskattning gav att ungefär 1\% av npm-ekosystemet kunde vara i riskzonen för kända säkerhetsproblem.
+Det finns trots detta flera exempel där säkerhetsproblem har förekommit i npm-paket och genom beroenden påverkat andra paket och projekt. Joseph Hejderup utförde 2015 en undersökning av dessa problem.\cite{Hejderup2017} De vanligaste problemen i npm-paket har visat sig vara känslighet för attacker som \textit{cross site scripting} och \textit{denial of service} (då Javascript används som server-språk). Hejderup identifierade i sin undersökning över 1~500 paket med beroenden till paket med säkerhetsproblem. En grov uppskattning gav att ungefär 1\% av npm-ekosystemet kunde vara i riskzonen för kända säkerhetsproblem.
 
 I tidigare nämnda arbete poängteras också att utvecklare till paket ofta inte visat någon medvetenhet över säkerhetsproblem i beroenden. Detta beror möjligen på att många paket är utdaterade och inte längre underhålls kontinuerligt. Denna observation visar på vikten för utvecklare att ha en stor medvetenhet om hur pass uppdaterade integrerade paket är. För att kunna garantera säkerhet i Javascript är det troligen nödvändigt att till viss del vara insatt i problem och underhåll för de paket som beroenden finns till.
 

@@ -63,16 +63,16 @@ I de fall ett paket specificerar flera accepterade versioner i ett beroende har 
 
 Något som gör denna modell något speciellt komplex att arbeta med är att npm ej ställer några krav på att beroenden inte får bilda cykler. Det kan tyckas ointuitivt att detta kan fungera. Beroende är dock endast krav på att ett visst paket måste ha hämtats. När en cykel följs och ett paket nås som redan har passerats behöver detta inte hämtas igen och därmed skapar dessa cykler inga större problem. Exempel på flera sådana cirkulära beroenden kan ses i figur \ref{fig:beroende-graf-cykel}.
 
-\subsection{GitHub}
-De olika Javascript-projekt som undersöks i detta arbete hämtas från plattformen GitHub. För projekt som ligger under en open-source-licens är all källkod tillgänglig att hämtas från GitHubs server. Detta innefattar filen \texttt{package.json} som är av stort intresse för denna undersökning. För att npm ska kunna använda \texttt{package.json} korrekt behöver denna fil vara placerad i projektets rotmapp. Detta underlättar analysen, då ett antagande om sökvägen till \texttt{package.json} i projektets mappstruktur kan göras.
+\subsection{Github}
+De olika Javascript-projekt som undersöks i detta arbete hämtas från plattformen Github. För projekt som ligger under en open-source-licens är all källkod tillgänglig att hämtas från Githubs server. Detta innefattar filen \texttt{package.json} som är av stort intresse för denna undersökning. För att npm ska kunna använda \texttt{package.json} korrekt behöver denna fil vara placerad i projektets rotmapp. Detta underlättar analysen, då ett antagande om sökvägen till \texttt{package.json} i projektets mappstruktur kan göras.
 
-Projekt på GitHub refereras till genom en unik kombination av ägarens användarnamn och projektets namn. Med denna information kan för ett visst projekt filen \texttt{package.json} hittas på adressen
+Projekt på Github refereras till genom en unik kombination av ägarens användarnamn och projektets namn. Med denna information kan för ett visst projekt filen \texttt{package.json} hittas på adressen
 
 \texttt{raw.githubusercontent.com/\textit{användarnamn}/\textit{projektnamn}/master/package.json}.
 
 Om denna adress ej pekar på någon fil för ett visst projekt, och \texttt{package.json} därmed inte existerar, tyder det på att projektet ej använder sig av npm för pakethantering.
 
-GitHub erbjuder ett sök-api som kan användas för att hitta ett urval av projekt att analysera.\cite{github-api} Detta tillåter sökningar efter projekt skrivna i ett visst programmeringsspråk och med ett visst antal stjärnor. Stjärnor är systemet GitHub använder för att ranka omtyckta paket. Användare kan stjärnmarkera projekt de tycker om och därmed ger antalet stjärnor ett projekt har tilldelats en bra bild över hur populärt projektet är.
+Github erbjuder ett sök-api som kan användas för att hitta ett urval av projekt att analysera.\cite{github-api} Detta tillåter sökningar efter projekt skrivna i ett visst programmeringsspråk och med ett visst antal stjärnor. Stjärnor är systemet Github använder för att ranka omtyckta paket. Användare kan stjärnmarkera projekt de tycker om och därmed ger antalet stjärnor ett projekt har tilldelats en bra bild över hur populärt projektet är.
 
 \subsection{Säkerhet och tillförlitlighet}
 Säkerhet är en svårdefinierad term som kan betyda flera saker. En nyttig definition för mjukvarusäkerhet är till vilken grad säkerhetspolicies kan upprätthållas. Säkerhetspolicies i detta sammanhang refererar till regler för vad eller vem som kan ta del av eller manipulera olika resurser.\cite{secure-software} Typiska exempel är att hålla information dold från vissa användare eller motverka möjligheter att förändra data.
