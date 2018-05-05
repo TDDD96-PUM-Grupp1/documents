@@ -9,19 +9,19 @@ Kontroll-applikationen som har utvecklats är ett gränssnitt som används för 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.3]{controller_instances}
+    \includegraphics[scale=0.2]{controller_instances}
     \caption{Exempel hur visningen av instanser ser ut på kontrollen}
     \label{fig:controller_instances}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.2]{controller_selection}
     \caption{Skärm för att anpassa sin spelare innan anslutning till en spelinstans}
     \label{fig:controller_selection}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.15]{controller_gamescreen}
     \caption{Skärmdump av kontrollen i spelläget \textit{Knockoff}}
@@ -36,14 +36,14 @@ Spelet innehåller flera generella system för att kunna skapa olika sorters spe
 \subsection{Nätverk}
 För att användarna ska ha god möjlighet att styra sin karaktär behöver spelet svara responsivt på input från kontrollen. Responsivt i det här sammanhanget syftar på tiden det tar från att en användare lutar kontrollen tills att spelpjäsen flyttar på sig på UI:t. Detta var en utmaning för gruppen då datan som skickas från kontrollen till spelet skickas över internet och därför påverkas av nätverkets svarstid. Eftersom spelet spelas i realtid är det alltså viktigt att användarens input också påverkar spelet i realtid. För att spelupplevelsen ska vara responsiv har därför gruppen jobbat mycket med att optimera hur mycket data som skickas via nätverket. En genomförd optimering för att minska mängden data som skickades från kontrollen var att enbart skicka data när sensorvärden uppdaterats. Sensorvärdena hade dock en väldigt bra precision med många värdesiffror vilket resulterade i att data fortfarande skickades väldigt frekvent. För att lösa detta problem avrundades sensorvärdena till närmaste heltal. Detta reducerade mängden data som skickades avsevärt. Gruppen kalibrerade även hanteringen av sensordatan på UI:t. Här fokuserades det på att få känslan av att styra en spelare bra. Denna kalibreringen skedde manuellt tills gruppen var nöjd med känslan att styra en spelare. I verkligheten betydde detta en styrning som direkt reagerar på ny input, men också tar hänsyn till tidigare värden som tagit emot. Detta ledde till ett robust styrsystem som ger mjuka rörelser i spelet. Lösningen klarar även av eventuella nätverksstörningar utan att spelaren tappar kontrollen.
 
-\begin{figure}[t]
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.2]{ui-dodgebot}
     \caption{Skärmdump av UI:t i spelläget \textit{Dodgebot}}
     \label{fig:ui-dodgebot}
 \end{figure}
 
-\begin{figure}[b]
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.2]{ui-knockoff}
     \caption{Skärmdump av UI:t i spelläget \textit{Knockoff}}
