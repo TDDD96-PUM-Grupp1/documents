@@ -7,11 +7,11 @@ Detta kapitel beskriver den teori som krävs för att förstå den metod och res
 
 Analysen för detta arbete baseras på hur olika typning i språket påverkar koden som skrivs. Det är därför viktigt att ha en tydlig förståelse för vilka typer som finns i Javascript och hur de hanteras. Javascript är ett dynamiskt typat språk vilket i praktiken innebär att utvecklaren inte specificerar vilken typ en variabel har, utan detta sätts istället vid körtid beroende på vad variabeln blir tilldelad för värde. Motsatsen till detta är statisk typning, då till exempel en kompilator verifierar typen av variabler innan koden körs.
 
-Javascript har totalt fem primitiva datatyper: \textit{String}, \textit{Number}, \textit{Boolean}, \textit{null} och \textit{undefined}.
+Javascript har totalt sex primitiva datatyper: \textit{String}, \textit{Number}, \textit{Boolean}, och \textit{Symbol}, \textit{null} och \textit{undefined} \cite{javascript-primitives}.
 
 \subsection{Påtvingade typer}
 
-Från sin design som ett dynamiskt typat språk följer att Javascript är väldigt uttrycksfullt. Med detta menas att språket väljer att tolka en hel del saker själv istället för att låta användaren specificera det explicit. Detta hänger ihop med Javascripts sätt tvinga typer. Ett snabbt exempel visar hur Javascript själv väljer att konvertera värden beroende på vilken operator som används:
+Från sin design som ett dynamiskt typat språk följer att Javascript är väldigt uttrycksfullt \cite{javascript-type-coersion}. Med detta menas att språket väljer att tolka en hel del saker själv istället för att låta användaren specificera det explicit. Detta hänger ihop med Javascripts sätt tvinga typer. Ett snabbt exempel visar hur Javascript själv väljer att konvertera värden beroende på vilken operator som används:
 
 \begin{lstlisting}[language=JavaScript]
 var a = 1; // Number
@@ -30,13 +30,13 @@ Denna typ av uttrycksfullhet ger utvecklare möjlighet att snabbt utveckla appli
 
 \subsection{Introduktion av Flow och Typescript}
 
-Eventuella problem med påtvingade typer som beskrivs ovan är något som är väldebatterat när det kommer till Javascript. Många anser att språket fungerar utmärkt som det är och utvecklar storskaliga projekt med det. Andra är dock inte lika nöjda med det\cite{js-bad} och flera stora mjukvaruföretag har utvecklat egna verktyg för att lösa de eventuella problem de har med språket. Två av dessa är Facebook och Microsoft som har utvecklat Flow\cite{info-flow} respektive Typescript\cite{typescript}.
+Eventuella problem med påtvingade typer som beskrivs ovan är något som är väldebatterat när det kommer till Javascript. Många anser att språket fungerar utmärkt som det är och utvecklar storskaliga projekt med det. Andra är dock inte lika nöjda med det \cite{js-bad} och flera stora mjukvaruföretag har utvecklat egna verktyg för att lösa de eventuella problem de har med språket. Två av dessa är Facebook och Microsoft som har utvecklat Flow \cite{info-flow} respektive Typescript \cite{typescript}.
 
-\textbf{Flow:}
+\subsubsection{Flow}
 
 Flow är ett verktyg som används för att komplettera Javascript. Det ger utvecklare möjligheten att explicit specificera vilken typ en variabel är eller vad en funktion returnerar. Facebook marknadsför dock att med Flow ska utvecklaren inte behöva explicit specificera vilken typ en variabel behöver vara. Istället ska verktyget vara smart nog att bestämma vilken typ variabeln är och fortfarande markera om eventuella konflikter uppstår. Flow gör också en extra kontroll på nyckelordet \texttt{this} som förekommer ofta i Javascript-utveckling. Ett vanligt problem utvecklare stöter på är att de försöker använda nyckelordet för att hänvisa till den delen av koden där funktionen ligger, men när funktionen som använder nyckelordet anropas så refererar \texttt{this} till något annat. Detta sker vanligtvis i en callback-funktion, alltså en funktion som anropas när en annan funktion är klar, och kan leda till en del frustration om man inte är försiktig. Det som Flow tillför är att verifiera vilken funktion som använder sig av nyckelordet redan vid kompilering och kan alltså bestämma om det kommer orsaka problem vid körtid eller inte. 
 
-\textbf{Typescript:}
+\subsubsection{Typescript}
 
 Till skillnad mot Flow så är Typescript inte bara ett verktyg som kan användas i projekt, utan ett helt programmeringsspråk som kompileras till Javascript innan körning. Typescript erbjuder, precis som Flow, en möjlighet för utvecklare att explicit specificera vilken typ en variabel är. Dock erbjuder språket en hel del andra funktioner, som mer utvecklade klasser och gränssnitt, tillsammans med andra funktioner som inte är speciellt intressanta för detta arbete.
 Någonting som både Flow och senare versioner av Typescript har gemensamt är hur variabler som antingen är null eller undefined hanteras. I vanlig Javascript ges generellt ingen feedback om man försöker göra operationer med variabler som är odefinierade, vilket kan anses som en svaghet i språket. I både Flow och Typescript kan man däremot få kompilatorn att ge ett fel vid sådana operationer, om inte utvecklaren explicit specificerar att dessa är okej.
