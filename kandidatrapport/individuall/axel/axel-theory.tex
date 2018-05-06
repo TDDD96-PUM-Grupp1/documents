@@ -13,7 +13,7 @@ När en hemsida laddas in, skapar webbläsaren en DOM (Document object module) a
 \begin{itemize}
 \item HTML/XML-element som objekt
 \item HTML/XML-elementens attribut
-\item Metoder för att modifera HTML/XML-element
+\item Metoder för att modifiera HTML/XML-element
 \item Alla event för varje HTML/XML-element.
 \end{itemize} 
 
@@ -28,7 +28,7 @@ DOM ger även annan slags funktionalitet, så som att den tillåter Javascript a
 Både Angular och React är Javascript-baserade språk, men båda språken brukar generellt använda olika typer av tillägg till Javascript.
 
 \subsubsection{JSX}
-JSX är ett tillägg till Javascript med XML-liknande syntax. JSX står för Javascript XML och är helt enkelt Javascript som tillåter XML-syntax. Idén bakom JSX är att på ett elegant sätt lägga till XML-syntaxen till Javascript för att bland annat öka läsbarheten av koden.\cite{react-jsx} JSX är ett preprocessor steg som transpilerar JSX kod till vanlig Javascript. När kod transpileras innebär det att koden översätts till ett annat språk. Det vill säga slutresultatet är ren Javascript kod utan någon JSX syntax. Detta preprocessor steg  tillåter JSX att även optimera koden vilket innebär att JSX blir generellt sett snabbare än vanlig Javascript.\cite{jsx} \cite{facebook-jsx} JSX är även statiskt typat vilket underlättar utvecklingsprocessen eftersom kompliatorfel kan specificeras ytterligare.
+JSX är ett tillägg till Javascript med XML-liknande syntax. JSX står för Javascript XML och är helt enkelt Javascript som tillåter XML-syntax. Idén bakom JSX är att på ett elegant sätt lägga till XML-syntaxen till Javascript för att bland annat öka läsbarheten av koden.\cite{react-jsx} JSX är ett preprocessor steg som transpilerar JSX kod till vanlig Javascript. När kod transpileras innebär det att koden översätts till ett annat språk. Det vill säga slutresultatet är ren Javascript kod utan någon JSX syntax. Detta preprocessor steg tillåter JSX att även optimera koden vilket innebär att JSX blir generellt sett snabbare än vanlig Javascript.\cite{jsx} \cite{facebook-jsx} JSX är även statiskt typat vilket underlättar utvecklingsprocessen eftersom kompliatorfel kan specificeras ytterligare.
 
 %https://jsx.github.io/doc/tutorial.html
 %https://reactjs.org/docs/introducing-jsx.html
@@ -45,16 +45,15 @@ Typescript är att Javascript-tillägg utvecklat och framtaget av Microsoft. Id�
 Angular är ett TypeScript-baserad open-source ramverk som underhålls och utvecklas främst av Google. Angular 2.0 lanserades i september 2016 med sin initiala release och den stabila releasen i december 2018. Angular 2.0 är en total rekonstruktion av det tidigare ramverket AngularJS som lanserades i october 2010. Idag är den senaste stabila releasen Angular 5.0. \cite{angular-date}
 
 \subsubsection{NgModules}
-Angular är ett modulärt ramverk och har sitt egna modularitetssystem kallat \texttt{NgModules}.\cite{angular-architecture} \texttt{NgModule} är en container som innehåller kod för en specifik domän av applikationen, flödet för en arbetsprocess eller en mängd av förmågor. Den kan innehålla komponenter, service providers eller andra \texttt{NgModules}, se \ref{angular-services} för vad en service provider är. Idén är att man ska kunna antigen exportera funktionalitet från en modul eller importera funktionalitet från en annan modul. Vilket innebär att \texttt{NgModules} erbjuder funktionaliteten för återanvändning av kod på ett simpelt sätt. 
+Angular är ett modulärt ramverk och har sitt egna modularitetssystem kallat \texttt{NgModules}.\cite{angular-architecture} \texttt{NgModule} är en container som innehåller kod för en specifik domän av applikationen, flödet för en arbetsprocess eller en mängd av förmågor. Den kan innehålla komponenter, service providers eller andra \texttt{NgModules} (se \ref{angular-services} för vad en service provider är). Idén är att man ska kunna antigen exportera funktionalitet från en modul eller importera funktionalitet från en annan modul. Vilket innebär att \texttt{NgModules} erbjuder möjligheten för återanvändning av kod på ett simpelt sätt. 
 
 Alla Angular-applikationer består av åtminstone en \texttt{NgModule}, root-modulen. Denna brukar namnges \texttt{AppModule}.\cite{angular-modules} Root-modulen kan ses som applikationens startpunkt då denna är det första som anropas när en Angular-applikation ska startas.
-
 
 %https://angular.io/guide/architecture
 %https://angular.io/guide/architecture-modules
 
 \subsubsection{Dekoratör}
-I Angular definierar en dekoratör modulens typ och innehåller tillhörande metadata. En dekoratör anges högst upp i ett dokument och skrivs med ett @ och därefter dekoratörens typ. Till exempel en dekoratör för en komponent skrivs som \texttt{@Component}.\cite{angular-modules} Metadatans innehåll varierar beroende på typ av modul. Till exempel metadatan för en komponent innehåller en \texttt{selector}, \texttt{templateUrl} och \texttt{provider}. En \texttt{selector} berättar vart komponentens CSS befinner sig. En \texttt{templateUrl} berättar vart komponentens template finns, se \ref{angular-template} för vad en template är. En \texttt{provider} beskriver vilka services komponenten använder sig av, se \ref{angular-services} för vad en service är. \cite{angular-components}
+I Angular definierar en dekoratör modulens typ och innehåller tillhörande metadata. En dekoratör anges högst upp i ett dokument och skrivs med ett @ och därefter dekoratörens typ. Till exempel en dekoratör för en komponent skrivs som \texttt{@Component}.\cite{angular-modules} Metadatans innehåll varierar beroende på typ av modul. Exempelvis metadatan för en komponent innehåller en \texttt{selector}, \texttt{templateUrl} och \texttt{provider}. En \texttt{selector} berättar vart komponentens CSS befinner sig. En \texttt{templateUrl} berättar vart komponentens template finns (se \ref{angular-template} för vad en template är). En \texttt{provider} beskriver vilka services komponenten använder sig av (se \ref{angular-services} för vad en service är). \cite{angular-components}
 
 %https://angular.io/guide/architecture-modules
 %https://angular.io/guide/architecture-components
@@ -69,27 +68,26 @@ En \texttt{template} beskriver utseendet av en vy. En \texttt{template} i Angula
 \subsubsection{Directives}
 I Angular kan man ge HTML element fler attribut utöver de som redan existerar i vanlig HTML. Detta kallar Angular för \texttt{directives}. I Angular finns det två olika sorters \texttt{directives}:
 \begin{itemize}
-    \item Strukturella
-    \item Attribut
+    \item Strukturella \texttt{directives}
+    \item Attribut \texttt{directives}
 \end{itemize}
 Strukturella \texttt{directives} tillåter en utvecklare att manipulera DOMen genom att ge funktionaliteten att ta bort, lägga till och ändra HTML element i DOMen. \cite{angular-services} 
 
 Ett exempel på en strukturell \texttt{directive} är \texttt{*ngFor}. \texttt{*ngFor} itererar över en lista och skapar ett HTML-element för varje element i listan. Dessa HTML-element kommer att vara av samma typ som HTML-elementet där \texttt{*ngFor} är angiven. Strukturella \texttt{directives} kan på detta sätt reducera mängden repetitiv kod avsevärt.
 
-Attribut \texttt{directives} ger funktionaliteten att modifiera utseendet eller beteendet hos redan existerande HTML element. Attribut- \texttt{directives} brukar vanligtvis vara databindning vilket kan till exempel binda data från en modul till ett HTML-element, se \ref{angular-data-binding} för vad databindning är. Detta gör en hemsida mer dynamisk eftersom innehåll kan förändras när till exempel en användare klickar på en knapp.
+Attribut \texttt{directives} ger möjligheten att modifiera utseendet eller beteendet hos redan existerande HTML element. Attribut- \texttt{directives} brukar vanligtvis vara databindning, då kan den exempelvis binda data från en modul till ett HTML-element (se \ref{angular-data-binding} för vad databindning är). Detta gör en hemsida mer dynamisk eftersom innehåll kan förändras när en användare klickar på en knapp eller annat dylikt.
 
-I Angular kan man även skriva egna strukturella- eller attribut \texttt{directives} genom att ange dekoratören \texttt{@Directives} hos sin modul. \cite{angular-components}
-
+I Angular kan man även skriva egna strukturella- eller attribut-\texttt{directives} genom att ange dekoratören \texttt{@Directives} hos sin modul. \cite{angular-components}
 
 \subsubsection{Databindning}
 \label{angular-data-binding}
 Det finns det 4 olika former av databindning i Angular. \cite{angular-components} 
 \begin{enumerate}
-    \item Interpolation. Den låter en utvecklare injicera data in i ett HTML-element, det vill säga modulen binder specifik data till ett objekt i DOMen. Interpolation används för att synkronisera data hos modulen med vyn.
+    \item Interpolation, låter en utvecklare injicera data in i ett HTML-element, det vill säga modulen binder specifik data till ett objekt i DOMen. Interpolation används för att synkronisera data hos modulen med vyn.
     
-    \item Property binding. Den möjliggör att en föräldermodul kan skicka vidare data till ett av sina barns moduler. Med andra ord binder man data hos en föräldermodul till data hos en av förälderns barns modul. Property bindning används för att synkronisera data mellan moduler. \cite{angular-databinding}
+    \item Property binding, möjliggör att en föräldermodul kan skicka vidare data till ett av sina barns moduler. Med andra ord binder man data hos en föräldermodul till data hos en av förälderns barns modul. Property bindning används för att synkronisera data mellan moduler. \cite{angular-databinding}
 
-    \item Event binding. Den binder data eller en metod hos en modul till ett specifikt event hos ett objekt i DOMen. Detta används för att synkronisera användarinput med data hos en modul.
+    \item Event binding, binder data eller en metod hos en modul till ett specifikt event hos ett objekt i DOMen. Detta används för att synkronisera användarinput med data hos en modul.
 
     \item Property- och event binding kombinerat till en notation. Angular kallar denna form av bindning för tvåvägsdatabindning. Tvåvägsdatabindning tillåter data hos en modul bli synkroniserat med användarinput samtidigt som modulen kan uppdatera en eller flera vyer baserat på användarinputen.
 
@@ -101,12 +99,12 @@ Angular bearbetar alla databindningar på en Javascript-eventcykel från root-ko
 
 \subsubsection{Services}
 \label{angular-services}
-En \texttt{service} omfattar ett brett spektrum av kategorier vars syfte är att utföra en specifik sak väl. Detta kan vara att hämta data, göra beräkningar eller något annat dylikt. Angular separerar på komponenter och \texttt{services} för att öka modulariteten och återanvändbarheten av både komponenter och \texttt{services}. Idén bakom services är att komponenter inte ska behöva veta hur data till exempel ska hämtas. Genom att göra uppdelningen kan komponenter som behöver samma data som andra komponenter redan använder, använda sig av samma \texttt{service}. \cite{angular-services} En \texttt{service} innehålla flera andra \texttt{services} inom sig.
+En \texttt{service} omfattar ett brett spektrum av kategorier vars syfte är att utföra en specifik sak väl. Detta kan vara att hämta data, göra beräkningar eller något annat dylikt. Angular separerar på komponenter och \texttt{services} för att öka modulariteten och återanvändbarheten av både komponenter och \texttt{services}. Idén bakom services är att komponenter inte ska behöva veta hur data exempelvis ska hämtas. Genom denna uppdelning, kan komponenter som behöver samma data som andra komponenter redan använder, använda sig av samma \texttt{service}. \cite{angular-services} En \texttt{service} kan innehålla flera andra \texttt{services} inom sig.
 
 %https://angular.io/guide/architecture-services
 
 \subsubsection{Dependency injection}
-För att skapa en \texttt{service} använder man sig av \texttt{@Injector} dekoratören. Injektör dekoratören möjliggör för Angular att skapa ett beroende (\texttt{dependency}) till en \texttt{service}  hos en komponent. Det vill säga, för att komponenten ska fungera, behöver komponenten tillgång till en specificerad \texttt{service}. Dependency injection är djupt integrerat i Angular-ramverket. När en ny komponent skapas undersöker Angular om en annan komponent redan använder sig av samma \texttt{service} som den nya komponenten är beroende av. Om en eftertraktad \texttt{service} redan används injicerar Angular samma \texttt{service} i den nya komponenten, annars skapar Angular en ny instans av den \texttt{service}n. \cite{angular-services}
+För att skapa en \texttt{service} använder man sig av \texttt{@Injector} dekoratören. Injektör dekoratören möjliggör för Angular att skapa ett beroende (\texttt{dependency}) till en \texttt{service} hos en komponent. Det vill säga, för att komponenten ska fungera, behöver komponenten tillgång till en specificerad \texttt{service}. Dependency injection är djupt integrerat i Angular-ramverket. När en ny komponent skapas undersöker Angular om en annan komponent redan använder sig av samma \texttt{service} som den nya komponenten är beroende av. Om en eftertraktad \texttt{service} redan används injicerar Angular samma \texttt{service} i den nya komponenten, annars skapar Angular en ny instans av den \texttt{service}n. \cite{angular-services}
 
 %https://angular.io/guide/architecture-services
 
@@ -117,12 +115,12 @@ React är ett open-source Javascript-biblotek framtaget och utvecklat av Faceboo
 %https://www.infoworld.com/article/2608181/javascript/react--making-faster--smoother-uis-for-data-driven-web-apps.html
 
 \subsubsection{JSX}
-React rekommenderar att man använder sig av JSX även om det inte är ett krav för att använda React. Idén bakom att introducera JSX är att samla funktionallitet och andra teknologier till en komponent istället för att sprida dessa bland olika filer. \cite{react-jsx}
+React rekommenderar att man använder sig av JSX även om det inte är ett krav för att använda React. Idén bakom att introducera JSX är att samla funktionalitet och andra teknologier till en komponent istället för att sprida dessa bland olika filer. \cite{react-jsx}
 
 %https://reactjs.org/docs/introducing-jsx.html
 
 \subsubsection{Komponenter}
-React introducerar också komponenter, dessa är annorlunda från de Angular har. En komponent i React liknar en Javascript-funktion som tar emot en parameter \texttt{props} (står för eng. properties) och returnerar utseendet för komponenten med JSX. Parametern \texttt{props} är ett objekt som kan innehålla data, funktioner med mera. Idén bakom komponenter är att kunna konstruera en hemsida i små, självständiga och återanvändbara block (komponenter). \cite{react-components} I React finns det två olika sorters komponenter:
+React introducerar också komponenter, dessa är annorlunda från de i Angular. En komponent i React liknar en Javascript-funktion som tar emot en parameter \texttt{props} (står för eng. properties) och returnerar utseendet för komponenten med JSX. Parametern \texttt{props} är ett objekt som kan innehålla data, funktioner med mera. Idén bakom komponenter är att kunna konstruera en hemsida i små, självständiga och återanvändbara block (komponenter). \cite{react-components} I React finns det två olika sorters komponenter:
 
 \begin{enumerate}
     \item Funktionellkomponent, en funktion i Javascript.
@@ -136,9 +134,10 @@ Komponenter delas oftast upp i en inbördes hierarkisk struktur av flera andra k
 %https://reactjs.org/docs/components-and-props.html
 
 \subsubsection{Dataflöde och props}
-I React flödar data alltid neråt\cite{react-states}, från en förälderkomponent till ett av förälderns barns komponenter och så vidare. En förälderkomponent måste importera den komponent den vill skicka data till och skickar datan genom att sätta ett attribut i komponentens HTML-element. Namnet på detta attribut får utvecklaren bestämma själv och ska konventionellt sett skrivas med kamelnotation. Kamelnotation är en metod för att skriva samman ord genom att låta första bokstaven i varje ord vara en versal bortsett från första ordet. Komponenter i React får tillgång till datan genom parametern \texttt{props}. Ett simpelt kodexempel på hur man kan skicka data är, <ExempelKomponent exempelData=\{data\} />. I exemplet får komponenten ExempelKomponent tillgång till datan kopplad till attributet exempelData genom att skriva, \texttt{props.exempelData}. Detta ger en utvecklare möjligheten att skicka annan data till samma komponenter som återanvänds. Denna funktionalitet gör att en komponent kan se annorlunda ut eller få ett annorlunda beteende beroende på vad för data som skickas till komponenten. I React kan man även skicka funktioner hos förälderkomponenten genom props. 
+I React flödar data alltid neråt\cite{react-states}, från en förälderkomponent till ett av förälderns barns komponenter och så vidare. En förälderkomponent måste importera den komponent, den vill skicka data till. Datan skickas genom att sätta ett attribut i komponentens HTML-element. Namnet på detta attribut får utvecklaren bestämma själv och ska konventionellt sett skrivas med kamelnotation. Kamelnotation är en metod för att skriva samman ord genom att låta första bokstaven i varje ord vara en versal bortsett från första ordet. Komponenter i React får tillgång till datan genom parametern \texttt{props}. Ett simpelt kodexempel på hur man kan skicka data är, <ExempelKomponent exempelData=\{data\} />. I exemplet får komponenten ExempelKomponent tillgång till datan kopplad till attributet exempelData genom att skriva, \texttt{props.exempelData}. Detta ger utvecklaren möjligheten att skicka annan data till samma komponenter som återanvänds. Detta möjliggör att en komponent kan se annorlunda ut eller få ett annorlunda beteende beroende på vad för data som skickas till komponenten. I React kan man även skicka funktioner hos förälderkomponenten genom props. 
 
 \subsubsection{States}
 \label{axel:react-states} 
 För att göra komponenter självständiga har React skapat \texttt{states}.\cite{react-states} \texttt{States} kan enbart användas i klasskomponenter och deklareras i klasskonstruktorn. Idén bakom \texttt{states} är att göra komponenter mer självständiga och minska på beroenden till andra komponenter. Man kan förklara \texttt{states} som globala variabler för klassen. Detta hjälper komponenten att lagra viktig information och byta till exempel komponentens utseende när ett \texttt{state} ändras. För att ändra ett \texttt{state} måste en specifik metod anropas, \texttt{setState()}. \texttt{setState()}-metoden är enbart tillgänglig inom komponenten. I och med att \texttt{props}-objektet kan innehålla metoder kan komponenter skicka sina \texttt{setState()}-metoder till en annan komponent. Detta möjliggör att vissa komponenter kan ändra ett \texttt{state} hos en annan komponent.
+
 
