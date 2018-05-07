@@ -1,68 +1,63 @@
 \chapter{Teori}
 \label{cha:theory}
 I detta avsnitt beskrivs grundläggande teoretiska begrepp och ramverk som följdes under projektets gång. Här beskrivs de essentiella programmeringsverktyg och ramverk för projektet samt utvecklingsmetoden Scrum. 
-\section{Utvecklingsverktyg för produkt}
-Det här avsnittet redovisar vilka verktyg projektgruppen har använt för att utveckla produkten samt hur projektgruppen har använt sig av dessa verktyg.
 
-\subsection*{React}
-Ramverket React användes för att utveckla UI-applikationen samt kontroller-applikationen. Ett krav från kunden var att produkten skulle skrivas i JavaScript. React är ett Javascript bibliotek som bidrar med mycket funktionalitet vilket underlättar utvecklandet av användargränssnittet.  Detta bestämdes tidigt i projektet då vissa projektmedlemmar hade tidigare erfarenheter med React ramverket \cite{React}.
+\section{React}
+Ramverket React användes för att utveckla UI-applikationen samt kontroller-applikationen.\cite{React} Ramverket bidrar med mycket funktionalitet vilket underlättar utvecklandet av användargränssnittet.  Detta bestämdes tidigt i projektet då vissa projektmedlemmar hade tidigare erfarenheter med React, tillsammans med rekommendationer och önskemål från kunden.
 
-\subsection*{Yarn}
-Yarn är ett Javascript bibliotek. Biblioteket fungerar som en pakethanterare som skapar beroende mellan paket och underhåller dessa. Detta gör det enklare att lägga till och ta bort bibliotek till ett projekt \cite{Yarn}.
+\section{Yarn}
+Yarn är den pakethanterare gruppen har valt att använda.\cite{Yarn} Den använder sig av samma paket som finns tillängliga för npm och skillnaden mellan dessa två är marginell. Yarn gör det enklare att lägga till och ta bort paket till ett projekt.
 
-\subsection*{Prettier}
-Prettier är ett verktyg för att formatera kod på ett standardiserat och lättläsigt sätt\cite{prettier}. Prettier går igenom koden och lägger till eller tar bort blanksteg och nya rader enligt förutbestämda regler. Syntaktiskt blir koden samma före och efter att Prettier körts, men läsbarheten lär ha förändrats. Prettier tar även bort stilpreferenser som olika kodskribenter då den alltid formaterar koden enligt samma regler.
+\section{Prettier}
+Prettier är ett verktyg för att formatera kod på ett standardiserat och lättläsigt sätt.\cite{prettier} Prettier går igenom koden och lägger till eller tar bort blanksteg och nya rader enligt förutbestämda regler. Syntaktiskt blir koden samma före och efter att Prettier körts, men läsbarheten lär ha förändrats. Prettier tar även bort stilpreferenser som olika kodskribenter då den alltid formaterar koden enligt samma regler.
 
 
-\subsection*{Eslint}
-Eslint är ett \textit{open source} program som definierar stilregler för hur Javascriptkod skrivs. Dessa stilregler handlar  om hur kod ska formateras och att följa bra programmeringspraxis. Eslint söker sen igenom koden för rader som bryter mot de satta reglerna och påpekar alla fall som detta sker. Oftast så integreras Eslint in till programmet där koden skrivs för att få Eslints varningar direkt när koden skrivs. De regler Eslint efterföljer är bra praxis för kodning i Javascript och de går att ändra på efter behov.
+\section{Eslint}
+Eslint är ett program som definierar stilregler för hur Javascript-kod ska skrivas.\cite{eslint} Dessa stilregler handlar om hur kod ska formateras och att följa bra programmeringspraxis. Eslint söker sen igenom koden för rader som bryter mot de satta reglerna och påpekar alla fall som detta sker. Oftast så integreras Eslint in till programmet där koden skrivs för att ge varningar direkt när koden skrivs. De regler Eslint efterföljer är bra praxis för kodning i Javascript och de går att ändra på efter behov.
 
 
-\subsection*{Node.js}
-Node.js är en exekveringsmiljö för Javascript. Nodes.js ger funktionalitet att emulera en server med sin applikation på lokalt på sin dator \cite{Node}. Att Node.js skulle användas var ett krav från kunden.
+\section{PIXI}
+PIXI är ett kraftfullt renderingsbibliotek för Javascript.\cite{Pixi} Den erbjuder funktioner som att rendera geometriska former och bilder samt en uppdateringsloop varje gång ett objekt ritas ut igen. PIXI är väldigt populärt och används av många stora företag såsom Google, Ubisoft och Spotify. 
 
-\subsection*{PIXI}
-PIXI är ett kraftfullt open-source renderingsbiblotek för Javascript\cite{Pixi}. Den erbjuder funktioner som att rendera geometriska former och bilder samt en uppdateringsloop varje gång ett objekt ritas ut igen. PIXI är väldigt populärt och används av många stora företag såsom Google, Ubisoft och Spotify. 
-
-\subsection*{Scrum}
-Scrum är en populär agil utvecklingsmetodik inom mjukvaruutveckling. Metoden är anpassad för en mindre grupp på 5-9 medlemmar. Scrum använder ett iterativt, inkrementellt tillvägagångssätt som är relevant för detta projekt då den tillåter ändringar att ske när det behövs\cite{TheScrum}. I Scrum delas arbetet i mindre iterationer kallas för \textit{sprint}. En sprint kan vara 1-4 veckor lång. Varje sprint planeras vid dess början och då bestäms mål som ska vara färdiga vid sprintensslut. Efter en sprint så utvärderas hur väl arbetet gick under denna sprint samt vad som bör göras annorlunda till nästa sprint. Scrum har många inslag som är typiska för just Scrum, de som tas upp i denna rapport är följande:
+\section{Scrum}
+Scrum är en populär agil utvecklingsmetodik inom mjukvaruutveckling. Metoden är anpassad för en mindre grupp på 5-9 medlemmar. Scrum använder ett iterativt, inkrementellt tillvägagångssätt som är relevant för detta projekt då den tillåter ändringar att ske när det behövs.\cite{TheScrum} I Scrum delas arbetet in i mindre iterationer, där varje iteration kallas för \textit{sprint}. En sprint kan vara 1-4 veckor lång. Varje sprint planeras vid dess början och då bestäms mål som ska vara färdiga vid sprintens slut. Efter en sprint så utvärderas hur väl arbetet gick under föregående sprint samt vad som bör göras annorlunda till nästa sprint. Scrum har många inslag som är typiska för just Scrum, de som tas upp i denna rapport är följande:
 
 \begin{itemize}
-	\item \textit{Scrum-bräde}: ett bräde med alla uppgifter som ska göras under en sprint, varje teammedlem kan sedan ta en egen uppgift och flytta den till rätt kategori i \textit{Trello}beroende på hur det går i arbetet med den. Vanliga kategorier är: att göras, pågående, testing, färdig.
+	\item \textit{Scrum-bräde}: Ett bräde med alla uppgifter som ska göras under en sprint, varje teammedlem kan sedan ta en egen uppgift och flytta den till rätt kategori i \textit{Trello} beroende på hur det går i arbetet med den. Vanliga kategorier är: ``att göra'', ``pågående'' och ``färdigt''.
 	
-	\item \textit{Burndown chart}: en graf som visar kvarstående arbetet. Grafen hjälper teamet att ta reda på om de ligger bra eller dåligt till för att leverera dem uppgifter som de har åtagit sig. 
+	\item \textit{Burndown chart}: En graf som visar kvarstående arbetet. Grafen hjälper teamet att ta reda på om de ligger bra eller dåligt till för att leverera dem uppgifter som de har åtagit sig. 
 	
 	\item \textit{Produkt-backlog}: En lista av prioriterade önskemål som visar vad kundens önskemål vid slutprodukten.
 	
-	\item \textit{Sprint-backlog} nedbrutna uppgifter ifrån produkt-backlogen som teamet åtar sig att leverera under en sprint. 	
+	\item \textit{Sprint-backlog}: En lista med nedbrutna uppgifter ifrån produkt-backlogen som teamet åtar sig att leverera under en sprint. 	
 	
 \end{itemize}
 
-\subsection*{Trello}
-Trello är en hemsida för att skapa och fördela uppgifter bland flera personer. Det kan liknas till en anslagstavla där lappar med uppgifter kan klistras på. Anslagstavlan i sig är uppdelad i kategorier som användarna själva kan skapa och modifiera. Oftast så har dessa kategorier namn som att ''att göra'', ''pågående'' och ''färdigt''. Lappar fästs sen vid den första kategorien ''att göra'' och flyttas sedan till de andra när det anses passande. Varje lapp har sedan möjlighet att innehålla extra information bland annat: vem som arbetar med den, en beskrivning av lappen samt en tidsuppskattning. Alla fält på en lapp bortsett dess namn är frivilliga, och därav så kan en Trello-lapp innehålla väldigt mycket, eller väldigt lite, information.
+\section{Trello}
+Trello är en hemsida för att skapa och fördela uppgifter bland flera personer.\cite{Trello} Det kan liknas till en anslagstavla där lappar med uppgifter kan klistras på. Anslagstavlan i sig är uppdelad i kategorier som användarna själva kan skapa och modifiera. Oftast så har dessa kategorier namn som att ''att göra'', ''pågående'' och ''färdigt''. Lappar fästs sen vid den första kategorien ''att göra'' och flyttas sedan till de andra när det anses passande. Varje lapp har sedan möjlighet att innehålla extra information bland annat: vem som arbetar med den, en beskrivning av lappen samt en tidsuppskattning. Alla fält på en lapp bortsett dess namn är frivilliga, och därav så kan en Trello-lapp innehålla väldigt mycket, eller väldigt lite, information.
 
-\subsection*{Git}
-Git är ett open-source decentraliserat versionshanteringsprogram för kod\cite{Git}. Arbetsprocessen för Git börjar vanligtvis med ett centralt arkiv som varje utvecklare sedan klonar lokalt. Sedan så skrivs förändringar in i detta lokala arkiv som sedan slås ihop med det centrala. Ifall en annan utvecklare försöker lägga till sina förändringar efter en annan utvecklare redan gjort så så uppstår en konflikt. Vid en konflikt så nekas sammanslagningen tills utvecklaren tagit in förändringarna i det centrala arkivet till sitt eget lokala arkiv. Där får utvecklaren avgöra vilka rader som ska vara med i arkivet och först efter detta är gjort så kallas konflikten för hanterad. Först när konflikten är hanterad så går det att slå ihop det lokala arkivet med det centrala. Många steg i denna arbetsprocess har specifika namn och de defineras nedanför:
+\section{Git}
+Git är ett open-source decentraliserat versionshanteringsprogram för kod.\cite{Git} Arbetsprocessen för Git börjar vanligtvis med ett centralt arkiv som varje utvecklare sedan klonar lokalt. Sedan så skrivs förändringar in i detta lokala arkiv som sedan slås ihop med det centrala. Ifall en annan utvecklare försöker lägga till sina förändringar efter en annan gjort ändringar så uppstår en konflikt. Vid en konflikt så nekas sammanslagningen tills utvecklaren tagit in förändringarna i det centrala arkivet till sitt eget lokala arkiv. Där får utvecklaren avgöra vilka rader som ska vara med i arkivet och först efter detta är gjort så kallas konflikten för hanterad. Först när konflikten är hanterad så går det att slå ihop det lokala arkivet med det centrala. Många steg i denna arbetsprocess har specifika namn och de defineras nedanför:
 
 \begin{itemize}
-	\item \textit{Pull request}: När en utvecklare tar in förändringar ifrån ett annat arkiv till sitt eget så kallas denna handling för en \textit{pull request}. Detta kan ske antingen när en utvecklares lokala arkiv tar in förändringar ifrån det centrala arkivet, eller när det centrala arkivet tar in utvecklarens lokala förändringar.
+	\item \textit{Gren}: En gren är en alternativ version av ett arkiv där förändringar kan göras utan att påverka ursprunget. En gren har en tydlig punkt när den bröts ifrån ursprungsgrenen. En gren kan finnas både lokalt och i det centrala arkivet och kan skapas av många anledningar. En vanlig anleding för att skapa en gren är för utveckla funktionalitet och sedan slå ihop grenen med ursprunget när funktionaliten är färdig.
 	
-	\item \textit{Push}: När en utvecklare lägger till sina förändringar i ett arkiv så kallas det för en \textit{push}. Detta kan ske när en utvecklare lägger till förändringar till sitt lokala arkiv eller när en utvecklare lägger till förändringarna ifrån sitt lokala arkiv till det centrala.
+	\item\textit{Master-gren} Den första grenen som skapas i ett projekt kallas för master-grenen, vanligtvis så anses denna gren som den officiela versionen arkivet.
+
+	\item \textit{Pull request}: När en gren ska slås ihop med master-grenen så görs detta genom att utvecklaren lägger en begäran för detta. Denna begäran måste granskas av en annan teammedlem innan sammanslagningen kan göras för att se till att master-grenen är stabil. En sådan begäran kallas för en \textit{pull-request}.
 	
-	\item \textit{Gren}: När en utvecklare skapar en lokal version av det centrala arkivet så kallas den lokala versionen för en \textit{gren}. En gren är en alternativ version av det centrala arkivet med en tydlig punkt när den avvek ifrån det centrala arkivet. När en gren är färdigutvecklad så slåss den samman med det centrala arkivet och tas då bort efter det.
-	
-	\item \textit{Master-gren} Det centrala arkivet kallas också för \textit{master-gren} eftersom det är den grenen alla andra grenar kommer ifrån när de skapas.
+	\item \textit{Push}: När en utvecklare synkroniserar sina lokala ändringar mot ett externt arkiv, vanligtvis mot det centrala arkivet.
 \end{itemize}
 
 
-\subsection*{Github}
-Github är en hemsida som integrerar Git och tillåter användare att lägga upp sin kod där gratis förutsatt att den är offentlig. Github erbjuder även en visualisering av många av Gits funktionaliteter såsom en grafisk vy över hur koden förändrats över tid eller skillnaderna mellan två versioner. Github erbjuder även verktyg för att strukturera ett projekt såsom möjligheten att enkelt bjuda in medlemmar och ändra hur vilka rättigheter de ska ha. Dessa rättigheter kan vara allt mellan att inte ha tillgång till någon förändring till att få ändra all kod i alla grenar. Github möjliggör också för integration med Travis på sin plattform. Dess primära funktionen är dock en att tillhandahålla ett Gitrepo på en server för att minimera risken av förlorat arbete vid en krasch.
+\section{Github}
+Github är en hemsida som integrerar Git och tillåter användare att lagra sin kod gratis, förutsatt att den är offentlig.\cite{Github} Github erbjuder även en visualisering för många av Gits funktionaliteter såsom en grafisk vy över hur koden förändrats över tid eller skillnaderna mellan två versioner. Github erbjuder även verktyg för att strukturera ett projekt såsom möjligheten att enkelt bjuda in medlemmar och ändra vilka rättigheter de ska ha. Dessa rättigheter kan vara allt mellan att inte ha tillgång till någon förändring till att få ändra all kod i alla grenar. Github möjliggör också för integration med Travis på sin plattform. En viktig funktion är dock att tillhandahålla ett Git-repo på en server för att minimera risken av förlorat arbete vid en eventuell krasch.
 
-\subsection*{Travis}
-Ett open-source testningstjänst som erbjuder automatisering för projekt som använder Github. Travis är gratis för open-source projekt. Tjänsten används i kontinuerlig integration för att köra tester på alla grenar innan de kan sammanfogas in i huvudgrenen\cite{Travis}.
+\section{Travis}
+En testningstjänst som erbjuder automatisering för projekt som använder Github.\cite{Travis} Travis är gratis för projekt som är open-source. Tjänsten används i kontinuerlig integration för att köra tester på alla grenar innan de kan sammanfogas in i huvudgrenen.
 
-\subsection*{Slack}
-Slack är ett kommunikationsverktyg som ofta används professionellt inom IT och mjukvaruutveckling. Funktionsmässigt är det ett chatprogram för datorer och mobila enheter. Slack tillåter utvecklingsteamen att ha olika kanaler som passar deras behov vilket hjälper till att organisera meddelanden\cite{Slack}.
+\section{Slack}
+Slack är ett kommunikationsverktyg som ofta används professionellt inom IT och mjukvaruutveckling.\cite{Slack} Funktionsmässigt är det ett chattprogram för datorer och mobila enheter. Slack tillåter utvecklingsteamen att ha olika kanaler som passar deras behov vilket hjälper till att organisera meddelanden.
 
-\subsection*{Latex}
-Latex är ett gratis program för att framställa textdokument i pdf-format. Latex är en utbyggnad av Tex och fungerar genom att kompilera tex-filer till först aux-filer och sedan till pdf-filer. Tillskillnad ifrån textredigerar-program såsom Word så ser det som skrivs i Latex annorlunda ut än slutresultatet i form av en pdf. Latex är ett väldigt kraftigt verktyg och används mycket i vetenskapliga rapporter och akademiska sammanhang\cite{ctan}. Latex är i sig inte en textredigerare utan för att skriva latexfiler så används oftast en specifik latexredigerare men praktiskt sett så fungerar nästan alla textredigrare.
+\section{Latex}
+Latex är ett gratis program för att framställa textdokument i pdf-format. Latex är en utbyggnad av Tex och fungerar genom att kompilera tex-filer till först aux-filer och sedan till pdf-filer. Tillskillnad ifrån textredigerar-program såsom Word så ser det som skrivs i Latex annorlunda ut än slutresultatet i form av en pdf. Latex är ett väldigt kraftigt verktyg och används mycket i vetenskapliga rapporter och akademiska sammanhang.\cite{ctan} Latex är i sig inte en textredigerare utan för att skriva latexfiler så används oftast en specifik latexredigerare men praktiskt sett så fungerar nästan alla textredigrare.

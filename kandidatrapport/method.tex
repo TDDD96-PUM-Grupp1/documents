@@ -3,7 +3,7 @@
 Det här kapitlet beskriver hur projektet har utförts samt beskrivningar av de metoder och verktyg som använts för de olika områden projektet omfattar.
 
 \section{Projektorganisation}
-Teamet består av 8 teammedlemmar. Den utförda kursen omfattade några förbestämda roller som skulle tilldelas till teammedlemmarna. Rollerna delades upp efter en intern valprocess vid projektets start. Rollerna är väldefinierade och dess ansvarsområden beskrivs nedan.
+Teamet består av åtta teammedlemmar. Den utförda kursen omfattade några förbestämda roller som skulle tilldelas till teammedlemmarna. Rollerna delades upp efter en intern valprocess vid projektets start. Rollerna är väldefinierade och dess ansvarsområden beskrivs nedan.
 
 \subsubsection*{Teamledare -- Alexander Wilkens}
 Teamledaren ska se till att samtliga processer som ska utföras under projektets gång följs. Denna person representerar också teamet utåt och har kontakt med handledaren. Om det behövs har teamledaren sista ordet.
@@ -47,8 +47,8 @@ Under denna fas finslipades diverse funktioner för att ge användaren en bättr
 \subsubsection*{Efterstudier}
 Efter projektet gjordes efterstudier för att granska det resultat teamet fick för att göra en utvärdering av projektet.
 
-\subsection{Utvecklingsmetod}
-Projektgruppen bestämde tidigt att utveckla med det agila ramverket Scrum med modifikationer. Delarna från ramverket som valdes till projektet var \textit{sprintutvärdering}, \textit{sprint-backlog}, \textit{produkt-backlog}, \textit{Scrum-bräde} och \textit{sprintplanering}. Resterande delar från ramverket valdes bort då projektgruppen tyckte koncepten kändes onödiga för projektet. Vid början av varje sprint samlades projektgruppen för att organisera en \textit{sprint-backlog} från \textit{produkt-backlogen}. \textit{Produkt-backlogen} uppdaterades med aktiviteter kontinuerligt av alla medlemmar när en aktivitet upptäcktes. Projektet bestod av tre olika kodbaser. Varje aktivitet hade en eller flera tillhörande etiketter som beskrev vilka kodbaser aktiviteten berörde. Detta gjorde att ett gemensamt \textit{Scrum-bräde} kunde användas för samtliga kodbaser. Vid slutet av varje sprint utvärderades sprinten i form av ett kortare möte där varje projektmedlem kunde uttrycka sina åsikter kring utvecklingsprocessen. 
+\subsection{Utvecklingsmetod} \label{main:Scrum}
+Projektgruppen bestämde tidigt att utveckla med det agila ramverket Scrum med modifikationer. Delarna från ramverket som valdes till projektet var \textit{sprintutvärdering}, \textit{sprint-backlog}, \textit{produkt-backlog}, \textit{Scrum-bräde} och \textit{sprintplanering}. Resterande delar från ramverket valdes bort då projektgruppen tyckte koncepten kändes onödiga för projektet. Vid början av varje sprint samlades projektgruppen för att organisera en \textit{sprint-backlog} från \textit{produkt-backlogen}. \textit{Produkt-backlogen} uppdaterades med aktiviteter kontinuerligt av alla medlemmar när en aktivitet upptäcktes. Projektet bestod av tre olika kodbaser. Varje aktivitet hade en eller flera tillhörande etiketter som beskrev vilka kodbaser aktiviteten berörde. Detta gjorde att ett gemensamt \textit{Scrum-bräde} kunde användas för samtliga kodbaser. Vid slutet av varje sprint utvärderades sprinten i form av ett kortare möte där varje projektmedlem kunde uttrycka sina åsikter kring utvecklingsprocessen.
 
 Verktyget Trello användes för att organisera och representera ett \textit{Scrum-bräde} under projektets gång. På detta bräde fanns kolumnerna ``aktiviteter'', ``att göra'', ``implementeras'', ``väntar'' och ``klar''. I kolumnen ``aktiviteter'' hamnade alla aktiviteter som behövde utföras för att få en färdig produkt. Aktiviteter kunde läggas till i denna kolumn under en pågående sprint. Kolumnen ``att göra'' fylldes på med aktiviteter som förväntades bli klara under en pågående sprint. Varje aktivitet tilldelades en prioritet, en tidsestimering och en beskrivning. Dessa attribut sattes under \textit{sprintplaneringen} och hjälpte gruppen att belasta varje sprint med en rimlig mängd aktiviteter. I ``implementeras'' hamnade alla aktiviteter som en eller flera projektmedlemmar arbetade med. I ``väntar'' hamnade alla aktiviteter som påbörjats men stoppats på grund av andra prioriteringar. I ``klar'' hamnade alla aktiviteter som blivit avklarade. Denna kolumn användes som en logg över vad som hade gjorts under en sprint och som underlag för \textit{sprintutvärderingar}. En bild på en av gruppens Scrum-bräden kan ses i figur \ref{fig:trello_board}.
 
@@ -71,7 +71,7 @@ De manuella testerna baserades på krav specificerade i kravspecifikationen. Eft
 
 Travis är ett verktyg som kör förskrivna tester vid varje pull request eller push till en gren. Om dessa tester skulle misslyckas vid en pull request från master-grenen nekas integrationen. En push kommer alltid lyckas även vid ett misslyckat test, men Travis noterar att testet har misslyckats.
 
-Huvudsyftet för de automatiska testerna var att se till att ingen felaktigkod fanns på master-grenen. Testerna kontrollerar att koden kompilerar, att det inte finns några Eslint-fel samt att de egenskrivna testerna uppfylls. Automatiska tester skrevs under utvecklingens gång. När ny funktionalitet implementerades skrevs även tester till denna. 
+Huvudsyftet för de automatiska testerna var att se till att ingen felaktigkod fanns på master-grenen. Testerna kontrollerar att koden kompilerar, att det inte finns några Eslint-fel samt att de egenskrivna testerna uppfylls. Automatiska tester skrevs under utvecklingens gång. När ny funktionalitet implementerades skrevs även tester till denna.
 
 \subsection{Möten}
 Vid början av varje vecka hade projektgruppen ett möte för att diskutera vad som skulle hända framöver och där funderingar eller problem kunde tas upp och diskuteras. Dessutom hade projektgruppen ett handledarmöte varje vecka. På handledarmötet kunde generella frågor kring projektet ställas och vägledning gavs för diverse problem eller funderingar projektgruppen hade. Alla möten dokumenterades med hjälp av ett mötesprotokoll som projektgruppen formulerat.
@@ -79,20 +79,22 @@ Vid början av varje vecka hade projektgruppen ett möte för att diskutera vad 
 En gemensam Google-kalender skapades där alla möten samt viktiga moment och deadlines lades till. Alla moment som lades till i kalendern ansågs vara obligatoriska av projektgruppen där alla medlemmar förväntades medverka.
 
 \subsection{Kommunikation}
-Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom rollerna teamledare och analysansvarig. Slack användes för både den interna och externa kommunikationen under projektets gång. En Slack-arbetsplats skapades, där enbart projektgruppen var medlemmar. Majoriteten av den interna kommunikationen skedde genom denna. Olika kanaler skapades på denna Slack-arbetsplats för att diskutera olika ärenden och hålla kommunikationen strukturerad. Det fanns ytterligare en Slack-arbetsplats där både projektgruppen och kunden medverkade. På denna arbetsplats skedde majoriteten av den externa kommunikationen med kunden. Även denna arbetsplats var uppdelad i olika kanaler: frågor och allmänt. Tanken bakom kanalen frågor var att projektgruppen kunde fylla kanalen med frågor rörande utvecklingen och kunden kunde bearbeta frågorna när de hade tid. Kanalen allmänt användes för all övrig kommunikation.
+Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom rollerna teamledare och analysansvarig. Slack användes för både den interna och externa kommunikationen under projektets gång. En Slack-arbetsplats skapades, där enbart projektgruppen var medlemmar. Majoriteten av den interna kommunikationen skedde genom denna. Olika kanaler skapades på denna Slack-arbetsplats för att diskutera olika ärenden och hålla kommunikationen strukturerad. Det fanns ytterligare en Slack-arbetsplats där både projektgruppen och kunden medverkade. På denna arbetsplats skedde en del av den externa kommunikationen med kunden. Kommunikation skedde även muntligt med kunden ute på deras kontor. Även denna arbetsplats var uppdelad i olika kanaler: frågor och allmänt. Tanken bakom kanalen frågor var att projektgruppen kunde fylla kanalen med frågor rörande utvecklingen och kunden kunde bearbeta frågorna när de hade tid. Kanalen allmänt användes för all övrig kommunikation.
 
-\subsection{Enkät}
-För att verifiera att produkten håller bra kvalitet bestämde gruppen sig för att genomföra en enkätundersökning. I denna undersökning fick 20 personer testa att använda produkten och sedan skriva ett enkät gällande hur de upplevde att använda produkten. De valda testpersonerna kom ifrån två grupper, andra studenter slumpmässigt valda på Linköpings Universitets campus. Den andra gruppen bestod av slumpmässigt anställda på Cybercom. Dessa personer fick testa spelet i ungefär fem minuter och sedan svara på en enkät med följande frågor. På varje fråga fick ett betyg ges mellan ett och tio där ett är helt emot och tio betyder att man instämmer helt.
+\subsection{Enkät och demonstationer}
+\label{sec:method-poll}
+För att verifiera att produkten håller hög kvalitet bestämde gruppen sig för att genomföra en enkätundersökning. I denna undersökning fick 20 personer testa att använda produkten och sedan fylla i en enkät gällande upplevelsen. De valda testpersonerna kom från två grupper, studenter slumpmässigt valda på Linköpings universitets campus och anställda på Cybercom. Dessa personer fick testa spelet i ungefär fem minuter innan de fick fylla i enkäten med nedanstående frågor. På varje fråga fick ett betyg ges mellan ett och tio där ett är helt emot och tio betyder att man instämmer helt.
 
 
 \begin{enumerate}[label={(\alph*)}]
 	\item Jag tycker det var svårt att förstå spelets regler.
-	\item Jag tycker att spelet kändes responsivt. (Spelpjäsen rörde sig på ett bra sätt efter dina rörelser)
+	\item Jag tycker att spelet kändes responsivt. (Spelpjäsen rörde sig på ett bra sätt efter mina rörelser)
 	\item Jag tycker det var lätt att följa vad som hände på den stora spelskärmen.
 	\item Jag tycker spelet var kul.
 	\item Jag tycker det var lätt att styra min spelpjäs.
-	\item Jag tycker att den alternativa styrningen kändes responsiv.
 \end{enumerate}
+
+Utöver testtillfällena med enkäten har också demonstationer för kunden förekommit. Dessa demonstationer har både varit informella, i form av snabbt visa upp vad som gjorts under exempelvis dagen, och formella. De formella demonstationerna var presentationer till kund kring hur produkten såg ut. Kunden fick chans att både spela spelet men också ställa frågor kring implementation och design som ansågs vara intressant.
 
 
 \section{Dokumentation}
@@ -103,7 +105,7 @@ Det här avsnittet beskriver vilka verktyg som har använts för att dokumentera
 Nedan beskrivs alla dokument projektgruppen producerat.
 
 \subsubsection*{Projektplan}
-Projektplan består av en beskrivning utav projektet, resurser som teamet har tillgång till, processer som kommer användas och risker inom projektet. Dessutom beskrivs en aktivitetsplan som översiktligt tar upp alla aktiviteter som kommer att
+Projektplan består av en beskrivning av projektet, resurser som teamet har tillgång till, processer som kommer användas och risker inom projektet. Dessutom beskrivs en aktivitetsplan som översiktligt tar upp alla aktiviteter som kommer att
 göras under projektet.
 
 \subsubsection*{Kravspecifikation}
@@ -130,7 +132,7 @@ Testplanen beskriver hur de olika delarna av produkten ska testas och även hur 
 Projektgruppen producerade och undertecknade ett gruppkontrakt som skrevs vid ett tidigt stadie för att förtydliga vad som förväntades av varje gruppmedlem.
 
 \subsubsection*{Tidrapport}
-Tidrapporteringen under projektet skedde i ett Excel blad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs ner fick inte överstiga två timmar och arbetspass som varade längre skrevs som två eller flera olika arbetstillfällen. Detta för att få en bättre bild av vad som har jobbats på under arbetspassen. I och med tidsrapporteringen kunde även en \textit{burndown chart}genereras för att få en bättre uppfattning om hur teamet låg till i tidsåtgång.
+Tidrapporteringen under projektet skedde i ett Excel blad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs ner fick inte överstiga två timmar och arbetspass som varade längre skrevs som två eller flera olika arbetstillfällen. Detta för att få en bättre bild av vad som har jobbats på under arbetspassen. I och med tidsrapporteringen kunde även en \textit{burndown chart} genereras för att få en bättre uppfattning om hur teamet låg till i tidsåtgång.
 
 \subsubsection*{Mötesprotokoll}
 Under projektet hölls olika möten för att diskutera saker som har kommit upp. Alla möten dokumenterades genom en mötesprotokollmall som skrevs vid varje möte.
@@ -144,7 +146,4 @@ Dokumenten som skapades under projektets gång lagrades på Google Drive för at
 \section{Metod för att fånga erfarenheter}
 Då teamet är samlat från olika program på universitetet och alla har olika erfarenheter om olika områden, vare sig det gäller spelprogrammering eller generell Javascript, behövdes det en struktur för att samla och ta nytta av varje projektmedlems kunskaper. För att uppnå detta samlade teamet in och skrev ner de olika kunskaperna som teamet hade och utifrån det höll olika workshops för att få alla projektmedlemmar på ungefär samma nivå.
 
-Utöver det jobbade teamet i grupper om två till tre vilket underlättade arbetet då man lättare kunde utbyta erfarenheter. Dessa grupper växlades även vid jämna mellanrum så alla kunde del av alla andras erfarenheter.
-
-
-
+Utöver det jobbade teamet i grupper om två till tre vilket underlättade arbetet då man lättare kunde utbyta erfarenheter. Dessa grupper växlades även vid jämna mellanrum så alla kunde ta del av alla erfarenheter. Hela gruppen delade även med sig av problem och nya erfarenheter på de regelbundna mötena. Dessa antecknades i mötesprotokollen.
