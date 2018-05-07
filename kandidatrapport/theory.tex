@@ -40,13 +40,13 @@ Trello är en hemsida för att skapa och fördela uppgifter bland flera personer
 Git är ett open-source decentraliserat versionshanteringsprogram för kod.\cite{Git} Arbetsprocessen för Git börjar vanligtvis med ett centralt arkiv som varje utvecklare sedan klonar lokalt. Sedan så skrivs förändringar in i detta lokala arkiv som sedan slås ihop med det centrala. Ifall en annan utvecklare försöker lägga till sina förändringar efter en annan utvecklare redan gjort så uppstår en konflikt. Vid en konflikt så nekas sammanslagningen tills utvecklaren tagit in förändringarna i det centrala arkivet till sitt eget lokala arkiv. Där får utvecklaren avgöra vilka rader som ska vara med i arkivet och först efter detta är gjort så kallas konflikten för hanterad. Först när konflikten är hanterad så går det att slå ihop det lokala arkivet med det centrala. Många steg i denna arbetsprocess har specifika namn och de defineras nedanför:
 
 \begin{itemize}
-	\item \textit{Pull request}: När en utvecklare tar in förändringar ifrån ett annat arkiv till sitt eget så kallas denna handling för en \textit{pull request}. Detta kan ske antingen när en utvecklares lokala arkiv tar in förändringar ifrån det centrala arkivet, eller när det centrala arkivet tar in utvecklarens lokala förändringar.
+	\item \textit{Gren}: En gren är en alternativ version av ett arkiv där förändringar kan göras utan att påverka ursprunget. En gren har en tydlig punkt när den bröts ifrån ursprungsgrenen. En gren kan finnas både lokalt och i det centrala arkivet och kan skapas av många anledningar. En vanlig anleding för att skapa en gren är för utveckla funktionalitet och sedan slå ihop grenen med ursprunget när funktionaliten är färdig.
 	
-	\item \textit{Push}: När en utvecklare lägger till sina förändringar i ett arkiv så kallas det för en \textit{push}. Detta kan ske när en utvecklare lägger till förändringar till sitt lokala arkiv eller när en utvecklare lägger till förändringarna ifrån sitt lokala arkiv till det centrala.
+	\item\textit{Master-gren} Den första grenen som skapas i ett projekt kallas för master-grenen, vanligtvis så anses denna gren som den officiela versionen arkivet.
+
+	\item \textit{Pull request}: När en gren ska slås ihop med master-grenen så görs detta genom att utvecklaren lägger en begäran för detta. Denna begäran måste granskas av en annan teammedlem innan sammanslagningen kan göras för att se till att master-grenen är stabil. En sådan begäran kallas för en \textit{pull-request}.
 	
-	\item \textit{Gren}: När en utvecklare skapar en lokal version av det centrala arkivet så kallas den lokala versionen för en \textit{gren}. En gren är en alternativ version av det centrala arkivet med en tydlig punkt när den avvek ifrån det centrala arkivet. När en gren är färdigutvecklad så slåss den samman med det centrala arkivet och tas då bort efter det.
-	
-	\item \textit{Master-gren} Det centrala arkivet kallas också för \textit{master-gren} eftersom det är den grenen alla andra grenar kommer ifrån när de skapas.
+	\item \textit{Push}: När en utvecklare synkroniserar sina lokala ändringar mot ett externt arkiv, vanligtvis mot det centrala arkivet.
 \end{itemize}
 
 
