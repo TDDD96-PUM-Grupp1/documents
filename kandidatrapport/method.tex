@@ -3,7 +3,7 @@
 Det här kapitlet beskriver hur projektet har utförts samt beskrivningar av de metoder och verktyg som använts för de olika områden projektet omfattar.
 
 \section{Projektorganisation}
-Teamet består av 8 teammedlemmar. Den utförda kursen omfattade några förbestämda roller som skulle tilldelas till teammedlemmarna. Rollerna delades upp efter en intern valprocess vid projektets start. Rollerna är väldefinierade och dess ansvarsområden beskrivs nedan.
+Teamet består av åtta teammedlemmar. Den utförda kursen omfattade några förbestämda roller som skulle tilldelas till teammedlemmarna. Rollerna delades upp efter en intern valprocess vid projektets start. Rollerna är väldefinierade och dess ansvarsområden beskrivs nedan.
 
 \subsubsection*{Teamledare -- Alexander Wilkens}
 Teamledaren ska se till att samtliga processer som ska utföras under projektets gång följs. Denna person representerar också teamet utåt och har kontakt med handledaren. Om det behövs har teamledaren sista ordet.
@@ -62,7 +62,7 @@ Verktyget Trello användes för att organisera och representera ett \textit{Scru
 \subsection{Versionshantering}
 Git användes för att versionshantera koden. Själva Git-repot lagrades på Github för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan GitHub hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på master-grenen.
 
-Utöver det så fungerar master-grenen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna gren. För att garantera detta laddades aldrig kod upp direkt till grenen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en pull request ska bli godkänd ska granskaren läsa igenom koden och testa relevanta områden för att garantera att det fungerar som det ska.
+Utöver det så fungerar master-grenen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna gren. För att garantera detta laddades aldrig kod upp direkt till grenen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en pull request skulle bli godkänd läste granskaren igenom koden och testade relevanta områden för att garantera att det fungerade som det skulle.
 
 \subsection{Testning}
 Under förstudiefasen undersökte testledaren vilka verktyg som kunde användas för projektet samt hur hela testningsprocessen skulle gå till. Projektgruppen beslutade om att verktyget Travis skulle användas för automatiska tester, men även manuella tester skulle utföras. De automatiska testerna användes främst för enhetstest medan de manuella testerna användes för mer komplicerade integrationstest.
@@ -83,7 +83,7 @@ Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom r
 
 \subsection{Enkät och demonstationer}
 \label{sec:method-poll}
-För att verifiera att produkten håller hög kvalitet bestämde gruppen sig för att genomföra en enkätundersökning. I denna undersökning fick 20 personer testa att använda produkten och sedan fylla i en enkät gällande upplevelsen. De valda testpersonerna kom från två grupper, studenter slumpmässigt valda på Linköpings universitets campus och anställda på Cybercom. Dessa personer fick testa spelet i ungefär fem minuter innan de fick fylla i enkäten med nedanstående frågor. På varje fråga fick ett betyg ges mellan ett och tio där ett är helt emot och tio betyder att man instämmer helt.
+För att verifiera att produkten höll hög kvalitet bestämde gruppen sig för att genomföra en enkätundersökning. I denna undersökning fick 20 personer testa att använda produkten och sedan fylla i en enkät gällande upplevelsen. De valda testpersonerna kom från två grupper, studenter slumpmässigt valda på Linköpings universitets campus och anställda på Cybercom. Dessa personer fick testa spelet i ungefär fem minuter innan de fick fylla i enkäten med nedanstående frågor. På varje fråga fick ett betyg ges mellan ett och tio där ett är helt emot och tio betyder att man instämmer helt.
 
 
 \begin{enumerate}[label={(\alph*)}]
@@ -105,7 +105,7 @@ Det här avsnittet beskriver vilka verktyg som har använts för att dokumentera
 Nedan beskrivs alla dokument projektgruppen producerat.
 
 \subsubsection*{Projektplan}
-Projektplan består av en beskrivning utav projektet, resurser som teamet har tillgång till, processer som kommer användas och risker inom projektet. Dessutom beskrivs en aktivitetsplan som översiktligt tar upp alla aktiviteter som kommer att
+Projektplanen består av en beskrivning av projektet, resurser som teamet har tillgång till, processer som kommer användas och risker inom projektet. Dessutom beskrivs en aktivitetsplan som översiktligt tar upp alla aktiviteter som kommer att
 göras under projektet.
 
 \subsubsection*{Kravspecifikation}
@@ -128,22 +128,25 @@ Arkitekturbeskrivningen detaljerar arkitekturen för systemet samt beskriver hur
 \subsubsection*{Testplan}
 Testplanen beskriver hur de olika delarna av produkten ska testas och även hur man ska följa upp på testerna.
 
+\subsubsection*{Testrapport}
+Testrapporten dokumenterar hur testningen har gått till och innehåller de större test som skapats och eventuella problem och anomalier.
+
 \subsubsection*{Gruppkontrakt}
 Projektgruppen producerade och undertecknade ett gruppkontrakt som skrevs vid ett tidigt stadie för att förtydliga vad som förväntades av varje gruppmedlem.
 
 \subsubsection*{Tidrapport}
-Tidrapporteringen under projektet skedde i ett Excel blad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs ner fick inte överstiga två timmar och arbetspass som varade längre skrevs som två eller flera olika arbetstillfällen. Detta för att få en bättre bild av vad som har jobbats på under arbetspassen. I och med tidsrapporteringen kunde även en \textit{burndown chart}genereras för att få en bättre uppfattning om hur teamet låg till i tidsåtgång.
+Tidrapporteringen under projektet skedde i ett Excel blad där varje teammedlem rapporterade den tid de har spenderat under en dag. Tiderna som skrevs ner fick inte överstiga två timmar och arbetspass som varade längre skrevs som två eller flera olika arbetstillfällen. Detta för att få en bättre bild av vad som har jobbats på under arbetspassen. I och med tidsrapporteringen kunde även en \textit{burndown chart} genereras för att få en bättre uppfattning om hur teamet låg till i tidsåtgång.
 
 \subsubsection*{Mötesprotokoll}
-Under projektet hölls olika möten för att diskutera saker som har kommit upp. Alla möten dokumenterades genom en mötesprotokollmall som skrevs vid varje möte.
+Under projektet hölls olika möten för att diskutera saker som kommit upp. Alla möten dokumenterades genom en mötesprotokollmall som skrevs vid varje möte.
 
 \subsection{Dokumentskrivning}
 Själva dokumentskrivningen utfördes genom att skriva i Latex, vilket gjorde det lättare att dela upp dokumenten i olika sektioner. Utöver Latex användes Google Drive för mer inofficiella dokument såsom mötesprotokoll, veckorapporter och seminarieförberedelser.
 
 \subsection{Dokumentlagring}
-Dokumenten som skapades under projektets gång lagrades på Google Drive för att både versionshantera de olika färdiga iterationerna av dokumenten, men även för att enkelt kunna se dokumenten om Latax inte finns till hand. Dessutom versionshanterades dokumenten under arbetets gång med hjälp av Git genom Github. Detta hjälpte dokumentskrivning genom att hantera olika konflikter när olika personer sitter i samma fil och skriver.
+Dokumenten som skapades under projektets gång lagrades på Google Drive för att både versionshantera de olika färdiga iterationerna av dokumenten, men även för att enkelt kunna se dokumenten om Latex inte fanns till hand. Dessutom versionshanterades dokumenten under arbetets gång med hjälp av Git genom Github. Detta hjälpte dokumentskrivning genom att hantera olika konflikter när olika personer sitter i samma fil och skriver.
 
 \section{Metod för att fånga erfarenheter}
 Då teamet är samlat från olika program på universitetet och alla har olika erfarenheter om olika områden, vare sig det gäller spelprogrammering eller generell Javascript, behövdes det en struktur för att samla och ta nytta av varje projektmedlems kunskaper. För att uppnå detta samlade teamet in och skrev ner de olika kunskaperna som teamet hade och utifrån det höll olika workshops för att få alla projektmedlemmar på ungefär samma nivå.
 
-Utöver det jobbade teamet i grupper om två till tre vilket underlättade arbetet då man lättare kunde utbyta erfarenheter. Dessa grupper växlades även vid jämna mellanrum så alla kunde del av alla andras erfarenheter. Hela gruppen delade även med sig av problem och nya erfarenheter på de regelbundna mötena. Dessa antecknades i mötesprotokollen.
+Utöver det jobbade teamet i grupper om två till tre vilket underlättade arbetet då man lättare kunde utbyta erfarenheter. Dessa grupper växlades även vid jämna mellanrum så alla kunde ta del av alla erfarenheter. Hela gruppen delade även med sig av problem och nya erfarenheter på de regelbundna mötena. Dessa antecknades i mötesprotokollen.
