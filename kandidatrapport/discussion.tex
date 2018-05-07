@@ -23,6 +23,14 @@ Det fanns genom projektet en viss förvirring och osäkerhet gällande arbetet m
 
 Det är mycket troligt att resultat av projekterfarenheter har påverkats av att denna studie av processen har pågått parallellt. Gruppmedlemmarna har haft en medvetenhet om att projektet ligger till grund för detta arbete och även tagit del av seminarier som skapat en djupare reflektion. Detta delade fokus har troligen påverkat projektets utveckling. Det är dock troligt att utförandet av denna undersökningen parallellt är nödvändigt för att ge en tillräcklig insikt i projektet. Även om gruppens erfarenheter är att projektet ej kan anses till fullo representera typisk mjukvaruutveckling bedöms detta inte påverka resultaten i alltför stor utsträckning.
 
+Testningen som gjorts under projektets gång har lämnat en lite önskande efter mer. De flesta test har utförts direkt efter koden som testats skrivits, och utav samma person och därmed inte varit en så utarbetad process man hade kunnat önskat. Detta berodde till stor del på avsaknad av ordentlig struktur från början och okunnighet från gruppens sida då få gruppmedlemmar var vana användare utav automatisk testning.
+
+ En bit in i projektet började testningen komma ifatt och ett antal automatiska tester började formas. Möjligtvis blev testerna inte optimala då tidigare erfarenheter utav testning var bristande. En lärdom dras av detta att påbörja testningen i ett tidigare skede för att verkligen komma igång med det, kanske till och med testdriven utveckling \cite{TDD} vore ett bra alternativ. Om man formar produkten efter testerna blir man tvungen att skriva tester och får som en slags checklista att bocka av när testerna klarar sig. Dock hade det inte fungerat med vår nuvvarande setup då vi har en regel som säger att man inte kan synka med versionhanteringssystemet om test inte går igenom. 
+
+Manuella tester är det som använts flitigast under projektets gång då manuella tester går snabbt och gruppen vet väl sedan tidigare hur de ska genomföras. De flesta har skett inofficiellt utav samma testare vilket kan vara en nackdel men utvecklingen har ändå gått framåt i en bra hastighet. Det finns ett par officiella tester \ref{fig:manual_test} som gjorts för att kolla så produkten lever upp till vad som är utlovat i kravspecifikationen. Dessa har gjorts utav en testare i samband med testledaren för att säkerställa att allting gått rätt till.
+
+Då det ej fanns mycket utav tidigare kompetens inom testning skapade gruppen lite olika tester för att lära sig använda verktyget. Mycket upplärning skedde i början för att veta hur tester definieras och vad de gör. Det skapades olika sorters testning i syfte för att få bredare kunskap och få lärdom över vad de olika testerna faktiskt gjorde. Det användes allt från assertion testing\cite{assertion-testing} till snapshot testing\cite{snapshot-testing}.
+
 % Are there anything in the results that stand out and need be
 % analyzed and commented on? How do the results relate to the
 % material covered in the theory chapter? What does the theory
@@ -92,20 +100,6 @@ En del av de använda källorna kommer från dokumentation över produkter skapa
 % Usually however, there are always relevant related research.
 % If not about the actual research questions, there is certainly
 % important information about the domain under study.
-
-\section{Testning}
-Testningen som gjorts under projektets gång har lämnat en lite önskande efter mer. De flesta test har utförts direkt efter koden som testats skrivits, och utav samma person och därmed inte varit en så utarbetad process man hade kunnat önskat. Detta berodde till stor del på avsaknad av ordentlig struktur från början och okunnighet från gruppens sida då få gruppmedlemmar var vana användare utav automatisk testning.
-
-\subsection{Automatiserade tester}
- En bit in i projektet började testningen komma ifatt och ett antal automatiska tester började formas. Möjligtvis blev testerna inte optimala då tidigare erfarenheter utav testning var bristande. En lärdom dras av detta att påbörja testningen i ett tidigare skede för att verkligen komma igång med det, kanske till och med testdriven utveckling \cite{TDD} vore ett bra alternativ. Om man formar produkten efter testerna blir man tvungen att skriva tester och får som en slags checklista att bocka av när testerna klarar sig. Dock hade det inte fungerat med vår nuvvarande setup då vi har en regel som säger att man inte kan synka med versionhanteringssystemet om test inte går igenom. 
-
-\subsection{Manuella tester}
-Manuella tester är det som använts flitigast under projektets gång då manuella tester går snabbt och gruppen vet väl sedan tidigare hur de ska genomföras. De flesta har skett inofficiellt utav samma testare vilket kan vara en nackdel men utvecklingen har ändå gått framåt i en bra hastighet. Det finns ett par officiella tester \ref{fig:manual_test} som gjorts för att kolla så produkten lever upp till vad som är utlovat i kravspecifikationen. Dessa har gjorts utav en testare i samband med testledaren för att säkerställa att allting gått rätt till.
-
-\subsection{Jest}
-Då det ej fanns mycket utav tidigare kompetens inom testning skapade gruppen lite olika tester för att lära sig använda verktyget. Mycket upplärning skedde i början för att veta hur tester definieras och vad de gör. Det skapades olika sorters testning i syfte för att få bredare kunskap och få lärdom över vad de olika testerna faktiskt gjorde. Det användes allt från assertion testing\cite{assertion-testing} till snapshot testing\cite{snapshot-testing}.
-
-
 
 \section{Samhälleliga och etiska aspekter}
 \label{sec:work-wider-context}
