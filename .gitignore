@@ -232,3 +232,4 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 *.swp
+.DS_Store
