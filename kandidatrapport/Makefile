@@ -14,7 +14,7 @@ MKLATEXOPTS = -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make
 
 all: $(PDFNAME).pdf
 
-$(PDFNAME).pdf: $(TEXMAINFILE) *.tex
+$(PDFNAME).pdf: $(TEXMAINFILE) *.tex ../*.tex ../*.bib
 	$(MKLATEX) $(MKLATEXOPTS) $<
 
 view: $(PDFNAME).pdf
