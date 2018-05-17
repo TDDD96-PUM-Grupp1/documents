@@ -7,11 +7,11 @@ Detta kapitel beskriver den teori som krävs för att förstå den metod och res
 
 Analysen för detta arbete baseras på hur olika typning i språket påverkar koden som skrivs. Det är därför viktigt att ha en tydlig förståelse för vilka typer som finns i Javascript och hur de hanteras. Javascript är ett dynamiskt typat språk vilket i praktiken innebär att utvecklaren inte specificerar vilken typ en variabel har, utan detta bestäms istället vid körtid beroende på vad variabeln blir tilldelad för värde. Motsatsen till detta är statisk typning, då till exempel en kompilator verifierar typen av variabler innan koden körs.
 
-Javascript har totalt sex primitiva datatyper: \textit{String}, \textit{Number}, \textit{Boolean}, och \textit{Symbol}, \textit{null} och \textit{undefined}.\cite{javascript-primitives}
+Javascript har totalt sex primitiva datatyper: \textit{String}, \textit{Number}, \textit{Boolean}, \textit{Symbol}, \textit{null} och \textit{undefined} \cite{javascript-primitives}.
 
 \subsection{Påtvingade typer}
 
-Från sin design som ett dynamiskt typat språk följer att Javascript är väldigt uttrycksfullt.\cite{javascript-type-coersion} Med detta menas att språket väljer att tolka en hel del saker själv istället för att låta användaren specificera det explicit. Detta hänger ihop med Javascripts sätt tvinga typer. Ett snabbt exempel visar hur Javascript själv väljer att konvertera värden beroende på vilken operator som används:
+Från sin design som ett dynamiskt typat språk följer att Javascript är väldigt uttrycksfullt \cite{javascript-type-coersion}. Med detta menas att språket väljer att tolka en hel del saker själv istället för att låta användaren specificera det explicit. Detta hänger ihop med Javascripts sätt tvinga typer. Ett snabbt exempel visar hur Javascript själv väljer att konvertera värden beroende på vilken operator som används:
 
 \begin{lstlisting}[language=JavaScript]
 var a = 1; // Number
@@ -30,7 +30,7 @@ Denna typ av uttrycksfullhet ger utvecklare möjlighet att snabbt utveckla appli
 
 \subsection{Introduktion av Flow och Typescript}
 
-Eventuella problem med påtvingade typer som beskrivs ovan är något som är väldebatterat när det kommer till Javascript. Många anser att språket fungerar utmärkt som det är och utvecklar storskaliga projekt med det. Andra är dock inte lika nöjda med det och flera stora mjukvaruföretag har utvecklat egna verktyg för att lösa de eventuella problem de har med språket.\cite{js-bad} Två av dessa är Facebook och Microsoft som har utvecklat Flow \cite{info-flow} respektive Typescript \cite{typescript}.
+Eventuella problem med påtvingade typer som beskrivs ovan är något som är väldebatterat när det kommer till Javascript. Många anser att språket fungerar utmärkt som det är och utvecklar storskaliga projekt med det. Andra är dock inte lika nöjda med det och flera stora mjukvaruföretag har utvecklat egna verktyg för att lösa de eventuella problem de har med språket \cite{js-bad}. Två av dessa är Facebook och Microsoft som har utvecklat Flow \cite{info-flow} respektive Typescript \cite{typescript}.
 
 \subsubsection{Flow}
 

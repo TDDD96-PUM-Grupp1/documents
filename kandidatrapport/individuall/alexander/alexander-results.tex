@@ -13,7 +13,7 @@ Resultaten för denna del kommer från \cite{Fischer:2015:EIE:2816707.2816720}. 
 
 Under projektets gång har gruppen stött på en hel del buggar som orsakats av Javascripts typsystem. Majoriteten av dessa buggar berodde på bristande indikation att variabler var odefinierade, då många operationer fungerar utan problem ändå. Ett specifikt exempel med en förklaring kan ses i figur \ref{fig:buggy-code-explained}. Denna kod skulle se till att kontrollapplikationen skickade information till servern med ett visst tidsintervall. Eftersom den använda variabeln inte var definierad ledde detta till en svårhittad bugg och en något misslyckad demo då systemet blev överbelastat eftersom för mycket data skickades.
 
-\begin{figure*}
+\begin{figure*}[h]
     \begin{lstlisting}[language=JavaScript]
         var sendTime = 1000/this.options.tickrate; // this.options.tickrate was undefined -> sendTime === NaN
         setInterval(this.tick, sendTime); // this.tick is called as often as possible
