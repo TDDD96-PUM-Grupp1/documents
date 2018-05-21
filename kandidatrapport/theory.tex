@@ -3,7 +3,7 @@
 I detta kapitel beskrivs grundläggande teoretiska begrepp och ramverk som följdes under projektets gång. Här beskrivs även de essentiella programmeringsverktyg och ramverk för projektet samt utvecklingsmetoden Scrum.
 
 \section{React}
-Ramverket React användes för att utveckla UI-applikationen samt kontroller-applikationen. Ramverket bidrar med färdig funktionalitet för att underlätta utvecklingen av hemsidor med Javascript.  Detta bestämdes tidigt i projektet då vissa projektmedlemmar hade tidigare erfarenheter med React, tillsammans med rekommendationer och önskemål från kunden.~\cite{React}
+Ramverket React användes för att utveckla UI-applikationen samt kontroller-applikationen. Ramverket bidrar med färdig funktionalitet för att underlätta utvecklingen av hemsidor med Javascript. Detta genom att dela upp projektet i olika komponenter som hanterar logik och utseende för olika delar av hemsidan. Komponenterna kan ses som block av en hemsida som modulärt kan bytas ut mot andra komponenter.~\cite{React}
 
 \section{Yarn}
 Yarn är den pakethanterare gruppen har valt att använda. Den använder sig av samma paket som finns tillängliga för npm och skillnaden mellan dessa två är marginell. Yarn gör det enklare att lägga till och ta bort paket till ett projekt.~\cite{Yarn}
@@ -26,11 +26,15 @@ Scrum är en populär agil utvecklingsmetodik inom mjukvaruutveckling. Metoden �
 \begin{itemize}
 	\item \textit{Scrum-bräde}: Ett bräde med alla uppgifter som ska göras under en sprint, varje teammedlem kan sedan ta en egen uppgift och flytta den till rätt kategori i \textit{Trello} beroende på hur det går i arbetet med den. Vanliga kategorier är: ''att göra'', ''pågående'' och ''färdigt''.
 
-	\item \textit{Burndown chart}: En graf som visar det kvarstående arbetet. Grafen hjälper teamet att ta reda på om de ligger bra eller dåligt till för att leverera de planerade uppgifterna.
-
 	\item \textit{Produkt-backlog}: En prioriterad lista av kundens önskemål för funktionalitet och egenskaper hos slutprodukten.
 
 	\item \textit{Sprint-backlog}: En lista med nedbrutna uppgifter från produkt-backlogen som teamet åtar sig att leverera under en sprint.
+
+	\item \textit{Sprintplanering}: Under en sprintplanering går teamet igenom produkt-backlogen för att planera vad som ska göras under sprinten. 
+
+	\item \textit{Burndown chart}: En graf som visar det kvarstående arbetet. Grafen hjälper teamet att ta reda på om de ligger bra eller dåligt till för att leverera de planerade uppgifterna.
+
+	\item \textit{Sprintutvärdering}: I slutet av en sprint utvärderar teamet vad som har gått bra och/eller dåligt under sprinten. Detta för att nästa sprint ska gå bättre.
 
 \end{itemize}
 
@@ -43,7 +47,7 @@ Git är ett open-source decentraliserat versionshanteringsprogram som huvudsakli
 \begin{itemize}
 	\item \textit{Gren}: En gren är en alternativ version av ett arkiv där förändringar kan göras utan att påverka ursprunget. En gren har en tydlig punkt när den bröts ifrån ursprungsgrenen. En gren kan finnas både lokalt och i det centrala arkivet och kan skapas av många anledningar. En vanlig anledning för att skapa en gren är för utveckla funktionalitet och sedan slå ihop grenen med ursprunget när funktionaliten är färdig.
 
-	\item\textit{Master-gren} Den första grenen som skapas i ett projekt kallas för master-grenen, vanligtvis anses denna gren vara den officiella versionen av arkivet.
+	\item\textit{Master-gren}: Den första grenen som skapas i ett projekt kallas för master-grenen, vanligtvis anses denna gren vara den officiella versionen av arkivet.
 
 	\item \textit{Pull request}: När en gren ska slås ihop med master-grenen görs detta genom att utvecklaren lägger en begäran för detta. Denna begäran måste granskas av en annan teammedlem innan sammanslagningen kan göras för att se till att master-grenen är stabil. En sådan begäran kallas för en \textit{pull-request}.
 
