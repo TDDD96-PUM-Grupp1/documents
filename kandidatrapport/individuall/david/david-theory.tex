@@ -1,21 +1,28 @@
 \section{Teori}
 \label{sec:david-theory}
-För att gå igenom fördelar och nackdelar med Jest kommer jämförelser göras mot andra testverktyg, eftersom det finns så många kommer det i första hand jämföras med de större konkurrerande verktygen\cite{bib-test-tools} som Mocha och Jasmine. I det här kapitlet kommer begrepp redas ut och sammanfattningar om testmetoder och andra testverktyg.
+För att gå igenom fördelar och nackdelar med Jest kommer jämförelser göras mot andra testverktyg, eftersom det finns så många kommer det i första hand jämföras med de större konkurrerande verktygen \cite{bib-test-tools} som Mocha och Jasmine. I det här kapitlet kommer begrepp redas ut och sammanfattningar om testmetoder och andra testverktyg.
 
-\subsection{Jest}
-Jest är som tidigare nämnt ett testverktyg utvecklat av Facebook Inc, baserat på Jasmine och är i fokus i denna studie. Det kommer färdigt med flera paket installerade så det bara är att starta direkt. Många kopplar ihop React med Jest för att de är utvecklade parallellt, men det är ett misstag då det går lika bra att testa andra bibliotek också.
-
-\subsection{Mocha}
-Mocha är så som Jest och Jasmine ett testverktyg för Javascript. Mocha är till skillnad från Jest och Jasmine, ett väldigt modulärt testverktyg. Här kan man inte börja testa direkt, utan man måste själv fixa varje paket man vill ha, till skillnad från till exempel Jest som kommer färdigbyggt. Det blir självklart fördelaktigt att man kan välja ut de paket man behöver för att minimera laddtider, testtider och det inte lika uppsvällt av onödiga saker som inte används. Detta innebär att mocha är ett kraftfullt och flexibelt verktyg, om man använder det på rätt sätt.
-
-\subsection{Jasmine}
-Jasmine är ett utvecklingsverktyg för att testa Javascripts kod precis som Jest. Jasmine har ett färdigt API med redan mycket funktionalitet och är oberoende av andra ramverk. Det har en intuitiv syntax och är ett av de mer populära verktygen för Javascript på marknaden. Jasmine är open source.
 
 \subsection{React}
-I projektet gruppen utvecklade användes React som grund för den webappen som byggdes. Det är ett Javascriptsbibliotek som utökar funktionaliteten i vanliga Javascript. Man brukar ofta tala om MVC, Model-View-Controller \cite{bib-mvc}, när man talar om webapplikationer. React brukar inte sägas använda samtliga utan fokuserar på View-delen av MVC.
+I projektet gruppen utvecklade användes React som grund för den webbappen som byggdes. Det är ett Javascriptsbibliotek som utökar funktionaliteten i vanliga Javascript. Man brukar ofta tala om MVC, Model-View-Controller \cite{bib-mvc}, när man talar om webbapplikationer. React brukar inte sägas använda samtliga utan fokuserar på View-delen av MVC.
 
-\subsection{Snapshot}
-Snapshot är en testmetod som går ut på att ta en ``snapshot'' av hur till exempel ett UI ser ut. Den sparar ner en kopia över hur det ser ut vid första testet för att sedan jämföra med hur det ser ut vid andra testkörningar. Om någonting har ändrats får man upp en prompt som man får välja om man vill se över sin kod, eller om man vill spara en nya snapshot istället. Ett exempel på ett enkelt snapshot test kan man se i \ref{fig:snapshot-test} nedan där testet tar en snapshot över hur startmenyn för hur UI ser ut. I \ref{fig:snapshot-shot} kan man se hur snapshoten sparas som en fil i projektet.
+\subsection{Verktyg}
+I studien jämfördes tre olika verktyg och kommer presenteras kort nedanför.
+
+\subsubsection{Jest}
+Jest är som tidigare nämnt ett testverktyg utvecklat av Facebook Inc, baserat på Jasmine och är i fokus i denna studie. Det kommer färdigt med flera paket installerade så det bara är att starta direkt. Många kopplar ihop React med Jest för att de är utvecklade parallellt, men det är ett misstag då det går lika bra att testa andra bibliotek också.
+
+\subsubsection{Mocha}
+Mocha är så som Jest och Jasmine ett testverktyg för Javascript. Mocha är till skillnad från Jest och Jasmine ett väldigt modulärt testverktyg. Här kan man inte börja testa direkt, utan man måste själv fixa varje paket man vill ha, till skillnad från till exempel Jest som kommer färdigbyggt. Det blir självklart fördelaktigt att man kan välja ut de paket man behöver för att minimera laddtider, testtider och det inte lika uppsvällt av onödiga saker som inte används. Detta innebär att mocha är ett kraftfullt och flexibelt verktyg, om man använder det på rätt sätt.
+
+\subsubsection{Jasmine}
+Jasmine är ett utvecklingsverktyg för att testa Javascripts kod precis som Jest. Jasmine har ett färdigt API med redan mycket funktionalitet och är oberoende av andra ramverk. Det har en intuitiv syntax och är ett av de mer populära verktygen för Javascript på marknaden. Jasmine är öppen källkod.
+
+\subsection{Typer av tester}
+I den här delen kommer fördjupning av olika testmetoder att ske. En kort förklaring vad de används till och hur man kan använda dem på bästa sätt.
+
+\subsubsection{Snapshot}
+Snapshot är en testmetod som går ut på att ta en ``snapshot'' av hur till exempel ett UI ser ut. Den sparar ner en kopia över hur det ser ut vid första testet för att sedan jämföra med hur det ser ut vid andra testkörningar. Om någonting har ändrats får man upp en prompt som man får välja om man vill se över sin kod, eller om man vill spara en ny snapshot istället. Ett exempel på ett enkelt test kan man se i \ref{fig:snapshot-test} nedan där testet tar en snapshot över hur startmenyn för hur UI ser ut. I \ref{fig:snapshot-shot} kan man se hur snapshoten sparas som en fil i projektet.
 
 \lstset{language=JavaScript}
 \begin{figure}[h]
@@ -72,9 +79,16 @@ exports[`FirstMenu matches the snapshot 1`] = `
 \end{figure}
 \pagebreak
 
-\subsection{Assertion}
-Assertion testing är något som används för att kolla att faktiskt värde stämmer överrens med förväntat värde. Ett exempel kan vara att man väljer att skapa en spelarkaraktär, testet kan vara att konfirmera att spelarkaraktären har renderats ordentligt eller att ett objekt har det värdet den förväntas ha. 
-\subsection{Spies}
-Spies, eller mock function\cite{bib-mock} som det heter i Jest, används vid enhetstestning. Det fungerar som en dummyfunktion där den kan anropas och alltid returnerar undefined. Den kan ersättas med en funktion i kod för att testas, genom att till exempel användas som en \textit{stub}. En stub är en dummyfunktion som används som placeholder för att ge förväntade svar på ett anrop till en funktion som inte existerar. En mock kan även hålla koll på när och hur den anropas för att testa hurvida mycket en funktion används.
+\subsubsection{Assertion}
+Assertion testing är något som används för att kolla att ett faktiskt värde stämmer överens med förväntat värde. Ett exempel kan vara att man väljer att skapa en spelarkaraktär, testet kan vara att verifiera att spelarkaraktären har renderats ordentligt eller att ett objekt har det värdet den förväntas ha. 
+\subsubsection{Spies}
+Spies, eller ``mock function'' \cite{bib-mock} som det heter i Jest, används vid enhetstestning. Det fungerar som en dummyfunktion där den kan anropas och alltid returnerar undefined. Den kan ersättas med en funktion i kod för att testas, genom att till exempel användas som en stub. En stub är en dummyfunktion som används som placeholder för att ge förväntade svar på ett anrop till en funktion som inte existerar. En mock kan även hålla koll på när och hur den anropas för att testa hurvida mycket en funktion används.
+
+\subsubsection{Stresstest}
+Ett stresstest kan utföras på flera olika sätt. I grund och botten handlar det om att testa att ett system fungerar som det ska under tung belastning. Exempel på det kan vara att flera användare försöker få tillgång till en webbsida samtidigt, eller i projektgruppens fall att flera användare spelar spelet samtidigt. 
+
+\subsection{API}
+Ett API eller Application programming interface som det också heter är ett set av subrutiner, protokoll och verktyg för mjukvara. Det används exempelvis när man vill komma åt en webbsida. Då kommunicerar den dator som vill komma åt webbsidan med serverns API för att hämta ut rätt information att servera till besökaren. \cite{bib-API}
+
 \subsection{Versioner}
-När det kommer till spel använder sig vissa företag av allämnheten för att hjälpa till att testa de olika aspekterna utav spelet. Det kan till exempel bara vara att låta användaren få en smak för spelet, testa hur de tycker om det för att få en prognos över hur mycket de gillar det och uppskatta försäljning. En annan anledning till att lansera en tidigare variant utav ett spel är att då det finns otroligt många olika operativsystem och olika uppsättningar av hårdvara, se hur produkten fungerar på de olika varianterna, och på så sätt använda allämnheten för att göra sina egna tester. Dessa brukar oftast refereras till som beta-versioner eller early access\cite{bib-beta-version}. Skillnaden på de två är att beta-versioner endast brukar innehålla en liten del utav spelet, medan early access brukar innehålla allt som skapat hittills, men det inte är en färdig produkt.
+När det kommer till spel använder sig vissa företag av allmänheten för att hjälpa till att testa de olika aspekterna utav spelet. Det kan till exempel bara vara att låta användaren få en smak för spelet, testa hur de tycker om det för att få en prognos över hur mycket de gillar det och uppskatta försäljning. En annan anledning till att lansera en tidigare variant utav ett spel är att då det finns otroligt många olika operativsystem och olika uppsättningar av hårdvara, se hur produkten fungerar på de olika varianterna, och på så sätt använda allmänheten för att göra sina egna tester. Dessa brukar oftast refereras till som beta-versioner eller early access \cite{bib-beta-version}. Skillnaden på de två är att beta-versioner endast brukar innehålla en liten del utav spelet, medan early access brukar innehålla allt som skapat hittills, men det är inte en färdig produkt.
