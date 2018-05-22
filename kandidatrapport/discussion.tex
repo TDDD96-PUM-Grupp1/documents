@@ -5,11 +5,17 @@ I följande del presenteras olika tankar och idéer som uppkommit baserat på de
 
 \section{Resultat}
 \label{sec:discussion-results}
+Nedan följer diskussion kring det resultat som tidigare presenterats.
+
+
+\subsection*{Tekniska val}
 
 %Fanns alternativa implementationssätt?
 Det fanns i det genomförda projektet många val som kunde leda till annorlunda resultat. Många teknikval beslutades om för att färdigställa produkten. En stor andel av dessa har tagits enligt önskemål från kunden och det är inte troligt att kundens värde skulle kunna öka om dessa inte följdes. I denna kategori faller användning av React samt att koden skrevs i ren Javascript.
 
 Många av de tekniska val som gruppen har tagit relaterar till speldelen av produkten. Ett stort sådant var att skapa spelet som ett mer allmänt ramverk för olika spellägen istället för ett specifikt spel. Det är troligt att projektet hade förändrats mycket om det andra alternativet hade valts. Då ett av kundens viktigaste önskemål var att enkelt kunna vidareutveckla projektet bedömdes dock det mer generella valet ge mer värde. Val av bibliotek för spelet var också ett viktigt avgörande beslut för projektet. Flera alternativ diskuterades som till olika grad förlitade sig på färdiga paket för fysik, grafik och logik. Den slutgiltiga lösningen med PIXI har givit stora möjligheter att skapa det system som önskades och gav även mycket stöd i rendering av spelets grafik. Utan färdiga bibliotek hade arbetet troligen tagit alldeles för lång tid. Användning av många stora bibliotek kan istället introducera oönskade begränsningar på projektets struktur.
+
+\subsection*{Utökningsbarhet}
 
 %Vad återstår för att kunden skall få ut fullt värde av produkten?
 Den slutgiltiga produkten innehåller några enkla spellägen som fungerar till fullo. Dessa kräver ingen vidareutveckling från kundens sida utan kan användas som tilltänkt efter leverans. Det är dock troligt att kunden vill introducera fler spellägen. En viss del av produktens värde ligger i hur hög utökningsbarhet som har uppnåtts för att underlätta denna process. Utförlig dokumentation har även skapats för att minimera tiden som krävs för att sätta sig in i systemet. Med detta är förhoppningen att skapandet av nya spellägen ska gå mycket smidigt och inte kräva förståelse för implementationsdetaljer.
@@ -17,11 +23,17 @@ Den slutgiltiga produkten innehåller några enkla spellägen som fungerar till 
 %Lyckades ni förbättra/fortsätt något från tidigare projekt?
 
 %Viktigaste lärdomar inför framtiden.
+\subsection*{Systemanatomin}
 
 % Övrig mumbo-jumbo :S
 Det fanns genom projektet en viss förvirring och osäkerhet gällande arbetet med systemanatomin. Ofta fanns stora skillnader i olika medlemmars uppfattning av hur anatomin skulle vara konstruerad. Det är möjligt att en otillräcklig förståelse för konceptet kan ha lett till att den framtagna modellen tappat mycket värde. Det är möjligt att svaret på frågeställning \ref{fs:fs_3} kunde haft ett större värde om det fanns fler ingående erfarenheter av arbete med systemanatomier. Gruppen diskuterade även huruvida relevansen av systemanatomin kan förändras mycket mellan olika typer av projekt och utvecklingsmetodik. Det genomförda projektet befinner sig på en hög abstraktionsnivå med liten hårdvarukoppling. Det är av intresse hur systemanatomins nytta skulle se ut i mer hårdvarunära projekt, men detta har inte undersökts vidare.
 
+\subsection*{Projektgruppens erfarenheter}
+
+
 Det är mycket troligt att resultat av projekterfarenheter har påverkats av att denna studie av processen har pågått parallellt. Gruppmedlemmarna har haft en medvetenhet om att projektet ligger till grund för detta arbete och även tagit del av seminarier som skapat en djupare reflektion. Detta delade fokus har troligen påverkat projektets utveckling. Det är dock troligt att utförandet av denna undersökningen parallellt är nödvändigt för att ge en tillräcklig insikt i projektet. Även om gruppens erfarenheter är att projektet ej kan anses till fullo representera typisk mjukvaruutveckling bedöms detta inte påverka resultaten i alltför stor utsträckning.
+
+\subsection*{Testning}
 
 Testningen som gjorts under projektets gång har lämnat viss önskan efter mer. De flesta test har utförts direkt efter att koden som testas skrivits. Ofta har även samma person som skrivit koden testat den. Processen har alltså inte alltid varit så utarbetad som hade kunnat önskats. Detta berodde till stor del på avsaknad av ordentlig struktur från början och okunnighet från gruppens sida då få gruppmedlemmar var vana användare av automatisk testning.
 
@@ -29,19 +41,31 @@ En bit in i projektet påbörjades testningen ordentligt och ett antal automatis
 
 Manuella tester är det som använts flitigast under projektets gång eftersom manuella tester går snabbt och gruppen vet väl sedan tidigare hur de ska genomföras. De flesta har skett inofficiellt av samma testare vilket kan vara en nackdel då testaren är partisk. Däremot uppstod inga uppenbara problem med detta. Hade projektet varit av större omfattning hade troligtvis denna nackdel haft en större inverkan. Det finns ett par officiella tester som gjorts för att kontrollera att produkten lever upp till vad som är utlovat i kravspecifikationen. Exempel på ett manuellt test finns i figur \ref{fig:manual_test} i appendixet. Dessa har gjorts av en testare i samband med testledaren för att säkerställa att allting gått rätt till.
 
+\subsection*{Enkätundersökningen och demonstrationer}
+
 Det inledande resultatet från den utförda enkätundersökningen uppnåde till stor del de önskade resultaten. Målet av undersökningen var att få ett snittbetyg över sex. Detta uppfylldes på alla frågor utom en, "Jag tycker det var svårt att förstå spelets regler", som fick betyget 4.2. Frågan var dock negativt ställd, vilket betyder att resultatet inverteras till 5.8. Detta nådde dock inte upp till målet för snittbetygen och för att åtgärda detta problem implementerade gruppen en inforuta på både kontrollen och UI:t. Inforutan beskriver reglerna för spelläget som spelas. Det samlades in ytterligare resultat efter denna implementation. Det inverterade betyget för ovanstående frågeställning ökade i sin tur till 6.5, vilket kan tyda på att inforutan hade en positiv effekt. När medianen undersökts för de övriga resultaten syns det att detta resultat är högre än medelvärdet. Detta tyder på att det var en större andel som röstade högt än lågt, men att de som röstade lågt, satte väldigt låga poäng.
 
 \section{Metod}
 \label{sec:discussion-method}
+Nedan följer diskussion kring den metod som tidigare presenterats.
+
+\subsection*{Roller}
+
 %Vilka konsekvenser fick de valda metoderna för resultaten?
 Den rolluppdelning som har gjorts har troligen påverkat delar av projektet och därmed resultatet. Vissa ansvarsområden överlappar delvis och det är tänkbart att andra resultat hade nåtts om dessa hade slagits ihop till färre roller. Det finns även specifika roller som inte använts. Exempel på detta är tekniska experter över vissa områden i projektet. Denna sorts roll har i det utförda projektet till viss del uppstått spontant genom personer som är mer insatta i viss teknik. Det är möjligt att resultaten hade sett annorlunda ut om denna uppdelning hade skett i förtid och mer explicit.
+
+\subsection*{Arbetsmetodik}
 
 %Fanns det alternativ?
 Ett alternativ till den iterativa, agila arbetsmetodiken i projektet hade varit en mer traditionell vattenfallsmodell. Detta går dock mot gruppmedlemmarnas tidigare erfarenheter av problem med denna sorts arbetsprocess. Det skulle även finnas organisatoriska problem med detta utifrån planeringen av den kurs projektet ingår i. Denna jämförelse undersöks vidare i individuell del \ref{individual:lieth-wahid}. Även inom iterativa arbetsmetoder finns det olika alternativ som har övervägts. Istället för att basera arbetsmetodiken på Scrum skulle exempelvis Kanban \cite{kanban} eller Rational Unified Process \cite{RUP} kunnat användas.
 
 Inom den variant av Scrum som har använts genom projektet finns många valmöjligheter som har förändrat utvecklingsprocessen. Längden på sprints, tid avsatt för vissa möten och uppdelning av arbetsuppgifter är saker som troligen har påverkat arbetet märkbart. Vilka delar av Scrum som har tagits med i projektets utförande har troligen också påverkat mycket. Exkludering av stand-up meetings är ett sådant centralt beslut. I det fallet ansågs det inte effektivt logistiskt. Här hade andra alternativ till daglig kommunikation kunnat övervägts för att uppnå samma effekter.
 
+\subsection*{Enkätundersökningen och demonstrationer}
+
 Arbetet med enkäterna och demonstrationerna påverkade troligen resultatet på helt olika sätt. Enkätundersökningen gjordes under projektets senare skede, under en tid då utvecklingsarbetets fokus var på kvalitet och inte funktioner. Alltså var det svårt för gruppen att använda sig av resultatet från denna undersökning på ett sätt som faktiskt visades i produkten. En möjlig förbättring på denna metod skulle vara att hålla flera enkätundersökningar under projektets gång och i sin tur använda sig av feedbacken i utvecklingsarbetet. Nu användes istället resultatet för att verifiera kvaliteten av en nästan färdigställd produkt. Det är värt att nämna att det deltog enbart 18 av 20 önskade personer i den utförda enkätundersökningen. Resultatet från de uteblivna personerna bör ha haft en marginell effekt på det slutgiltiga resultatet. Påverkan av enkäten skilde sig från demonstrationerna för kund. Denna feedback kom kontinuerligt under utvecklingsfaserna och feedbacken ledde till direkta ändringar av utvecklingen. En eventuell förbättring till denna metoden är att mer formellt dokumentera den feedback som gruppen får, för att senare verifiera dess påverkan på produkten.
+
+\subsection*{Källkritik}
 
 %Källkritik.
 En del av de använda källorna kommer från dokumentation över produkter skapade av företag. Här finns anledning att tro att ett visst intresse finns för att presentera dessa produkter med viss positiv vinkling. Dock har dessa källor endast används för tekniska specifikationer och i detta anses inte någon möjlig vinkling påverka korrektheten.
