@@ -4,20 +4,21 @@ Projektgruppen definierade en tydlig design av applikationen innan implementatio
 
 \subsection{Systemanatomi}
 \label{beskrivning-systemanatomi}
-Under iteration ett producerade projektgruppen en systemanatomi av applikationen som skulle utvecklas. Denna producerades utifrån de use-cases och krav kunden hade tillhandahållit. I figur \ref{fig:systemanatomi_graf} visas systemanatomin för hela systemet och i \ref{fig:systemanatomi_spel} visas den för själva spelet.
+Under iteration ett producerade projektgruppen en systemanatomi av applikationen som skulle utvecklas. Denna producerades utifrån de use-cases och krav kunden hade tillhandahållit. I figur \ref{fig:systemanatomi_spel} visas systemanatomin för spelet och i \ref{fig:systemanatomi_graf} visas den för hela systemet.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.3]{systemanatomi_graf}
-    \caption{Överblick av systemanatomin}
-    \label{fig:systemanatomi_graf}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{systemanatomi_spel}
+    \includegraphics[width=0.7\textwidth]{systemanatomi_spel}
     \caption{Överblick av systemanatomin för spelet}
     \label{fig:systemanatomi_spel}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{systemanatomi_graf}
+    \caption{Överblick av systemanatomin}
+    \label{fig:systemanatomi_graf}
 \end{figure}
 
 \pagebreak
@@ -28,7 +29,7 @@ Projektgruppen använde sig av den generella strukturen av systemet, kundens kra
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.3]{konceptarkitektur}
+    \includegraphics[width=\textwidth]{konceptarkitektur}
     \caption{Överblick av systemets moduler}
     \label{fig:konceptarkitektur}
 \end{figure}
@@ -36,10 +37,10 @@ Projektgruppen använde sig av den generella strukturen av systemet, kundens kra
 \pagebreak
 
 \subsubsection*{Ansvarsområden}
-Varje modul i systemet har ett eget ansvarsområde. Nedan följer en förtydning på vad varje modul ansvarar för.
+Varje modul i systemet har ett eget ansvarsområde. Nedan följer en förtydling av vad varje modul ansvarar för.
 
 \begin{labeling}{\small{\textbf{Kontrollkommunikation}}}
-    \item [\small{\textbf{GUI Spel}}]
+    \item [\small{\textbf{SpelGUI}}]
         \begin{itemize}
             \item Visa upp spelplanen
             \item Visa upp menyer
@@ -84,7 +85,7 @@ Varje modul i systemet har ett eget ansvarsområde. Nedan följer en förtydning
             \newline
         \end{itemize}
 
-    \item [\small{\textbf{GUI-kontroll}}]
+    \item [\small{\textbf{KontrollGUI}}]
         \begin{itemize}
             \item Visa menyer för att gå med i spelinstans
             \item Visa spelinformation om det pågående spelet

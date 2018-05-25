@@ -141,6 +141,7 @@
 \gdef\@abstract{\input{abstract}}
 \gdef\@sammanfattning{\input{sammanfattning.tex}}
 \gdef\@acknowledgments{\input{acknowledgments.tex}}
+\gdef\@definitions{\input{definitions.tex}}
 
 \newif\iflith
 \lithtrue
@@ -959,8 +960,8 @@ document integrity, please refer to its www home page:
   \fi
   \cleartorecto%
 \phantomsection
-\swedishenglish{\addcontentsline{toc}{chapter}{Sammanfattning}}
-{\addcontentsline{toc}{chapter}{Abstract}}
+%\swedishenglish{\addcontentsline{toc}{chapter}{Sammanfattning}}
+%{\addcontentsline{toc}{chapter}{Abstract}}
 \clearpage
 \ifstudent
 \begin{abstract}
@@ -971,13 +972,26 @@ document integrity, please refer to its www home page:
 \fi
 \clearpage
   \newpage
+  \pagenumbering{gobble}
   \@acknowledgments
-  \swedishenglish{\addcontentsline{toc}{chapter}{Författarens tack}}
-  {\addcontentsline{toc}{chapter}{Acknowledgments}}
+  %\swedishenglish{\addcontentsline{toc}{chapter}{Författarens tack}}
+  %{\addcontentsline{toc}{chapter}{Acknowledgments}}
   \clearpage
+
+  \pagenumbering{roman}
+  \setcounter{page}{1}
   {\pagestyle{plain}\tableofcontents\relax\clearpage}
   \iftotalfigures {\pagestyle{plain}\listoffigures\relax\clearpage}\fi
   \iftotaltables {\pagestyle{plain}\listoftables\relax\clearpage}\fi
+  {
+    \newpage
+    \pagestyle{plain}
+    \@definitions
+    \swedishenglish{\addcontentsline{toc}{chapter}{Definitioner}}
+    {\addcontentsline{toc}{chapter}{Definitioner}}
+    \relax
+    \clearpage
+  }
   \@ifpackageloaded{todonotes}{\pagestyle{plain}\listoftodos\relax\clearpage}{}
   \ifprinterfriendly
     \cleartooddpage
