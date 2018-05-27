@@ -1,6 +1,6 @@
 \chapter{Teori}
 \label{cha:theory}
-I detta kapitel beskrivs grundläggande teoretiska begrepp och ramverk som följdes under projektets gång. Här beskrivs även de essentiella programmeringsverktyg och ramverk för projektet samt utvecklingsmetoden Scrum.
+I detta kapitel beskrivs grundläggande teoretiska begrepp och ramverk som följdes under projektets gång. Här beskrivs även essentiella programmeringsverktyg samt utvecklingsmetoden Scrum.
 
 \section{React}
 Ramverket React användes för att utveckla UI-applikationen samt kontroll-applikationen. Ramverket bidrar med färdig funktionalitet för att underlätta utvecklingen av hemsidor med Javascript. Detta genom att dela upp projektet i olika komponenter som hanterar logik och utseende för olika delar av hemsidan. Komponenterna kan ses som block av en hemsida som modulärt kan bytas ut mot andra komponenter.~\cite{React}
@@ -11,9 +11,10 @@ Yarn är den pakethanterare gruppen har valt att använda. Den använder sig av 
 \section{Prettier}
 Prettier är ett verktyg för att formatera kod på ett standardiserat och lättläsligt sätt. Prettier går igenom koden och lägger till eller tar bort blanksteg och nya rader enligt förutbestämda regler. Syntaktiskt blir koden samma före och efter att Prettier körts, men läsbarheten har förändrats. Prettier tar även bort stilpreferenser som olika kodskribenter har då den alltid formaterar koden enligt samma regler.~\cite{prettier}
 
+\pagebreak
 
 \section{Eslint}
-Eslint är ett program som definierar stilregler för hur Javascript-kod ska skrivas. Dessa stilregler handlar om hur kod ska formateras och att följa bra programmeringspraxis. Eslint söker igenom koden efter som bryter mot de satta reglerna och påpekar alla fall där detta sker. Oftast integreras Eslint direkt in i utvecklingsmiljön för att ge varningar när koden skrivs. De regler Eslint efterföljer är bra praxis för kodning i Javascript och de går att ändra på efter behov.~\cite{eslint}
+Eslint är ett program som definierar stilregler för hur Javascript-kod ska skrivas. Dessa stilregler handlar om hur kod ska formateras och att följa bra programmeringspraxis. Eslint söker igenom koden efter rader som bryter mot de satta reglerna och påpekar alla fall där detta sker. Oftast integreras Eslint direkt in i utvecklingsmiljön för att ge varningar när koden skrivs. De regler Eslint efterföljer är bra praxis för kodning i Javascript och de går att ändra på efter behov.~\cite{eslint}
 
 
 \section{PIXI}
@@ -34,18 +35,20 @@ Scrum är en populär agil utvecklingsmetodik inom mjukvaruutveckling. Metoden �
 
 	\item \textit{Burndown chart}: En graf som visar det kvarstående arbetet. Grafen hjälper teamet att ta reda på om de ligger bra eller dåligt till för att leverera de planerade uppgifterna.
 
-	\item \textit{Sprintutvärdering}: I slutet av en sprint utvärderar teamet vad som har gått bra och/eller dåligt under sprinten. Detta för att nästa sprint ska gå bättre.
+	\item \textit{Sprintutvärdering}: I slutet av en sprint utvärderar teamet vad som har gått bra och/eller dåligt under sprinten. Detta för att nästkommande sprint ska gå bättre.
 
 \end{itemize}
+
+\pagebreak
 
 \section{Trello}
 Trello är en hemsida för att skapa och fördela uppgifter bland flera personer~\cite{Trello}. Det kan liknas vid en anslagstavla där lappar med uppgifter kan klistras på. Anslagstavlan i sig är uppdelad i kategorier som användarna själva kan skapa och modifiera. När Trello används för projekt kan dessa kategorier ha namn som ''att göra'', ''pågående'' och ''färdigt''. Lappar fästs sedan vid den första kategorien ''att göra'' och flyttas sedan till de andra när det anses passande. Varje lapp har sedan möjlighet att innehålla extra information, bland annat: vem som arbetar med den, en beskrivning av lappen samt en tidsuppskattning. Alla fält på en lapp bortsett från dess namn är frivilliga, och därav kan en Trello-lapp innehålla väldigt mycket, eller väldigt lite, information.
 
 \section{Git}
-Git är ett open-source decentraliserat versionshanteringsprogram som huvudsakligen används för kod~\cite{Git}. Arbetsprocessen för Git börjar vanligtvis med ett centralt arkiv som varje utvecklare sedan klonar lokalt. Sedan skrivs förändringar in i detta lokala arkiv som sedan slås ihop med det centrala. Om en annan utvecklare försöker lägga till sina förändringar efter en annan gjort ändringar uppstår en konflikt. Vid en konflikt nekas sammanslagningen tills utvecklaren tagit in förändringarna i det centrala arkivet till sitt eget lokala arkiv. Där får utvecklaren avgöra vilka rader som ska vara med i arkivet och först efter detta är gjort kallas konflikten för hanterad. Först när konflikten är hanterad går det att slå ihop det lokala arkivet med det centrala. Många steg i denna arbetsprocess har specifika namn och de defineras nedan:
+Git är ett open-source decentraliserat versionshanteringsprogram som huvudsakligen används för kod~\cite{Git}. Arbetsprocessen för Git börjar vanligtvis med ett centralt arkiv som varje utvecklare sedan klonar lokalt. Sedan skrivs förändringar in i detta lokala arkiv som sedan slås ihop med det centrala. Om en annan utvecklare försöker lägga till sina förändringar efter en annan gjort ändringar uppstår en konflikt. Vid en konflikt nekas sammanslagningen tills utvecklaren tagit in förändringarna i det centrala arkivet till sitt eget lokala arkiv. Där får utvecklaren avgöra vilka rader som ska vara med i arkivet och först efter detta är gjort kallas konflikten hanterad. Först när konflikten är hanterad går det att slå ihop det lokala arkivet med det centrala. Många steg i denna arbetsprocess har specifika namn och de defineras nedan:
 
 \begin{itemize}
-	\item \textit{Gren}: En gren är en alternativ version av ett arkiv där förändringar kan göras utan att påverka ursprunget. En gren har en tydlig punkt när den bröts ifrån ursprungsgrenen. En gren kan finnas både lokalt och i det centrala arkivet och kan skapas av många anledningar. En vanlig anledning för att skapa en gren är för utveckla funktionalitet och sedan slå ihop grenen med ursprunget när funktionaliten är färdig.
+	\item \textit{Gren}: En gren är en alternativ version av ett arkiv där förändringar kan göras utan att påverka ursprunget. En gren har en tydlig punkt när den bröts ifrån ursprungsgrenen. En gren kan finnas både lokalt och i det centrala arkivet och kan skapas av många anledningar. En vanlig anledning för att skapa en gren är för utveckla funktionalitet och sedan slå ihop grenen med ursprunget när funktionaliteten är färdig.
 
 	\item\textit{Master-gren}: Den första grenen som skapas i ett projekt kallas för master-grenen, vanligtvis anses denna gren vara den officiella versionen av arkivet.
 

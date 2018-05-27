@@ -1,3 +1,4 @@
+\pagebreak
 
 \section{Gemensamma erfarenheter}
 Denna del tar upp diverse erfarenheter projektgruppen varit med om, både innan och under projektets gång.
@@ -14,13 +15,15 @@ Under projektets gång har alla medlemmar fått använda sig av nya verktyg och 
 \subsection{Tidsbrist}
 I början av projektet hade gruppen bra tidsplanering och genomförde första iterationen i god tid. I början av iteration två satsade gruppen i huvudsak på utveckling och hade mindre fokus på dokumentskrivning. Det visade sig senare att vara en dålig prioritering. Konsekvensen av prioriteringen ledde till att det blev stressigt framåt slutet av iterationen vilket påverkade dokumentkvaliteten negativt. Gruppen noterade detta och ökade prioriteringen av att skriva dokument för de framtida iterationerna. Nästa iteration delades upp i en tydligare utvecklingsfas och dokumentfas, vilket ledde till en bättre planering och fördelning av tiden. Denna planering följde med till nästa iteration också, vilket visade sig fungera bra. Gruppen kände att detta ledde till mer tid att fokusera på de utsatta aktiviteterna.
 
+\pagebreak
+
 \subsection{Tekniska erfarenheter}
 Projektgruppen utvecklade applikationen med React. React saknar en tydlig struktur för hur data ska flöda genom applikationen, se \ref{axel:react} för mer information. Projektgruppen märkte detta då flera lager av komponenter implementerades. Detta problem löser andra ramverk och bibliotek genom att erbjuda funktionalitet som specifikt hanterar dataflöden. Gruppen reflekterade över om ett bibliotek skulle användas för detta men beslutade emot att använda det. Det visade sig i senare delen av projektet att hanteringen av dataflödet blev rörigare än förväntat. Gruppen hade använt sig av fler komponenter än vad som initialt hade tänkts. Detta ledde till att implementationen av nya komponenter som hamnade mellan redan existerande komponenter blev svårare. Detta berodde främst på att data som tidigare skickats från komponent \texttt{A} till \texttt{C} nu behövde skickas från \texttt{A} till \texttt{B} och sen vidare från \texttt{B} till \texttt{C}, när komponenten \texttt{B} introducerades mellan \texttt{A} och \texttt{C}. Detta ledde till att all data som tidigare skickades mellan \texttt{A} och \texttt{C} nu också behövde skickas till \texttt{B}, trots att det kunde vara data \texttt{B} inte använde sig av. En grafisk överblick kan ses i figur \ref{fig:middle_component}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{middle_component}
-    \caption{Överblick över hur implementation av mittenkomponent kan ge ett ineffektivt dataflöde}
+    \caption{Överblick av hur implementation av mittenkomponent kan ge ett ineffektivt dataflöde}
     \label{fig:middle_component}
 \end{figure}
 
