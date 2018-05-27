@@ -2,7 +2,58 @@
 \label{sec:joel_a-results}
 I denna del ska alla produktens miljökonsekvenser eliciteras. 
 
-\subsection{Nivå ett effekter}
+
+\subsection{Utvecklingsprocessens koldioxidutsläpp}
+Projektet var en del i en större universitetskurs som tog 400 timmar per teammedlem. Enligt teamets egna tidsrapportering så lades ungefär 30\% av dessa 400 timmar på utveckling. Vilken dator teamet utvecklade på varierade stort och för denna rapport så låts en av dessa datorer representera alla de andra. Teamet kunde se att programering på datorn ’’Lenovo ideapad Y700’’ drog hela dess batteri ifrån 100\% till noll på ungefär fyra timmar. Enligt dess tillverkade Lenovo~\cite{lenovo} så har denna datormodell ett batteri med 60 watt timmar. En urladdning av detta på fyra timmar ger oss en timmes användning av 15 watt. Kombinerat med den uppskattade tiden fås följande ekvation fram: $$ 400 * 0.3 * 8* 15 = 14.4 \text{kW}$$
+
+Enligt \ref{natuvard-co2} så skapade Sveriges el och värmeproduktion ett \ce{CO2} utsläpp på $4781*10^9$ gram år 2016. Kombinerat med att Sveriges energi produktion detta år var 152 TWh enligt Energimyndighetens pressmeddelande\cite{elprod2016}, så får vi att varje kWh i genomsnitt skapade ett utsläpp på: $$4781*10^9 / (152 * 10^{12}) \approx 31.45 * 10^{-3} \text{ gram \ce{CO2} per kWh}$$ 
+Kombinerat med uppskattningen av hur mycket elektricitet utvecklarnas datorer drog så får vi följande approximerade utsläpp: $$14.4 * 31.45 * 10^{-3} \approx 0.453 \text{ gram \ce{CO2}}$$
+
+
+\subsection{Molntjänsternas koldioxidutsläpp}
+En sammanställning av operationer teamet utförde mot Github och Google Drive har sammanställts i tabell \ref{tab:drive_results_table} och \ref{tab:github_results_table}. Operation i tabell \ref{tab:drive_results_table} syftar till hur ett objekt modifieras och de kategorier som finns är de namn som Google givit operationerna. Projektets Git-struktur är indelad i flera arkiv där varje arkiv står för en specifik del av produkten. Server-arkivet har inga modifikationer gjorts på eftersom detta arkiv enbart hanterar en Deepstream-tjänst och detta behövde inte förändras under projektet.
+
+I avsnitt \ref{joel_a-method-cloud-eq} så togs en approximation fram för hur mycket koldioxid som generas vid varje operation. Multiplicerar vi denna med antalet operationer så får vi ut hur mycket koldioxid användning av molntjänster skapad. $$(577 + 136) * 0.6 = 427.8 \text{ gram \ce{CO2}}$$
+
+\begin{table}[!htbp]
+	\centering
+	\begin{tabular}{| l | l |}
+		\cline{1-2}
+		\multicolumn{1}{| c |}{\textbf{Operation}} & \textbf{Antal}  \\ \hline
+		Redigera & 262 \\ \hline
+		Kopiera & 43 \\ \hline
+		Kommentera & 4 \\ \hline
+		Byta namn & 40 \\ \hline
+		Ladda upp & 95 \\ \hline
+		Skapa & 92 \\ \hline
+		Flytta & 39 \\ \hline
+		Ta bort & 2 \\ \hline
+		\textbf{Totalt} & \textbf{577}\\ \hline
+	\end{tabular}
+	\caption{Antal operationer teamet gjort på Google drive}
+	\label{tab:drive_results_table}
+\end{table}
+
+\begin{table}[!htbp]
+	\centering
+	\begin{tabular}{| l | l |}
+		\cline{1-2}
+		\multicolumn{1}{| c |}{\textbf{Gitrepo}} & \textbf{Antal push operationer}\\ \hline
+		UI & 31 \\ \hline
+		Kontroller & 26 \\ \hline
+		Services & 12 \\ \hline
+		Dokument & 67 \\ \hline
+		Server & 0 \\ \hline
+		\textbf{Totalt} & \textbf{136} \\ \hline
+	\end{tabular}
+	\caption{Antal git push operationer som gruppen gjort mot huvudgrenen på Githubs hemsida}
+	\label{tab:github_results_table}
+\end{table}
+
+
+
+
+\subsection{Nivå ett effekter *** DEPRICATED BELOW}
 Nivå ett effekter i Greensoft modellen är de effekter som direkt följer av utvecklingen eller användningen av produkten. Dessa är de enda effekterna som tas upp i detta kapitel då det är de enda effekterna som kan ha uppkommit. Nivå två och tre effekter kan först uppkomma efter användning av produkten, något som vid skrivandets stund inte skett. Den första fasen i Greensoft modellen är utvecklingsfasen och i den kan följande nivå ett effekter hittas:
 \begin{itemize}
 	\item Strömanvändning för utvecklarnas datorer
@@ -23,43 +74,6 @@ Under utvecklingsprocessen använde sig teamet av flertal olika molntjänster s�
 
 
 
-\begin{table}
-	\centering
-	\begin{tabular}{| l | l |}
-		\cline{1-2}
-		\multicolumn{1}{| c |}{\textbf{Operation}} & \textbf{Antal}  \\ \hline
-		Redigera & 262 \\ \hline
-		Kopiera & 43 \\ \hline
-		Kommentera & 4 \\ \hline
-		Byta namn & 40 \\ \hline
-		Ladda upp & 95 \\ \hline
-		Skapa & 92 \\ \hline
-		Flytta & 39 \\ \hline
-		Ta bort & 2 \\ \hline
-		\textbf{Totalt} & \textbf{577}\\ \hline
-	\end{tabular}
-	\caption{Antal operationer teamet gjort på Google drive}
-	\label{tab:drive_results_table}
-\end{table}
-
-
-
-\begin{table}
-	\centering
-	\begin{tabular}{| l | l |}
-		\cline{1-2}
-		\multicolumn{1}{| c |}{\textbf{Gitrepo}} & \textbf{Antal push operationer}\\ \hline
-		UI & 31 \\ \hline
-		Kontroller & 26 \\ \hline
-		Services & 12 \\ \hline
-		Dokument & 67 \\ \hline
-		Server & 0 \\ \hline
-		\textbf{Totalt} & \textbf{136} \\ \hline
-	\end{tabular}
-	\caption{Antal git push operationer som gruppen gjort mot huvudgrenen på Githubs hemsida}
-	\label{tab:github_results_table}
-\end{table}
-
 
 
 \begin{figure*}[h]
@@ -69,5 +83,3 @@ Under utvecklingsprocessen använde sig teamet av flertal olika molntjänster s�
 \end{figure*}
 
 
-\subsection{Miljöpåverkan av utvecklingsprocessen}
-Enligt \ref{natuvard-co2} så skapade Sveriges el och värmeproduktion ett \ce{CO2} utsläpp på $4781*10^9$ gram år 2016. Kombinerat med att Sveriges energi produktion detta år var 152 TWh enligt Energimyndighetens pressmeddelande\cite{elprod2016}, så får vi att varje kWh i genomsnitt skapade ett utsläpp på: $4781*10^9 / (152 * 10^{12}) \approx 31.45 * 10^{-3}$ gram \ce{CO2} per kWh. Ifrån tidigare approximerades gruppens kWh till $172.8 + 614.4 = 787.2$ vilket ger oss ett \ce{CO2} utsläpp på: $$31.45 * 10^{-3} * 787.2 \approx 24.8 \text{ gram \ce{CO2}}$$
