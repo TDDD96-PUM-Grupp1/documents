@@ -33,7 +33,7 @@ Konfigurationsansvarig ansvarade för generell versionshantering i projektet. Ro
 Det här avsnittet beskriver utvecklingsmetodiken projektgruppen har följt. Detta innefattar hur olika metoder och verktyg har använts för att uppnå ett resultat.
 
 \subsection{Projektfaser}
-Nedan beskrivs faserna projektet uppdelades i.
+Projektet delades in i fyra olika faser som fokuserade på olika områden. Dessa presenteras nedan.
 
 \subsubsection*{Förstudier}
 Första fasen under projektet bestod av att göra förstudier inför projektet. Detta inkluderar skrivandet av diverse dokument som beskrivs under avsnitt \ref{sec:method-documentation}. Dessutom gjordes individuella studier om Javascript och olika bibliotek för att underlätta arbetet till utvecklingsfasen. I slutet av förstudierna gavs även en workshop av Cybercom om deras backend.
@@ -45,7 +45,7 @@ Under denna fas utvecklades större delar av produkten. Själva utvecklingen utf
 Under denna fas finslipades diverse funktioner för att ge användaren en bättre upplevelse när de använder produkten. Detta inkluderade buggfixar och verifiering av projektets kravspecifikation.
 
 \subsubsection*{Efterstudier}
-Efter projektet gjordes efterstudier för att granska det resultat teamet fick för att göra en utvärdering av projektet.
+Efter projektet gjordes efterstudier för att granska det resultat teamet fick för att göra en utvärdering av projektet. Denna rapport är resultatet från efterstudierna.
 
 \subsection{Scrum}
 \label{main:Scrum}
@@ -60,10 +60,12 @@ Verktyget Trello användes för att organisera och representera ett Scrum-bräde
     \label{fig:trello_board}
 \end{figure}
 
+\pagebreak
+
 \subsection{Versionshantering}
 Git användes för att versionshantera koden. Git-repot lagrades på Github för att alla lätt skulle kunna ladda ner och ladda upp filer till ett centralt repo. Dessutom kan Github hantera diverse tester så att endast kod som går igenom våra tester kan laddas upp på master-grenen.
 
-Utöver det så fungerar master-grenen som en form av intern utgåva av produkten. Det vill säga att produkten ska vara körbar och fungera som väntat i denna gren. För att garantera detta laddades aldrig kod upp direkt till grenen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en pull request skulle bli godkänd läste granskaren igenom koden och testade relevanta områden för att garantera att det fungerade som det skulle.
+Utöver det så fungerade master-grenen som en form av intern utgåva av produkten. Det vill säga att produkten skulle vara körbar och fungera som väntat i denna gren. För att garantera detta laddades aldrig kod upp direkt till grenen utan det krävdes en pull request som godkändes av en annan projektmedlem. För att en pull request skulle bli godkänd läste granskaren igenom koden och testade relevanta områden för att garantera att det fungerade som det skulle.
 
 \subsection{Testning}
 Under förstudiefasen undersökte testledaren vilka verktyg som kunde användas för projektet samt hur hela testningsprocessen skulle gå till. Projektgruppen beslutade att verktyget Travis skulle användas för automatiska tester, men att även manuella tester skulle utföras. De automatiska testerna användes främst för enhetstest medan de manuella testerna användes för mer komplicerade integrationstester.
@@ -79,6 +81,8 @@ Vid början av varje vecka hade projektgruppen ett möte för att diskutera vad 
 
 En gemensam Google-kalender skapades där alla möten samt viktiga moment och deadlines lades till. Alla moment som lades till i kalendern ansågs vara obligatoriska för projektgruppen där alla medlemmar förväntades medverka.
 
+\pagebreak
+
 \subsection{Kommunikation}
 Kommunikationen mellan externa parter och projektgruppen gick i huvudsak genom rollerna teamledare och analysansvarig. Slack användes för både den interna och externa kommunikationen under projektets gång. En Slack-arbetsplats skapades, där enbart projektgruppen var medlemmar. Majoriteten av den interna kommunikationen skedde genom denna. Olika kanaler skapades på denna Slack-arbetsplats för att diskutera olika ärenden och hålla kommunikationen strukturerad. Det fanns ytterligare en Slack-arbetsplats där både projektgruppen och kunden medverkade. På denna arbetsplats skedde en del av den externa kommunikationen med kunden. Även denna arbetsplats var uppdelad i olika kanaler: frågor och allmänt. Tanken bakom kanalen frågor var att projektgruppen kunde fylla kanalen med frågor rörande utvecklingen och kunden kunde bearbeta frågorna när de hade tid. Kanalen allmänt användes för all övrig kommunikation. Den externa kommunikationen skedde även muntligt med kunden ute på deras kontor.
 
@@ -89,7 +93,7 @@ För att verifiera att produkten uppfyllde kundens förväntningar bestämde gru
 
 \begin{enumerate}[label={(\alph*)}]
 	\item Jag tycker det var svårt att förstå spelets regler.
-	\item Jag tycker att spelet kändes responsivt. (Spelpjäsen rörde sig på ett bra sätt efter mina rörelser)
+	\item Jag tycker att spelet kändes responsivt. (Spelpjäsen rörde sig på ett bra sätt efter dina rörelser)
 	\item Jag tycker det var lätt att följa vad som hände på den stora spelskärmen.
 	\item Jag tycker spelet var kul.
 	\item Jag tycker det var lätt att styra min spelpjäs.
@@ -97,6 +101,7 @@ För att verifiera att produkten uppfyllde kundens förväntningar bestämde gru
 
 Utöver testtillfällena med enkäten har också demonstationer för kunden förekommit. Dessa demonstrationer har både varit informella, i form av att snabbt visa upp vad som gjorts under exempelvis dagen, och formella. De formella demonstrationerna var presentationer till kund kring hur produkten såg ut. Kunden fick chans att både spela spelet men också ställa frågor kring implementation och design som ansågs vara intressant.
 
+\pagebreak
 
 \section{Dokumentation}
 \label{sec:method-documentation}
@@ -127,7 +132,7 @@ Arkitekturbeskrivningen detaljerade arkitekturen för systemet samt beskrev hur 
 Testplanen beskrev hur de olika delarna av produkten skulle testas och även hur man skulle följa upp på testerna.
 
 \subsubsection*{Testrapport}
-Testrapporten dokumenterade hur testningen gick till och innehöll de större testerna som hade skapats och eventuella problem och anomalier.
+Testrapporten dokumenterade hur testningen gick till och innehöll de större testerna som hade skapats och eventuella problem och avvikelser.
 
 \subsubsection*{Gruppkontrakt}
 Projektgruppen producerade och undertecknade ett gruppkontrakt som skrevs vid ett tidigt stadie för att förtydliga vad som förväntades av varje gruppmedlem.
