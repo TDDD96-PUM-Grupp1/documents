@@ -1,3 +1,18 @@
 \section{Slutsatser}
 \label{sec:bjorn-conclusion}
+Här presenteras de slutsatser som kan dras utifrån resultatet och diskussionen.
 
+%Centralized:
+%Devs don't need history (good for huge projects or binary files or long history)
+%
+%Distributed:
+%Open source don't need a repo
+%Can simulate centralized
+%Faster - less internet traffic, local changes
+%Offline work
+%Easy collaboration and testing (smaller groups of a team)
+%local commits don't cause problems for others
+
+Så länge ett projekt inte involverar en väldigt stor kodbas med mycket historik så finns det ingen särskild anledning att välja SVN över Git eller Mercurial då de distribuerade versionshanteringssystemen kan fungera centraliserat och oftast används på ett sådant sätt.
+
+Feature branching är ett effektivt arbetsflöde för agil utveckling och går att använda med båda typer av versionshanteringssystem. När feature branching används är det viktigt att tänka på att inte utveckla länge på brancher för att minimera problem när brancher ska kombineras. Det är lämpligt att kombinera feature branching med kodgranskning och continous integration. Om man jobbar i ett mindre team med bra kommunikation så kan det vara lämpligt att använda promiscuous integration istället. För att få effektivare kodgranskning så kan man strukturera en vy över de förändringar som skett i koden. Den vyn bör vara sortera på sätt så att ändringar som relaterar till varandra är grupperade.
