@@ -4,7 +4,7 @@ För att svara på frågeställningarna har information från flera källor inh�
 
 \subsection{Analys av Javascript-projekt}
 \label{subsec:joel_o-method-analys}
-I denna analys har beroenden för över 6~000 open-source projekt från Github undersökts. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig relationsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns tillgängliga på Github\footnote{\url{https://github.com/joelnir/dependency-analysis}}.
+I denna analys har beroenden för över 6~000 open-source projekt från Github undersökts för att svara på frågeställning \ref{joel_o-fs:1}. Ett script skrivet i Python 3 har använts för att hämta och hantera data. För lagring av data lokalt har en SQLite-databas använts. Detta är en lättviktig relationsdatabas som enkelt kan ändras från Python-scriptet. Scriptet som har använts, loggar från körningar och den slutgiltiga databasen finns tillgängliga på Github\footnote{\url{https://github.com/joelnir/dependency-analysis}}.
 
 I databasen skapades tabeller för att spara data om Javascript-projekt, npm-paket och relationer mellan dem. Tabeller för intressant statistik så som hur många versionsreferenser som var ogiltiga skapades också. Ett diagram över databasen visas i figur \ref{fig:dependency-db}.
 
@@ -27,9 +27,7 @@ Tabellerna innehåller följande:
   \label{fig:dependency-db}
 \end{figure}
 
-Då analysen enligt frågeställning \ref{joel_o-fs:1} ska utföras på populära Javascript-projekt behövde popularitet först definieras. Githubs system med stjärnor valdes som ett bra mått för detta. Projekt med mer än 500 stjärnmarkeringar definierades som populära. Denna gräns är godtycklig, men ger en stor datamängd att utgå ifrån.
-
-Python-scriptet hämtade och lagrade information om dessa Javascript-projekt. En slumpmässig delmängd av dessa valdes därefter ut att ingå i undersökningen. För varje av dessa projekt utfördes sedan en analys av de beroenden som hittats i \texttt{package.json}. Antalet direkta beroenden lästes ut direkt ur \texttt{package.json}. För att undersöka indirekta beroenden användes en rekursiv metod som såg till npm-paketens vidare beroenden. Dessa undersöktes med hjälp av npm-kommandon på formen
+Python-scriptet hämtade och lagrade information om Javascript-projekt med mer än 500 stjärnmarkeringar. En slumpmässig delmängd av dessa valdes därefter ut att ingå i undersökningen. För varje av dessa projekt utfördes sedan en analys av de beroenden som hittats i \texttt{package.json}. Antalet direkta beroenden lästes ut direkt ur \texttt{package.json}. För att undersöka indirekta beroenden användes en rekursiv metod som såg till npm-paketens vidare beroenden. Dessa undersöktes med hjälp av npm-kommandon på formen
 
 \begin{center}
   \texttt{npm view \textit{paket}@\textit{version} dependencies \hyphen\hyphen json}.
@@ -47,6 +45,6 @@ Sökord som användes var bland annat ``Javascript'', ``npm'', ``dependencies'' 
 \subsection{Projekterfarenheter}
 I det utförda projektet har Javascript varit det huvudsakliga programmeringsspråket och npm har också använts för pakethantering. Det fanns redan i projektets kravspecifikation att vissa färdiga paket skulle användas. Detta inkluderade både stora ramverk som React och utvecklingsverktyg som ESLint.
 
-Förutom en mängd beroenden som till en början krävdes för att påbörja arbetet tillkom flera under projektets gång. Detta inkluderade både \textit{dependencies} och \textit{devDependencies} i \texttt{package.json}. Under projektet uppkom flera öppna diskussioner om huruvida egna mjukvarukomponenter skulle implementeras eller färdiga paket användas. I dessa situationer övervägdes ofta kvalitet hos komponenterna samt till vilken grad de fyllde just det syfte som var nödvändigt.
+Förutom en mängd beroenden som till en början krävdes för att påbörja arbetet tillkom flera under projektets gång. Detta inkluderade både \textit{dependencies} och \textit{devDependencies} i \texttt{package.json}. Under projektet uppkom flera öppna diskussioner om huruvida egna mjukvarukomponenter skulle implementeras eller färdiga paket användas. I dessa situationer övervägdes ofta kvalitet hos komponenterna samt till vilken grad de fyllde just det syfte som var nödvändigt. De främsta kvalitetsattributen som vägdes in var tillförlitlighet, effektivitet och hur enkelt paket kunde integreras. För att få en uppfattning om dessa egenskaper undersöktes artiklar och bloggar om andra utvecklares erfarenheter av att använda de paket som övervägdes. Paket som utvecklades aktivt och användes i många projekt antogs ofta vara av högre kvalitet. I vissa fall utfördes också test av att integrera färdiga komponenter i den existerande koden.
 
 Då projektet består av flera separata applikationer finns i slutprodukten 3 separata kodbaser med varsin \texttt{package.json}-fil. Eftersom dessa filer har befunnit sig under versionshantering under hela projektet erbjuder de en logg över hur projektets beroenden har förändrats. Dessa ändringar tillsammans med de diskussioner och konsekvenser som har omgärdat dessa har givit upphov till en mängd erfarenheter för hur beroenden påverkat projektets utveckling och till viss del även slutproduktens kvalitet.

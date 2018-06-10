@@ -64,6 +64,7 @@ I de fall ett paket specificerar flera accepterade versioner i ett beroende har 
 Något som gör denna modell något speciellt komplex att arbeta med är att npm ej ställer några krav på att beroenden inte får bilda cykler. Det kan tyckas ointuitivt att detta kan fungera. Beroende är dock endast krav på att ett visst paket måste ha hämtats. När en cykel följs och ett paket nås som redan har passerats behöver detta inte hämtas igen och därmed skapar dessa cykler inga större problem. Exempel på flera sådana cirkulära beroenden kan ses i figur \ref{fig:beroende-graf-cykel}.
 
 \subsection{Github}
+\label{subsec:joel_o-github}
 De olika Javascript-projekt som undersöks i detta arbete hämtas från plattformen Github. För projekt som ligger under en open-source-licens är all källkod tillgänglig att hämtas från Githubs server. Detta innefattar filen \texttt{package.json} som är av stort intresse för denna undersökning. För att npm ska kunna använda \texttt{package.json} korrekt behöver denna fil vara placerad i projektets rotmapp. Detta underlättar analysen, då ett antagande om sökvägen till \texttt{package.json} i projektets mappstruktur kan göras.
 
 Projekt på Github refereras till genom en unik kombination av ägarens användarnamn och projektets namn. Med denna information kan för ett visst projekt filen \texttt{package.json} hittas på adressen
