@@ -19,14 +19,14 @@ För att göra denna undersökningen krävs några fundamentala frågor som beh�
 
 \item\label{tim-fs:2} Under vilka förhållanden är det bättre att använda RPC över event och vice versa?
 
-\item\label{tim-fs:3} Hur påverkas rundturstiden i nätverket beroende på datastorleken?  
+\item\label{tim-fs:3} Hur påverkas svarstiden i nätverket beroende på datastorleken?  
 
 \end{enumerate}
 
 \subsection{Avgränsningar}
 \label{subsec:tim-delimitations}
-Då det inte går att delegera hur mycket tid och resurser som helst på undersökningen behöver vissa avgränsningar göras. Till en början så undersöks inte deepstream i en verklig miljö, det vill säga undersökningen görs på ett lokalt nätverk. Detta leder till att rundturstiden till stor del inte reflekterar tiden att skicka data mellan olika enheter på nätverket då all data skickas på ett lokalt nätverk.
+Då det inte går att delegera hur mycket tid och resurser som helst på undersökningen behöver vissa avgränsningar göras. Till en början så undersöks inte deepstream i en verklig miljö, det vill säga undersökningen görs på ett lokalt nätverk. Detta leder till att svarstiden till stor del inte reflekterar tiden att skicka data mellan olika enheter på nätverket då all data skickas på ett lokalt nätverk.
 
-Dessutom så kommer inte rundturstiden ta skalbarheten in i beräkningen då resurser för att koppla upp ett stort antal användare inte finns tillgängligt. Därmed är rundturstiden endast med avseende på ett tomt nätverk och handlar då mer om hur snabbt deepstream kan serialisera/deserialisera datan.
+Dessutom så kommer inte svarstiden ta skalbarheten in i beräkningen då resurser för att koppla upp ett stort antal användare inte finns tillgängligt. Därmed är svarstiden endast med avseende på ett tomt nätverk och handlar då mer om hur snabbt deepstream kan serialisera/deserialisera datan.
 
-I rapporten hanteras inte heller deepstreams records då denna struktur inte är relevant för projektet. Denna struktur hanterar endast data som lagras på deepstream servern och används inte för rundturstider.
+I rapporten hanteras inte heller deepstreams records då denna struktur inte är relevant för projektet. Denna struktur hanterar endast data som lagras på deepstream servern och används inte för svarstider.
